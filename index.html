@@ -119,18 +119,96 @@ footer strong{color:var(--ink)}
 }
 
 /* ---------- print ---------- */
-@page{size:A4;margin:14mm}
+@page{
+  size:A4 portrait;
+  margin:12mm;
+}
 @media print{
-  body{background:#fff;padding:0;font-size:10pt;color:#000}
-  .doc{max-width:none;margin:0;padding:0;box-shadow:none;background:#fff}
+  html,body{
+    width:auto!important;
+    height:auto!important;
+    overflow:visible!important;
+    background:#fff!important;
+  }
+
+  body{
+    margin:0!important;
+    padding:0!important;
+    font-size:9.4pt;
+    line-height:1.32;
+    color:#000;
+  }
+
+  .doc{
+    width:auto!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    box-shadow:none!important;
+    background:#fff!important;
+  }
+
   .toolbar,.screen-only{display:none!important}
-  .page-break{break-before:page}
-  section,.sheet,.f,tr{break-inside:avoid}
-  .sheet{border-color:#000}
+  body.print-core .full-only{display:none!important}
+
+  /* Explicit starts for the comparison and optional-depth pages. */
+  .page-break{
+    break-before:page;
+    page-break-before:always;
+  }
+
+  /*
+    Do NOT try to keep an entire section/provider sheet on one page.
+    Several are taller than A4. Keeping them together is what caused
+    Chrome to clip/overflow the printable page.
+  */
+  section,.sheet{
+    break-inside:auto;
+    page-break-inside:auto;
+  }
+
+  /* Keep only small logical units together. */
+  .f,.sec-head,h1,h2,h3,tr{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  thead{display:table-header-group}
+  tfoot{display:table-footer-group}
+
+  /* Slightly tighter print spacing so pages fit real A4 printers at 100%. */
+  .mast{padding-bottom:10px}
+  .standfirst{margin-top:8px;font-size:9.2pt;line-height:1.35}
+  section{margin-top:18px}
+  .sec-head{padding-bottom:4px;margin-bottom:10px}
+  .sec-note{margin:-3px 0 10px;font-size:8.5pt}
+  h3{margin:12px 0 6px;font-size:8pt}
+  .f{margin-bottom:6px}
+  .opts{font-size:9pt;line-height:1.65}
+  .rule{height:1.28em}
+  .rule.tall{height:1.5em}
+  .grid-note{padding:8px 10px;margin-bottom:10px}
+  table{font-size:8.5pt}
+  th{font-size:7pt;padding:0 5px 5px}
+  td{height:2.55em;padding:0 5px}
+  .sheet{
+    padding:12px 14px 14px;
+    margin-top:0;
+    border-color:#000;
+  }
+  .sheet-head{margin-bottom:10px;padding-bottom:5px}
+  .cost-row{margin-bottom:4px;font-size:9pt}
+  .warn{font-size:8pt;margin-top:6px}
+  footer{margin-top:18px;padding-top:8px;font-size:8pt}
+
   h2,h1,.sheet-title{color:#000}
   .sec-no,h3,.brand{color:#000}
   th{color:#000;border-bottom-color:#000}
-  .grid-note{border-left-color:#000;background:transparent;border:1px solid #000}
+  .grid-note{
+    border-left-color:#000;
+    background:transparent;
+    border:1px solid #000;
+  }
   tbody tr:nth-child(odd) td{background:transparent}
   a{text-decoration:none;color:#000}
 }
@@ -157,7 +235,8 @@ footer strong{color:var(--ink)}
   </p>
 
   <div class="toolbar screen-only">
-    <button onclick="window.print()">Print or save as PDF</button>
+    <button id="printCore">Print core checklist</button>
+    <button id="printFull">Print full checklist</button>
     <button class="ghost" id="addSheet">Add another provider sheet</button>
   </div>
 
@@ -295,14 +374,14 @@ footer strong{color:var(--ink)}
   </section>
 
   <!-- 5 ................................................. -->
-  <section class="page-break">
+  <section class="page-break full-only">
     <div class="sec-head"><span class="sec-no">05</span><h2>Provider detail sheets</h2></div>
     <p class="sec-note">One sheet per provider you're seriously considering. Add more sheets on screen before printing, or print this page as many times as you need.</p>
     <div id="sheets"></div>
   </section>
 
   <!-- 6 ................................................. -->
-  <section class="page-break">
+  <section class="page-break full-only">
     <div class="sec-head"><span class="sec-no">06</span><h2>Still to confirm</h2></div>
     <p class="sec-note">What do I still need to know before deciding? Note who can answer each one.</p>
     <div class="rows">
@@ -312,7 +391,7 @@ footer strong{color:var(--ink)}
   </section>
 
   <!-- 7 ................................................. -->
-  <section>
+  <section class="full-only">
     <div class="sec-head"><span class="sec-no">07</span><h2>Notes</h2></div>
     <div class="rows">
       <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
@@ -522,6 +601,27 @@ footer strong{color:var(--ink)}
 
   addSheet();
   addSheet();
+
+  function printChecklist(mode){
+    if (mode === 'core') {
+      document.body.classList.add('print-core');
+    } else {
+      document.body.classList.remove('print-core');
+    }
+    window.print();
+  }
+
+  window.addEventListener('afterprint', function(){
+    document.body.classList.remove('print-core');
+  });
+
+  document.getElementById('printCore').addEventListener('click', function(){
+    printChecklist('core');
+  });
+
+  document.getElementById('printFull').addEventListener('click', function(){
+    printChecklist('full');
+  });
 
   document.getElementById('addSheet').addEventListener('click', function(){
     addSheet();
