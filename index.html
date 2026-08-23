@@ -6,211 +6,219 @@
 <title>Assessment Routes Checklist — Queuend</title>
 <style>
 :root{
-  --ink:#1B2733;
-  --muted:#5A646E;
-  --rule:#C8C4BA;
-  --rule-light:#E2DFD6;
-  --teal:#014F52;
-  --seafoam:#00A896;
-  --paper:#FCFBF8;
-  --tint:#EDF4F2;
+  --ink:#16212C;
+  --ink-soft:#3E4A56;
+  --muted:#5E6A75;
+  --teal:#04575A;
+  --teal-mid:#0B7B77;
+  --ochre:#8A5A14;
+  --tint-cool:#EDF4F3;
+  --tint-warm:#FBF6EC;
+  --rule:#9E998E;
+  --rule-fine:#C2BDB2;
+  --line:#A9A398;
   --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
   --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
 body{
   font-family:var(--sans);
   font-size:10.5pt;
   line-height:1.45;
   color:var(--ink);
-  background:#EFEDE7;
+  background:#EDEBE6;
   padding:28px 16px 60px;
 }
 .doc{
   max-width:210mm;
   margin:0 auto;
-  background:var(--paper);
-  padding:24mm 20mm 20mm;
-  box-shadow:0 2px 18px rgba(27,39,51,.12);
+  background:#FFFFFF;
+  padding:22mm 19mm 18mm;
+  box-shadow:0 1px 3px rgba(22,33,44,.10),0 8px 28px rgba(22,33,44,.10);
 }
 
 /* ---------- masthead ---------- */
-.mast{display:flex;align-items:flex-start;gap:14px;padding-bottom:14px;border-bottom:2px solid var(--teal)}
-.mark{flex:0 0 auto;margin-top:2px}
+.mast{display:flex;align-items:flex-start;gap:15px;padding-bottom:13px;border-bottom:2.5px solid var(--teal)}
+.mark{flex:0 0 auto;margin-top:3px}
 .mast-id{flex:1}
-.brand{font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
-h1{font-family:var(--serif);font-size:22pt;line-height:1.1;font-weight:400;letter-spacing:-.01em;margin-top:4px}
-.standfirst{margin-top:12px;font-size:10pt;color:var(--muted);max-width:52em}
+.brand{font-size:8pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+h1{font-family:var(--serif);font-size:23pt;line-height:1.08;font-weight:400;letter-spacing:-.015em;margin-top:5px;color:var(--ink)}
+.kicker{margin-top:7px;font-size:8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ochre);font-weight:700}
+.standfirst{margin-top:13px;font-size:10pt;color:var(--ink-soft);max-width:50em;line-height:1.55}
 .standfirst strong{color:var(--ink);font-weight:600}
 
-.toolbar{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+.toolbar{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;padding:13px 0 2px;border-top:1px solid var(--rule-fine)}
 button{
   font-family:var(--sans);font-size:9.5pt;font-weight:600;
-  padding:9px 15px;border-radius:4px;cursor:pointer;
-  border:1px solid var(--teal);background:var(--teal);color:#fff;
+  padding:9px 16px;border-radius:3px;cursor:pointer;
+  border:1.25px solid var(--teal);background:var(--teal);color:#fff;
+  transition:background-color .12s ease,color .12s ease;
 }
-button.ghost{background:transparent;color:var(--teal)}
-button:hover{filter:brightness(1.12)}
-button:focus-visible{outline:3px solid var(--seafoam);outline-offset:2px}
+button.ghost{background:#fff;color:var(--teal)}
+button:hover{background:var(--teal-mid);border-color:var(--teal-mid);color:#fff}
+button:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
 
 /* ---------- sections ---------- */
-section{margin-top:26px;break-inside:avoid}
-.sec-head{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:14px}
-.sec-no{font-family:var(--mono);font-size:9pt;font-weight:600;color:var(--seafoam)}
-h2{font-family:var(--serif);font-size:13.5pt;font-weight:400;letter-spacing:-.005em}
-.sec-note{font-size:9pt;color:var(--muted);margin:-6px 0 14px;max-width:50em}
+section{margin-top:30px}
+.sec-head{display:flex;align-items:center;gap:11px;border-bottom:1.75px solid var(--ink);padding-bottom:6px;margin-bottom:13px}
+.sec-no{
+  font-family:var(--mono);font-size:8.5pt;font-weight:600;color:var(--teal);
+  border:1.25px solid var(--teal);border-radius:2px;padding:2px 5px;line-height:1;
+}
+h2{font-family:var(--serif);font-size:14.5pt;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
+.sec-note{font-size:9pt;color:var(--muted);margin:-4px 0 14px;max-width:48em;line-height:1.55}
 
-h3{font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin:16px 0 8px}
-h3:first-of-type{margin-top:0}
+h3{
+  font-size:8.5pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);
+  margin:20px 0 9px;padding-bottom:4px;border-bottom:1px solid var(--rule-fine);
+}
+.block:first-child h3{margin-top:0}
+h3 .plain{text-transform:none;letter-spacing:0;font-weight:400;font-style:italic;color:var(--muted);font-size:8pt}
 
 /* ---------- fields ---------- */
-.f{margin-bottom:9px;break-inside:avoid}
-.lbl{display:block;font-size:9.5pt;color:var(--ink);margin-bottom:3px}
+.f{margin-bottom:10px}
+.lbl{display:block;font-size:9.5pt;color:var(--ink);margin-bottom:4px;line-height:1.4}
 .hint{font-size:8.5pt;color:var(--muted);font-style:italic}
-.rule{border-bottom:1px solid var(--rule-light);height:1.5em}
-.rule.tall{height:1.7em}
-.rows .rule{margin-bottom:2px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
-.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 14px}
-.inline-rule{display:inline-block;border-bottom:1px solid var(--rule-light);min-width:80px;height:1.15em;vertical-align:-2px}
-.inline-rule.w-wide{min-width:190px}
-.inline-rule.w-narrow{min-width:52px}
+.rule{border-bottom:1px solid var(--line);height:1.55em}
+.rule.tall{height:1.85em}
+.rows .rule{margin-bottom:3px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+.inline-rule{display:inline-block;border-bottom:1px solid var(--line);min-width:80px;height:1.15em;vertical-align:-2px}
+.inline-rule.w-wide{min-width:170px}
 
 /* ---------- checkboxes ---------- */
-.opts{font-size:9.5pt;line-height:1.9}
-.cb{display:inline-block;width:10px;height:10px;border:1px solid var(--muted);border-radius:1px;margin-right:5px;vertical-align:-1px}
-.opt{white-space:nowrap;margin-right:15px;display:inline-block}
+.opts{font-size:9.5pt;line-height:2}
+.cb{display:inline-block;width:11px;height:11px;border:1.25px solid var(--ink-soft);border-radius:1px;margin-right:6px;vertical-align:-1px}
+.opt{white-space:nowrap;margin-right:16px;display:inline-block}
+.q{margin-bottom:1px}
+.q strong{font-weight:600}
 
-/* ---------- comparison grid (signature) ---------- */
-.grid-note{background:var(--tint);border-left:3px solid var(--seafoam);padding:10px 13px;font-size:9.5pt;margin-bottom:12px}
+/* ---------- three note tiers ---------- */
+.note,.flag,.key{font-size:8.5pt;line-height:1.55;margin-top:10px;padding:9px 12px}
+.note{background:var(--tint-cool);border-left:2.5px solid var(--teal);color:var(--ink-soft)}
+.flag{background:var(--tint-warm);border-left:2.5px solid var(--ochre);color:var(--ink-soft)}
+.key{background:#fff;border:1.25px solid var(--teal);border-left:3.5px solid var(--teal);color:var(--ink)}
+.note-lbl{
+  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;
+}
+.note .note-lbl{color:var(--teal)}
+.flag .note-lbl{color:var(--ochre)}
+.key .note-lbl{color:var(--teal)}
+.key strong{font-weight:600}
+
+/* ---------- comparison table ---------- */
+.table-wrap{border-top:2.5px solid var(--teal);border-bottom:1.75px solid var(--ink);padding-top:2px;margin-top:4px}
 table{width:100%;border-collapse:collapse;font-size:9pt}
 th{
-  font-size:7.5pt;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  text-align:left;color:var(--teal);padding:0 6px 6px;border-bottom:1.5px solid var(--teal);vertical-align:bottom;
+  font-size:7.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-align:left;color:var(--teal);padding:7px 6px 7px;border-bottom:1.25px solid var(--ink);vertical-align:bottom;
 }
-td{border-bottom:1px solid var(--rule-light);height:2.9em;padding:0 6px}
-td:first-child{border-left:none}
-tbody tr:nth-child(odd) td{background:rgba(1,79,82,.022)}
-.col-sub{display:block;font-size:6.8pt;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-style:italic}
+td{border-bottom:1px solid var(--rule-fine);height:3.3em;padding:0 6px}
+.col-sub{display:block;font-size:6.8pt;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-style:italic;margin-top:1px}
+.sheet table{border-top:1.5px solid var(--teal)}
+.sheet th{padding-top:6px;padding-bottom:5px}
 
 /* ---------- provider sheet ---------- */
-.sheet{border:1px solid var(--rule);padding:16px 18px 18px;margin-top:18px;background:#fff}
-.sheet-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1.5px solid var(--teal);padding-bottom:7px;margin-bottom:14px}
-.sheet-title{font-family:var(--serif);font-size:12pt}
-.sheet-no{font-family:var(--mono);font-size:8.5pt;color:var(--muted)}
-.cost-row{display:flex;align-items:baseline;gap:8px;margin-bottom:5px;font-size:9.5pt}
-.cost-row .cl{flex:1}
-.cost-row .cv{font-family:var(--mono);border-bottom:1px solid var(--rule-light);min-width:92px;height:1.2em}
-.cost-total{border-top:1.5px solid var(--ink);margin-top:7px;padding-top:6px;font-weight:700}
-.warn{font-size:8.5pt;color:var(--muted);border-left:2px solid var(--rule);padding-left:9px;margin-top:8px}
+.sheet{border:1.25px solid var(--rule);border-top:4px solid var(--teal);padding:0 20px 20px;margin-top:22px;background:#fff}
+.sheet-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  border-bottom:1.75px solid var(--ink);padding:14px 0 8px;margin-bottom:11px;
+}
+.sheet-title{font-family:var(--serif);font-size:14pt;letter-spacing:-.01em}
+.sheet-title .st-sub{display:block;font-family:var(--sans);font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:2px}
+.sheet-no{
+  font-family:var(--mono);font-size:9pt;font-weight:600;color:#fff;background:var(--teal);
+  padding:4px 9px;border-radius:2px;white-space:nowrap;
+}
+.sheet-lead{font-size:9pt;color:var(--muted);margin-bottom:16px;font-style:italic;line-height:1.55}
 
-footer{margin-top:30px;padding-top:12px;border-top:1px solid var(--rule);font-size:8.5pt;color:var(--muted)}
+/* ---------- costs ---------- */
+.cost-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;font-size:9.5pt}
+.cost-row .cl{flex:1}
+.cost-row .cv{font-family:var(--mono);border-bottom:1px solid var(--line);min-width:96px;height:1.25em}
+.cost-total{border-top:1.5px solid var(--ink);margin-top:8px;padding-top:7px;font-weight:700}
+.cost-flag{border-top:2px solid var(--ochre);margin-top:10px;padding-top:8px;font-weight:700;color:var(--ochre)}
+.cost-flag .cv{border-bottom-color:var(--ochre)}
+
+footer{margin-top:34px;padding-top:13px;border-top:1.75px solid var(--ink);font-size:8.5pt;color:var(--muted);line-height:1.55}
 footer strong{color:var(--ink)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 @media (max-width:620px){
-  body{padding:0}
-  .doc{padding:16mm 6mm}
-  .two,.three{grid-template-columns:1fr}
+  body{padding:0;background:#fff}
+  .doc{padding:14mm 6mm;box-shadow:none;max-width:none}
+  .two{grid-template-columns:1fr}
   table{font-size:8pt}
   th{font-size:7pt}
+  .sheet{padding:0 12px 14px}
 }
 
-/* ---------- print ---------- */
-@page{
-  size:A4 portrait;
-  margin:12mm;
+/* ---------- tail notes (turn part-page gaps into usable space) ---------- */
+.tail-notes{margin-top:15px;padding-top:6px;border-top:1px solid var(--rule-fine)}
+.tn-lbl{
+  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:6px;
 }
-@media print{
-  html,body{
-    width:auto!important;
-    height:auto!important;
-    overflow:visible!important;
-    background:#fff!important;
+.tail-notes .rule{height:1.85em}
+
+/* ---------- print: A4 pagination ---------- */
+@page{size:A4;margin:15mm 14mm 16mm}
+@media print {
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
-
-  body{
-    margin:0!important;
-    padding:0!important;
-    font-size:9.4pt;
-    line-height:1.32;
-    color:#000;
+  body {
+    background: #fff;
+    padding: 0;
+    font-size: 10pt;
   }
-
-  .doc{
-    width:auto!important;
-    max-width:none!important;
-    margin:0!important;
-    padding:0!important;
-    box-shadow:none!important;
-    background:#fff!important;
+  .doc {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: #fff;
   }
-
-  .toolbar,.screen-only{display:none!important}
-  body.print-core .full-only{display:none!important}
-
-  /* Explicit starts for the comparison and optional-depth pages. */
-  .page-break{
-    break-before:page;
-    page-break-before:always;
+  .toolbar,
+  .screen-only {
+    display: none !important;
   }
-
-  /*
-    Do NOT try to keep an entire section/provider sheet on one page.
-    Several are taller than A4. Keeping them together is what caused
-    Chrome to clip/overflow the printable page.
-  */
-  section,.sheet{
-    break-inside:auto;
-    page-break-inside:auto;
+  body.print-core .full-only {
+    display: none !important;
   }
-
-  /* Keep only small logical units together. */
-  .f,.sec-head,h1,h2,h3,tr{
-    break-inside:avoid;
-    page-break-inside:avoid;
+  p, .lbl, .opts {
+    orphans: 3;
+    widows: 3;
   }
-
-  thead{display:table-header-group}
-  tfoot{display:table-footer-group}
-
-  /* Slightly tighter print spacing so pages fit real A4 printers at 100%. */
-  .mast{padding-bottom:10px}
-  .standfirst{margin-top:8px;font-size:9.2pt;line-height:1.35}
-  section{margin-top:18px}
-  .sec-head{padding-bottom:4px;margin-bottom:10px}
-  .sec-note{margin:-3px 0 10px;font-size:8.5pt}
-  h3{margin:12px 0 6px;font-size:8pt}
-  .f{margin-bottom:6px}
-  .opts{font-size:9pt;line-height:1.65}
-  .rule{height:1.28em}
-  .rule.tall{height:1.5em}
-  .grid-note{padding:8px 10px;margin-bottom:10px}
-  table{font-size:8.5pt}
-  th{font-size:7pt;padding:0 5px 5px}
-  td{height:2.55em;padding:0 5px}
-  .sheet{
-    padding:12px 14px 14px;
-    margin-top:0;
-    border-color:#000;
+  section {
+    margin-top: 22px;
+    break-inside: auto;
   }
-  .sheet-head{margin-bottom:10px;padding-bottom:5px}
-  .cost-row{margin-bottom:4px;font-size:9pt}
-  .warn{font-size:8pt;margin-top:6px}
-  footer{margin-top:18px;padding-top:8px;font-size:8pt}
-
-  h2,h1,.sheet-title{color:#000}
-  .sec-no,h3,.brand{color:#000}
-  th{color:#000;border-bottom-color:#000}
-  .grid-note{
-    border-left-color:#000;
-    background:transparent;
-    border:1px solid #000;
+  .page-break {
+    break-before: page;
+    page-break-before: always;
   }
-  tbody tr:nth-child(odd) td{background:transparent}
-  a{text-decoration:none;color:#000}
+  h1, h2, h3, .sec-head, .sheet-head {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .f, .note, .flag, .key, .cost-row, tr, .two, .opts,
+  .block, .table-wrap, .cost-group {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .sheet {
+    break-inside: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
 }
 </style>
 </head>
@@ -218,13 +226,14 @@ footer strong{color:var(--ink)}
 <div class="doc">
 
   <header class="mast">
-    <svg class="mark" width="30" height="30" viewBox="0 0 240 240" aria-hidden="true">
-      <path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="#014F52"/>
-      <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#00A896"/>
+    <svg class="mark" width="32" height="32" viewBox="0 0 240 240" aria-hidden="true">
+      <path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="#04575A"/>
+      <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
     </svg>
     <div class="mast-id">
       <div class="brand">Queuend</div>
       <h1>Assessment Routes Checklist</h1>
+      <div class="kicker">A free worksheet &middot; ADHD and autism assessment in the UK</div>
     </div>
   </header>
 
@@ -240,7 +249,6 @@ footer strong{color:var(--ink)}
     <button class="ghost" id="addSheet">Add another provider sheet</button>
   </div>
 
-  <!-- 1 ................................................. -->
   <section>
     <div class="sec-head"><span class="sec-no">01</span><h2>What matters most to you</h2></div>
     <p class="sec-note">Fill this in before you start ringing round. If a provider is persuasive on the phone, check what they're offering against this list rather than the other way round.</p>
@@ -255,46 +263,46 @@ footer strong{color:var(--ink)}
       <span class="opt"><span class="cb"></span>Experience with women and girls</span>
       <span class="opt"><span class="cb"></span>Experience with co-occurring conditions</span>
     </div>
-    <div class="f" style="margin-top:10px">
+    <div class="f" style="margin-top:11px">
       <span class="lbl">Anything else that matters to me</span>
       <div class="rows"><div class="rule"></div><div class="rule"></div></div>
     </div>
   </section>
 
-  <!-- 2 ................................................. -->
   <section>
     <div class="sec-head"><span class="sec-no">02</span><h2>About this assessment</h2></div>
     <div class="opts">
-      <div><strong style="font-weight:600">Assessment for:</strong>
+      <div class="q"><strong>Assessment for:</strong>
         <span class="opt"><span class="cb"></span>Adult</span>
         <span class="opt"><span class="cb"></span>Child or young person</span>
+        &nbsp;Age now: <span class="inline-rule"></span>
       </div>
-      <div><strong style="font-weight:600">Being considered:</strong>
+      <div class="q"><strong>Being considered:</strong>
         <span class="opt"><span class="cb"></span>ADHD</span>
         <span class="opt"><span class="cb"></span>Autism</span>
         <span class="opt"><span class="cb"></span>Both</span>
         <span class="opt"><span class="cb"></span>Unsure</span>
       </div>
-      <div><strong style="font-weight:600">UK nation:</strong>
+      <div class="q"><strong>UK nation:</strong>
         <span class="opt"><span class="cb"></span>England</span>
         <span class="opt"><span class="cb"></span>Scotland</span>
         <span class="opt"><span class="cb"></span>Wales</span>
         <span class="opt"><span class="cb"></span>Northern Ireland</span>
       </div>
-      <div><strong style="font-weight:600">Evidence needed for:</strong>
+      <div class="q"><strong>Evidence needed for:</strong>
         <span class="opt"><span class="cb"></span>Work</span>
         <span class="opt"><span class="cb"></span>School</span>
         <span class="opt"><span class="cb"></span>College or university</span>
         <span class="opt"><span class="cb"></span>Adjustments</span>
         <span class="opt"><span class="cb"></span>Other</span>
       </div>
-      <div><strong style="font-weight:600">Medication something I may want to explore:</strong>
+      <div class="q"><strong>Medication something I may want to explore:</strong>
         <span class="opt"><span class="cb"></span>Yes</span>
         <span class="opt"><span class="cb"></span>No</span>
         <span class="opt"><span class="cb"></span>Unsure</span>
       </div>
     </div>
-    <div class="two" style="margin-top:10px">
+    <div class="two" style="margin-top:12px">
       <div class="f"><span class="lbl">Local area / NHS area or board</span><div class="rule"></div></div>
       <div class="f"><span class="lbl">Date started this checklist</span><div class="rule"></div></div>
     </div>
@@ -304,96 +312,144 @@ footer strong{color:var(--ink)}
     </div>
   </section>
 
-  <!-- 3 ................................................. -->
   <section class="page-break">
     <div class="sec-head"><span class="sec-no">03</span><h2>Side-by-side comparison</h2></div>
-    <div class="grid-note">
+    <div class="key">
+      <span class="note-lbl">Decision point</span>
       <strong>If you fill in only one page, make it this one.</strong>
       The detail sheets that follow are the evidence behind these rows. Decisions get made by comparison, and comparison needs everything in one view.
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:20%">Provider</th>
-          <th style="width:13%">Route</th>
-          <th style="width:15%">Wait <span class="col-sub">to what point?</span></th>
-          <th style="width:14%">First-year cost</th>
-          <th style="width:19%">Shared Care <span class="col-sub">what they said</span></th>
-          <th style="width:19%">Status <span class="col-sub">& next step</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      </tbody>
-    </table>
-    <p class="warn">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:17%">Provider</th>
+            <th style="width:10%">Route</th>
+            <th style="width:14%">Wait <span class="col-sub">assessment / report</span></th>
+            <th style="width:13%">First-year cost</th>
+            <th style="width:14%">&pound; a year <span class="col-sub">if no Shared Care</span></th>
+            <th style="width:16%">Shared Care <span class="col-sub">confirmed or expected?</span></th>
+            <th style="width:16%">Status <span class="col-sub">&amp; next step</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <span class="note-lbl">Why this matters</span>
       Status options: not yet contacted &middot; awaiting callback &middot; information received &middot; ruled out &middot; shortlisted &middot; booked.
       A provider that has gone quiet twice is telling you something about their admin.
-    </p>
+    </div>
   </section>
 
-  <!-- 4 ................................................. -->
   <section>
     <div class="sec-head"><span class="sec-no">04</span><h2>The GP conversation</h2></div>
     <p class="sec-note">Your GP may be central to the NHS and Right to Choose referral routes, and may later decide whether to accept Shared Care. Keep this separate from any single provider.</p>
-    <div class="two">
-      <div class="f"><span class="lbl">GP practice</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">GP spoken to</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Date of conversation</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">ICB / health board <span class="hint">(for escalation)</span></span><div class="rule"></div></div>
+    <div class="block">
+      <div class="two">
+        <div class="f"><span class="lbl">GP practice</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">GP spoken to</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Date of conversation</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">ICB / health board <span class="hint">(for escalation)</span></span><div class="rule"></div></div>
+      </div>
+      <div class="opts">
+        <div class="q"><strong>What I asked for:</strong>
+          <span class="opt"><span class="cb"></span>NHS referral</span>
+          <span class="opt"><span class="cb"></span>Right to Choose referral</span>
+          <span class="opt"><span class="cb"></span>Shared Care</span>
+          <span class="opt"><span class="cb"></span>Advice only</span>
+        </div>
+        <div class="q"><strong>Outcome:</strong>
+          <span class="opt"><span class="cb"></span>Agreed</span>
+          <span class="opt"><span class="cb"></span>Declined</span>
+          <span class="opt"><span class="cb"></span>Referred elsewhere</span>
+          <span class="opt"><span class="cb"></span>Awaiting decision</span>
+        </div>
+        <div class="q"><strong>If declined, do I have the reasons in writing?</strong>
+          <span class="opt"><span class="cb"></span>Yes</span>
+          <span class="opt"><span class="cb"></span>No</span>
+          <span class="opt"><span class="cb"></span>Requested</span>
+        </div>
+      </div>
+      <div class="note">
+        <span class="note-lbl">Why this matters</span>
+        Written reasons matter. They tell you exactly what to address, and they're what an ICB or a complaint would need to see.
+      </div>
+      <div class="f" style="margin-top:10px">
+        <span class="lbl">What was said, and what happens next</span>
+        <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+      </div>
     </div>
-    <div class="opts">
-      <div><strong style="font-weight:600">What I asked for:</strong>
-        <span class="opt"><span class="cb"></span>NHS referral</span>
-        <span class="opt"><span class="cb"></span>Right to Choose referral</span>
-        <span class="opt"><span class="cb"></span>Shared Care</span>
-        <span class="opt"><span class="cb"></span>Advice only</span>
+
+    <div class="block">
+      <h3>If using Right to Choose <span class="plain">England only</span></h3>
+      <div class="opts">
+        <div class="q">Provider says it accepts Right to Choose referrals:
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Does their pathway cover assessment only, or treatment as well?
+          <span class="opt"><span class="cb"></span>Assessment only</span><span class="opt"><span class="cb"></span>Both</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
       </div>
-      <div><strong style="font-weight:600">Outcome:</strong>
-        <span class="opt"><span class="cb"></span>Agreed</span>
-        <span class="opt"><span class="cb"></span>Declined</span>
-        <span class="opt"><span class="cb"></span>Referred elsewhere</span>
-        <span class="opt"><span class="cb"></span>Awaiting decision</span>
+      <div class="two" style="margin-top:8px">
+        <div class="f"><span class="lbl">What service does their NHS contract cover?</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Referral instructions checked on</span><div class="rule"></div></div>
       </div>
-      <div><strong style="font-weight:600">If declined, do I have the reasons in writing?</strong>
-        <span class="opt"><span class="cb"></span>Yes</span>
-        <span class="opt"><span class="cb"></span>No</span>
-        <span class="opt"><span class="cb"></span>Requested</span>
+      <div class="f"><span class="lbl">If told I cannot choose this provider, what exact reason was given?</span><div class="rule"></div></div>
+      <div class="opts">
+        <div class="q"><strong>Which of these is it?</strong></div>
+        <span class="opt"><span class="cb"></span>Not clinically appropriate</span>
+        <span class="opt"><span class="cb"></span>No qualifying NHS contract</span><br>
+        <span class="opt"><span class="cb"></span>Wrong cohort (adult / child)</span>
+        <span class="opt"><span class="cb"></span>Provider has paused referrals</span><br>
+        <span class="opt"><span class="cb"></span>Practice preference &mdash; "the one we use"</span>
+        <span class="opt"><span class="cb"></span>Unclear</span>
+      </div>
+      <div class="f" style="margin-top:9px">
+        <span class="lbl">Ask directly: is this about the referral itself, or about Shared Care afterwards?</span>
+        <div class="opts">
+          <span class="opt"><span class="cb"></span>They cannot refer me there</span>
+          <span class="opt"><span class="cb"></span>They will not do Shared Care with them later</span>
+          <span class="opt"><span class="cb"></span>Still unclear</span>
+        </div>
+      </div>
+      <div class="flag">
+        <span class="note-lbl">Watch out</span>
+        These are different answers with different consequences. Declining Shared Care with a particular provider later is lawful and fairly common. Refusing the referral itself has only narrow lawful grounds &mdash; clinical appropriateness, or the provider not holding a qualifying NHS contract for your service and age group. Practice preference is not one of them. If you are told you cannot be referred to a provider you have chosen, ask for the reason in writing. You are not expected to judge whether a contract legally qualifies; these questions exist so the answer is on the record rather than assumed.
       </div>
     </div>
-    <p class="warn">Written reasons matter. They tell you exactly what to address, and they're what an ICB or a complaint would need to see.</p>
-    <div class="f" style="margin-top:8px">
-      <span class="lbl">What was said, and what happens next</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+
+    <div class="tail-notes">
+      <span class="tn-lbl">Notes</span>
+      <div class="rule"></div><div class="rule"></div>
     </div>
   </section>
 
-  <!-- 5 ................................................. -->
   <section class="page-break full-only">
     <div class="sec-head"><span class="sec-no">05</span><h2>Provider detail sheets</h2></div>
     <p class="sec-note">One sheet per provider you're seriously considering. Add more sheets on screen before printing, or print this page as many times as you need.</p>
     <div id="sheets"></div>
   </section>
 
-  <!-- 6 ................................................. -->
   <section class="page-break full-only">
     <div class="sec-head"><span class="sec-no">06</span><h2>Still to confirm</h2></div>
     <p class="sec-note">What do I still need to know before deciding? Note who can answer each one.</p>
-    <div class="rows">
+    <div class="block rows">
       <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
       <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
     </div>
   </section>
 
-  <!-- 7 ................................................. -->
   <section class="full-only">
     <div class="sec-head"><span class="sec-no">07</span><h2>Notes</h2></div>
-    <div class="rows">
+    <div class="block rows">
       <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
       <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
       <div class="rule tall"></div><div class="rule tall"></div>
@@ -401,7 +457,7 @@ footer strong{color:var(--ink)}
   </section>
 
   <footer>
-    <strong>Queuend — Assessment Routes Checklist.</strong>
+    <strong>Queuend &mdash; Assessment Routes Checklist.</strong>
     For organising information only. It does not diagnose, recommend a provider, or replace professional advice.
     In England, clinic regulation is checked at cqc.org.uk. Elsewhere, check Healthcare Improvement Scotland,
     Healthcare Inspectorate Wales, or the RQIA in Northern Ireland.
@@ -412,176 +468,325 @@ footer strong{color:var(--ink)}
 <template id="sheetTpl">
   <div class="sheet">
     <div class="sheet-head">
-      <span class="sheet-title">Provider</span>
+      <span class="sheet-title"><span class="st-sub">Provider detail sheet</span>Provider</span>
       <span class="sheet-no">Sheet <span class="n"></span></span>
     </div>
+    <p class="sheet-lead">Everything below is something to ask them. Work down it on the call and write what they actually say, not what the website says.</p>
 
-    <h3>Who they are</h3>
-    <div class="two">
-      <div class="f"><span class="lbl">Name</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Website</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Phone / email</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Information checked on / recheck by</span><div class="rule"></div></div>
-    </div>
-    <div class="opts">
-      <strong style="font-weight:600">Route:</strong>
-      <span class="opt"><span class="cb"></span>Local NHS</span>
-      <span class="opt"><span class="cb"></span>Right to Choose</span>
-      <span class="opt"><span class="cb"></span>Private</span>
-      <span class="opt"><span class="cb"></span>Children's pathway</span>
-      <span class="opt"><span class="cb"></span>Other</span>
-    </div>
-
-    <h3>Contact log</h3>
-    <table>
-      <thead><tr>
-        <th style="width:14%">Date</th>
-        <th style="width:14%">Method</th>
-        <th style="width:20%">Who I spoke to</th>
-        <th style="width:36%">What they said</th>
-        <th style="width:16%">Follow up by</th>
-      </tr></thead>
-      <tbody>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-      </tbody>
-    </table>
-
-    <h3>Waiting</h3>
-    <div class="two">
-      <div class="f"><span class="lbl">Current estimated wait</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Referral required?</span><div class="rule"></div></div>
-    </div>
-    <div class="opts">
-      <strong style="font-weight:600">That wait is until:</strong>
-      <span class="opt"><span class="cb"></span>First contact</span>
-      <span class="opt"><span class="cb"></span>First appointment</span>
-      <span class="opt"><span class="cb"></span>Completed assessment</span>
-      <span class="opt"><span class="cb"></span>Medication settled</span>
-      <span class="opt"><span class="cb"></span>Unsure</span>
-    </div>
-
-    <h3>The assessment</h3>
-    <div class="two">
-      <div class="f"><span class="lbl">Who conducts it</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Length / number of appointments</span><div class="rule"></div></div>
-    </div>
-    <div class="opts">
-      <div><strong style="font-weight:600">Format:</strong>
-        <span class="opt"><span class="cb"></span>In person</span>
-        <span class="opt"><span class="cb"></span>Video</span>
-        <span class="opt"><span class="cb"></span>Mixed</span>
+    <div class="block">
+      <h3>The basics</h3>
+      <div class="two">
+        <div class="f"><span class="lbl">Name</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Website</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Phone / email</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Information checked on / recheck by</span><div class="rule"></div></div>
       </div>
-      <div><strong style="font-weight:600">They require:</strong>
-        <span class="opt"><span class="cb"></span>Developmental history</span>
-        <span class="opt"><span class="cb"></span>School reports</span>
-        <span class="opt"><span class="cb"></span>Someone who knew me as a child</span>
-      </div>
-      <div><strong style="font-weight:600">Included:</strong>
-        <span class="opt"><span class="cb"></span>Written report</span>
-        <span class="opt"><span class="cb"></span>Feedback appointment</span>
-      </div>
-    </div>
-    <div class="f"><span class="lbl">What happens if the result is inconclusive</span><div class="rule"></div></div>
-
-    <h3>The report <span class="hint" style="text-transform:none;letter-spacing:0;font-weight:400">— report quality may affect how useful the assessment is to other professionals later</span></h3>
-    <div class="opts">
-      <div>Does it state which diagnostic criteria were used?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-      <div>Does it include recommendations or a treatment plan?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-      <div>Have local GPs accepted their reports before?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-      <div>Can I see an anonymised example?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
+      <div class="opts">
+        <div class="q"><strong>Route:</strong>
+          <span class="opt"><span class="cb"></span>Local NHS</span>
+          <span class="opt"><span class="cb"></span>Right to Choose</span>
+          <span class="opt"><span class="cb"></span>Private</span>
+          <span class="opt"><span class="cb"></span>Children's pathway</span>
+          <span class="opt"><span class="cb"></span>Other</span>
+        </div>
       </div>
     </div>
 
-    <h3>Regulation and credentials</h3>
-    <div class="opts">
-      <strong style="font-weight:600">CQC status (England):</strong>
-      <span class="opt"><span class="cb"></span>Registered</span>
-      <span class="opt"><span class="cb"></span>Not required — diagnosis only</span>
-      <span class="opt"><span class="cb"></span>Unclear</span>
-      <span class="opt"><span class="cb"></span>N/A outside England</span>
+    <div class="block">
+      <h3>Contact log</h3>
+      <table>
+        <thead><tr>
+          <th style="width:14%">Date</th>
+          <th style="width:14%">Method</th>
+          <th style="width:20%">Who I spoke to</th>
+          <th style="width:36%">What they said</th>
+          <th style="width:16%">Follow up by</th>
+        </tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="two" style="margin-top:6px">
-      <div class="f"><span class="lbl">Rating, if rated / checked on</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Clinician's register &amp; number <span class="hint">(GMC, NMC, HCPC, BACP)</span></span><div class="rule"></div></div>
-    </div>
-    <p class="warn">A missing CQC registration is not automatically a warning sign. Since March 2026, providers offering diagnosis only, without treatment or prescribing, are no longer required to register. Ask which applies.</p>
 
-    <h3>Cost — first year</h3>
-    <div class="cost-row"><span class="cl">Assessment</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Report, if charged separately</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Feedback appointment</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Medication consultation</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Titration appointments (how many? ____)</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Prescriptions during titration</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Anything else</span><span class="cv"></span></div>
-    <div class="cost-row cost-total"><span class="cl">Total, first year</span><span class="cv"></span></div>
-
-    <h3>Cost — each year after</h3>
-    <div class="cost-row"><span class="cl">Annual review</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Ongoing prescriptions</span><span class="cv"></span></div>
-    <div class="cost-row"><span class="cl">Renewal or membership fee</span><span class="cv"></span></div>
-    <div class="cost-row cost-total"><span class="cl">Total, per year after</span><span class="cv"></span></div>
-    <p class="warn">The headline assessment price is rarely the whole cost. Ask which parts of the pathway are charged separately, and what recurs.</p>
-
-    <h3>Paying, and changing your mind</h3>
-    <div class="opts">
-      <div>Payment plan offered?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
-        &nbsp;Through: <span class="inline-rule w-wide"></span>
-      </div>
-      <div>Insurance accepted?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
-        &nbsp;Which: <span class="inline-rule w-wide"></span>
+    <div class="block">
+      <h3>Ask: who actually makes the diagnosis</h3>
+      <div class="f"><span class="lbl">Who conducts the assessment? <span class="hint">Name, profession, registration</span></span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">Who makes and signs off the diagnostic decision? <span class="hint">Name, profession, registration</span></span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">What specialist ADHD or autism training and experience do they have?</span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">If autism is being assessed, who else contributes to the decision?</span><div class="rule"></div></div>
+      <div class="flag">
+        <span class="note-lbl">Watch out</span>
+        The person interviewing you is not always the person responsible for the diagnosis. NICE expects ADHD diagnosis to be made by a specialist with training and expertise in ADHD, and adult autism assessment to draw on a range of professional skills rather than one clinician alone.
       </div>
     </div>
-    <div class="f" style="margin-top:6px"><span class="lbl">Cancellation, rescheduling and refund policy</span><div class="rule"></div></div>
 
-    <h3>After the assessment</h3>
-    <div class="two">
-      <div class="f"><span class="lbl">If a diagnosis is given, what follows</span><div class="rule"></div></div>
+    <div class="block">
+      <h3>Ask: how long, and until what</h3>
+      <div class="two">
+        <div class="f"><span class="lbl">Current estimated wait</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Referral required?</span><div class="rule"></div></div>
+      </div>
+      <div class="opts">
+        <div class="q"><strong>That wait is until:</strong>
+          <span class="opt"><span class="cb"></span>First contact</span>
+          <span class="opt"><span class="cb"></span>First appointment</span>
+          <span class="opt"><span class="cb"></span>Completed assessment</span>
+          <span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+      </div>
+      <div class="two" style="margin-top:8px">
+        <div class="f"><span class="lbl">After the final appointment, diagnostic decision within</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Feedback appointment within</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Written report within</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">If the report is delayed, who do I contact?</span><div class="rule"></div></div>
+      </div>
+      <div class="note">
+        <span class="note-lbl">Why this matters</span>
+        An assessment in six weeks is less impressive if the written report takes another twelve. The report is usually the thing you actually need.
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Ask: what the assessment involves</h3>
+      <div class="two">
+        <div class="f"><span class="lbl">Length / number of appointments</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">What happens if the result is inconclusive</span><div class="rule"></div></div>
+      </div>
+      <div class="opts">
+        <div class="q"><strong>Format:</strong>
+          <span class="opt"><span class="cb"></span>In person</span>
+          <span class="opt"><span class="cb"></span>Video</span>
+          <span class="opt"><span class="cb"></span>Mixed</span>
+        </div>
+        <div class="q"><strong>Included:</strong>
+          <span class="opt"><span class="cb"></span>Written report</span>
+          <span class="opt"><span class="cb"></span>Feedback appointment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Ask: what happens if it turns out to be something else</h3>
+      <div class="opts">
+        <div class="q">Will the assessment consider other possible explanations for the difficulties?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Will it consider co-occurring conditions?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">If something else becomes apparent, what happens?</span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">If I'm assessed for one and the other seems relevant, is it discussed, assessed, referred on, or charged again?</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="note">
+        <span class="note-lbl">Why this matters</span>
+        A good assessment is not a conveyor belt towards the condition written on the booking form.
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Ask: what they need from me</h3>
+      <div class="opts">
+        <div class="q"><strong>They require:</strong>
+          <span class="opt"><span class="cb"></span>Developmental history</span>
+          <span class="opt"><span class="cb"></span>School reports</span>
+          <span class="opt"><span class="cb"></span>Someone who knew me as a child</span>
+        </div>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">If I cannot provide school reports or a childhood informant, what will they accept instead?</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="note">
+        <span class="note-lbl">Why this matters</span>
+        Guidance asks for childhood evidence where possible. Those two words matter if your school reports vanished thirty years ago.
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Ask: about the report</h3>
+      <div class="opts">
+        <div class="q">Does it state which diagnostic criteria were used?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Does it include recommendations or a treatment plan?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Have local GPs accepted their reports before?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Can I see an anonymised example?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
+        </div>
+        <div class="q">Can I request clarification or a second clinical opinion?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+      </div>
+      <div class="two" style="margin-top:8px">
+        <div class="f"><span class="lbl">If I find a factual error, how do I request a correction?</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">What is the complaints process?</span><div class="rule"></div></div>
+      </div>
+    </div>
+
+      <div class="tail-notes">
+        <span class="tn-lbl">Notes</span>
+        <div class="rule"></div><div class="rule"></div>
+      </div>
+
+
+    <div class="block">
+      <h3>Ask: about regulation and registration</h3>
+      <div class="opts">
+        <div class="q"><strong>CQC status (England):</strong>
+          <span class="opt"><span class="cb"></span>Registered</span>
+          <span class="opt"><span class="cb"></span>Not required &mdash; diagnosis only</span>
+          <span class="opt"><span class="cb"></span>Unclear</span>
+          <span class="opt"><span class="cb"></span>N/A outside England</span>
+        </div>
+      </div>
+      <div class="two" style="margin-top:8px">
+        <div class="f"><span class="lbl">Rating, if rated / checked on</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Statutory register &amp; number <span class="hint">e.g. GMC, HCPC, NMC</span></span><div class="rule"></div></div>
+      </div>
+      <div class="f"><span class="lbl">Other professional membership or accreditation <span class="hint">e.g. BACP, UKCP</span></span><div class="rule"></div></div>
+      <div class="flag">
+        <span class="note-lbl">Watch out</span>
+        GMC, HCPC and NMC are statutory regulators. Membership bodies are not the same thing, and membership alone does not establish qualification to diagnose ADHD or autism. Separately, a missing CQC registration is not automatically a warning sign &mdash; since March 2026, providers offering diagnosis only, without treatment or prescribing, are no longer required to register. Ask which applies.
+      </div>
+    </div>
+
+      <div class="tail-notes">
+        <span class="tn-lbl">Notes</span>
+        <div class="rule"></div><div class="rule"></div>
+      </div>
+
+
+    <div class="block cost-group">
+      <h3>Ask: what it costs in the first year</h3>
+      <div class="cost-row"><span class="cl">Assessment</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Report, if charged separately</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Feedback appointment</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Medication consultation</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Titration appointments (how many? ____)</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Prescriptions during titration</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Anything else</span><span class="cv"></span></div>
+      <div class="cost-row cost-total"><span class="cl">Total, first year</span><span class="cv"></span></div>
+    </div>
+
+    <div class="block cost-group">
+      <h3>Ask: what it costs after that</h3>
+      <div class="cost-row"><span class="cl">Annual review</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Ongoing prescriptions</span><span class="cv"></span></div>
+      <div class="cost-row"><span class="cl">Renewal or membership fee</span><span class="cv"></span></div>
+      <div class="cost-row cost-total"><span class="cl">Total, per year after</span><span class="cv"></span></div>
+      <div class="cost-row cost-flag"><span class="cl">If my GP never accepts Shared Care, cost per year</span><span class="cv"></span></div>
+      <div class="key">
+        <span class="note-lbl">Decision point</span>
+        That last figure is the one worth insisting on. It prices the scenario everybody hopes will not happen.
+      </div>
+    </div>
+
+      <div class="tail-notes">
+        <span class="tn-lbl">Notes</span>
+        <div class="rule"></div><div class="rule"></div>
+      </div>
+
+
+    <div class="block">
+      <h3>Ask: about medication and Shared Care</h3>
+      <div class="opts">
+        <div class="q">Medication available on this pathway?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Titration included in the price?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Will they keep prescribing if my GP declines?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q"><strong>Shared Care status:</strong>
+          <span class="opt"><span class="cb"></span>GP confirmed</span>
+          <span class="opt"><span class="cb"></span>Provider expects</span>
+          <span class="opt"><span class="cb"></span>Not discussed</span>
+          <span class="opt"><span class="cb"></span>GP declined</span>
+        </div>
+      </div>
+      <div class="two" style="margin-top:8px">
+        <div class="f"><span class="lbl">Who prescribes during titration</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">If a diagnosis is given, what follows</span><div class="rule"></div></div>
+      </div>
       <div class="f"><span class="lbl">If no diagnosis is given, what follows</span><div class="rule"></div></div>
-    </div>
-    <div class="opts">
-      <div>Medication available on this pathway?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+      <div class="flag">
+        <span class="note-lbl">Watch out</span>
+        "We routinely enter Shared Care" describes their habit. It is not an agreement from your GP.
       </div>
-      <div>Titration included in the price?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-      <div>Do they expect Shared Care later?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-      <div>Will they keep prescribing if my GP declines?
-        <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-    </div>
-    <div class="f" style="margin-top:6px"><span class="lbl">Who prescribes during titration</span><div class="rule"></div></div>
-
-    <h3>Adjustments I need to attend</h3>
-    <div class="opts">
-      <span class="opt"><span class="cb"></span>Quiet or low-sensory room</span>
-      <span class="opt"><span class="cb"></span>Questions in advance</span>
-      <span class="opt"><span class="cb"></span>Breaks</span><br>
-      <span class="opt"><span class="cb"></span>Bring someone with me</span>
-      <span class="opt"><span class="cb"></span>Written rather than spoken</span>
-      <span class="opt"><span class="cb"></span>Other</span>
-    </div>
-    <div class="f" style="margin-top:6px">
-      <span class="lbl">Can they accommodate these? What did they say?</span>
-      <div class="rule"></div>
     </div>
 
-    <h3>Outstanding for this provider</h3>
-    <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+      <div class="tail-notes">
+        <span class="tn-lbl">Notes</span>
+        <div class="rule"></div><div class="rule"></div>
+      </div>
+
+
+    <div class="block">
+      <h3>Ask: about my data and recordings</h3>
+      <div class="opts">
+        <div class="q">Is the appointment recorded?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Optional</span>
+        </div>
+        <div class="q">Is AI transcription or another automated system used?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Can I opt out?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">How long are recordings and notes kept?</span><div class="rule"></div></div>
+    </div>
+
+    <div class="block">
+      <h3>Ask: about paying, and changing my mind</h3>
+      <div class="opts">
+        <div class="q">Payment plan offered?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
+          &nbsp;Through: <span class="inline-rule w-wide"></span>
+        </div>
+        <div class="q">Insurance accepted?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
+          &nbsp;Which: <span class="inline-rule w-wide"></span>
+        </div>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">Cancellation, rescheduling and refund policy</span><div class="rule"></div></div>
+    </div>
+
+    <div class="block">
+      <h3>Ask: about adjustments I need</h3>
+      <div class="opts">
+        <span class="opt"><span class="cb"></span>Quiet or low-sensory room</span>
+        <span class="opt"><span class="cb"></span>Questions in advance</span>
+        <span class="opt"><span class="cb"></span>Breaks</span><br>
+        <span class="opt"><span class="cb"></span>Bring someone with me</span>
+        <span class="opt"><span class="cb"></span>Written rather than spoken</span>
+        <span class="opt"><span class="cb"></span>Other</span>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">Can they accommodate these? What did they say?</span><div class="rule"></div></div>
+    </div>
+
+    <div class="block">
+      <h3>Ask: if this is for a child or young person</h3>
+      <div class="opts">
+        <div class="q">If approaching 18, will the provider continue treatment or prescribing?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+        <div class="q">Is another referral or assessment required at 18?
+          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
+        </div>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">What happens at transition to adult services?</span><div class="rule"></div></div>
+    </div>
+
+    <div class="block">
+      <h3>Outstanding for this provider</h3>
+      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    </div>
   </div>
 </template>
 
@@ -590,6 +795,33 @@ footer strong{color:var(--ink)}
   var host = document.getElementById('sheets');
   var tpl = document.getElementById('sheetTpl');
   var count = 0;
+  var lastReported = 0;
+
+  function measure(){
+    var doc = document.querySelector('.doc');
+    if (!doc) return Math.ceil(document.documentElement.scrollHeight);
+    var cs = window.getComputedStyle(document.body);
+    var pad = parseFloat(cs.paddingTop || '0') + parseFloat(cs.paddingBottom || '0');
+    return Math.ceil(doc.getBoundingClientRect().height + pad + 2);
+  }
+
+  function report(){
+    var h = measure();
+    if (!isFinite(h) || h < 1) return;
+    if (Math.abs(h - lastReported) <= 2) return;
+    lastReported = h;
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ channel: 'queuend-checklist', height: h }, '*');
+      }
+    } catch (e) {}
+  }
+
+  var rafId = 0;
+  function scheduleReport(){
+    cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(report);
+  }
 
   function addSheet(){
     count++;
@@ -597,6 +829,7 @@ footer strong{color:var(--ink)}
     node.querySelector('.n').textContent = count;
     if (count > 1) node.querySelector('.sheet').classList.add('page-break');
     host.appendChild(node);
+    scheduleReport();
   }
 
   addSheet();
@@ -613,6 +846,7 @@ footer strong{color:var(--ink)}
 
   window.addEventListener('afterprint', function(){
     document.body.classList.remove('print-core');
+    scheduleReport();
   });
 
   document.getElementById('printCore').addEventListener('click', function(){
@@ -630,6 +864,19 @@ footer strong{color:var(--ink)}
       block: 'start'
     });
   });
+
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(scheduleReport).observe(document.body);
+  }
+  window.addEventListener('load', scheduleReport);
+  window.addEventListener('resize', scheduleReport);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleReport).catch(function(){});
+  }
+  scheduleReport();
+  setTimeout(scheduleReport, 100);
+  setTimeout(scheduleReport, 400);
+  setTimeout(scheduleReport, 1200);
 })();
 </script>
 </body>
