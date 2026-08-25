@@ -1,1 +1,778 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADHD Assessment Checklist, Part B &mdash; Queuend</title>
+<style>
+:root{
+  --ink:#16212C;
+  --ink-soft:#3E4A56;
+  --muted:#5E6A75;
+  --teal:#04575A;
+  --teal-mid:#0B7B77;
+  --ochre:#8A5A14;
+  --tint-cool:#EDF4F3;
+  --tint-warm:#FBF6EC;
+  --rule:#9E998E;
+  --rule-fine:#C2BDB2;
+  --line:#A9A398;
+  --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{
+  font-family:var(--sans);
+  font-size:10.5pt;
+  line-height:1.45;
+  color:var(--ink);
+  background:#EDEBE6;
+  padding:28px 16px 60px;
+}
+.doc{
+  max-width:210mm;
+  margin:0 auto;
+  background:#FFFFFF;
+  padding:22mm 19mm 18mm;
+  box-shadow:0 1px 3px rgba(22,33,44,.10),0 8px 28px rgba(22,33,44,.10);
+}
+
+/* ---------- masthead ---------- */
+.mast{display:flex;align-items:flex-start;gap:15px;padding-bottom:13px;border-bottom:2.5px solid var(--teal)}
+.mark{flex:0 0 auto;margin-top:3px}
+.mast-id{flex:1}
+.brand{font-size:8pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+h1{font-family:var(--serif);font-size:23pt;line-height:1.08;font-weight:400;letter-spacing:-.015em;margin-top:5px;color:var(--ink)}
+.kicker{margin-top:7px;font-size:8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ochre);font-weight:700}
+.standfirst{margin-top:13px;font-size:10pt;color:var(--ink-soft);max-width:50em;line-height:1.55}
+.standfirst strong{color:var(--ink);font-weight:600}
+
+.toolbar{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;padding:13px 0 2px;border-top:1px solid var(--rule-fine)}
+button{
+  font-family:var(--sans);font-size:9.5pt;font-weight:600;
+  padding:9px 16px;border-radius:3px;cursor:pointer;
+  border:1.25px solid var(--teal);background:var(--teal);color:#fff;
+  transition:background-color .12s ease,color .12s ease;
+}
+button.ghost{background:#fff;color:var(--teal)}
+button:hover{background:var(--teal-mid);border-color:var(--teal-mid);color:#fff}
+button:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+
+/* ---------- sections ---------- */
+section{margin-top:30px}
+.sec-head{display:flex;align-items:center;gap:11px;border-bottom:1.75px solid var(--ink);padding-bottom:6px;margin-bottom:13px}
+.sec-no{
+  font-family:var(--mono);font-size:8.5pt;font-weight:600;color:var(--teal);
+  border:1.25px solid var(--teal);border-radius:2px;padding:2px 5px;line-height:1;
+}
+h2{font-family:var(--serif);font-size:14.5pt;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
+.sec-note{font-size:9pt;color:var(--muted);margin:-4px 0 14px;max-width:48em;line-height:1.55}
+
+h3{
+  font-size:8.5pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);
+  margin:20px 0 9px;padding-bottom:4px;border-bottom:1px solid var(--rule-fine);
+}
+.block:first-child h3{margin-top:0}
+h3 .plain{text-transform:none;letter-spacing:0;font-weight:400;font-style:italic;color:var(--muted);font-size:8pt}
+
+/* ---------- fields ---------- */
+.f{margin-bottom:10px}
+.lbl{display:block;font-size:9.5pt;color:var(--ink);margin-bottom:4px;line-height:1.4}
+.hint{font-size:8.5pt;color:var(--muted);font-style:italic}
+.rule{border-bottom:1px solid var(--line);height:1.55em}
+.rule.tall{height:1.85em}
+.rows .rule{margin-bottom:3px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+.inline-rule{display:inline-block;border-bottom:1px solid var(--line);min-width:80px;height:1.15em;vertical-align:-2px}
+.inline-rule.w-wide{min-width:170px}
+
+/* ---------- checkboxes ---------- */
+.opts{font-size:9.5pt;line-height:2}
+.cb{display:inline-block;width:11px;height:11px;border:1.25px solid var(--ink-soft);border-radius:1px;margin-right:6px;vertical-align:-1px}
+.opt{white-space:nowrap;margin-right:16px;display:inline-block}
+.q{margin-bottom:1px}
+.q strong{font-weight:600}
+
+/* ---------- three note tiers ---------- */
+.note,.flag,.key{font-size:8.5pt;line-height:1.55;margin-top:10px;padding:9px 12px}
+.note{background:var(--tint-cool);border-left:2.5px solid var(--teal);color:var(--ink-soft)}
+.flag{background:var(--tint-warm);border-left:2.5px solid var(--ochre);color:var(--ink-soft)}
+.key{background:#fff;border:1.25px solid var(--teal);border-left:3.5px solid var(--teal);color:var(--ink)}
+.note-lbl{
+  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;
+}
+.note .note-lbl{color:var(--teal)}
+.flag .note-lbl{color:var(--ochre)}
+.key .note-lbl{color:var(--teal)}
+.key strong{font-weight:600}
+
+/* ---------- comparison table ---------- */
+.table-wrap{border-top:2.5px solid var(--teal);border-bottom:1.75px solid var(--ink);padding-top:2px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:9pt}
+th{
+  font-size:7.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-align:left;color:var(--teal);padding:7px 6px 7px;border-bottom:1.25px solid var(--ink);vertical-align:bottom;
+}
+td{border-bottom:1px solid var(--rule-fine);height:3.3em;padding:0 6px}
+.col-sub{display:block;font-size:6.8pt;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-style:italic;margin-top:1px}
+.sheet table{border-top:1.5px solid var(--teal)}
+.sheet th{padding-top:6px;padding-bottom:5px}
+
+/* ---------- provider sheet ---------- */
+.sheet{border:1.25px solid var(--rule);border-top:4px solid var(--teal);padding:0 20px 20px;margin-top:22px;background:#fff}
+.sheet-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  border-bottom:1.75px solid var(--ink);padding:14px 0 8px;margin-bottom:11px;
+}
+.sheet-title{font-family:var(--serif);font-size:14pt;letter-spacing:-.01em}
+.sheet-title .st-sub{display:block;font-family:var(--sans);font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:2px}
+.sheet-no{
+  font-family:var(--mono);font-size:9pt;font-weight:600;color:#fff;background:var(--teal);
+  padding:4px 9px;border-radius:2px;white-space:nowrap;
+}
+.sheet-lead{font-size:9pt;color:var(--muted);margin-bottom:16px;font-style:italic;line-height:1.55}
+
+/* ---------- costs ---------- */
+.cost-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;font-size:9.5pt}
+.cost-row .cl{flex:1}
+.cost-row .cv{font-family:var(--mono);border-bottom:1px solid var(--line);min-width:96px;height:1.25em}
+.cost-total{border-top:1.5px solid var(--ink);margin-top:8px;padding-top:7px;font-weight:700}
+.cost-flag{border-top:2px solid var(--ochre);margin-top:10px;padding-top:8px;font-weight:700;color:var(--ochre)}
+.cost-flag .cv{border-bottom-color:var(--ochre)}
+
+footer{margin-top:34px;padding-top:13px;border-top:1.75px solid var(--ink);font-size:8.5pt;color:var(--muted);line-height:1.55}
+footer strong{color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+@media (max-width:620px){
+  body{padding:0;background:#fff}
+  .doc{padding:14mm 6mm;box-shadow:none;max-width:none}
+  .two{grid-template-columns:1fr}
+  table{font-size:8pt}
+  th{font-size:7pt}
+  .sheet{padding:0 12px 14px}
+}
+
+/* ---------- tail notes (turn part-page gaps into usable space) ---------- */
+.tail-notes{margin-top:15px;padding-top:6px;border-top:1px solid var(--rule-fine)}
+.tn-lbl{
+  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:6px;
+}
+.tail-notes .rule{height:1.85em}
+
+/* ---------- print: A4 pagination ---------- */
+@page{size:A4;margin:15mm 14mm 16mm}
+@media print {
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    background: #fff;
+    padding: 0;
+    font-size: 10pt;
+  }
+  .doc {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+  .toolbar,
+  .screen-only {
+    display: none !important;
+  }
+  body.print-core .full-only {
+    display: none !important;
+  }
+  p, .lbl, .opts {
+    orphans: 3;
+    widows: 3;
+  }
+  section {
+    margin-top: 22px;
+    break-inside: auto;
+  }
+  .page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+  h1, h2, h3, .sec-head, .sheet-head {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .f, .note, .flag, .key, .cost-row, tr, .two, .opts,
+  .block, .table-wrap, .cost-group, .tail-notes {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .sheet {
+    break-inside: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
+}
+
+/* ---------- Part B additions ---------- */
+.standfirst + .key{margin-top:14px}
+.note a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+.note a:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header class="mast">
+    <svg class="mark" width="32" height="32" viewBox="0 0 240 240" aria-hidden="true">
+      <path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="#04575A"/>
+      <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
+    </svg>
+    <div class="mast-id">
+      <div class="brand">Queuend</div>
+      <h1>ADHD Assessment Checklist</h1>
+      <div class="kicker">Part B &middot; Preparing for your assessment</div>
+    </div>
+  </header>
+
+  <p class="standfirst">
+    <strong>Use this once you are booked or in the queue.</strong>
+    A worksheet for gathering what you want to remember before an ADHD assessment, and for recording
+    what you are told afterwards. It is not a test, a symptom questionnaire, or a way of working out
+    what the &ldquo;right&rdquo; answers are!
+  </p>
+
+  <div class="key">
+    <span class="note-lbl">How to use this</span>
+    <strong>A memory aid, not a script.</strong>
+    Bring it with you and use whichever parts are useful. If you do not know or cannot remember
+    something, it is fine to say so during the assessment.
+  </div>
+
+  <div class="note">
+    <span class="note-lbl">Not booked yet?</span>
+    Still choosing a route or provider? Use <a href="../">Part A &mdash; Choosing your route and provider</a> instead.
+  </div>
+
+  <div class="toolbar screen-only">
+    <button id="printBtn">Print this checklist</button>
+  </div>
+
+  <!-- 01 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><h2>My appointment</h2></div>
+    <div class="block">
+      <div class="two">
+        <div class="f"><span class="lbl">Date</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Time</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Clinician or service</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Expected duration</span><div class="rule"></div></div>
+      </div>
+      <div class="f"><span class="lbl">Location, or video link</span><div class="rule"></div></div>
+      <div class="two">
+        <div class="f"><span class="lbl">Anything to complete or send beforehand</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Deadline for returning it</span><div class="rule"></div></div>
+      </div>
+      <div class="opts" style="margin-top:8px">
+        <div class="q"><strong>Before the day:</strong></div>
+        <span class="opt"><span class="cb"></span>Appointment confirmed</span>
+        <span class="opt"><span class="cb"></span>Link or address saved</span>
+        <span class="opt"><span class="cb"></span>Forms returned</span><br>
+        <span class="opt"><span class="cb"></span>Identification or payment details, if requested</span>
+        <span class="opt"><span class="cb"></span>Travel or technology checked</span>
+      </div>
+    </div>
+
+    <div class="tail-notes">
+      <span class="tn-lbl">Notes</span>
+      <div class="rule"></div><div class="rule"></div>
+    </div>
+  </section>
+
+ <!-- 02 -->
+<section>
+  <div class="sec-head"><span class="sec-no">02</span><h2>Why I sought an assessment</h2></div>
+  <div class="block">
+    <div class="f">
+      <span class="lbl">What made me seek an assessment now?</span>
+      <div class="rows">
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+      </div>
+    </div>
+
+    <div class="f">
+      <span class="lbl">Which difficulties or unanswered questions matter most to me?</span>
+      <div class="rows">
+        <div class="rule"></div>
+        <div class="rule"></div>
+        <div class="rule"></div>
+      </div>
+    </div>
+
+    <div class="opts">
+      <div class="q"><strong>Where I notice the impact most:</strong></div>
+      <span class="opt"><span class="cb"></span>Work</span>
+      <span class="opt"><span class="cb"></span>Study</span>
+      <span class="opt"><span class="cb"></span>Home</span>
+      <span class="opt"><span class="cb"></span>Relationships</span>
+      <span class="opt"><span class="cb"></span>Everyday tasks</span>
+    </div>
+
+    <div class="opts" style="margin-top:6px">
+      <div class="q"><strong>Things that have been difficult:</strong></div>
+      <span class="opt"><span class="cb"></span>Organisation</span>
+      <span class="opt"><span class="cb"></span>Timekeeping</span>
+      <span class="opt"><span class="cb"></span>Concentration</span>
+      <span class="opt"><span class="cb"></span>Impulsivity</span><br>
+      <span class="opt"><span class="cb"></span>Restlessness</span>
+      <span class="opt"><span class="cb"></span>Other</span>
+    </div>
+
+    <div class="note">
+      <span class="note-lbl">Why this matters</span>
+      Specific real-life examples are usually more useful to an assessor than trying to describe
+      yourself in diagnostic language.
+    </div>
+  </div>
+</section>
+
+ <!-- 03 -->
+<section>
+  <div class="sec-head"><span class="sec-no">03</span><h2>Examples I do not want to forget</h2></div>
+  <p class="sec-note">Concrete moments are easier to describe under pressure than general impressions. A date, a place, or what actually happened is enough.</p>
+
+  <div class="key">
+    <span class="note-lbl">Use what fits</span>
+    You do not need an example for every heading. Use the areas that actually describe your
+    experience and leave the rest blank.
+  </div>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Attention and concentration</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Starting tasks</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Finishing tasks</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Organisation</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Losing or forgetting things</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Time and lateness</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Impulsive decisions</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Restlessness</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Work or education</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Household life</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Relationships</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Driving, money or risk, if relevant</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Routines</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Emotional regulation, if relevant</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+    <div class="f">
+      <span class="lbl">Strategies I use to cope or compensate</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+
+    <div class="note">
+      <span class="note-lbl">Worth mentioning</span>
+      What you do to work around a difficulty is often as informative as the difficulty itself,
+      and it is easy to forget to mention.
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Something important that does not fit these headings</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+  </div>
+</section>
+
+  <!-- 04 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">04</span><h2>Childhood and earlier life</h2></div>
+    <p class="sec-note">Assessments usually explore whether relevant patterns were present earlier in life. Write down whatever you genuinely remember.</p>
+    <div class="block">
+      <h3>What I remember about school</h3>
+      <div class="f"><span class="lbl">Concentration or daydreaming</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Unfinished work</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Organisation</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+    </div>
+    <div class="block">
+      <div class="f"><span class="lbl">Lateness or forgetting things</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Behaviour or restlessness</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Friendships</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+    </div>
+    <div class="block">
+      <div class="f"><span class="lbl">Learning</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Routines</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Comments adults repeatedly made about me</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Anything else I remember</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+    </div>
+    <div class="block">
+      <h3>Information I may have available</h3>
+      <div class="opts">
+        <span class="opt"><span class="cb"></span>School reports</span>
+        <span class="opt"><span class="cb"></span>Old records</span>
+        <span class="opt"><span class="cb"></span>Family recollections</span><br>
+        <span class="opt"><span class="cb"></span>Previous assessments</span>
+        <span class="opt"><span class="cb"></span>No documents available</span>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">Someone who knew me when I was younger may be able to help <span class="hint">name, relationship, contact if relevant</span></span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="flag">
+        <span class="note-lbl">Watch out</span>
+        Not having old paperwork should not automatically prevent an assessment. ADHD assessment
+        explores whether relevant patterns were present earlier in life, but many adults no longer
+        have school reports or other records. If you cannot provide something the service requested,
+        tell them rather than trying to fill the gap yourself.
+      </div>
+    </div>
+  </section>
+
+ <!-- 05 -->
+<section>
+  <div class="sec-head"><span class="sec-no">05</span><h2>Previous reports and relevant history</h2></div>
+  <p class="sec-note">A place to gather what already exists, so you are not trying to recall it in the room.</p>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Previous diagnoses</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    </div>
+
+    <div class="f">
+      <span class="lbl">Mental-health history</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    </div>
+
+    <div class="f">
+      <span class="lbl">Previous psychological or psychiatric assessments <span class="hint">who, when</span></span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="two">
+      <div class="f"><span class="lbl">Educational psychology reports</span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">Occupational-health reports</span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">Learning difficulties</span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">Sleep difficulties</span><div class="rule"></div></div>
+    </div>
+
+    <div class="f">
+      <span class="lbl">Relevant medical history</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    </div>
+
+    <div class="f">
+      <span class="lbl">Alcohol, recreational drugs or other substances, if relevant</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    </div>
+
+    <div class="f">
+      <span class="lbl">Other conditions that may overlap with or affect attention</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="f">
+      <span class="lbl">Anything I think could be another explanation, or part of the picture</span>
+      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+    </div>
+
+    <div class="note">
+      <span class="note-lbl">Why this matters</span>
+      A good assessment considers other possible explanations and anything that may occur alongside
+      ADHD. Raising something here does not commit you to it, and it is better said than withheld.
+    </div>
+  </div>
+</section>
+
+  <!-- 06 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">06</span><h2>Medication and health information</h2></div>
+    <p class="sec-note">For organising what you already take, so you can answer accurately. Nothing here is medical advice.</p>
+    <div class="block">
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th style="width:36%">Medicine</th>
+            <th style="width:18%">Dose</th>
+            <th style="width:46%">What I take it for</th>
+          </tr></thead>
+          <tbody>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="f" style="margin-top:10px"><span class="lbl">Allergies or important medical information</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Anything the provider specifically asked me to bring</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">07</span><h2>Someone who knows me well</h2></div>
+    <p class="sec-note">Some providers ask for information from a partner, parent, sibling, friend, or someone who knew you in childhood. Requirements vary.</p>
+    <div class="block">
+      <div class="two">
+        <div class="f"><span class="lbl">Who has the provider asked for?</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Name and relationship</span><div class="rule"></div></div>
+      </div>
+      <div class="f"><span class="lbl">What are they being asked to complete?</span><div class="rule"></div></div>
+      <div class="opts">
+        <div class="q">Has it been returned?
+          <span class="opt"><span class="cb"></span>Yes</span>
+          <span class="opt"><span class="cb"></span>Not yet</span>
+          <span class="opt"><span class="cb"></span>Not required</span>
+          &nbsp;Deadline: <span class="inline-rule w-wide"></span>
+        </div>
+      </div>
+      <div class="f" style="margin-top:8px"><span class="lbl">If nobody suitable is available, what has the provider said they will accept instead?</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+    </div>
+  </section>
+
+  <!-- 08 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">08</span><h2>What would help me during the assessment</h2></div>
+    <p class="sec-note">Worth thinking about in advance, while you are not under pressure.</p>
+    <div class="block">
+      <div class="opts">
+        <div class="q"><strong>Things that might help:</strong></div>
+        <span class="opt"><span class="cb"></span>Breaks</span>
+        <span class="opt"><span class="cb"></span>Extra processing time</span>
+        <span class="opt"><span class="cb"></span>Questions repeated or rephrased</span><br>
+        <span class="opt"><span class="cb"></span>Written information</span>
+        <span class="opt"><span class="cb"></span>Questions or information in advance</span><br>
+        <span class="opt"><span class="cb"></span>Quieter or low-sensory setting</span>
+        <span class="opt"><span class="cb"></span>Camera off, or camera considerations if remote</span><br>
+        <span class="opt"><span class="cb"></span>Bring someone with me</span>
+        <span class="opt"><span class="cb"></span>Other</span>
+      </div>
+      <div class="opts" style="margin-top:6px">
+        <div class="q">Have I asked the provider?
+          <span class="opt"><span class="cb"></span>Yes</span>
+          <span class="opt"><span class="cb"></span>Not yet</span>
+        </div>
+      </div>
+      <div class="f" style="margin-top:6px"><span class="lbl">What have they agreed?</span><div class="rule"></div></div>
+      <div class="f"><span class="lbl">Anything I want the assessor to know at the beginning</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+    </div>
+
+    <div class="tail-notes">
+      <span class="tn-lbl">Notes</span>
+      <div class="rule"></div><div class="rule"></div>
+    </div>
+  </section>
+
+  <!-- 09 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">09</span><h2>Questions I want to ask</h2></div>
+    <div class="block">
+      <div class="rows">
+        <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
+        <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
+        <div class="rule tall"></div><div class="rule tall"></div>
+      </div>
+      <div class="note">
+        <span class="note-lbl">Prompts, if useful</span>
+        When will I know the outcome? Will there be a feedback appointment? When should I expect the
+        written report? Who do I contact if I have questions afterwards? What happens if ADHD is
+        diagnosed, if it is not, or if the result is unclear? If medication is relevant, what happens next?
+      </div>
+      <div class="key">
+        <span class="note-lbl">Worth doing</span>
+        Write your questions down beforehand rather than relying on memory. Long appointments are tiring,
+        and questions are easy to lose.
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">10</span><h2>On the day</h2></div>
+    <div class="block">
+      <div class="opts">
+        <span class="opt"><span class="cb"></span>Appointment details</span>
+        <span class="opt"><span class="cb"></span>Forms or reports requested</span><br>
+        <span class="opt"><span class="cb"></span>Medication list</span>
+        <span class="opt"><span class="cb"></span>Glasses, hearing aids, other practical items</span><br>
+        <span class="opt"><span class="cb"></span>Water or a snack</span>
+        <span class="opt"><span class="cb"></span>Charger or headphones, if remote</span><br>
+        <span class="opt"><span class="cb"></span>This checklist</span>
+        <span class="opt"><span class="cb"></span>Questions I want to ask</span>
+      </div>
+      <div class="key">
+        <span class="note-lbl">Before you go in</span>
+        <strong>You do not need to perform ADHD.</strong>
+        Describe your experiences as accurately as you can. It is fine to pause, ask for clarification,
+        or say that you do not know or cannot remember.
+      </div>
+    </div>
+
+    <div class="tail-notes">
+      <span class="tn-lbl">Notes</span>
+      <div class="rule"></div><div class="rule"></div>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section class="page-break">
+    <div class="sec-head"><span class="sec-no">11</span><h2>What I was told afterwards</h2></div>
+    <p class="sec-note">Fill this in as soon as you can. Detail fades quickly after a long appointment.</p>
+    <div class="block">
+      <div class="opts">
+        <div class="q">Was an outcome given today?
+          <span class="opt"><span class="cb"></span>Yes</span>
+          <span class="opt"><span class="cb"></span>No</span>
+        </div>
+        <div class="q"><strong>Outcome:</strong>
+          <span class="opt"><span class="cb"></span>ADHD diagnosed</span>
+          <span class="opt"><span class="cb"></span>ADHD not diagnosed</span><br>
+          <span class="opt"><span class="cb"></span>Decision pending</span>
+          <span class="opt"><span class="cb"></span>Further information needed</span>
+	  <span class="opt"><span class="cb"></span>Unclear</span>
+        </div>
+      </div>
+      <div class="two" style="margin-top:8px">
+        <div class="f"><span class="lbl">Feedback appointment date</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Report expected by</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Who to contact</span><div class="rule"></div></div>
+        <div class="f"><span class="lbl">Next appointment</span><div class="rule"></div></div>
+      </div>
+      <div class="f"><span class="lbl">Anything else I need to send</span><div class="rule"></div></div>
+    </div>
+    <div class="block">
+      <h3>What happens next</h3>
+      <div class="f"><span class="lbl">Medication or titration, if relevant</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Other support or recommendations</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">GP involvement</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+    </div>
+    <div class="block">
+      <div class="f"><span class="lbl">Shared Care discussion</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Workplace or education adjustments</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Further assessment or referral</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><span class="lbl">Anything else</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="note">
+        <span class="note-lbl">Why this matters</span>
+        This is a record of what you were told, in your own words. It is useful later if something does
+        not arrive when expected, or if you need to explain the pathway to somebody else.
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">12</span><h2>Things still outstanding</h2></div>
+    <div class="block">
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th style="width:36%">What I am waiting for</th>
+            <th style="width:22%">Who needs to do it</th>
+            <th style="width:16%">By when</th>
+            <th style="width:26%">Who I will contact</th>
+          </tr></thead>
+          <tbody>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">13</span><h2>Notes</h2></div>
+    <div class="block rows">
+      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
+      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
+      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
+      <div class="rule tall"></div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Queuend ADHD Assessment Checklist &mdash; Part B, preparing for your assessment.</strong>
+    For organising information only. It does not diagnose, assess, or replace professional advice.
+    Part A covers choosing a route and provider.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('printBtn');
+  if (btn) btn.addEventListener('click', function(){ window.print(); });
+})();
+</script>
+
+</body>
+</html>
 
