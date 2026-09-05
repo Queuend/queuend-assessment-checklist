@@ -107,6 +107,9 @@ legend{padding:0}
 .opt-else{display:flex;align-items:center;gap:9px;padding:6px 0;flex-wrap:wrap}
 .opt-else input[type=text]{flex:1 1 150px;min-height:40px;font-size:9.5pt;font-family:var(--sans);width:auto}
 
+.addmore{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule-fine)}
+.addmore button{font-size:10pt;padding:12px 18px}
+.addmore-note{font-family:var(--sans);font-size:8.5pt;color:var(--muted);margin:8px 0 0;max-width:36em}
 .block{border:1px solid var(--rule);border-top:2.5px solid var(--rose);padding:15px 17px 17px;margin:16px 0}
 .block-head{padding-bottom:9px;margin-bottom:4px;border-bottom:1px solid var(--rule-fine)}
 .block-title{font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.11em;
@@ -201,8 +204,8 @@ body.blank-print > #printClone{display:block}
   <input type="file" id="fileIn" accept="application/json,.json" hidden>
 </div>
 <div class="privacy no-print">
-  <p><strong>Queuend does not receive or store your answers.</strong> Nothing you enter is stored by this website and nothing is sent anywhere. Because nothing is stored, closing or reloading this page will lose your answers.</p>
-  <p>If you choose <em>Save my progress</em>, a copy containing your answers is downloaded to your device, and you can use "Pick up where I left off" later to carry on. Saved files are not encrypted. If you share a device, keep the file somewhere private or delete it when you no longer need it, and bear in mind that some devices synchronise the downloads folder to a cloud service.</p>
+  <p><strong>Queuend does not receive or store your answers.</strong> Nothing you enter is stored by this website or sent to Queuend. Because nothing is stored, closing or reloading this page will lose your answers.</p>
+  <p>If you choose <em>Save my progress</em>, a copy containing your answers is downloaded to your device, and <em>Pick up where I left off</em> will reopen it here later so you can carry on. Saved files are not encrypted. If you share a device, keep the file somewhere private or delete it when you no longer need it, and bear in mind that some devices synchronise the downloads folder to a cloud service.</p>
 </div>
 
 <noscript>
@@ -288,7 +291,10 @@ body.blank-print > #printClone{display:block}
   <div class="sec-head"><span class="sec-no">03</span><h2>Real-life examples</h2></div>
   <p class="sec-intro">This is the part most worth spending time on. A specific example is far easier to describe &mdash; and far more useful later &mdash; than a general statement. One good example beats five half-finished ones, so stop whenever you have said what you wanted to say.</p>
   <div id="exWrap"></div>
-  <button class="ghost no-print" id="btnAddEx" type="button">Add another example</button>
+  <div class="addmore no-print">
+    <button class="ghost" id="btnAddEx" type="button"><span aria-hidden="true">+</span> Add another example</button>
+    <p class="addmore-note">Only if another useful example comes to mind.</p>
+  </div>
 </section>
 
 <section id="s4">
@@ -358,7 +364,7 @@ body.blank-print > #printClone{display:block}
 
 <section id="s9">
   <div class="sec-head"><span class="sec-no">09</span><h2>Things that do not fit, or make me unsure</h2></div>
-  <p class="sec-intro">This is not a section for talking yourself out of anything. It is simply the part of the picture that is easiest to leave out, and often the part an assessor finds useful.</p>
+  <p class="sec-intro">This is not a section for talking yourself out of anything. It is simply the part of the picture that is easiest to leave out, and can be particularly useful to discuss with an assessor.</p>
 
   <div id="g_notfit"></div>
 
@@ -435,7 +441,7 @@ body.blank-print > #printClone{display:block}
 var SCHEMA = "queuend-reflection-record";
 var VERSION = 2;
 var MAX_FILE = 3 * 1024 * 1024;
-var BASE_EXAMPLES = 5;
+var BASE_EXAMPLES = 1;
 var MAX_EXAMPLES = 40;
 
 function esc(s){
@@ -892,8 +898,8 @@ fileIn.addEventListener("change", function(){
     if(!data || typeof data !== "object" || data.format !== SCHEMA){
       return fail("That does not look like a saved reflection record. Please choose a file you saved from this worksheet.");
     }
-    if(typeof data.version !== "number" || data.version > VERSION){
-      return fail("That file was saved by a newer version of this worksheet, so it cannot be opened here.");
+    if(data.version !== VERSION){
+      return fail("That file was saved by a different version of this worksheet, so it cannot be opened here.");
     }
     if(!data.answers || typeof data.answers !== "object" || Array.isArray(data.answers)){
       return fail("That file does not contain any answers this worksheet can read.");
