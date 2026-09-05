@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A free worksheet to help you organise what you have noticed before deciding whether to seek an ADHD assessment. Mostly tick-boxes, with writing only where it helps.">
+<title>My ADHD Reflection Record — Queuend</title>
+<style>
+:root{
+  --ink:#241D22; --muted:#574A52; --rose:#9B536C; --berry:#71374C; --mid:#BB748A;
+  --blush:#F8EEF1; --warm:#F4E4E9; --rule:#DDC8CF; --rule-fine:#EADCE1; --page:#EFE9EA;
+  --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:var(--serif);font-size:11pt;line-height:1.62;color:var(--ink);
+  background:var(--page);padding:28px 16px 60px}
+.doc{max-width:210mm;margin:0 auto;background:#fff;padding:20mm 18mm 16mm;
+  box-shadow:0 1px 3px rgba(36,29,34,.10),0 8px 28px rgba(36,29,34,.10)}
+
+.mast{display:flex;align-items:flex-start;gap:15px;padding-bottom:13px;border-bottom:2.5px solid var(--rose)}
+.mark{flex:0 0 auto;margin-top:3px}
+.brand{font-family:var(--sans);font-size:8pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
+h1{font-size:24pt;line-height:1.06;font-weight:400;letter-spacing:-.015em;margin-top:5px}
+.kicker{margin-top:8px;font-family:var(--sans);font-size:8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--berry);font-weight:700}
+.standfirst{margin-top:14px;font-size:11pt;color:var(--muted);max-width:36em}
+.meta{margin-top:12px;font-family:var(--sans);font-size:8pt;color:var(--muted);letter-spacing:.04em;
+  padding-top:9px;border-top:1px solid var(--rule-fine)}
+
+.toolbar{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button{font-family:var(--sans);font-size:9.5pt;font-weight:600;padding:10px 15px;border-radius:3px;
+  cursor:pointer;border:1.25px solid var(--rose);background:var(--rose);color:#fff;min-height:44px;
+  transition:background-color .12s ease,border-color .12s ease}
+button.ghost{background:#fff;color:var(--berry);border-color:var(--rule)}
+button:hover{background:var(--berry);border-color:var(--berry);color:#fff}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
+  outline:3px solid var(--berry);outline-offset:2px}
+.privacy{font-family:var(--sans);font-size:8.5pt;color:var(--muted);margin-top:10px;line-height:1.55;max-width:44em}
+.privacy strong{color:var(--berry)}
+.privacy p{margin-bottom:6px;max-width:none}
+.privacy p:last-child{margin-bottom:0}
+
+.callout{margin:20px 0;padding:14px 17px;font-family:var(--sans);font-size:9.5pt;line-height:1.6;
+  background:var(--blush);border-left:3px solid var(--rose);color:var(--muted)}
+.callout .lbl{display:block;font-size:7.5pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--berry);margin-bottom:5px}
+.callout p{margin-bottom:8px;max-width:none}.callout p:last-child{margin-bottom:0}
+.callout strong{color:var(--ink)}
+.quiet{font-family:var(--sans);font-size:9pt;color:var(--muted);font-style:italic;margin:10px 0;max-width:36em}
+
+.contents{margin-top:20px;padding:14px 17px;background:var(--warm);border-top:2.5px solid var(--rose)}
+.contents h2{font-family:var(--sans);font-size:8pt;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--berry);margin-bottom:9px;border:0;padding:0}
+.contents ol{list-style:none;counter-reset:toc;column-count:2;column-gap:24px}
+.contents li{counter-increment:toc;font-size:9.5pt;line-height:1.5;margin-bottom:5px;break-inside:avoid}
+.contents li::before{content:counter(toc,decimal-leading-zero);font-family:var(--mono);font-size:8pt;
+  color:var(--berry);margin-right:7px}
+.contents a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.contents a:hover{color:var(--berry);border-bottom-color:var(--berry)}
+
+section{margin-top:34px}
+.sec-head{display:flex;align-items:center;gap:11px;border-bottom:1.75px solid var(--ink);
+  padding-bottom:7px;margin-bottom:14px}
+.sec-no{font-family:var(--mono);font-size:8.5pt;font-weight:600;color:var(--berry);
+  border:1.25px solid var(--mid);border-radius:2px;padding:2px 5px;line-height:1;flex:0 0 auto}
+h2{font-size:15pt;font-weight:400;letter-spacing:-.01em;line-height:1.25}
+.sec-intro{font-size:10.5pt;color:var(--muted);margin-bottom:14px;max-width:36em}
+p{margin-bottom:10px;max-width:36em}
+
+.field{margin:16px 0}
+.field label,.flabel{display:block;font-family:var(--sans);font-size:9.5pt;font-weight:600;
+  color:var(--ink);margin-bottom:6px;line-height:1.45}
+.opt-label{font-family:var(--sans);font-size:9.5pt;font-weight:600;color:var(--ink);margin-bottom:6px;
+  display:block;line-height:1.45}
+.opt-label .tag{font-weight:400;color:var(--muted);font-style:italic}
+.hint{display:block;font-family:var(--sans);font-size:8.5pt;font-weight:400;color:var(--muted);
+  margin-top:2px;line-height:1.45}
+input[type=text],textarea{width:100%;font-family:var(--serif);font-size:10.5pt;line-height:1.75;
+  color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:2px;padding:9px 11px}
+input[type=text]{min-height:44px}
+textarea{resize:vertical;overflow:hidden;display:block}
+textarea.sm{min-height:66px}textarea.md{min-height:98px}textarea.lg{min-height:140px}
+input[type=text]:hover,textarea:hover{border-color:var(--mid)}
+.print-mirror{display:none;font-family:var(--serif);font-size:10.5pt;line-height:1.75;
+  white-space:pre-wrap;overflow-wrap:break-word;border-bottom:1px solid var(--rule);padding:2px 0 6px}
+
+fieldset{border:0;margin:16px 0;padding:0;min-width:0}
+legend{padding:0}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 18px;margin-top:4px}
+.opts.wide{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.opt{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-size:9.5pt;line-height:1.45;
+  padding:8px 0;cursor:pointer;min-height:44px}
+.opt input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:17px;height:17px;
+  border:1.5px solid var(--mid);background:#fff;cursor:pointer;position:relative;margin:0}
+.opt input[type=checkbox]{border-radius:2px}
+.opt input[type=radio]{border-radius:50%}
+.opt input:checked{background:var(--rose);border-color:var(--rose)}
+.opt input[type=checkbox]:checked::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.opt input[type=radio]:checked::after{content:"";position:absolute;left:4px;top:4px;width:6px;height:6px;
+  border-radius:50%;background:#fff}
+.opt input:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
+.opt input:checked ~ .opt-txt{font-weight:600;color:var(--berry)}
+.opt-else{display:flex;align-items:center;gap:9px;padding:6px 0;flex-wrap:wrap}
+.opt-else input[type=text]{flex:1 1 150px;min-height:40px;font-size:9.5pt;font-family:var(--sans);width:auto}
+
+.block{border:1px solid var(--rule);border-top:2.5px solid var(--rose);padding:15px 17px 17px;margin:16px 0}
+.block-head{padding-bottom:9px;margin-bottom:4px;border-bottom:1px solid var(--rule-fine)}
+.block-title{font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--berry)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+
+.next{border:1.25px solid var(--rose);border-left:3.5px solid var(--rose);padding:16px 18px;margin-top:22px}
+.next h3{font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--berry);margin-bottom:8px}
+.cta{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:10pt;font-weight:600;
+  background:var(--rose);color:#fff;padding:12px 18px;border-radius:3px;text-decoration:none}
+.cta:hover{background:var(--berry)}
+
+.handover{margin-top:34px;border-top:2.5px solid var(--rose);padding-top:16px}
+.stmt{font-family:var(--sans);font-size:9.5pt;line-height:1.6;color:var(--muted);
+  background:var(--blush);padding:14px 17px;margin:12px 0 18px}
+
+footer{margin-top:36px;padding-top:13px;border-top:1.75px solid var(--ink);
+  font-family:var(--sans);font-size:8.5pt;color:var(--muted);line-height:1.6}
+footer strong{color:var(--ink)}
+.indep{display:inline-block;margin-top:8px;font-size:7.5pt;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--berry);font-weight:700}
+
+#printClone{display:none}
+body.blank-print > .doc:not(#printClone){display:none}
+body.blank-print > #printClone{display:block}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+@media (max-width:620px){
+  body{padding:0;background:#fff;font-size:11.5pt}
+  .doc{padding:12mm 5mm;box-shadow:none;max-width:none}
+  h1{font-size:20pt}
+  .contents ol{column-count:1}
+  .opts,.opts.wide,.opts.row{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .toolbar button{flex:1 1 100%}
+  .block{padding:13px 13px 15px}
+}
+
+@page{size:A4;margin:16mm 15mm}
+@media print{
+  html,body{overflow:visible!important;height:auto!important;
+    -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background:#fff;padding:0;font-size:10.5pt}
+  .doc{max-width:none;margin:0;padding:0;box-shadow:none}
+  .no-print{display:none!important}
+  h1,h2,h3,.sec-head,.flabel,.opt-label,.block-title,legend,.field label{
+    break-after:avoid;page-break-after:avoid}
+  .opt,.contents li,.stmt,.callout,.block-head{break-inside:avoid;page-break-inside:avoid}
+  .field,.block,section,fieldset{break-inside:auto;page-break-inside:auto}
+  p,li{orphans:3;widows:3}
+  input[type=text],textarea{border:0;border-bottom:1px solid var(--rule);border-radius:0;
+    padding:2px 0;background:transparent;
+    background-image:repeating-linear-gradient(transparent,transparent 25px,var(--rule-fine) 25px,var(--rule-fine) 26px);
+    background-position:0 2px}
+  textarea.has-value{display:none}
+  .print-mirror.filled{display:block}
+  .opt input{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .opt{padding:3px 0;min-height:0}
+  .handover{break-before:page;page-break-before:always}
+  .cta{border:1px solid var(--rose);background:transparent;color:var(--berry);padding:6px 0}
+  .cta::after{content:" — queuend.github.io/queuend-assessment-checklist/";font-size:8pt;color:var(--muted)}
+}
+</style>
+</head>
+<body>
+<div class="doc" id="doc">
+
+<header class="mast">
+  <svg class="mark" width="32" height="32" viewBox="0 0 240 240" aria-hidden="true">
+    <path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="#04575A"/>
+    <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
+  </svg>
+  <div>
+    <div class="brand">Queuend Worksheet</div>
+    <h1>My ADHD reflection record</h1>
+    <div class="kicker">Patterns and examples I&rsquo;ve noticed</div>
+  </div>
+</header>
+
+<p class="standfirst">A practical worksheet to help you organise what you have noticed before deciding whether to seek an ADHD assessment. If you later book an assessment, you may also choose to share it with your assessor.</p>
+
+<div class="meta">Free to use &nbsp;&middot;&nbsp; Mostly tick-boxes &nbsp;&middot;&nbsp; Write only where it helps &nbsp;&middot;&nbsp; Skip anything that does not</div>
+
+<div class="toolbar no-print">
+  <button id="btnPrint" type="button">Print or save as PDF</button>
+  <button class="ghost" id="btnBlank" type="button">Print a blank copy</button>
+  <button class="ghost" id="btnSave" type="button">Save my answers to a file</button>
+  <button class="ghost" id="btnLoad" type="button">Open a saved file</button>
+  <button class="ghost" id="btnClear" type="button">Clear my answers</button>
+  <input type="file" id="fileIn" accept="application/json,.json" hidden>
+</div>
+<div class="privacy no-print">
+  <p><strong>Queuend does not receive or store your answers.</strong> Nothing you enter is stored by this website and nothing is sent anywhere. Because nothing is stored, closing or reloading this page will lose your answers.</p>
+  <p>If you choose <em>Save my answers to a file</em>, a copy containing your answers is downloaded to your device, and you can reopen it here later to carry on. Saved files are not encrypted. If you share a device, keep the file somewhere private or delete it when you no longer need it, and bear in mind that some devices synchronise the downloads folder to a cloud service.</p>
+</div>
+
+<noscript>
+  <p style="font-family:system-ui,sans-serif;font-size:9.5pt;background:#F4E4E9;padding:14px 17px;border-left:3px solid #71374C;margin:16px 0;max-width:none">This worksheet needs JavaScript to build its choices and writing areas, and to print or save a copy. Please enable JavaScript, or contact us for a plain printable version.</p>
+</noscript>
+
+<div class="callout">
+  <span class="lbl">Before you start</span>
+  <p><strong>This is your record, not a diagnostic form.</strong></p>
+  <p>There are no right answers, nothing here is counted, and this worksheet does not calculate a score or produce a result. The choices are memory prompts rather than ADHD criteria, and ticking a lot of them means nothing in itself.</p>
+  <p>Record what you genuinely notice, including things that do not seem to fit ADHD. If you later have an assessment, your assessor will still need to reach their own conclusions.</p>
+  <p>You do not need to complete every section, or every question within a section. Use whatever helps you organise your thoughts and skip the rest.</p>
+</div>
+
+<nav class="contents no-print" aria-label="Contents">
+  <h2>What&rsquo;s in this worksheet</h2>
+  <ol>
+    <li><a href="#s1">My overview</a></li>
+    <li><a href="#s2">What made me start wondering?</a></li>
+    <li><a href="#s3">Real-life examples</a></li>
+    <li><a href="#s4">Areas I have noticed</a></li>
+    <li><a href="#s5">What I do to keep things working</a></li>
+    <li><a href="#s6">Looking back</a></li>
+    <li><a href="#s7">What other people notice</a></li>
+    <li><a href="#s8">What else could be contributing?</a></li>
+    <li><a href="#s9">Things that do not fit, or make me unsure</a></li>
+    <li><a href="#s10">What would I actually like help with?</a></li>
+    <li><a href="#s11">My next step</a></li>
+    <li><a href="#handover">If I choose to share this</a></li>
+  </ol>
+</nav>
+
+<section id="s1">
+  <div class="sec-head"><span class="sec-no">01</span><h2>My overview</h2></div>
+  <p class="sec-intro">A short summary of the whole picture. Many people find this easier to write <em>last</em>, once the rest of the worksheet has jogged their memory.</p>
+
+  <div class="field">
+    <label for="f_wonder">What first made me wonder about ADHD?<span class="hint">A sentence or two is plenty.</span></label>
+    <textarea id="f_wonder" class="md"></textarea>
+  </div>
+
+  <div class="field">
+    <span class="flabel">The three things that affect me most</span>
+    <label class="hint" for="f_top1">1</label><input type="text" id="f_top1">
+    <label class="hint" for="f_top2">2</label><input type="text" id="f_top2">
+    <label class="hint" for="f_top3">3</label><input type="text" id="f_top3">
+  </div>
+
+  <div id="g_where"></div>
+  <div id="g_howfar"></div>
+
+  <div class="field">
+    <label for="f_howfar_note">Anything I want to add<span class="hint">Optional.</span></label>
+    <textarea id="f_howfar_note" class="sm"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="f_manage">Things I already do to manage or compensate<span class="hint">Optional here &mdash; there is a fuller list of choices in section 5.</span></label>
+    <textarea id="f_manage" class="sm"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="f_other_rel">Other things that may also be relevant<span class="hint">Optional.</span></label>
+    <textarea id="f_other_rel" class="sm"></textarea>
+  </div>
+
+  <p class="quiet">Examples and detail follow in the next sections.</p>
+</section>
+
+<section id="s2">
+  <div class="sec-head"><span class="sec-no">02</span><h2>What made me start wondering?</h2></div>
+  <p class="sec-intro">A change like that does not indicate ADHD in itself. It may alter the demands on you, affect how well existing coping strategies work, or simply make a longstanding pattern easier to notice.</p>
+
+  <div id="g_prompted"></div>
+
+  <div class="field">
+    <label for="f_happening">Anything about what has been happening that I want to remember<span class="hint">Optional.</span></label>
+    <textarea id="f_happening" class="md"></textarea>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="sec-head"><span class="sec-no">03</span><h2>Real-life examples</h2></div>
+  <p class="sec-intro">This is the part most worth spending time on. A specific example is far easier to describe &mdash; and far more useful later &mdash; than a general statement. One good example beats five half-finished ones, so stop whenever you have said what you wanted to say.</p>
+  <div id="exWrap"></div>
+  <button class="ghost no-print" id="btnAddEx" type="button">Add another example</button>
+</section>
+
+<section id="s4">
+  <div class="sec-head"><span class="sec-no">04</span><h2>Areas I have noticed</h2></div>
+  <p class="sec-intro"><strong>Most people will find that only some areas apply. Skip anything that does not help.</strong> These are everyday descriptions gathered as memory prompts, not a list of symptoms, and there is no benefit in working through every card.</p>
+  <div id="areaWrap"></div>
+</section>
+
+<section id="s5">
+  <div class="sec-head"><span class="sec-no">05</span><h2>What I do to keep things working</h2></div>
+  <p class="sec-intro">Sometimes the strategies we use are as informative as the difficulty itself. An outcome may look effortless from the outside even when maintaining it takes considerable planning or pressure.</p>
+
+  <div id="g_strat"></div>
+  <div id="g_stratgone"></div>
+
+  <div class="field">
+    <label for="f_strat_cost">Anything else I do to keep things working &mdash; and what does it cost me in time, effort or stress?<span class="hint">Optional.</span></label>
+    <textarea id="f_strat_cost" class="md"></textarea>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="sec-head"><span class="sec-no">06</span><h2>Looking back</h2></div>
+  <p class="sec-intro">ADHD is developmental, so an assessment usually explores whether relevant patterns were present earlier in life. You do not need perfect memories or old paperwork to use this section. Not having school reports, and not having anybody available who knew you as a child, does not automatically prevent an assessment &mdash; services differ, and it is worth asking what they accept.</p>
+  <div id="backWrap"></div>
+
+  <div id="g_norecall"></div>
+
+  <div class="field">
+    <label for="f_norecall_note">Anything I want to note about that<span class="hint">Optional.</span></label>
+    <textarea id="f_norecall_note" class="sm"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="f_whohelp">People or documents that might help me remember, if available<span class="hint">Optional. Leave blank if there is nobody you want to ask, or nothing you can find.</span></label>
+    <textarea id="f_whohelp" class="sm"></textarea>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="sec-head"><span class="sec-no">07</span><h2>What other people notice</h2></div>
+  <p class="sec-intro">Other people may notice things we miss, but their view is only one part of the picture. You do not have to involve anybody to use this worksheet, or to seek an assessment.</p>
+
+  <div id="g_others"></div>
+
+  <div class="field">
+    <label for="f_op_ment">Examples somebody else has mentioned to me<span class="hint">Optional.</span></label>
+    <textarea id="f_op_ment" class="md"></textarea>
+  </div>
+  <div class="field">
+    <label for="f_op_ask">Someone I could ask about childhood or earlier life, if I wanted to<span class="hint">Optional.</span></label>
+    <input type="text" id="f_op_ask">
+  </div>
+</section>
+
+<section id="s8">
+  <div class="sec-head"><span class="sec-no">08</span><h2>What else could be contributing?</h2></div>
+  <p class="sec-intro">Attention, memory, organisation, restlessness and emotional regulation can be affected by many things, and more than one may be present at once. Tick anything you think is worth mentioning. You are not being asked to decide whether it applies, only to flag it.</p>
+
+  <div id="g_contrib"></div>
+
+  <div class="field">
+    <label for="f_c_when">Anything else happening that may be relevant<span class="hint">Optional.</span></label>
+    <textarea id="f_c_when" class="md"></textarea>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="sec-head"><span class="sec-no">09</span><h2>Things that do not fit, or make me unsure</h2></div>
+  <p class="sec-intro">This is not a section for talking yourself out of anything. It is simply the part of the picture that is easiest to leave out, and often the part an assessor finds useful.</p>
+
+  <div id="g_notfit"></div>
+
+  <div class="field">
+    <label for="f_nf_note">Things that do not fit ADHD, make me unsure, or seem important for an assessor to know</label>
+    <textarea id="f_nf_note" class="md"></textarea>
+  </div>
+</section>
+
+<section id="s10">
+  <div class="sec-head"><span class="sec-no">10</span><h2>What would I actually like help with?</h2></div>
+  <p class="sec-intro">If you sought professional help, what would you most like to understand or improve?</p>
+
+  <div id="g_help"></div>
+
+  <div class="field">
+    <label for="f_h_hope">What would I hope to get from an assessment or professional conversation?<span class="hint">Optional.</span></label>
+    <textarea id="f_h_hope" class="md"></textarea>
+  </div>
+  <div class="field">
+    <label for="f_h_prob">What decision or problem am I actually trying to solve?<span class="hint">Optional, but worth a moment&rsquo;s thought. The answer sometimes points somewhere other than assessment.</span></label>
+    <textarea id="f_h_prob" class="md"></textarea>
+  </div>
+</section>
+
+<section id="s11">
+  <div class="sec-head"><span class="sec-no">11</span><h2>My next step</h2></div>
+  <p class="sec-intro">Where do I want to go from here?</p>
+
+  <div id="g_next"></div>
+
+  <div class="field">
+    <label for="f_next_note">Notes about my next step<span class="hint">Dates, phone numbers, who you plan to speak to, anything you want to look up.</span></label>
+    <textarea id="f_next_note" class="sm"></textarea>
+  </div>
+
+  <div class="next">
+    <h3>If you decide to explore assessment</h3>
+    <p>Queuend&rsquo;s Part A checklist can help you compare the NHS, Right to Choose and private routes, and shows what to check before you commit to a provider.</p>
+    <a class="cta" href="https://queuend.github.io/queuend-assessment-checklist/">Continue to Part A &mdash; Choosing your route and provider</a>
+  </div>
+</section>
+
+<section class="handover" id="handover">
+  <div class="sec-head"><span class="sec-no">&mdash;</span><h2>If I choose to share this with an assessor</h2></div>
+
+  <p class="stmt">This document was completed by the person seeking assessment as a personal reflection aid. It is not a diagnostic questionnaire and no score has been generated. The examples are self-reported and are intended only to help the person remember experiences they may wish to discuss during assessment.</p>
+
+  <div class="two">
+    <div class="field"><label for="f_name">Name (optional)</label><input type="text" id="f_name"></div>
+    <div class="field"><label for="f_dob">Date of birth (optional)</label><input type="text" id="f_dob"></div>
+    <div class="field"><label for="f_done">Date completed</label><input type="text" id="f_done"></div>
+    <div class="field"><label for="f_upd">Date last updated</label><input type="text" id="f_upd"></div>
+  </div>
+
+  <div class="field">
+    <label for="f_read">Anything I particularly want my assessor to read</label>
+    <textarea id="f_read" class="lg"></textarea>
+  </div>
+</section>
+
+<footer>
+  <strong>Queuend &mdash; My ADHD Reflection Record.</strong>
+  Information and reflection support, not diagnosis or personal medical advice. This worksheet does not assess, screen or diagnose, and nothing in it is counted or scored. If you are worried about your health, speak to your GP or a qualified assessor.
+  <br><span class="indep">Independent by design</span>
+</footer>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var SCHEMA = "queuend-reflection-record";
+var VERSION = 2;
+var MAX_FILE = 3 * 1024 * 1024;
+var BASE_EXAMPLES = 5;
+var MAX_EXAMPLES = 40;
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];
+  });
+}
+
+function group(type, key, legend, items, opts){
+  opts = opts || {};
+  var cls = opts.cls ? " " + opts.cls : "";
+  var h = '<fieldset><legend class="opt-label">' + esc(legend);
+  if(opts.tag){ h += ' <span class="tag">' + esc(opts.tag) + '</span>'; }
+  h += '</legend><div class="opts' + cls + '">';
+  for(var i=0;i<items.length;i++){
+    var id = key + "_" + i;
+    h += '<label class="opt" for="' + id + '"><input type="' + type + '" name="' + key + '" id="' + id + '">' +
+         '<span class="opt-txt">' + esc(items[i]) + '</span></label>';
+  }
+  h += '</div>';
+  if(opts.elseField){
+    h += '<div class="opt-else"><label class="hint" for="' + key + '_txt" style="margin:0">' +
+         esc(opts.elseField) + '</label><input type="text" id="' + key + '_txt"></div>';
+  }
+  return h + '</fieldset>';
+}
+function checks(key, legend, items, opts){ return group("checkbox", key, legend, items, opts); }
+function radios(key, legend, items, opts){ return group("radio", key, legend, items, opts); }
+
+var MULTI = "Tick any that apply";
+var ONE = "Choose one";
+
+function put(id, html){ var el = document.getElementById(id); if(el){ el.innerHTML = html; } }
+
+put("g_where", checks("where", "Where I notice difficulties",
+  ["Work","Education","Home","Relationships","Parenting","Finances","Driving",
+   "Health and appointments","Everyday organisation","Sleep and routines"],
+  {tag: MULTI, elseField: "Somewhere else:"}));
+
+put("g_howfar", radios("howfar", "How far back do I remember similar patterns?",
+  ["Childhood","Teenage years","Early adulthood","Only more recently",
+   "Different things at different times","I genuinely do not know"],
+  {tag: ONE}));
+
+put("g_prompted", checks("prompted", "What prompted me to look into this now?",
+  ["Difficulties have become harder to manage","Work changed","Study or university changed",
+   "Responsibilities increased","Parenthood or family life","Menopause or hormonal changes",
+   "Somebody close to me was diagnosed","I came across information that felt familiar",
+   "Somebody suggested ADHD to me","A period of stress or change made things more noticeable",
+   "I am not sure"],
+  {tag: MULTI, cls: "wide", elseField: "Something else:"}));
+
+put("g_strat", checks("strat", "Things I rely on",
+  ["Alarms and reminders","More than one calendar","Lists","Keeping things visible",
+   "Asking other people to remind me","Over-preparing","Checking repeatedly","Arriving very early",
+   "Relying on urgency or deadlines","Working late to catch up","Avoiding certain tasks",
+   "Choosing environments that suit me","Help from a partner, parent or colleague"],
+  {tag: MULTI, elseField: "Something else:"}));
+
+put("g_stratgone", checks("stratgone", "What happens when my usual systems or support are not available?",
+  ["Things become noticeably harder","I miss or forget more","I become stressed or overwhelmed",
+   "I rely more heavily on urgency","I ask somebody else for help",
+   "It does not make much difference","Unsure"],
+  {tag: MULTI, cls: "wide", elseField: "Something else:"}));
+
+put("g_norecall", checks("norecall", "Memory of earlier life",
+  ["There are significant parts of childhood or adolescence I genuinely do not remember"],
+  {tag: "Tick if this applies", cls: "wide"}));
+
+put("g_others", radios("others", "Has anybody else mentioned similar difficulties?",
+  ["Yes","No","Not sure","I would rather not involve anybody"],
+  {tag: ONE, cls: "row"}));
+
+put("g_contrib", checks("contrib", "Things that may be worth mentioning",
+  ["Sleep","Anxiety","Low mood","Stress","Difficult past experiences",
+   "Menopause or hormonal changes","Physical illness","Medication","Alcohol or other substances",
+   "Learning difficulties","Autism or other neurodevelopmental differences","Major life changes",
+   "Caring responsibilities"],
+  {tag: MULTI, elseField: "Something else:"}));
+
+var YNU = ["Yes","No","Unsure"];
+put("g_notfit",
+  radios("nf_less", "Are there situations where these difficulties are much less noticeable?", YNU, {tag: ONE, cls: "row"}) +
+  radios("nf_recent", "Did some of these difficulties begin only recently?", YNU, {tag: ONE, cls: "row"}) +
+  radios("nf_other", "Do I think something else may explain at least part of what I am experiencing?", YNU, {tag: ONE, cls: "row"}) +
+  radios("nf_expect", "Are there things I expected to recognise in ADHD descriptions but do not?", YNU, {tag: ONE, cls: "row"}));
+
+put("g_help", checks("help", "Things I would like help with",
+  ["Attention and concentration","Organisation","Starting or completing tasks","Impulsivity",
+   "Restlessness","Emotional regulation","Work","Study","Relationships","Sleep and routines",
+   "Medication options","Workplace or educational adjustments","Understanding myself better"],
+  {tag: MULTI, elseField: "Something else:"}));
+
+put("g_next", checks("next", "What I think I will do next",
+  ["Speak to my GP","Find out about my local NHS ADHD pathway","Explore Right to Choose",
+   "Look at private assessment","Talk things through with somebody first","Gather more information",
+   "Take no further action for now","I am not sure yet"],
+  {tag: MULTI, cls: "wide"}));
+
+var EX_WHERE = ["Work","Education","Home","Relationship or social situation","Parenting or family",
+  "Driving or travel","Health or appointment","Somewhere else"];
+var EX_FAMILIAR = ["One-off or unusual","Has happened a few times","Happens fairly often",
+  "Happens very often","Unsure"];
+var EX_RELEVANT = ["I was distracted","I lost track of time","I could not get started",
+  "I became absorbed in something else","I forgot what I intended to do","I felt overwhelmed",
+  "I acted or spoke quickly","I was tired","I was stressed or anxious","None of these quite fit"];
+
+function exampleBlock(n){
+  var h = '<div class="block" data-ex="' + n + '"><div class="block-head"><span class="block-title">Example ' + n + '</span></div>';
+  h += '<div class="field"><label for="ex' + n + '_what">What happened?</label><textarea id="ex' + n + '_what" class="md"></textarea></div>';
+  h += radios("ex" + n + "_where", "Where did it happen?", EX_WHERE, {tag: ONE});
+  h += radios("ex" + n + "_fam", "How familiar is this pattern?", EX_FAMILIAR, {tag: ONE});
+  h += checks("ex" + n + "_rel", "What seemed relevant at the time?", EX_RELEVANT, {tag: MULTI, elseField: "Something else:"});
+  h += '<div class="field"><label for="ex' + n + '_result">What happened as a result?</label><textarea id="ex' + n + '_result" class="md"></textarea></div>';
+  h += '<div class="field"><label for="ex' + n + '_cope">Anything I did to cope, recover or work around it<span class="hint">Optional.</span></label><textarea id="ex' + n + '_cope" class="sm"></textarea></div>';
+  return h + '</div>';
+}
+
+var AREAS = [
+  ["Starting and finishing things", [
+    "I put things off even when they matter",
+    "Getting started is harder than doing the task once I am underway",
+    "I start enthusiastically and lose momentum",
+    "I leave the final part unfinished",
+    "I often need urgency or a deadline",
+    "None of these quite describes it"]],
+  ["Attention and distraction", [
+    "My attention is pulled away by things around me",
+    "My own thoughts distract me",
+    "I lose track during conversations or reading",
+    "I can become very absorbed in something interesting",
+    "Switching attention can be difficult",
+    "None of these quite describes it"]],
+  ["Remembering and keeping track", [
+    "I forget what I went into a room to do",
+    "I mislay things and have to retrace my steps",
+    "I forget appointments, or messages I meant to answer",
+    "I remember something only once it is too late",
+    "I lose the thread of what I was saying",
+    "Little stays in place without a reminder",
+    "None of these quite describes it"]],
+  ["Organisation and time", [
+    "Time passes faster or slower than I expect",
+    "I underestimate how long things will take",
+    "Paperwork and admin build up",
+    "My space becomes cluttered, and then overwhelming",
+    "I plan carefully, but the plan does not survive the day",
+    "I am often late, or very early to avoid being late",
+    "None of these quite describes it"]],
+  ["Impulsivity and decisions", [
+    "I say things before I have thought them through",
+    "I decide quickly and reconsider afterwards",
+    "I interrupt, or finish other people's sentences",
+    "I buy or commit to things on the spur of the moment",
+    "Waiting is uncomfortable",
+    "I change direction suddenly",
+    "None of these quite describes it"]],
+  ["Restlessness or need for stimulation", [
+    "I fidget, or need to be moving",
+    "Sitting still for long is uncomfortable",
+    "I feel restless inside even when I look calm",
+    "I seek out noise, activity or something new",
+    "Quiet or repetitive situations are hard to tolerate",
+    "I take on more than I need to",
+    "None of these quite describes it"]],
+  ["Emotional responses", [
+    "Reactions arrive quickly and strongly",
+    "Frustration builds faster than I expect",
+    "Criticism or rejection stays with me for a long time",
+    "My mood can shift within a day",
+    "I find it hard to let something go",
+    "I recover quickly once it has passed",
+    "None of these quite describes it"]],
+  ["Work, study and everyday responsibilities", [
+    "I work best under pressure, or close to a deadline",
+    "Long or open-ended tasks are the hardest",
+    "What I produce is inconsistent from day to day",
+    "I avoid particular kinds of task",
+    "I do the interesting part and leave the rest",
+    "Meetings, forms and routine admin are difficult",
+    "None of these quite describes it"]],
+  ["Relationships and communication", [
+    "I talk more than I mean to, or go off at a tangent",
+    "I miss things people have told me",
+    "I forget to reply, or to stay in touch",
+    "Other people find me hard to follow",
+    "I withdraw when things feel like too much",
+    "People have said I do not seem to be listening",
+    "None of these quite describes it"]],
+  ["Something important that does not fit these headings", null]
+];
+
+var AREA_REL = ["Not really","Sometimes","Often enough to cause difficulty","Unsure"];
+var AREA_BACK = ["Childhood","Teenage years","Adulthood","Only recently","Unsure, or I cannot remember"];
+var AREA_EFFECT = ["Mostly inconvenience","Stress or exhaustion","Work or study difficulties",
+  "Problems at home","Relationship difficulties","Financial or practical consequences",
+  "Health or appointment problems","Not much practical effect","Other"];
+
+var areaHtml = "";
+for(var a=0;a<AREAS.length;a++){
+  var aName = AREAS[a][0], prompts = AREAS[a][1], k = "ar" + a;
+  areaHtml += '<div class="block"><div class="block-head"><span class="block-title">' + esc(aName) + '</span></div>';
+  if(!prompts){
+    areaHtml += '<div class="field"><label for="' + k + '_desc">What is it?</label><input type="text" id="' + k + '_desc"></div>';
+  }
+  areaHtml += radios(k + "_rel", "How relevant does this feel to me?", AREA_REL, {tag: ONE});
+  if(prompts){
+    areaHtml += checks(k + "_what", "What tends to happen?", prompts, {tag: MULTI, cls: "wide", elseField: "Something else:"});
+  }
+  areaHtml += radios(k + "_back", "How far back do I remember something like this?", AREA_BACK, {tag: ONE});
+  areaHtml += checks(k + "_eff", "What effect does it usually have?", AREA_EFFECT, {tag: MULTI});
+  areaHtml += '<div class="field"><label for="' + k + '_ex">An example, if one comes to mind<span class="hint">Optional.</span></label><textarea id="' + k + '_ex" class="sm"></textarea></div>';
+  areaHtml += '</div>';
+}
+put("areaWrap", areaHtml);
+
+var STAGES = [
+  ["Primary-school years", "bk0", [
+    "Difficulty concentrating in class","Daydreaming or zoning out","Losing belongings",
+    "Forgetting instructions","Homework was a struggle","Fidgeting, or being out of my seat",
+    "Talking or calling out","Told I was bright but not applying myself","Friendship difficulties",
+    "Strong reactions or frustration","Untidy work or workbooks","Timekeeping problems",
+    "I do not remember much","None of these particularly stand out"]],
+  ["Secondary-school and teenage years", "bk1", [
+    "Concentration got harder as the work got longer","Coursework left to the last minute",
+    "Disorganised folders, timetable or equipment","Missed deadlines",
+    "Grades below what teachers expected","Lateness or absence",
+    "Restlessness, or needing to be doing something","Talking, interrupting, or getting into trouble",
+    "Risk-taking","Strong reactions or frustration","Intense or difficult friendships",
+    "Comments in reports about effort or focus",
+    "I do not remember much","None of these particularly stand out"]],
+  ["Early adulthood", "bk2", [
+    "Struggled once the structure disappeared, at university or in a first job",
+    "Started courses or jobs and did not finish","Money or admin became difficult",
+    "Missed appointments, bills or deadlines","Changed jobs, courses or homes often",
+    "Relied on deadlines, all-nighters or crises","Difficulty keeping a household running",
+    "Relationship difficulties","Felt I was working much harder than others for the same result",
+    "I do not remember much","None of these particularly stand out"]]
+];
+
+var backHtml = "";
+for(var b=0;b<STAGES.length;b++){
+  var st = STAGES[b];
+  backHtml += '<div class="block"><div class="block-head"><span class="block-title">' + esc(st[0]) + '</span></div>';
+  backHtml += checks(st[1], "Things I remember", st[2], {tag: MULTI, cls: "wide", elseField: "Something else:"});
+  backHtml += '<div class="field"><label for="' + st[1] + '_note">Anything specific I remember<span class="hint">Optional.</span></label><textarea id="' + st[1] + '_note" class="sm"></textarea></div>';
+  backHtml += '</div>';
+}
+put("backWrap", backHtml);
+
+var exWrap = document.getElementById("exWrap");
+var exCount = 0;
+
+function autosize(t){
+  t.style.height = "auto";
+  var min = parseFloat(window.getComputedStyle(t).minHeight) || 0;
+  t.style.height = Math.max(t.scrollHeight, min) + "px";
+}
+function autoAll(root){
+  var ts = (root || document).querySelectorAll("textarea");
+  for(var i=0;i<ts.length;i++){ autosize(ts[i]); }
+}
+
+function addExample(){
+  exCount++;
+  exWrap.insertAdjacentHTML("beforeend", exampleBlock(exCount));
+  return exWrap.querySelector('[data-ex="' + exCount + '"]');
+}
+function buildExamples(n){
+  exWrap.innerHTML = "";
+  exCount = 0;
+  for(var i=0;i<n;i++){ addExample(); }
+}
+buildExamples(BASE_EXAMPLES);
+autoAll();
+
+document.getElementById("btnAddEx").addEventListener("click", function(){
+  var el = addExample();
+  autoAll(el);
+  var t = el.querySelector("textarea");
+  if(t){ t.focus(); }
+});
+
+var dirty = false;
+
+function isAnswerControl(el){
+  if(!el || !el.tagName) return false;
+  if(el.tagName === "TEXTAREA") return true;
+  if(el.tagName !== "INPUT") return false;
+  return el.type === "text" || el.type === "checkbox" || el.type === "radio";
+}
+function markDirty(ev){
+  if(isAnswerControl(ev.target) && ev.target.id !== "fileIn"){ dirty = true; }
+}
+document.addEventListener("input", function(ev){
+  if(ev.target && ev.target.tagName === "TEXTAREA"){ autosize(ev.target); }
+  markDirty(ev);
+});
+document.addEventListener("change", markDirty);
+
+function fields(){
+  return document.getElementById("doc")
+    .querySelectorAll('input[type=text], input[type=checkbox], input[type=radio], textarea');
+}
+
+function collect(){
+  var data = {}, f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(!el.id) continue;
+    data[el.id] = (el.type === "checkbox" || el.type === "radio") ? el.checked : el.value;
+  }
+  return data;
+}
+
+function hasContent(){
+  var f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(el.type === "checkbox" || el.type === "radio"){ if(el.checked) return true; }
+    else if(el.value && el.value.trim() !== ""){ return true; }
+  }
+  return false;
+}
+
+function resetAll(){
+  buildExamples(BASE_EXAMPLES);
+  var f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(el.type === "checkbox" || el.type === "radio"){ el.checked = false; }
+    else { el.value = ""; }
+  }
+  autoAll();
+}
+
+function mirrorTextareas(){
+  var ts = document.getElementById("doc").querySelectorAll("textarea");
+  for(var i=0;i<ts.length;i++){
+    var t = ts[i], m = t.nextElementSibling;
+    if(!m || !m.classList || !m.classList.contains("print-mirror")){
+      m = document.createElement("div");
+      m.className = "print-mirror";
+      t.parentNode.insertBefore(m, t.nextSibling);
+    }
+    var v = t.value || "";
+    m.textContent = v;
+    if(v.replace(/\s/g, "") !== ""){
+      t.classList.add("has-value");
+      m.classList.add("filled");
+    } else {
+      t.classList.remove("has-value");
+      m.classList.remove("filled");
+    }
+  }
+}
+
+document.getElementById("btnPrint").addEventListener("click", function(){
+  autoAll(); mirrorTextareas(); window.print();
+});
+window.addEventListener("beforeprint", function(){
+  if(!document.body.classList.contains("blank-print")){ mirrorTextareas(); }
+});
+
+var cloneTimer = null;
+function removeClone(){
+  var c = document.getElementById("printClone");
+  if(c && c.parentNode){ c.parentNode.removeChild(c); }
+  document.body.classList.remove("blank-print");
+  if(cloneTimer){ clearTimeout(cloneTimer); cloneTimer = null; }
+}
+
+document.getElementById("btnBlank").addEventListener("click", function(){
+  removeClone();
+  var clone = document.getElementById("doc").cloneNode(true);
+  var i, els;
+
+  els = clone.querySelectorAll("textarea");
+  for(i=0;i<els.length;i++){
+    els[i].value = ""; els[i].textContent = "";
+    els[i].removeAttribute("style"); els[i].classList.remove("has-value");
+  }
+  els = clone.querySelectorAll("input");
+  for(i=0;i<els.length;i++){
+    if(els[i].type === "checkbox" || els[i].type === "radio"){
+      els[i].checked = false; els[i].removeAttribute("checked");
+    } else { els[i].value = ""; els[i].removeAttribute("value"); }
+  }
+  els = clone.querySelectorAll(".print-mirror");
+  for(i=els.length-1;i>=0;i--){ els[i].parentNode.removeChild(els[i]); }
+  els = clone.querySelectorAll("[data-ex]");
+  for(i=els.length-1;i>=0;i--){
+    if(parseInt(els[i].getAttribute("data-ex"), 10) > BASE_EXAMPLES){ els[i].parentNode.removeChild(els[i]); }
+  }
+  els = clone.querySelectorAll("[id]");
+  for(i=0;i<els.length;i++){ els[i].removeAttribute("id"); }
+  els = clone.querySelectorAll("label[for]");
+  for(i=0;i<els.length;i++){ els[i].removeAttribute("for"); }
+  els = clone.querySelectorAll("[name]");
+  for(i=0;i<els.length;i++){ els[i].setAttribute("name", "blank_" + els[i].getAttribute("name")); }
+
+  clone.id = "printClone";
+  clone.setAttribute("aria-hidden", "true");
+  document.body.appendChild(clone);
+  document.body.classList.add("blank-print");
+  window.print();
+  cloneTimer = setTimeout(removeClone, 1500);
+});
+
+window.addEventListener("afterprint", removeClone);
+window.addEventListener("focus", function(){
+  if(document.body.classList.contains("blank-print")){ setTimeout(removeClone, 200); }
+});
+
+function stamp(){
+  var d = new Date();
+  function p(n){ return (n < 10 ? "0" : "") + n; }
+  return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+}
+
+document.getElementById("btnSave").addEventListener("click", function(){
+  var payload = { format: SCHEMA, version: VERSION, saved: stamp(), examples: exCount, answers: collect() };
+  var blob = new Blob([JSON.stringify(payload, null, 2)], {type: "application/json"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = "Queuend-ADHD-reflection-progress-" + stamp() + ".json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  dirty = false;
+});
+
+var fileIn = document.getElementById("fileIn");
+document.getElementById("btnLoad").addEventListener("click", function(){ fileIn.click(); });
+function fail(msg){ window.alert(msg); fileIn.value = ""; }
+
+fileIn.addEventListener("change", function(){
+  var file = fileIn.files && fileIn.files[0];
+  if(!file) return;
+  if(file.size > MAX_FILE){ return fail("That file is too large to be a saved reflection record."); }
+  if(hasContent() && !window.confirm("Opening this file will replace the answers currently on this page. Continue?")){
+    fileIn.value = ""; return;
+  }
+
+  var reader = new FileReader();
+  reader.onerror = function(){ fail("That file could not be read."); };
+  reader.onload = function(){
+    var data;
+    try { data = JSON.parse(reader.result); }
+    catch(err){ return fail("That file could not be read. Please choose a file you saved from this worksheet."); }
+
+    if(!data || typeof data !== "object" || data.format !== SCHEMA){
+      return fail("That does not look like a saved reflection record. Please choose a file you saved from this worksheet.");
+    }
+    if(typeof data.version !== "number" || data.version > VERSION){
+      return fail("That file was saved by a newer version of this worksheet, so it cannot be opened here.");
+    }
+    if(!data.answers || typeof data.answers !== "object" || Array.isArray(data.answers)){
+      return fail("That file does not contain any answers this worksheet can read.");
+    }
+
+    var want = parseInt(data.examples, 10);
+    if(!isFinite(want) || want < BASE_EXAMPLES){ want = BASE_EXAMPLES; }
+    if(want > MAX_EXAMPLES){ want = MAX_EXAMPLES; }
+
+    resetAll();
+    buildExamples(want);
+
+    var f = fields(), applied = 0;
+    for(var i=0;i<f.length;i++){
+      var el = f[i];
+      if(!el.id || !Object.prototype.hasOwnProperty.call(data.answers, el.id)) continue;
+      var v = data.answers[el.id];
+      if(el.type === "checkbox" || el.type === "radio"){
+        if(typeof v !== "boolean") continue;
+        el.checked = v;
+      } else {
+        if(typeof v !== "string") continue;
+        el.value = v;
+      }
+      applied++;
+    }
+    autoAll();
+    dirty = false;
+    fileIn.value = "";
+    window.alert(applied > 0
+      ? "Your saved answers have been loaded."
+      : "That file opened, but contained no answers this worksheet recognises.");
+  };
+  reader.readAsText(file);
+});
+
+document.getElementById("btnClear").addEventListener("click", function(){
+  if(!hasContent()){ window.alert("There is nothing to clear yet."); return; }
+  if(!window.confirm(
+    "Clear every answer currently shown on this page?\n\n" +
+    "This cannot be undone. It does not delete any file you have already downloaded \u2014 " +
+    "those belong to you, and you would need to delete them yourself.")) return;
+  resetAll();
+  dirty = false;
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener("beforeunload", function(ev){
+  if(dirty && hasContent()){ ev.preventDefault(); ev.returnValue = ""; return ""; }
+});
+})();
+</script>
+</body>
+</html>
