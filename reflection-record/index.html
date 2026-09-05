@@ -110,6 +110,9 @@ legend{padding:0}
 .addmore{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule-fine)}
 .addmore button{font-size:10pt;padding:12px 18px}
 .addmore-note{font-family:var(--sans);font-size:8.5pt;color:var(--muted);margin:8px 0 0;max-width:36em}
+.resume{margin:18px 0;padding:14px 17px;background:var(--warm);border-left:3px solid var(--berry)}
+.resume p{font-family:var(--sans);font-size:9.5pt;font-weight:600;color:var(--ink);margin:0 0 10px;max-width:none}
+.resume-btns{display:flex;gap:8px;flex-wrap:wrap}
 .block{border:1px solid var(--rule);border-top:2.5px solid var(--rose);padding:15px 17px 17px;margin:16px 0}
 .block-head{padding-bottom:9px;margin-bottom:4px;border-bottom:1px solid var(--rule-fine)}
 .block-title{font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.11em;
@@ -196,16 +199,25 @@ body.blank-print > #printClone{display:block}
 <div class="meta">Free to use &nbsp;&middot;&nbsp; Mostly tick-boxes &nbsp;&middot;&nbsp; Write only where it helps &nbsp;&middot;&nbsp; Skip anything that does not</div>
 
 <div class="toolbar no-print">
+  <button id="btnSaveLocal" type="button">Save my progress in this browser</button>
   <button id="btnPrint" type="button">Print or save as PDF</button>
   <button class="ghost" id="btnBlank" type="button">Print a blank copy</button>
-  <button class="ghost" id="btnSave" type="button">Save my progress</button>
-  <button class="ghost" id="btnLoad" type="button">Pick up where I left off</button>
+  <button class="ghost" id="btnSave" type="button">Download a backup copy</button>
+  <button class="ghost" id="btnLoad" type="button">Open a backup copy</button>
   <button class="ghost" id="btnClear" type="button">Clear my answers</button>
   <input type="file" id="fileIn" accept="application/json,.json" hidden>
 </div>
 <div class="privacy no-print">
-  <p><strong>Queuend does not receive or store your answers.</strong> Nothing you enter is stored by this website or sent to Queuend. Because nothing is stored, closing or reloading this page will lose your answers.</p>
-  <p>If you choose <em>Save my progress</em>, a copy containing your answers is downloaded to your device, and <em>Pick up where I left off</em> will reopen it here later so you can carry on. Saved files are not encrypted. If you share a device, keep the file somewhere private or delete it when you no longer need it, and bear in mind that some devices synchronise the downloads folder to a cloud service.</p>
+  <p><strong>Queuend does not receive or store your answers.</strong> Unless you choose to save your progress, your answers exist only on the page while it is open. If you choose <em>Save my progress in this browser</em>, a copy is stored in this browser so you can return to it later. It is not sent to Queuend. Anyone using the same browser profile may be able to reopen it, and clearing browser data may remove it. You can also download a backup copy to keep yourself.</p>
+  <p>A backup copy is an ordinary file downloaded to your device, and it is not encrypted. If you share a device, keep it somewhere private or delete it when you no longer need it, and bear in mind that some devices synchronise the downloads folder to a cloud service.</p>
+</div>
+
+<div class="resume no-print" id="resumeBox" hidden>
+  <p>You have saved progress in this browser.</p>
+  <div class="resume-btns">
+    <button id="btnRestore" type="button">Pick up where I left off</button>
+    <button class="ghost" id="btnStartAgain" type="button">Start again</button>
+  </div>
 </div>
 
 <noscript>
@@ -440,6 +452,7 @@ body.blank-print > #printClone{display:block}
 
 var SCHEMA = "queuend-reflection-record";
 var VERSION = 2;
+var STORE_KEY = "queuend-reflection-record";
 var MAX_FILE = 3 * 1024 * 1024;
 var BASE_EXAMPLES = 1;
 var MAX_EXAMPLES = 40;
@@ -725,7 +738,10 @@ document.getElementById("btnAddEx").addEventListener("click", function(){
   if(t){ t.focus(); }
 });
 
-var dirty = false;
+var lastSavedSerial = null;
+var autosaveOn = false;
+var autosaveTimer = null;
+var storageWarned = false;
 
 function isAnswerControl(el){
   if(!el || !el.tagName) return false;
@@ -733,14 +749,14 @@ function isAnswerControl(el){
   if(el.tagName !== "INPUT") return false;
   return el.type === "text" || el.type === "checkbox" || el.type === "radio";
 }
-function markDirty(ev){
-  if(isAnswerControl(ev.target) && ev.target.id !== "fileIn"){ dirty = true; }
+function onAnswerChanged(ev){
+  if(isAnswerControl(ev.target) && ev.target.id !== "fileIn"){ scheduleAutosave(); }
 }
 document.addEventListener("input", function(ev){
   if(ev.target && ev.target.tagName === "TEXTAREA"){ autosize(ev.target); }
-  markDirty(ev);
+  onAnswerChanged(ev);
 });
-document.addEventListener("change", markDirty);
+document.addEventListener("change", onAnswerChanged);
 
 function fields(){
   return document.getElementById("doc")
@@ -777,6 +793,100 @@ function resetAll(){
   }
   autoAll();
 }
+
+function makePayload(){
+  return { format: SCHEMA, version: VERSION, saved: stamp(), examples: exCount, answers: collect() };
+}
+function serialize(){
+  return JSON.stringify({ examples: exCount, answers: collect() });
+}
+function isUnsaved(){
+  return hasContent() && serialize() !== lastSavedSerial;
+}
+function validPayload(d){
+  return !!d && typeof d === "object" && d.format === SCHEMA && d.version === VERSION &&
+         !!d.answers && typeof d.answers === "object" && !Array.isArray(d.answers);
+}
+function applyPayload(d){
+  var want = parseInt(d.examples, 10);
+  if(!isFinite(want) || want < BASE_EXAMPLES){ want = BASE_EXAMPLES; }
+  if(want > MAX_EXAMPLES){ want = MAX_EXAMPLES; }
+  resetAll();
+  buildExamples(want);
+  var f = fields(), applied = 0;
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(!el.id || !Object.prototype.hasOwnProperty.call(d.answers, el.id)) continue;
+    var v = d.answers[el.id];
+    if(el.type === "checkbox" || el.type === "radio"){
+      if(typeof v !== "boolean") continue;
+      el.checked = v;
+    } else {
+      if(typeof v !== "string") continue;
+      el.value = v;
+    }
+    applied++;
+  }
+  autoAll();
+  return applied;
+}
+
+function storageAvailable(){
+  try{
+    var k = "__queuend_probe__";
+    window.localStorage.setItem(k, "1");
+    window.localStorage.removeItem(k);
+    return true;
+  } catch(e){ return false; }
+}
+function readSaved(){
+  var raw;
+  try { raw = window.localStorage.getItem(STORE_KEY); }
+  catch(e){ return null; }
+  if(!raw) return null;
+  var d;
+  try { d = JSON.parse(raw); } catch(e){ d = null; }
+  if(!validPayload(d)){
+    try { window.localStorage.removeItem(STORE_KEY); } catch(e){}
+    return null;
+  }
+  return d;
+}
+function writeSaved(){
+  try {
+    window.localStorage.setItem(STORE_KEY, JSON.stringify(makePayload()));
+    lastSavedSerial = serialize();
+    return true;
+  } catch(e){ return false; }
+}
+function clearSaved(){
+  try { window.localStorage.removeItem(STORE_KEY); return true; }
+  catch(e){ return false; }
+}
+function scheduleAutosave(){
+  if(!autosaveOn) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); }
+  autosaveTimer = setTimeout(function(){
+    autosaveTimer = null;
+    if(!writeSaved()){
+      autosaveOn = false;
+      if(!storageWarned){
+        storageWarned = true;
+        window.alert("Your progress could not be updated in this browser, so automatic saving has been switched off.\n\nYou can use Download a backup copy to keep your answers instead.");
+      }
+    }
+  }, 800);
+}
+function flushAutosave(){
+  if(autosaveTimer){
+    clearTimeout(autosaveTimer);
+    autosaveTimer = null;
+    writeSaved();
+  }
+}
+
+var resumeBox = document.getElementById("resumeBox");
+function hideResume(){ resumeBox.hidden = true; }
 
 function mirrorTextareas(){
   var ts = document.getElementById("doc").querySelectorAll("textarea");
@@ -863,8 +973,7 @@ function stamp(){
 }
 
 document.getElementById("btnSave").addEventListener("click", function(){
-  var payload = { format: SCHEMA, version: VERSION, saved: stamp(), examples: exCount, answers: collect() };
-  var blob = new Blob([JSON.stringify(payload, null, 2)], {type: "application/json"});
+  var blob = new Blob([JSON.stringify(makePayload(), null, 2)], {type: "application/json"});
   var url = URL.createObjectURL(blob);
   var a = document.createElement("a");
   a.href = url;
@@ -873,7 +982,7 @@ document.getElementById("btnSave").addEventListener("click", function(){
   a.click();
   document.body.removeChild(a);
   setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
-  dirty = false;
+  lastSavedSerial = serialize();
 });
 
 var fileIn = document.getElementById("fileIn");
@@ -884,7 +993,13 @@ fileIn.addEventListener("change", function(){
   var file = fileIn.files && fileIn.files[0];
   if(!file) return;
   if(file.size > MAX_FILE){ return fail("That file is too large to be a saved reflection record."); }
-  if(hasContent() && !window.confirm("Opening this file will replace the answers currently on this page. Continue?")){
+  var warn = null;
+  if(autosaveOn){
+    warn = "Opening this backup copy will replace the answers currently on this page, and will also replace the copy saved in this browser, because browser saving is switched on.\n\nContinue?";
+  } else if(hasContent()){
+    warn = "Opening this backup copy will replace the answers currently on this page. Continue?";
+  }
+  if(warn && !window.confirm(warn)){
     fileIn.value = ""; return;
   }
 
@@ -896,60 +1011,112 @@ fileIn.addEventListener("change", function(){
     catch(err){ return fail("That file could not be read. Please choose a file you saved from this worksheet."); }
 
     if(!data || typeof data !== "object" || data.format !== SCHEMA){
-      return fail("That does not look like a saved reflection record. Please choose a file you saved from this worksheet.");
+      return fail("That does not look like a backup copy from this worksheet. Please choose a file you downloaded from here.");
     }
     if(data.version !== VERSION){
       return fail("That file was saved by a different version of this worksheet, so it cannot be opened here.");
     }
-    if(!data.answers || typeof data.answers !== "object" || Array.isArray(data.answers)){
+    if(!validPayload(data)){
       return fail("That file does not contain any answers this worksheet can read.");
     }
 
-    var want = parseInt(data.examples, 10);
-    if(!isFinite(want) || want < BASE_EXAMPLES){ want = BASE_EXAMPLES; }
-    if(want > MAX_EXAMPLES){ want = MAX_EXAMPLES; }
-
-    resetAll();
-    buildExamples(want);
-
-    var f = fields(), applied = 0;
-    for(var i=0;i<f.length;i++){
-      var el = f[i];
-      if(!el.id || !Object.prototype.hasOwnProperty.call(data.answers, el.id)) continue;
-      var v = data.answers[el.id];
-      if(el.type === "checkbox" || el.type === "radio"){
-        if(typeof v !== "boolean") continue;
-        el.checked = v;
-      } else {
-        if(typeof v !== "string") continue;
-        el.value = v;
-      }
-      applied++;
-    }
-    autoAll();
-    dirty = false;
+    var hadBrowserCopy = !!readSaved();
+    var applied = applyPayload(data);
+    lastSavedSerial = serialize();
+    if(autosaveOn){ writeSaved(); }
+    hideResume();
     fileIn.value = "";
-    window.alert(applied > 0
-      ? "Your saved answers have been loaded."
-      : "That file opened, but contained no answers this worksheet recognises.");
+    if(applied > 0){
+      if(autosaveOn){
+        window.alert("Your backup copy has been loaded, and the copy saved in this browser has been updated to match.");
+      } else if(hadBrowserCopy){
+        window.alert("Your backup copy has been opened. It has not been saved in this browser. " +
+          "Your previously saved browser progress has not been changed. " +
+          "Choose \u201CSave my progress in this browser\u201D if you want this version to replace it.");
+      } else {
+        window.alert("Your backup copy has been opened. It has not been saved in this browser. " +
+          "Choose \u201CSave my progress in this browser\u201D if you want to keep it here.");
+      }
+    } else {
+      window.alert("That file opened, but contained no answers this worksheet recognises.");
+    }
   };
   reader.readAsText(file);
 });
 
 document.getElementById("btnClear").addEventListener("click", function(){
-  if(!hasContent()){ window.alert("There is nothing to clear yet."); return; }
+  var saved = readSaved();
+  if(!hasContent() && !saved){ window.alert("There is nothing to clear yet."); return; }
   if(!window.confirm(
     "Clear every answer currently shown on this page?\n\n" +
-    "This cannot be undone. It does not delete any file you have already downloaded \u2014 " +
-    "those belong to you, and you would need to delete them yourself.")) return;
+    "Any copy saved in this browser will be deleted too. This cannot be undone. " +
+    "It does not delete a backup copy you have already downloaded \u2014 " +
+    "that belongs to you, and you would need to delete it yourself.")) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); autosaveTimer = null; }
+  autosaveOn = false;
+  var removed = clearSaved();
   resetAll();
-  dirty = false;
+  lastSavedSerial = serialize();
+  hideResume();
   window.scrollTo(0, 0);
+  if(saved && !removed){
+    window.alert("The page has been cleared, but the copy saved in this browser could not be removed. You may need to clear this site's data in your browser settings.");
+  }
 });
 
 window.addEventListener("beforeunload", function(ev){
-  if(dirty && hasContent()){ ev.preventDefault(); ev.returnValue = ""; return ""; }
+  flushAutosave();
+  if(isUnsaved()){ ev.preventDefault(); ev.returnValue = ""; return ""; }
 });
+
+document.getElementById("btnSaveLocal").addEventListener("click", function(){
+  if(!storageAvailable()){
+    window.alert("This browser will not let the page save anything locally. That usually happens in private browsing, or when site data is switched off.\n\nUse Download a backup copy instead, and reopen it later with Open a backup copy.");
+    return;
+  }
+  if(writeSaved()){
+    autosaveOn = true;
+    hideResume();
+    window.alert("Your progress has been saved in this browser, and will be kept up to date as you carry on.");
+  } else {
+    window.alert("Your progress could not be saved in this browser. Its storage may be full.\n\nUse Download a backup copy instead.");
+  }
+});
+
+document.getElementById("btnRestore").addEventListener("click", function(){
+  var d = readSaved();
+  if(!d){
+    hideResume();
+    window.alert("The saved progress could not be found in this browser. It may have been removed since this page was opened.");
+    return;
+  }
+  if(isUnsaved() && !window.confirm("Restoring will replace the answers currently on this page. Continue?")) return;
+  applyPayload(d);
+  lastSavedSerial = serialize();
+  autosaveOn = true;
+  hideResume();
+  window.scrollTo(0, 0);
+});
+
+document.getElementById("btnStartAgain").addEventListener("click", function(){
+  if(!window.confirm(
+    "Start again?\n\n" +
+    "This deletes the copy of your answers saved in this browser and clears the page. " +
+    "It cannot be undone. It does not delete a backup copy you have already downloaded.")) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); autosaveTimer = null; }
+  autosaveOn = false;
+  var removed = clearSaved();
+  resetAll();
+  lastSavedSerial = serialize();
+  hideResume();
+  window.scrollTo(0, 0);
+  if(!removed){
+    window.alert("The page has been cleared, but the copy saved in this browser could not be removed. You may need to clear this site's data in your browser settings.");
+  }
+});
+
+lastSavedSerial = serialize();
+if(readSaved()){ resumeBox.hidden = false; }
 })();
 </script>
 </body>
