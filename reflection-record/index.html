@@ -9,6 +9,7 @@
 :root{
   --ink:#241D22; --muted:#574A52; --rose:#9B536C; --berry:#71374C; --mid:#BB748A;
   --blush:#F8EEF1; --warm:#F4E4E9; --rule:#DDC8CF; --rule-fine:#EADCE1; --page:#EFE9EA;
+  --alert:#8E2A2A; --alert-tint:#FDF2F0;
   --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
   --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
@@ -42,6 +43,12 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
 .privacy p{margin-bottom:6px;max-width:none}
 .privacy p:last-child{margin-bottom:0}
 
+.alert{margin:16px 0 0;padding:14px 17px;border:1.5px solid var(--alert);border-left:4px solid var(--alert);
+  background:var(--alert-tint);font-family:var(--sans);font-size:9.5pt;line-height:1.6;color:var(--ink)}
+.alert .lbl{display:block;font-size:7.5pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--alert);margin-bottom:5px}
+.alert p{margin-bottom:8px;max-width:none}.alert p:last-child{margin-bottom:0}
+.alert strong{color:var(--alert)}
 .callout{margin:20px 0;padding:14px 17px;font-family:var(--sans);font-size:9.5pt;line-height:1.6;
   background:var(--blush);border-left:3px solid var(--rose);color:var(--muted)}
 .callout .lbl{display:block;font-size:7.5pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
@@ -104,8 +111,6 @@ legend{padding:0}
   border-radius:50%;background:#fff}
 .opt input:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
 .opt input:checked ~ .opt-txt{font-weight:600;color:var(--berry)}
-.opt-else{display:flex;align-items:center;gap:9px;padding:6px 0;flex-wrap:wrap}
-.opt-else input[type=text]{flex:1 1 150px;min-height:40px;font-size:9.5pt;font-family:var(--sans);width:auto}
 
 .addmore{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule-fine)}
 .addmore button{font-size:10pt;padding:12px 18px}
@@ -198,6 +203,13 @@ body.blank-print > #printClone{display:block}
 
 <div class="meta">Free to use &nbsp;&middot;&nbsp; Mostly tick-boxes &nbsp;&middot;&nbsp; Write only where it helps &nbsp;&middot;&nbsp; Skip anything that does not</div>
 
+<div class="alert">
+  <span class="lbl">Your answers stay private</span>
+  <p><strong>Queuend does not receive or see anything you enter in this worksheet.</strong> Your answers are not submitted to Queuend or stored on our servers.</p>
+  <p>If you save your progress, it is stored in this browser on this device so you can return to it later. Queuend does not upload that saved copy. If you download a backup, it is saved wherever your device normally puts downloaded files; that location may be synchronised to a service such as Google Drive, OneDrive or iCloud.</p>
+  <p>This is your personal record. You decide whether to keep it, delete it or share it with anyone.</p>
+</div>
+
 <div class="toolbar no-print">
   <button id="btnSaveLocal" type="button">Save my progress in this browser</button>
   <button id="btnPrint" type="button">Print or save as PDF</button>
@@ -208,8 +220,8 @@ body.blank-print > #printClone{display:block}
   <input type="file" id="fileIn" accept="application/json,.json" hidden>
 </div>
 <div class="privacy no-print">
-  <p><strong>Queuend does not receive or store your answers.</strong> Unless you choose to save your progress, your answers exist only on the page while it is open. If you choose <em>Save my progress in this browser</em>, a copy is stored in this browser so you can return to it later. It is not sent to Queuend. Anyone using the same browser profile may be able to reopen it, and clearing browser data may remove it. You can also download a backup copy to keep yourself.</p>
-  <p>A backup copy is an ordinary file downloaded to your device, and it is not encrypted. If you share a device, keep it somewhere private or delete it when you no longer need it, and bear in mind that some devices synchronise the downloads folder to a cloud service.</p>
+  <p>Unless you choose to save your progress, your answers exist only on the page while it is open, and closing or reloading will lose them. Saved progress can be reopened by anyone using the same browser profile, and clearing browser data may remove it.</p>
+  <p>A backup copy is an ordinary file downloaded to your device, and it is not encrypted. If you share a device, keep it somewhere private or delete it when you no longer need it.</p>
 </div>
 
 <div class="resume no-print" id="resumeBox" hidden>
@@ -246,45 +258,19 @@ body.blank-print > #printClone{display:block}
     <li><a href="#s9">Things that do not fit, or make me unsure</a></li>
     <li><a href="#s10">What would I actually like help with?</a></li>
     <li><a href="#s11">My next step</a></li>
+    <li><a href="#s12">Optional notes</a></li>
     <li><a href="#handover">If I choose to share this</a></li>
   </ol>
 </nav>
 
 <section id="s1">
   <div class="sec-head"><span class="sec-no">01</span><h2>My overview</h2></div>
-  <p class="sec-intro">A short summary of the whole picture. Many people find this easier to write <em>last</em>, once the rest of the worksheet has jogged their memory.</p>
-
-  <div class="field">
-    <label for="f_wonder">What first made me wonder about ADHD?<span class="hint">A sentence or two is plenty.</span></label>
-    <textarea id="f_wonder" class="md"></textarea>
-  </div>
-
-  <div class="field">
-    <span class="flabel">The three things that affect me most</span>
-    <label class="hint" for="f_top1">1</label><input type="text" id="f_top1">
-    <label class="hint" for="f_top2">2</label><input type="text" id="f_top2">
-    <label class="hint" for="f_top3">3</label><input type="text" id="f_top3">
-  </div>
+  <p class="sec-intro">A quick overview of where you notice difficulties and how far back you remember similar patterns.</p>
 
   <div id="g_where"></div>
   <div id="g_howfar"></div>
 
-  <div class="field">
-    <label for="f_howfar_note">Anything I want to add<span class="hint">Optional.</span></label>
-    <textarea id="f_howfar_note" class="sm"></textarea>
-  </div>
-
-  <div class="field">
-    <label for="f_manage">Things I already do to manage or compensate<span class="hint">Optional here &mdash; there is a fuller list of choices in section 5.</span></label>
-    <textarea id="f_manage" class="sm"></textarea>
-  </div>
-
-  <div class="field">
-    <label for="f_other_rel">Other things that may also be relevant<span class="hint">Optional.</span></label>
-    <textarea id="f_other_rel" class="sm"></textarea>
-  </div>
-
-  <p class="quiet">Examples and detail follow in the next sections.</p>
+  <p class="quiet">Examples follow in section 3. There is space for anything you want to write in your own words at the end, in section 12.</p>
 </section>
 
 <section id="s2">
@@ -292,11 +278,6 @@ body.blank-print > #printClone{display:block}
   <p class="sec-intro">A change like that does not indicate ADHD in itself. It may alter the demands on you, affect how well existing coping strategies work, or simply make a longstanding pattern easier to notice.</p>
 
   <div id="g_prompted"></div>
-
-  <div class="field">
-    <label for="f_happening">Anything about what has been happening that I want to remember<span class="hint">Optional.</span></label>
-    <textarea id="f_happening" class="md"></textarea>
-  </div>
 </section>
 
 <section id="s3">
@@ -321,11 +302,6 @@ body.blank-print > #printClone{display:block}
 
   <div id="g_strat"></div>
   <div id="g_stratgone"></div>
-
-  <div class="field">
-    <label for="f_strat_cost">Anything else I do to keep things working &mdash; and what does it cost me in time, effort or stress?<span class="hint">Optional.</span></label>
-    <textarea id="f_strat_cost" class="md"></textarea>
-  </div>
 </section>
 
 <section id="s6">
@@ -334,16 +310,6 @@ body.blank-print > #printClone{display:block}
   <div id="backWrap"></div>
 
   <div id="g_norecall"></div>
-
-  <div class="field">
-    <label for="f_norecall_note">Anything I want to note about that<span class="hint">Optional.</span></label>
-    <textarea id="f_norecall_note" class="sm"></textarea>
-  </div>
-
-  <div class="field">
-    <label for="f_whohelp">People or documents that might help me remember, if available<span class="hint">Optional. Leave blank if there is nobody you want to ask, or nothing you can find.</span></label>
-    <textarea id="f_whohelp" class="sm"></textarea>
-  </div>
 </section>
 
 <section id="s7">
@@ -351,15 +317,6 @@ body.blank-print > #printClone{display:block}
   <p class="sec-intro">Other people may notice things we miss, but their view is only one part of the picture. You do not have to involve anybody to use this worksheet, or to seek an assessment.</p>
 
   <div id="g_others"></div>
-
-  <div class="field">
-    <label for="f_op_ment">Examples somebody else has mentioned to me<span class="hint">Optional.</span></label>
-    <textarea id="f_op_ment" class="md"></textarea>
-  </div>
-  <div class="field">
-    <label for="f_op_ask">Someone I could ask about childhood or earlier life, if I wanted to<span class="hint">Optional.</span></label>
-    <input type="text" id="f_op_ask">
-  </div>
 </section>
 
 <section id="s8">
@@ -367,11 +324,6 @@ body.blank-print > #printClone{display:block}
   <p class="sec-intro">Attention, memory, organisation, restlessness and emotional regulation can be affected by many things, and more than one may be present at once. Tick anything you think is worth mentioning. You are not being asked to decide whether it applies, only to flag it.</p>
 
   <div id="g_contrib"></div>
-
-  <div class="field">
-    <label for="f_c_when">Anything else happening that may be relevant<span class="hint">Optional.</span></label>
-    <textarea id="f_c_when" class="md"></textarea>
-  </div>
 </section>
 
 <section id="s9">
@@ -379,11 +331,6 @@ body.blank-print > #printClone{display:block}
   <p class="sec-intro">This is not a section for talking yourself out of anything. It is simply the part of the picture that is easiest to leave out, and can be particularly useful to discuss with an assessor.</p>
 
   <div id="g_notfit"></div>
-
-  <div class="field">
-    <label for="f_nf_note">Things that do not fit ADHD, make me unsure, or seem important for an assessor to know</label>
-    <textarea id="f_nf_note" class="md"></textarea>
-  </div>
 </section>
 
 <section id="s10">
@@ -391,15 +338,6 @@ body.blank-print > #printClone{display:block}
   <p class="sec-intro">If you sought professional help, what would you most like to understand or improve?</p>
 
   <div id="g_help"></div>
-
-  <div class="field">
-    <label for="f_h_hope">What would I hope to get from an assessment or professional conversation?<span class="hint">Optional.</span></label>
-    <textarea id="f_h_hope" class="md"></textarea>
-  </div>
-  <div class="field">
-    <label for="f_h_prob">What decision or problem am I actually trying to solve?<span class="hint">Optional, but worth a moment&rsquo;s thought. The answer sometimes points somewhere other than assessment.</span></label>
-    <textarea id="f_h_prob" class="md"></textarea>
-  </div>
 </section>
 
 <section id="s11">
@@ -408,15 +346,36 @@ body.blank-print > #printClone{display:block}
 
   <div id="g_next"></div>
 
-  <div class="field">
-    <label for="f_next_note">Notes about my next step<span class="hint">Dates, phone numbers, who you plan to speak to, anything you want to look up.</span></label>
-    <textarea id="f_next_note" class="sm"></textarea>
-  </div>
-
   <div class="next">
     <h3>If you decide to explore assessment</h3>
     <p>Queuend&rsquo;s Part A checklist can help you compare the NHS, Right to Choose and private routes, and shows what to check before you commit to a provider.</p>
     <a class="cta" href="https://queuend.github.io/queuend-assessment-checklist/">Continue to Part A &mdash; Choosing your route and provider</a>
+  </div>
+</section>
+
+<section id="s12">
+  <div class="sec-head"><span class="sec-no">12</span><h2>Optional notes</h2></div>
+  <p class="sec-intro">Apart from the examples in section 3, everything up to here was a matter of ticking. This is the only other place with space to write, and all of it is optional. Many people leave most of it blank, and a worksheet with nothing in this section is still a perfectly useful one.</p>
+  <p class="sec-intro">Four boxes, for the things a tick-box cannot carry. A sentence is as valid as a page.</p>
+
+  <div class="field">
+    <label for="note_own">Something I particularly want to remember or explain in my own words</label>
+    <textarea id="note_own" class="md"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="note_earlier">Something about my earlier life or circumstances that the choices did not capture</label>
+    <textarea id="note_earlier" class="md"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="note_notfit">Something that doesn&rsquo;t fit ADHD, or that I think might have another explanation</label>
+    <textarea id="note_notfit" class="md"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="note_assessor">Anything else I would like a future assessor to understand about me</label>
+    <textarea id="note_assessor" class="md"></textarea>
   </div>
 </section>
 
@@ -433,8 +392,8 @@ body.blank-print > #printClone{display:block}
   </div>
 
   <div class="field">
-    <label for="f_read">Anything I particularly want my assessor to read</label>
-    <textarea id="f_read" class="lg"></textarea>
+    <label for="f_read">What I&rsquo;d particularly like my assessor to look at first<span class="hint">A pointer rather than a summary &mdash; for example &ldquo;section 3, example 2&rdquo;, or &ldquo;the notes about school&rdquo;. Anything you want to say in your own words belongs in section 12.</span></label>
+    <textarea id="f_read" class="sm"></textarea>
   </div>
 </section>
 
@@ -451,7 +410,7 @@ body.blank-print > #printClone{display:block}
 "use strict";
 
 var SCHEMA = "queuend-reflection-record";
-var VERSION = 2;
+var VERSION = 5;
 var STORE_KEY = "queuend-reflection-record";
 var MAX_FILE = 3 * 1024 * 1024;
 var BASE_EXAMPLES = 1;
@@ -465,21 +424,17 @@ function esc(s){
 
 function group(type, key, legend, items, opts){
   opts = opts || {};
+  var list = opts.elseItem ? items.concat([opts.elseItem]) : items;
   var cls = opts.cls ? " " + opts.cls : "";
   var h = '<fieldset><legend class="opt-label">' + esc(legend);
   if(opts.tag){ h += ' <span class="tag">' + esc(opts.tag) + '</span>'; }
   h += '</legend><div class="opts' + cls + '">';
-  for(var i=0;i<items.length;i++){
+  for(var i=0;i<list.length;i++){
     var id = key + "_" + i;
     h += '<label class="opt" for="' + id + '"><input type="' + type + '" name="' + key + '" id="' + id + '">' +
-         '<span class="opt-txt">' + esc(items[i]) + '</span></label>';
+         '<span class="opt-txt">' + esc(list[i]) + '</span></label>';
   }
-  h += '</div>';
-  if(opts.elseField){
-    h += '<div class="opt-else"><label class="hint" for="' + key + '_txt" style="margin:0">' +
-         esc(opts.elseField) + '</label><input type="text" id="' + key + '_txt"></div>';
-  }
-  return h + '</fieldset>';
+  return h + '</div></fieldset>';
 }
 function checks(key, legend, items, opts){ return group("checkbox", key, legend, items, opts); }
 function radios(key, legend, items, opts){ return group("radio", key, legend, items, opts); }
@@ -492,7 +447,7 @@ function put(id, html){ var el = document.getElementById(id); if(el){ el.innerHT
 put("g_where", checks("where", "Where I notice difficulties",
   ["Work","Education","Home","Relationships","Parenting","Finances","Driving",
    "Health and appointments","Everyday organisation","Sleep and routines"],
-  {tag: MULTI, elseField: "Somewhere else:"}));
+  {tag: MULTI, elseItem: "Somewhere else not listed"}));
 
 put("g_howfar", radios("howfar", "How far back do I remember similar patterns?",
   ["Childhood","Teenage years","Early adulthood","Only more recently",
@@ -505,20 +460,20 @@ put("g_prompted", checks("prompted", "What prompted me to look into this now?",
    "Somebody close to me was diagnosed","I came across information that felt familiar",
    "Somebody suggested ADHD to me","A period of stress or change made things more noticeable",
    "I am not sure"],
-  {tag: MULTI, cls: "wide", elseField: "Something else:"}));
+  {tag: MULTI, cls: "wide", elseItem: "Something else not listed"}));
 
 put("g_strat", checks("strat", "Things I rely on",
   ["Alarms and reminders","More than one calendar","Lists","Keeping things visible",
    "Asking other people to remind me","Over-preparing","Checking repeatedly","Arriving very early",
    "Relying on urgency or deadlines","Working late to catch up","Avoiding certain tasks",
    "Choosing environments that suit me","Help from a partner, parent or colleague"],
-  {tag: MULTI, elseField: "Something else:"}));
+  {tag: MULTI, elseItem: "Something else not listed"}));
 
 put("g_stratgone", checks("stratgone", "What happens when my usual systems or support are not available?",
   ["Things become noticeably harder","I miss or forget more","I become stressed or overwhelmed",
    "I rely more heavily on urgency","I ask somebody else for help",
    "It does not make much difference","Unsure"],
-  {tag: MULTI, cls: "wide", elseField: "Something else:"}));
+  {tag: MULTI, cls: "wide", elseItem: "Something else not listed"}));
 
 put("g_norecall", checks("norecall", "Memory of earlier life",
   ["There are significant parts of childhood or adolescence I genuinely do not remember"],
@@ -533,7 +488,7 @@ put("g_contrib", checks("contrib", "Things that may be worth mentioning",
    "Menopause or hormonal changes","Physical illness","Medication","Alcohol or other substances",
    "Learning difficulties","Autism or other neurodevelopmental differences","Major life changes",
    "Caring responsibilities"],
-  {tag: MULTI, elseField: "Something else:"}));
+  {tag: MULTI, elseItem: "Something else not listed"}));
 
 var YNU = ["Yes","No","Unsure"];
 put("g_notfit",
@@ -546,7 +501,7 @@ put("g_help", checks("help", "Things I would like help with",
   ["Attention and concentration","Organisation","Starting or completing tasks","Impulsivity",
    "Restlessness","Emotional regulation","Work","Study","Relationships","Sleep and routines",
    "Medication options","Workplace or educational adjustments","Understanding myself better"],
-  {tag: MULTI, elseField: "Something else:"}));
+  {tag: MULTI, elseItem: "Something else not listed"}));
 
 put("g_next", checks("next", "What I think I will do next",
   ["Speak to my GP","Find out about my local NHS ADHD pathway","Explore Right to Choose",
@@ -567,7 +522,7 @@ function exampleBlock(n){
   h += '<div class="field"><label for="ex' + n + '_what">What happened?</label><textarea id="ex' + n + '_what" class="md"></textarea></div>';
   h += radios("ex" + n + "_where", "Where did it happen?", EX_WHERE, {tag: ONE});
   h += radios("ex" + n + "_fam", "How familiar is this pattern?", EX_FAMILIAR, {tag: ONE});
-  h += checks("ex" + n + "_rel", "What seemed relevant at the time?", EX_RELEVANT, {tag: MULTI, elseField: "Something else:"});
+  h += checks("ex" + n + "_rel", "What seemed relevant at the time?", EX_RELEVANT, {tag: MULTI, elseItem: "Something else not listed"});
   h += '<div class="field"><label for="ex' + n + '_result">What happened as a result?</label><textarea id="ex' + n + '_result" class="md"></textarea></div>';
   h += '<div class="field"><label for="ex' + n + '_cope">Anything I did to cope, recover or work around it<span class="hint">Optional.</span></label><textarea id="ex' + n + '_cope" class="sm"></textarea></div>';
   return h + '</div>';
@@ -658,15 +613,18 @@ for(var a=0;a<AREAS.length;a++){
   var aName = AREAS[a][0], prompts = AREAS[a][1], k = "ar" + a;
   areaHtml += '<div class="block"><div class="block-head"><span class="block-title">' + esc(aName) + '</span></div>';
   if(!prompts){
-    areaHtml += '<div class="field"><label for="' + k + '_desc">What is it?</label><input type="text" id="' + k + '_desc"></div>';
+    areaHtml += checks(k + "_flag", "Is there something else?",
+      ["There is something important that isn't covered above"],
+      {tag: "Tick if this applies", cls: "wide"});
+    areaHtml += '<p class="quiet">You can explain it in section 12, if you want to.</p></div>';
+    continue;
   }
   areaHtml += radios(k + "_rel", "How relevant does this feel to me?", AREA_REL, {tag: ONE});
   if(prompts){
-    areaHtml += checks(k + "_what", "What tends to happen?", prompts, {tag: MULTI, cls: "wide", elseField: "Something else:"});
+    areaHtml += checks(k + "_what", "What tends to happen?", prompts, {tag: MULTI, cls: "wide", elseItem: "Something else not listed"});
   }
   areaHtml += radios(k + "_back", "How far back do I remember something like this?", AREA_BACK, {tag: ONE});
   areaHtml += checks(k + "_eff", "What effect does it usually have?", AREA_EFFECT, {tag: MULTI});
-  areaHtml += '<div class="field"><label for="' + k + '_ex">An example, if one comes to mind<span class="hint">Optional.</span></label><textarea id="' + k + '_ex" class="sm"></textarea></div>';
   areaHtml += '</div>';
 }
 put("areaWrap", areaHtml);
@@ -699,8 +657,7 @@ var backHtml = "";
 for(var b=0;b<STAGES.length;b++){
   var st = STAGES[b];
   backHtml += '<div class="block"><div class="block-head"><span class="block-title">' + esc(st[0]) + '</span></div>';
-  backHtml += checks(st[1], "Things I remember", st[2], {tag: MULTI, cls: "wide", elseField: "Something else:"});
-  backHtml += '<div class="field"><label for="' + st[1] + '_note">Anything specific I remember<span class="hint">Optional.</span></label><textarea id="' + st[1] + '_note" class="sm"></textarea></div>';
+  backHtml += checks(st[1], "Things I remember", st[2], {tag: MULTI, cls: "wide", elseItem: "Something else not listed"});
   backHtml += '</div>';
 }
 put("backWrap", backHtml);
