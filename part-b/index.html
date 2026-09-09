@@ -3,43 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A free worksheet for preparing for an ADHD assessment: what to have ready, ask, take and record afterwards. Nothing you enter is sent to Queuend.">
 <title>ADHD Assessment Checklist, Part B &mdash; Queuend</title>
 <style>
 :root{
-  --ink:#16212C;
-  --ink-soft:#3E4A56;
-  --muted:#5E6A75;
-  --teal:#04575A;
-  --teal-mid:#0B7B77;
-  --ochre:#8A5A14;
-  --tint-cool:#EDF4F3;
-  --tint-warm:#FBF6EC;
-  --rule:#9E998E;
-  --rule-fine:#C2BDB2;
-  --line:#A9A398;
+  --ink:#16212C; --ink-soft:#3E4A56; --muted:#5E6A75;
+  --teal:#04575A; --teal-mid:#0B7B77; --ochre:#8A5A14;
+  --tint-cool:#EDF4F3; --tint-warm:#FBF6EC;
+  --rule:#9E998E; --rule-fine:#C2BDB2; --line:#A9A398;
+  --alert:#8E2A2A; --alert-tint:#FDF2F0;
   --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
   --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden}
-body{
-  font-family:var(--sans);
-  font-size:10.5pt;
-  line-height:1.45;
-  color:var(--ink);
-  background:#EDEBE6;
-  padding:28px 16px 60px;
-}
-.doc{
-  max-width:210mm;
-  margin:0 auto;
-  background:#FFFFFF;
-  padding:22mm 19mm 18mm;
-  box-shadow:0 1px 3px rgba(22,33,44,.10),0 8px 28px rgba(22,33,44,.10);
-}
+body{font-family:var(--sans);font-size:10.5pt;line-height:1.45;color:var(--ink);
+  background:#EDEBE6;padding:28px 16px 60px}
+.doc{max-width:210mm;margin:0 auto;background:#FFFFFF;padding:22mm 19mm 18mm;
+  box-shadow:0 1px 3px rgba(22,33,44,.10),0 8px 28px rgba(22,33,44,.10)}
 
-/* ---------- masthead ---------- */
 .mast{display:flex;align-items:flex-start;gap:15px;padding-bottom:13px;border-bottom:2.5px solid var(--teal)}
 .mark{flex:0 0 auto;margin-top:3px}
 .mast-id{flex:1}
@@ -49,101 +32,101 @@ h1{font-family:var(--serif);font-size:23pt;line-height:1.08;font-weight:400;lett
 .standfirst{margin-top:13px;font-size:10pt;color:var(--ink-soft);max-width:50em;line-height:1.55}
 .standfirst strong{color:var(--ink);font-weight:600}
 
-.toolbar{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;padding:13px 0 2px;border-top:1px solid var(--rule-fine)}
-button{
-  font-family:var(--sans);font-size:9.5pt;font-weight:600;
-  padding:9px 16px;border-radius:3px;cursor:pointer;
-  border:1.25px solid var(--teal);background:var(--teal);color:#fff;
-  transition:background-color .12s ease,color .12s ease;
-}
-button.ghost{background:#fff;color:var(--teal)}
+.toolbar{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;padding:13px 0 2px;border-top:1px solid var(--rule-fine)}
+button{font-family:var(--sans);font-size:9.5pt;font-weight:600;padding:10px 15px;border-radius:3px;
+  cursor:pointer;border:1.25px solid var(--teal);background:var(--teal);color:#fff;min-height:44px;
+  transition:background-color .12s ease,color .12s ease}
+button.ghost{background:#fff;color:var(--teal);border-color:var(--rule-fine)}
 button:hover{background:var(--teal-mid);border-color:var(--teal-mid);color:#fff}
-button:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
+  outline:3px solid var(--ochre);outline-offset:2px}
+.privacy{font-size:8.5pt;color:var(--muted);margin-top:10px;line-height:1.55;max-width:50em}
+.privacy p{margin-bottom:6px}.privacy p:last-child{margin-bottom:0}
 
-/* ---------- sections ---------- */
+.alert{margin:16px 0 0;padding:13px 16px;border:1.5px solid var(--alert);border-left:4px solid var(--alert);
+  background:var(--alert-tint);font-size:9pt;line-height:1.6;color:var(--ink)}
+.alert .note-lbl{color:var(--alert)}
+.alert p{margin-bottom:7px}.alert p:last-child{margin-bottom:0}
+.alert strong{color:var(--alert)}
+
+.resume{margin:16px 0 0;padding:13px 16px;background:var(--tint-warm);border-left:3px solid var(--ochre)}
+.resume p{font-size:9.5pt;font-weight:600;color:var(--ink);margin:0 0 10px}
+.resume-btns{display:flex;gap:8px;flex-wrap:wrap}
+
 section{margin-top:30px}
 .sec-head{display:flex;align-items:center;gap:11px;border-bottom:1.75px solid var(--ink);padding-bottom:6px;margin-bottom:13px}
-.sec-no{
-  font-family:var(--mono);font-size:8.5pt;font-weight:600;color:var(--teal);
-  border:1.25px solid var(--teal);border-radius:2px;padding:2px 5px;line-height:1;
-}
+.sec-no{font-family:var(--mono);font-size:8.5pt;font-weight:600;color:var(--teal);
+  border:1.25px solid var(--teal);border-radius:2px;padding:2px 5px;line-height:1}
 h2{font-family:var(--serif);font-size:14.5pt;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
 .sec-note{font-size:9pt;color:var(--muted);margin:-4px 0 14px;max-width:48em;line-height:1.55}
 
-h3{
-  font-size:8.5pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);
-  margin:20px 0 9px;padding-bottom:4px;border-bottom:1px solid var(--rule-fine);
-}
+h3{font-size:8.5pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);
+  margin:20px 0 9px;padding-bottom:4px;border-bottom:1px solid var(--rule-fine)}
 .block:first-child h3{margin-top:0}
-h3 .plain{text-transform:none;letter-spacing:0;font-weight:400;font-style:italic;color:var(--muted);font-size:8pt}
 
-/* ---------- fields ---------- */
-.f{margin-bottom:10px}
-.lbl{display:block;font-size:9.5pt;color:var(--ink);margin-bottom:4px;line-height:1.4}
-.hint{font-size:8.5pt;color:var(--muted);font-style:italic}
-.rule{border-bottom:1px solid var(--line);height:1.55em}
-.rule.tall{height:1.85em}
-.rows .rule{margin-bottom:3px}
+.f{margin-bottom:12px}
+.lbl{display:block;font-size:9.5pt;color:var(--ink);margin-bottom:5px;line-height:1.4;font-weight:600}
+.hint{font-size:8.5pt;color:var(--muted);font-style:italic;font-weight:400}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
-.inline-rule{display:inline-block;border-bottom:1px solid var(--line);min-width:80px;height:1.15em;vertical-align:-2px}
-.inline-rule.w-wide{min-width:170px}
 
-/* ---------- checkboxes ---------- */
-.opts{font-size:9.5pt;line-height:2}
-.cb{display:inline-block;width:11px;height:11px;border:1.25px solid var(--ink-soft);border-radius:1px;margin-right:6px;vertical-align:-1px}
-.opt{white-space:nowrap;margin-right:16px;display:inline-block}
-.q{margin-bottom:1px}
-.q strong{font-weight:600}
+input[type=text],textarea{width:100%;font-family:var(--sans);font-size:10pt;line-height:1.7;
+  color:var(--ink);background:#fff;border:1px solid var(--rule-fine);border-radius:2px;padding:8px 10px}
+input[type=text]{min-height:42px}
+textarea{resize:vertical;overflow:hidden;display:block}
+textarea.sm{min-height:62px}textarea.md{min-height:92px}textarea.lg{min-height:150px}
+input[type=text]:hover,textarea:hover{border-color:var(--line)}
+.print-mirror{display:none;font-family:var(--sans);font-size:10pt;line-height:1.7;
+  white-space:pre-wrap;overflow-wrap:break-word;border-bottom:1px solid var(--line);padding:2px 0 6px}
 
-/* ---------- three note tiers ---------- */
-.note,.flag,.key{font-size:8.5pt;line-height:1.55;margin-top:10px;padding:9px 12px}
+fieldset{border:0;margin:12px 0;padding:0;min-width:0}
+legend{padding:0;font-size:9.5pt;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.4}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 18px}
+.opts.wide{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
+.opt{display:flex;align-items:center;gap:9px;font-size:9.5pt;line-height:1.4;padding:7px 0;
+  cursor:pointer;min-height:42px}
+.opt input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:16px;height:16px;
+  border:1.4px solid var(--ink-soft);background:#fff;cursor:pointer;position:relative;margin:0}
+.opt input[type=checkbox]{border-radius:2px}
+.opt input[type=radio]{border-radius:50%}
+.opt input:checked{background:var(--teal);border-color:var(--teal)}
+.opt input[type=checkbox]:checked::after{content:"";position:absolute;left:4.5px;top:1px;width:5px;height:9px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.opt input[type=radio]:checked::after{content:"";position:absolute;left:4px;top:4px;width:6px;height:6px;
+  border-radius:50%;background:#fff}
+.opt input:checked ~ .opt-txt{font-weight:600;color:var(--teal)}
+
+.note,.flag,.key{font-size:8.5pt;line-height:1.55;margin-top:12px;padding:10px 13px}
 .note{background:var(--tint-cool);border-left:2.5px solid var(--teal);color:var(--ink-soft)}
 .flag{background:var(--tint-warm);border-left:2.5px solid var(--ochre);color:var(--ink-soft)}
 .key{background:#fff;border:1.25px solid var(--teal);border-left:3.5px solid var(--teal);color:var(--ink)}
-.note-lbl{
-  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;
-}
+.note-lbl{display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px}
 .note .note-lbl{color:var(--teal)}
 .flag .note-lbl{color:var(--ochre)}
 .key .note-lbl{color:var(--teal)}
 .key strong{font-weight:600}
+.key a,.note a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
 
-/* ---------- comparison table ---------- */
 .table-wrap{border-top:2.5px solid var(--teal);border-bottom:1.75px solid var(--ink);padding-top:2px;margin-top:4px}
 table{width:100%;border-collapse:collapse;font-size:9pt}
-th{
-  font-size:7.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  text-align:left;color:var(--teal);padding:7px 6px 7px;border-bottom:1.25px solid var(--ink);vertical-align:bottom;
-}
-td{border-bottom:1px solid var(--rule-fine);height:3.3em;padding:0 6px}
-.col-sub{display:block;font-size:6.8pt;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-style:italic;margin-top:1px}
-.sheet table{border-top:1.5px solid var(--teal)}
-.sheet th{padding-top:6px;padding-bottom:5px}
+th{font-size:7.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:left;
+  color:var(--teal);padding:7px 6px;border-bottom:1.25px solid var(--ink);vertical-align:bottom}
+td{border-bottom:1px solid var(--rule-fine);padding:3px 4px}
+td input[type=text]{border:0;min-height:34px;padding:4px;border-radius:0}
+td input[type=text]:hover{border:0;background:var(--tint-cool)}
 
-/* ---------- provider sheet ---------- */
-.sheet{border:1.25px solid var(--rule);border-top:4px solid var(--teal);padding:0 20px 20px;margin-top:22px;background:#fff}
-.sheet-head{
-  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
-  border-bottom:1.75px solid var(--ink);padding:14px 0 8px;margin-bottom:11px;
-}
-.sheet-title{font-family:var(--serif);font-size:14pt;letter-spacing:-.01em}
-.sheet-title .st-sub{display:block;font-family:var(--sans);font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:2px}
-.sheet-no{
-  font-family:var(--mono);font-size:9pt;font-weight:600;color:#fff;background:var(--teal);
-  padding:4px 9px;border-radius:2px;white-space:nowrap;
-}
-.sheet-lead{font-size:9pt;color:var(--muted);margin-bottom:16px;font-style:italic;line-height:1.55}
-
-/* ---------- costs ---------- */
-.cost-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;font-size:9.5pt}
-.cost-row .cl{flex:1}
-.cost-row .cv{font-family:var(--mono);border-bottom:1px solid var(--line);min-width:96px;height:1.25em}
-.cost-total{border-top:1.5px solid var(--ink);margin-top:8px;padding-top:7px;font-weight:700}
-.cost-flag{border-top:2px solid var(--ochre);margin-top:10px;padding-top:8px;font-weight:700;color:var(--ochre)}
-.cost-flag .cv{border-bottom-color:var(--ochre)}
+.tail-notes{margin-top:15px;padding-top:8px;border-top:1px solid var(--rule-fine)}
+.tn-lbl{display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:6px}
 
 footer{margin-top:34px;padding-top:13px;border-top:1.75px solid var(--ink);font-size:8.5pt;color:var(--muted);line-height:1.55}
 footer strong{color:var(--ink)}
+
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+#printClone{display:none}
+body.blank-print > .doc:not(#printClone){display:none}
+body.blank-print > #printClone{display:block}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
@@ -151,84 +134,41 @@ footer strong{color:var(--ink)}
   body{padding:0;background:#fff}
   .doc{padding:14mm 6mm;box-shadow:none;max-width:none}
   .two{grid-template-columns:1fr}
+  .opts,.opts.wide,.opts.row{grid-template-columns:1fr}
+  .toolbar button{flex:1 1 100%}
   table{font-size:8pt}
   th{font-size:7pt}
-  .sheet{padding:0 12px 14px}
 }
 
-/* ---------- tail notes (turn part-page gaps into usable space) ---------- */
-.tail-notes{margin-top:15px;padding-top:6px;border-top:1px solid var(--rule-fine)}
-.tn-lbl{
-  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--teal);margin-bottom:6px;
-}
-.tail-notes .rule{height:1.85em}
-
-/* ---------- print: A4 pagination ---------- */
 @page{size:A4;margin:15mm 14mm 16mm}
-@media print {
-  html, body {
-    overflow: visible !important;
-    height: auto !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-  body {
-    background: #fff;
-    padding: 0;
-    font-size: 10pt;
-  }
-  .doc {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    background: #fff;
-  }
-  .toolbar,
-  .screen-only {
-    display: none !important;
-  }
-  body.print-core .full-only {
-    display: none !important;
-  }
-  p, .lbl, .opts {
-    orphans: 3;
-    widows: 3;
-  }
-  section {
-    margin-top: 22px;
-    break-inside: auto;
-  }
-  .page-break {
-    break-before: page;
-    page-break-before: always;
-  }
-  h1, h2, h3, .sec-head, .sheet-head {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  .f, .note, .flag, .key, .cost-row, tr, .two, .opts,
-  .block, .table-wrap, .cost-group, .tail-notes {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .sheet {
-    break-inside: auto;
-  }
-  thead {
-    display: table-header-group;
-  }
+@media print{
+  html,body{overflow:visible!important;height:auto!important;
+    -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background:#fff;padding:0;font-size:10pt}
+  .doc{max-width:none;margin:0;padding:0;box-shadow:none;background:#fff}
+  .toolbar,.screen-only,.no-print{display:none!important}
+  p,.lbl,legend,.opt{orphans:3;widows:3}
+  section{margin-top:22px;break-inside:auto}
+  .page-break{break-before:page;page-break-before:always}
+  h1,h2,h3,.sec-head,.lbl,legend,.tn-lbl{break-after:avoid;page-break-after:avoid}
+  .opt,.note,.flag,.key,tr,.tail-notes,.table-wrap{break-inside:avoid;page-break-inside:avoid}
+  .f,.block,fieldset,.two{break-inside:auto;page-break-inside:auto}
+  thead{display:table-header-group}
+  input[type=text],textarea{border:0;border-bottom:1px solid var(--line);border-radius:0;
+    padding:2px 0;background:transparent;
+    background-image:repeating-linear-gradient(transparent,transparent 24px,var(--rule-fine) 24px,var(--rule-fine) 25px);
+    background-position:0 2px}
+  td input[type=text]{border-bottom:0;background-image:none;min-height:2.8em}
+  textarea.sm{min-height:74px}textarea.md{min-height:98px}textarea.lg{min-height:156px}
+  textarea.has-value{display:none}
+  .print-mirror.filled{display:block}
+  .opt{padding:2px 0;min-height:0}
+  .opt input{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
-
-/* ---------- Part B additions ---------- */
-.standfirst + .key{margin-top:14px}
-.note a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
-.note a:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
 </style>
 </head>
 <body>
-<div class="doc">
+<div class="doc" id="doc">
 
   <header class="mast">
     <svg class="mark" width="32" height="32" viewBox="0 0 240 240" aria-hidden="true">
@@ -244,15 +184,49 @@ footer strong{color:var(--ink)}
 
   <p class="standfirst">
     <strong>Use this once you are booked or in the queue.</strong>
-    A worksheet for gathering what you want to remember before an ADHD assessment, and for recording
-    what you are told afterwards. It is not a test, a symptom questionnaire, or a way of working out
-    what the &ldquo;right&rdquo; answers are!
+    A worksheet for organising what you need to have ready, ask, take and remember, and for recording
+    what you are told afterwards. Fill it in here, save your progress, and come back to it as often as
+    you need. It is not a test, a symptom questionnaire, or a way of working out what the
+    &ldquo;right&rdquo; answers are!
   </p>
+
+  <div class="alert">
+    <span class="note-lbl">Your answers stay private</span>
+    <p><strong>Queuend does not receive or see anything you enter in this worksheet.</strong> Your answers are not submitted to Queuend or stored on our servers.</p>
+    <p>If you save your progress, it is stored in this browser on this device so you can return to it later. Queuend does not upload that saved copy. If you download a backup, it is saved wherever your device normally puts downloaded files; that location may be synchronised to a service such as Google Drive, OneDrive or iCloud.</p>
+    <p>This is your personal record. You decide whether to keep it, delete it or share it with anyone.</p>
+  </div>
+
+  <div class="toolbar screen-only">
+    <button id="btnSaveLocal" type="button">Save my progress in this browser</button>
+    <button id="btnPrint" type="button">Print or save as PDF</button>
+    <button class="ghost" id="btnBlank" type="button">Print a blank copy</button>
+    <button class="ghost" id="btnSave" type="button">Download a backup copy</button>
+    <button class="ghost" id="btnLoad" type="button">Open a backup copy</button>
+    <button class="ghost" id="btnClear" type="button">Clear my answers</button>
+    <input type="file" id="fileIn" accept="application/json,.json" hidden>
+  </div>
+  <div class="privacy screen-only">
+    <p>Unless you choose to save your progress, your answers exist only on the page while it is open, and closing or reloading will lose them. Saved progress can be reopened by anyone using the same browser profile, and clearing browser data may remove it.</p>
+    <p>A backup copy is an ordinary file downloaded to your device, and it is not encrypted. If you share a device, keep it somewhere private or delete it when you no longer need it.</p>
+  </div>
+
+  <div class="resume screen-only" id="resumeBox" hidden>
+    <p>You have saved progress in this browser.</p>
+    <div class="resume-btns">
+      <button id="btnRestore" type="button">Pick up where I left off</button>
+      <button class="ghost" id="btnStartAgain" type="button">Start again</button>
+    </div>
+  </div>
+
+  <noscript>
+    <p style="font-size:9pt;background:#FBF6EC;padding:13px 16px;border-left:3px solid #8A5A14;margin:16px 0">This checklist needs JavaScript to save your progress or to use the print buttons. Please enable JavaScript, or use your browser&rsquo;s own print command.</p>
+  </noscript>
 
   <div class="key">
     <span class="note-lbl">How to use this</span>
     <strong>A memory aid, not a script.</strong>
-    Bring it with you and use whichever parts are useful. If you do not know or cannot remember
+    Use whichever parts are useful and leave the rest. If you do not know or cannot remember
     something, it is fine to say so during the assessment.
   </div>
 
@@ -261,221 +235,120 @@ footer strong{color:var(--ink)}
     Still choosing a route or provider? Use <a href="../">Part A &mdash; Choosing your route and provider</a> instead.
   </div>
 
-  <div class="toolbar screen-only">
-    <button id="printBtn">Print this checklist</button>
-  </div>
-
   <!-- 01 -->
   <section>
     <div class="sec-head"><span class="sec-no">01</span><h2>My appointment</h2></div>
     <div class="block">
       <div class="two">
-        <div class="f"><span class="lbl">Date</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Time</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Clinician or service</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Expected duration</span><div class="rule"></div></div>
+        <div class="f"><label class="lbl" for="a_date">Date</label><input type="text" id="a_date"></div>
+        <div class="f"><label class="lbl" for="a_time">Time</label><input type="text" id="a_time"></div>
+        <div class="f"><label class="lbl" for="a_clin">Clinician or service</label><input type="text" id="a_clin"></div>
+        <div class="f"><label class="lbl" for="a_dur">Expected duration</label><input type="text" id="a_dur"></div>
       </div>
-      <div class="f"><span class="lbl">Location, or video link</span><div class="rule"></div></div>
+      <div class="f"><label class="lbl" for="a_loc">Location, or video link</label><input type="text" id="a_loc"></div>
       <div class="two">
-        <div class="f"><span class="lbl">Anything to complete or send beforehand</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Deadline for returning it</span><div class="rule"></div></div>
+        <div class="f"><label class="lbl" for="a_send">Anything to complete or send beforehand</label><input type="text" id="a_send"></div>
+        <div class="f"><label class="lbl" for="a_deadline">Deadline for returning it</label><input type="text" id="a_deadline"></div>
       </div>
-      <div class="opts" style="margin-top:8px">
-        <div class="q"><strong>Before the day:</strong></div>
-        <span class="opt"><span class="cb"></span>Appointment confirmed</span>
-        <span class="opt"><span class="cb"></span>Link or address saved</span>
-        <span class="opt"><span class="cb"></span>Forms returned</span><br>
-        <span class="opt"><span class="cb"></span>Identification or payment details, if requested</span>
-        <span class="opt"><span class="cb"></span>Travel or technology checked</span>
-      </div>
+      <fieldset>
+        <legend>Before the day</legend>
+        <div class="opts">
+          <label class="opt" for="a_c1"><input type="checkbox" id="a_c1"><span class="opt-txt">Appointment confirmed</span></label>
+          <label class="opt" for="a_c2"><input type="checkbox" id="a_c2"><span class="opt-txt">Link or address saved</span></label>
+          <label class="opt" for="a_c3"><input type="checkbox" id="a_c3"><span class="opt-txt">Forms returned</span></label>
+          <label class="opt" for="a_c4"><input type="checkbox" id="a_c4"><span class="opt-txt">ID or payment details, if requested</span></label>
+          <label class="opt" for="a_c5"><input type="checkbox" id="a_c5"><span class="opt-txt">Travel or technology checked</span></label>
+        </div>
+      </fieldset>
     </div>
 
     <div class="tail-notes">
-      <span class="tn-lbl">Notes</span>
-      <div class="rule"></div><div class="rule"></div>
+      <label class="tn-lbl" for="a_notes">Optional notes</label>
+      <textarea id="a_notes" class="sm"></textarea>
     </div>
   </section>
 
- <!-- 02 -->
-<section>
-  <div class="sec-head"><span class="sec-no">02</span><h2>Why I sought an assessment</h2></div>
-  <div class="block">
-    <div class="f">
-      <span class="lbl">What made me seek an assessment now?</span>
-      <div class="rows">
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-      </div>
-    </div>
-
-    <div class="f">
-      <span class="lbl">Which difficulties or unanswered questions matter most to me?</span>
-      <div class="rows">
-        <div class="rule"></div>
-        <div class="rule"></div>
-        <div class="rule"></div>
-      </div>
-    </div>
-
-    <div class="opts">
-      <div class="q"><strong>Where I notice the impact most:</strong></div>
-      <span class="opt"><span class="cb"></span>Work</span>
-      <span class="opt"><span class="cb"></span>Study</span>
-      <span class="opt"><span class="cb"></span>Home</span>
-      <span class="opt"><span class="cb"></span>Relationships</span>
-      <span class="opt"><span class="cb"></span>Everyday tasks</span>
-    </div>
-
-    <div class="opts" style="margin-top:6px">
-      <div class="q"><strong>Things that have been difficult:</strong></div>
-      <span class="opt"><span class="cb"></span>Organisation</span>
-      <span class="opt"><span class="cb"></span>Timekeeping</span>
-      <span class="opt"><span class="cb"></span>Concentration</span>
-      <span class="opt"><span class="cb"></span>Impulsivity</span><br>
-      <span class="opt"><span class="cb"></span>Restlessness</span>
-      <span class="opt"><span class="cb"></span>Other</span>
-    </div>
-
-    <div class="note">
-      <span class="note-lbl">Why this matters</span>
-      Specific real-life examples are usually more useful to an assessor than trying to describe
-      yourself in diagnostic language.
-    </div>
-  </div>
-</section>
-
- <!-- 03 -->
-<section>
-  <div class="sec-head"><span class="sec-no">03</span><h2>Examples I do not want to forget</h2></div>
-  <p class="sec-note">Concrete moments are easier to describe under pressure than general impressions. A date, a place, or what actually happened is enough.</p>
-
   <div class="key">
-    <span class="note-lbl">Use what fits</span>
-    You do not need an example for every heading. Use the areas that actually describe your
-    experience and leave the rest blank.
+    <span class="note-lbl">Already completed My ADHD Reflection Record?</span>
+    You do not need to write the same information out again. Keep it with you, or have it available
+    for your assessment. Where something below is already covered there, simply tick
+    <strong>Already covered in my Reflection Record</strong> and move on.
+    <br><br>
+    Haven&rsquo;t used it? <a href="https://queuend.github.io/queuend-assessment-checklist/reflection-record/"
+    target="_blank" rel="noopener">My ADHD Reflection Record</a> is a separate free worksheet for
+    organising what you have noticed about yourself. It opens in a new tab, so you will not lose your
+    place here. It is optional, and the next three sections work without it.
   </div>
 
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Attention and concentration</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Starting tasks</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Finishing tasks</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Organisation</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Losing or forgetting things</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Time and lateness</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Impulsive decisions</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Restlessness</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Work or education</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Household life</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Relationships</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Driving, money or risk, if relevant</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Routines</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Emotional regulation, if relevant</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-    <div class="f">
-      <span class="lbl">Strategies I use to cope or compensate</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-
-    <div class="note">
-      <span class="note-lbl">Worth mentioning</span>
-      What you do to work around a difficulty is often as informative as the difficulty itself,
-      and it is easy to forget to mention.
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Something important that does not fit these headings</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-  </div>
-</section>
-
-  <!-- 04 -->
+  <!-- 02 -->
   <section>
-    <div class="sec-head"><span class="sec-no">04</span><h2>Childhood and earlier life</h2></div>
-    <p class="sec-note">Assessments usually explore whether relevant patterns were present earlier in life. Write down whatever you genuinely remember.</p>
+    <div class="sec-head"><span class="sec-no">02</span><h2>What I want to remember about my experience</h2></div>
+    <p class="sec-note">If you have completed the Reflection Record, this section should take a moment. It is short by design.</p>
     <div class="block">
-      <h3>What I remember about school</h3>
-      <div class="f"><span class="lbl">Concentration or daydreaming</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Unfinished work</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Organisation</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-    </div>
-    <div class="block">
-      <div class="f"><span class="lbl">Lateness or forgetting things</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Behaviour or restlessness</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Friendships</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-    </div>
-    <div class="block">
-      <div class="f"><span class="lbl">Learning</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Routines</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Comments adults repeatedly made about me</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Anything else I remember</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-    </div>
-    <div class="block">
-      <h3>Information I may have available</h3>
-      <div class="opts">
-        <span class="opt"><span class="cb"></span>School reports</span>
-        <span class="opt"><span class="cb"></span>Old records</span>
-        <span class="opt"><span class="cb"></span>Family recollections</span><br>
-        <span class="opt"><span class="cb"></span>Previous assessments</span>
-        <span class="opt"><span class="cb"></span>No documents available</span>
+      <fieldset>
+        <legend>Which applies to me?</legend>
+        <div class="opts wide">
+          <label class="opt" for="b_r1"><input type="radio" name="b_state" id="b_r1"><span class="opt-txt">Already covered in my Reflection Record</span></label>
+          <label class="opt" for="b_r2"><input type="radio" name="b_state" id="b_r2"><span class="opt-txt">I completed the Reflection Record, but something has changed since then</span></label>
+          <label class="opt" for="b_r3"><input type="radio" name="b_state" id="b_r3"><span class="opt-txt">I have not used the Reflection Record</span></label>
+        </div>
+      </fieldset>
+
+      <div class="f">
+        <label class="lbl" for="b_forget">One or two things I particularly do not want to forget
+          <span class="hint">optional &mdash; use this only if they are not already in your Reflection Record</span></label>
+        <textarea id="b_forget" class="md"></textarea>
       </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">Someone who knew me when I was younger may be able to help <span class="hint">name, relationship, contact if relevant</span></span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+
+      <div class="f">
+        <label class="lbl" for="b_changed">Anything that has changed since I completed my Reflection Record
+          <span class="hint">optional</span></label>
+        <textarea id="b_changed" class="sm"></textarea>
+      </div>
+
+      <div class="note">
+        <span class="note-lbl">Why this matters</span>
+        Specific real-life examples are usually more useful to an assessor than trying to describe
+        yourself in diagnostic language. If you have not used the Reflection Record, a few concrete
+        moments written here &mdash; what happened, where, and what followed &mdash; will serve you
+        better than a general description.
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">03</span><h2>Earlier life and information I may have available</h2></div>
+    <p class="sec-note">Assessments usually explore whether relevant patterns were present earlier in life. This section is about what you can supply, not about setting your history down again.</p>
+    <div class="block">
+      <fieldset>
+        <legend>What I have</legend>
+        <div class="opts wide">
+          <label class="opt" for="c_c1"><input type="checkbox" id="c_c1"><span class="opt-txt">Earlier-life patterns already covered in my Reflection Record</span></label>
+          <label class="opt" for="c_c2"><input type="checkbox" id="c_c2"><span class="opt-txt">School reports</span></label>
+          <label class="opt" for="c_c3"><input type="checkbox" id="c_c3"><span class="opt-txt">Old records</span></label>
+          <label class="opt" for="c_c4"><input type="checkbox" id="c_c4"><span class="opt-txt">Family recollections</span></label>
+          <label class="opt" for="c_c5"><input type="checkbox" id="c_c5"><span class="opt-txt">Previous assessments</span></label>
+          <label class="opt" for="c_c6"><input type="checkbox" id="c_c6"><span class="opt-txt">No documents available</span></label>
+          <label class="opt" for="c_c7"><input type="checkbox" id="c_c7"><span class="opt-txt">I am not sure what the provider expects</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Has the provider specifically asked for childhood information or evidence?</legend>
+        <div class="opts row">
+          <label class="opt" for="c_ask1"><input type="radio" name="c_ask" id="c_ask1"><span class="opt-txt">Yes</span></label>
+          <label class="opt" for="c_ask2"><input type="radio" name="c_ask" id="c_ask2"><span class="opt-txt">No</span></label>
+          <label class="opt" for="c_ask3"><input type="radio" name="c_ask" id="c_ask3"><span class="opt-txt">Not sure</span></label>
+        </div>
+      </fieldset>
+
+      <div class="f">
+        <label class="lbl" for="c_who">Someone who knew me when I was younger may be able to help, if needed
+          <span class="hint">name, relationship, contact if relevant</span></label>
+        <textarea id="c_who" class="sm"></textarea>
+      </div>
+
       <div class="flag">
         <span class="note-lbl">Watch out</span>
         Not having old paperwork should not automatically prevent an assessment. ADHD assessment
@@ -486,155 +359,134 @@ footer strong{color:var(--ink)}
     </div>
   </section>
 
- <!-- 05 -->
-<section>
-  <div class="sec-head"><span class="sec-no">05</span><h2>Previous reports and relevant history</h2></div>
-  <p class="sec-note">A place to gather what already exists, so you are not trying to recall it in the room.</p>
-
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Previous diagnoses</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
-    </div>
-
-    <div class="f">
-      <span class="lbl">Mental-health history</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
-    </div>
-
-    <div class="f">
-      <span class="lbl">Previous psychological or psychiatric assessments <span class="hint">who, when</span></span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="two">
-      <div class="f"><span class="lbl">Educational psychology reports</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Occupational-health reports</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Learning difficulties</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Sleep difficulties</span><div class="rule"></div></div>
-    </div>
-
-    <div class="f">
-      <span class="lbl">Relevant medical history</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
-    </div>
-
-    <div class="f">
-      <span class="lbl">Alcohol, recreational drugs or other substances, if relevant</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
-    </div>
-
-    <div class="f">
-      <span class="lbl">Other conditions that may overlap with or affect attention</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="f">
-      <span class="lbl">Anything I think could be another explanation, or part of the picture</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
-    </div>
-
-    <div class="note">
-      <span class="note-lbl">Why this matters</span>
-      A good assessment considers other possible explanations and anything that may occur alongside
-      ADHD. Raising something here does not commit you to it, and it is better said than withheld.
-    </div>
-  </div>
-</section>
-
-  <!-- 06 -->
+  <!-- 04 -->
   <section>
-    <div class="sec-head"><span class="sec-no">06</span><h2>Medication and health information</h2></div>
+    <div class="sec-head"><span class="sec-no">04</span><h2>Previous reports and relevant history</h2></div>
+    <p class="sec-note">An inventory of what may be worth mentioning or bringing, so you are not trying to recall it in the room.</p>
+    <div class="block">
+      <fieldset>
+        <legend>Previous information I may need to mention or bring</legend>
+        <div class="opts wide">
+          <label class="opt" for="d_c1"><input type="checkbox" id="d_c1"><span class="opt-txt">Previous diagnosis or treatment</span></label>
+          <label class="opt" for="d_c2"><input type="checkbox" id="d_c2"><span class="opt-txt">Previous psychological or psychiatric assessment</span></label>
+          <label class="opt" for="d_c3"><input type="checkbox" id="d_c3"><span class="opt-txt">Educational psychology report</span></label>
+          <label class="opt" for="d_c4"><input type="checkbox" id="d_c4"><span class="opt-txt">Occupational-health report</span></label>
+          <label class="opt" for="d_c5"><input type="checkbox" id="d_c5"><span class="opt-txt">Learning difficulty</span></label>
+          <label class="opt" for="d_c6"><input type="checkbox" id="d_c6"><span class="opt-txt">Relevant medical condition</span></label>
+          <label class="opt" for="d_c7"><input type="checkbox" id="d_c7"><span class="opt-txt">Sleep difficulty</span></label>
+          <label class="opt" for="d_c8"><input type="checkbox" id="d_c8"><span class="opt-txt">Mental-health history</span></label>
+          <label class="opt" for="d_c9"><input type="checkbox" id="d_c9"><span class="opt-txt">Alcohol or substance information, if relevant</span></label>
+          <label class="opt" for="d_c10"><input type="checkbox" id="d_c10"><span class="opt-txt">Something else the provider has asked about</span></label>
+        </div>
+      </fieldset>
+
+      <div class="f">
+        <label class="lbl" for="d_details">Details I do not want to forget
+          <span class="hint">optional &mdash; dates, names of services, where a report is held</span></label>
+        <textarea id="d_details" class="md"></textarea>
+      </div>
+
+      <div class="note">
+        <span class="note-lbl">Why this matters</span>
+        Telling an assessor that something exists, and where, is more useful than trying to summarise
+        it from memory. Mentioning something does not commit you to it, and it is better said than withheld.
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">05</span><h2>Medication and health information</h2></div>
     <p class="sec-note">For organising what you already take, so you can answer accurately. Nothing here is medical advice.</p>
     <div class="block">
       <div class="table-wrap">
         <table>
+          <caption class="vh">Medicines I take</caption>
           <thead><tr>
             <th style="width:36%">Medicine</th>
             <th style="width:18%">Dose</th>
             <th style="width:46%">What I take it for</th>
           </tr></thead>
           <tbody>
-            <tr><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td></tr>
+            <tr><td><input type="text" id="e_m1n" aria-label="Medicine 1"></td><td><input type="text" id="e_m1d" aria-label="Dose 1"></td><td><input type="text" id="e_m1w" aria-label="What medicine 1 is for"></td></tr>
+            <tr><td><input type="text" id="e_m2n" aria-label="Medicine 2"></td><td><input type="text" id="e_m2d" aria-label="Dose 2"></td><td><input type="text" id="e_m2w" aria-label="What medicine 2 is for"></td></tr>
+            <tr><td><input type="text" id="e_m3n" aria-label="Medicine 3"></td><td><input type="text" id="e_m3d" aria-label="Dose 3"></td><td><input type="text" id="e_m3w" aria-label="What medicine 3 is for"></td></tr>
+            <tr><td><input type="text" id="e_m4n" aria-label="Medicine 4"></td><td><input type="text" id="e_m4d" aria-label="Dose 4"></td><td><input type="text" id="e_m4w" aria-label="What medicine 4 is for"></td></tr>
+            <tr><td><input type="text" id="e_m5n" aria-label="Medicine 5"></td><td><input type="text" id="e_m5d" aria-label="Dose 5"></td><td><input type="text" id="e_m5w" aria-label="What medicine 5 is for"></td></tr>
           </tbody>
         </table>
       </div>
-      <div class="f" style="margin-top:10px"><span class="lbl">Allergies or important medical information</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Anything the provider specifically asked me to bring</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f" style="margin-top:12px"><label class="lbl" for="e_allergies">Allergies or important medical information</label><textarea id="e_allergies" class="sm"></textarea></div>
+      <div class="f"><label class="lbl" for="e_bring">Anything the provider specifically asked me to bring</label><textarea id="e_bring" class="sm"></textarea></div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">06</span><h2>Someone who knows me well</h2></div>
+    <p class="sec-note">Some providers ask for information from a partner, parent, sibling, friend, or someone who knew you in childhood. Requirements vary.</p>
+    <div class="block">
+      <div class="two">
+        <div class="f"><label class="lbl" for="f_who">Who has the provider asked for?</label><input type="text" id="f_who"></div>
+        <div class="f"><label class="lbl" for="f_name">Name and relationship</label><input type="text" id="f_name"></div>
+      </div>
+      <div class="f"><label class="lbl" for="f_what">What are they being asked to complete?</label><input type="text" id="f_what"></div>
+      <fieldset>
+        <legend>Has it been returned?</legend>
+        <div class="opts row">
+          <label class="opt" for="f_ret1"><input type="radio" name="f_ret" id="f_ret1"><span class="opt-txt">Yes</span></label>
+          <label class="opt" for="f_ret2"><input type="radio" name="f_ret" id="f_ret2"><span class="opt-txt">Not yet</span></label>
+          <label class="opt" for="f_ret3"><input type="radio" name="f_ret" id="f_ret3"><span class="opt-txt">Not required</span></label>
+        </div>
+      </fieldset>
+      <div class="f"><label class="lbl" for="f_deadline">Deadline for returning it</label><input type="text" id="f_deadline"></div>
+      <div class="f"><label class="lbl" for="f_alt">If nobody suitable is available, what has the provider said they will accept instead?</label><textarea id="f_alt" class="sm"></textarea></div>
     </div>
   </section>
 
   <!-- 07 -->
   <section>
-    <div class="sec-head"><span class="sec-no">07</span><h2>Someone who knows me well</h2></div>
-    <p class="sec-note">Some providers ask for information from a partner, parent, sibling, friend, or someone who knew you in childhood. Requirements vary.</p>
+    <div class="sec-head"><span class="sec-no">07</span><h2>What would help me during the assessment</h2></div>
+    <p class="sec-note">Worth thinking about in advance, while you are not under pressure.</p>
     <div class="block">
-      <div class="two">
-        <div class="f"><span class="lbl">Who has the provider asked for?</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Name and relationship</span><div class="rule"></div></div>
-      </div>
-      <div class="f"><span class="lbl">What are they being asked to complete?</span><div class="rule"></div></div>
-      <div class="opts">
-        <div class="q">Has it been returned?
-          <span class="opt"><span class="cb"></span>Yes</span>
-          <span class="opt"><span class="cb"></span>Not yet</span>
-          <span class="opt"><span class="cb"></span>Not required</span>
-          &nbsp;Deadline: <span class="inline-rule w-wide"></span>
+      <fieldset>
+        <legend>Things that might help</legend>
+        <div class="opts wide">
+          <label class="opt" for="g_c1"><input type="checkbox" id="g_c1"><span class="opt-txt">Breaks</span></label>
+          <label class="opt" for="g_c2"><input type="checkbox" id="g_c2"><span class="opt-txt">Extra processing time</span></label>
+          <label class="opt" for="g_c3"><input type="checkbox" id="g_c3"><span class="opt-txt">Questions repeated or rephrased</span></label>
+          <label class="opt" for="g_c4"><input type="checkbox" id="g_c4"><span class="opt-txt">Written information</span></label>
+          <label class="opt" for="g_c5"><input type="checkbox" id="g_c5"><span class="opt-txt">Questions or information in advance</span></label>
+          <label class="opt" for="g_c6"><input type="checkbox" id="g_c6"><span class="opt-txt">Quieter or low-sensory setting</span></label>
+          <label class="opt" for="g_c7"><input type="checkbox" id="g_c7"><span class="opt-txt">Camera off, or camera considerations if remote</span></label>
+          <label class="opt" for="g_c8"><input type="checkbox" id="g_c8"><span class="opt-txt">Bring someone with me</span></label>
+          <label class="opt" for="g_c9"><input type="checkbox" id="g_c9"><span class="opt-txt">Something else</span></label>
         </div>
-      </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">If nobody suitable is available, what has the provider said they will accept instead?</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      </fieldset>
+      <fieldset>
+        <legend>Have I asked the provider?</legend>
+        <div class="opts row">
+          <label class="opt" for="g_ask1"><input type="radio" name="g_ask" id="g_ask1"><span class="opt-txt">Yes</span></label>
+          <label class="opt" for="g_ask2"><input type="radio" name="g_ask" id="g_ask2"><span class="opt-txt">Not yet</span></label>
+        </div>
+      </fieldset>
+      <div class="f"><label class="lbl" for="g_agreed">What have they agreed?</label><input type="text" id="g_agreed"></div>
+      <div class="f"><label class="lbl" for="g_begin">Anything I want the assessor to know at the beginning</label><textarea id="g_begin" class="sm"></textarea></div>
+    </div>
+
+    <div class="tail-notes">
+      <label class="tn-lbl" for="g_notes">Optional notes</label>
+      <textarea id="g_notes" class="sm"></textarea>
     </div>
   </section>
 
   <!-- 08 -->
   <section>
-    <div class="sec-head"><span class="sec-no">08</span><h2>What would help me during the assessment</h2></div>
-    <p class="sec-note">Worth thinking about in advance, while you are not under pressure.</p>
+    <div class="sec-head"><span class="sec-no">08</span><h2>Questions I want to ask</h2></div>
     <div class="block">
-      <div class="opts">
-        <div class="q"><strong>Things that might help:</strong></div>
-        <span class="opt"><span class="cb"></span>Breaks</span>
-        <span class="opt"><span class="cb"></span>Extra processing time</span>
-        <span class="opt"><span class="cb"></span>Questions repeated or rephrased</span><br>
-        <span class="opt"><span class="cb"></span>Written information</span>
-        <span class="opt"><span class="cb"></span>Questions or information in advance</span><br>
-        <span class="opt"><span class="cb"></span>Quieter or low-sensory setting</span>
-        <span class="opt"><span class="cb"></span>Camera off, or camera considerations if remote</span><br>
-        <span class="opt"><span class="cb"></span>Bring someone with me</span>
-        <span class="opt"><span class="cb"></span>Other</span>
-      </div>
-      <div class="opts" style="margin-top:6px">
-        <div class="q">Have I asked the provider?
-          <span class="opt"><span class="cb"></span>Yes</span>
-          <span class="opt"><span class="cb"></span>Not yet</span>
-        </div>
-      </div>
-      <div class="f" style="margin-top:6px"><span class="lbl">What have they agreed?</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Anything I want the assessor to know at the beginning</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-    </div>
-
-    <div class="tail-notes">
-      <span class="tn-lbl">Notes</span>
-      <div class="rule"></div><div class="rule"></div>
-    </div>
-  </section>
-
-  <!-- 09 -->
-  <section>
-    <div class="sec-head"><span class="sec-no">09</span><h2>Questions I want to ask</h2></div>
-    <div class="block">
-      <div class="rows">
-        <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-        <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-        <div class="rule tall"></div><div class="rule tall"></div>
+      <div class="f">
+        <label class="lbl" for="h_questions">My questions</label>
+        <textarea id="h_questions" class="lg"></textarea>
       </div>
       <div class="note">
         <span class="note-lbl">Prompts, if useful</span>
@@ -650,20 +502,24 @@ footer strong{color:var(--ink)}
     </div>
   </section>
 
-  <!-- 10 -->
+  <!-- 09 -->
   <section>
-    <div class="sec-head"><span class="sec-no">10</span><h2>On the day</h2></div>
+    <div class="sec-head"><span class="sec-no">09</span><h2>On the day</h2></div>
     <div class="block">
-      <div class="opts">
-        <span class="opt"><span class="cb"></span>Appointment details</span>
-        <span class="opt"><span class="cb"></span>Forms or reports requested</span><br>
-        <span class="opt"><span class="cb"></span>Medication list</span>
-        <span class="opt"><span class="cb"></span>Glasses, hearing aids, other practical items</span><br>
-        <span class="opt"><span class="cb"></span>Water or a snack</span>
-        <span class="opt"><span class="cb"></span>Charger or headphones, if remote</span><br>
-        <span class="opt"><span class="cb"></span>This checklist</span>
-        <span class="opt"><span class="cb"></span>Questions I want to ask</span>
-      </div>
+      <fieldset>
+        <legend>What to take</legend>
+        <div class="opts wide">
+          <label class="opt" for="i_c1"><input type="checkbox" id="i_c1"><span class="opt-txt">Appointment details</span></label>
+          <label class="opt" for="i_c2"><input type="checkbox" id="i_c2"><span class="opt-txt">Forms or reports requested</span></label>
+          <label class="opt" for="i_c3"><input type="checkbox" id="i_c3"><span class="opt-txt">Medication list</span></label>
+          <label class="opt" for="i_c4"><input type="checkbox" id="i_c4"><span class="opt-txt">Glasses, hearing aids, other practical items</span></label>
+          <label class="opt" for="i_c5"><input type="checkbox" id="i_c5"><span class="opt-txt">Water or a snack</span></label>
+          <label class="opt" for="i_c6"><input type="checkbox" id="i_c6"><span class="opt-txt">Charger or headphones, if remote</span></label>
+          <label class="opt" for="i_c7"><input type="checkbox" id="i_c7"><span class="opt-txt">This checklist</span></label>
+          <label class="opt" for="i_c8"><input type="checkbox" id="i_c8"><span class="opt-txt">My Reflection Record, if I have one</span></label>
+          <label class="opt" for="i_c9"><input type="checkbox" id="i_c9"><span class="opt-txt">Questions I want to ask</span></label>
+        </div>
+      </fieldset>
       <div class="key">
         <span class="note-lbl">Before you go in</span>
         <strong>You do not need to perform ADHD.</strong>
@@ -673,48 +529,52 @@ footer strong{color:var(--ink)}
     </div>
 
     <div class="tail-notes">
-      <span class="tn-lbl">Notes</span>
-      <div class="rule"></div><div class="rule"></div>
+      <label class="tn-lbl" for="i_notes">Optional notes</label>
+      <textarea id="i_notes" class="sm"></textarea>
     </div>
   </section>
 
-  <!-- 11 -->
+  <!-- 10 -->
   <section class="page-break">
-    <div class="sec-head"><span class="sec-no">11</span><h2>What I was told afterwards</h2></div>
+    <div class="sec-head"><span class="sec-no">10</span><h2>What I was told afterwards</h2></div>
     <p class="sec-note">Fill this in as soon as you can. Detail fades quickly after a long appointment.</p>
     <div class="block">
-      <div class="opts">
-        <div class="q">Was an outcome given today?
-          <span class="opt"><span class="cb"></span>Yes</span>
-          <span class="opt"><span class="cb"></span>No</span>
+      <fieldset>
+        <legend>Was an outcome given today?</legend>
+        <div class="opts row">
+          <label class="opt" for="j_out1"><input type="radio" name="j_out" id="j_out1"><span class="opt-txt">Yes</span></label>
+          <label class="opt" for="j_out2"><input type="radio" name="j_out" id="j_out2"><span class="opt-txt">No</span></label>
         </div>
-        <div class="q"><strong>Outcome:</strong>
-          <span class="opt"><span class="cb"></span>ADHD diagnosed</span>
-          <span class="opt"><span class="cb"></span>ADHD not diagnosed</span><br>
-          <span class="opt"><span class="cb"></span>Decision pending</span>
-          <span class="opt"><span class="cb"></span>Further information needed</span>
-	  <span class="opt"><span class="cb"></span>Unclear</span>
+      </fieldset>
+      <fieldset>
+        <legend>Outcome</legend>
+        <div class="opts">
+          <label class="opt" for="j_res1"><input type="radio" name="j_res" id="j_res1"><span class="opt-txt">ADHD diagnosed</span></label>
+          <label class="opt" for="j_res2"><input type="radio" name="j_res" id="j_res2"><span class="opt-txt">ADHD not diagnosed</span></label>
+          <label class="opt" for="j_res3"><input type="radio" name="j_res" id="j_res3"><span class="opt-txt">Decision pending</span></label>
+          <label class="opt" for="j_res4"><input type="radio" name="j_res" id="j_res4"><span class="opt-txt">Further information needed</span></label>
+          <label class="opt" for="j_res5"><input type="radio" name="j_res" id="j_res5"><span class="opt-txt">Unclear</span></label>
         </div>
-      </div>
+      </fieldset>
       <div class="two" style="margin-top:8px">
-        <div class="f"><span class="lbl">Feedback appointment date</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Report expected by</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Who to contact</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Next appointment</span><div class="rule"></div></div>
+        <div class="f"><label class="lbl" for="j_fb">Feedback appointment date</label><input type="text" id="j_fb"></div>
+        <div class="f"><label class="lbl" for="j_report">Report expected by</label><input type="text" id="j_report"></div>
+        <div class="f"><label class="lbl" for="j_contact">Who to contact</label><input type="text" id="j_contact"></div>
+        <div class="f"><label class="lbl" for="j_next">Next appointment</label><input type="text" id="j_next"></div>
       </div>
-      <div class="f"><span class="lbl">Anything else I need to send</span><div class="rule"></div></div>
+      <div class="f"><label class="lbl" for="j_send">Anything else I need to send</label><input type="text" id="j_send"></div>
     </div>
     <div class="block">
       <h3>What happens next</h3>
-      <div class="f"><span class="lbl">Medication or titration, if relevant</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Other support or recommendations</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">GP involvement</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><label class="lbl" for="j_med">Medication or titration, if relevant</label><textarea id="j_med" class="sm"></textarea></div>
+      <div class="f"><label class="lbl" for="j_support">Other support or recommendations</label><textarea id="j_support" class="sm"></textarea></div>
+      <div class="f"><label class="lbl" for="j_gp">GP involvement</label><textarea id="j_gp" class="sm"></textarea></div>
     </div>
     <div class="block">
-      <div class="f"><span class="lbl">Shared Care discussion</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Workplace or education adjustments</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Further assessment or referral</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="f"><span class="lbl">Anything else</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
+      <div class="f"><label class="lbl" for="j_shared">Shared Care discussion</label><textarea id="j_shared" class="sm"></textarea></div>
+      <div class="f"><label class="lbl" for="j_adj">Workplace or education adjustments</label><textarea id="j_adj" class="sm"></textarea></div>
+      <div class="f"><label class="lbl" for="j_further">Further assessment or referral</label><textarea id="j_further" class="sm"></textarea></div>
+      <div class="f"><label class="lbl" for="j_else">Anything else</label><textarea id="j_else" class="sm"></textarea></div>
       <div class="note">
         <span class="note-lbl">Why this matters</span>
         This is a record of what you were told, in your own words. It is useful later if something does
@@ -723,12 +583,13 @@ footer strong{color:var(--ink)}
     </div>
   </section>
 
-  <!-- 12 -->
+  <!-- 11 -->
   <section>
-    <div class="sec-head"><span class="sec-no">12</span><h2>Things still outstanding</h2></div>
+    <div class="sec-head"><span class="sec-no">11</span><h2>Things still outstanding</h2></div>
     <div class="block">
       <div class="table-wrap">
         <table>
+          <caption class="vh">Things still outstanding</caption>
           <thead><tr>
             <th style="width:36%">What I am waiting for</th>
             <th style="width:22%">Who needs to do it</th>
@@ -736,43 +597,444 @@ footer strong{color:var(--ink)}
             <th style="width:26%">Who I will contact</th>
           </tr></thead>
           <tbody>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td><input type="text" id="k_r1a" aria-label="Waiting for, row 1"></td><td><input type="text" id="k_r1b" aria-label="Who needs to do it, row 1"></td><td><input type="text" id="k_r1c" aria-label="By when, row 1"></td><td><input type="text" id="k_r1d" aria-label="Who I will contact, row 1"></td></tr>
+            <tr><td><input type="text" id="k_r2a" aria-label="Waiting for, row 2"></td><td><input type="text" id="k_r2b" aria-label="Who needs to do it, row 2"></td><td><input type="text" id="k_r2c" aria-label="By when, row 2"></td><td><input type="text" id="k_r2d" aria-label="Who I will contact, row 2"></td></tr>
+            <tr><td><input type="text" id="k_r3a" aria-label="Waiting for, row 3"></td><td><input type="text" id="k_r3b" aria-label="Who needs to do it, row 3"></td><td><input type="text" id="k_r3c" aria-label="By when, row 3"></td><td><input type="text" id="k_r3d" aria-label="Who I will contact, row 3"></td></tr>
+            <tr><td><input type="text" id="k_r4a" aria-label="Waiting for, row 4"></td><td><input type="text" id="k_r4b" aria-label="Who needs to do it, row 4"></td><td><input type="text" id="k_r4c" aria-label="By when, row 4"></td><td><input type="text" id="k_r4d" aria-label="Who I will contact, row 4"></td></tr>
+            <tr><td><input type="text" id="k_r5a" aria-label="Waiting for, row 5"></td><td><input type="text" id="k_r5b" aria-label="Who needs to do it, row 5"></td><td><input type="text" id="k_r5c" aria-label="By when, row 5"></td><td><input type="text" id="k_r5d" aria-label="Who I will contact, row 5"></td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- 13 -->
+  <!-- 12 -->
   <section>
-    <div class="sec-head"><span class="sec-no">13</span><h2>Notes</h2></div>
-    <div class="block rows">
-      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-      <div class="rule tall"></div>
+    <div class="sec-head"><span class="sec-no">12</span><h2>Optional notes</h2></div>
+    <p class="sec-note">Space for anything this checklist did not ask about. Leaving it empty is perfectly normal.</p>
+    <div class="block">
+      <div class="f">
+        <label class="lbl" for="l_notes">Notes</label>
+        <textarea id="l_notes" class="lg"></textarea>
+      </div>
     </div>
   </section>
 
   <footer>
     <strong>Queuend ADHD Assessment Checklist &mdash; Part B, preparing for your assessment.</strong>
     For organising information only. It does not diagnose, assess, or replace professional advice.
-    Part A covers choosing a route and provider.
+    Part A covers choosing a route and provider. The Reflection Record covers what you have noticed
+    about yourself.
   </footer>
 
 </div>
 
 <script>
 (function(){
-  var btn = document.getElementById('printBtn');
-  if (btn) btn.addEventListener('click', function(){ window.print(); });
+"use strict";
+
+var SCHEMA = "queuend-assessment-checklist-part-b";
+var STORE_KEY = "queuend-assessment-checklist-part-b";
+var VERSION = 2;
+var MAX_FILE = 3 * 1024 * 1024;
+
+function stamp(){
+  var d = new Date();
+  function p(n){ return (n < 10 ? "0" : "") + n; }
+  return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+}
+
+function autosize(t){
+  t.style.height = "auto";
+  var min = parseFloat(window.getComputedStyle(t).minHeight) || 0;
+  t.style.height = Math.max(t.scrollHeight, min) + "px";
+}
+function autoAll(root){
+  var ts = (root || document).querySelectorAll("textarea");
+  for(var i=0;i<ts.length;i++){ autosize(ts[i]); }
+}
+
+function fields(){
+  return document.getElementById("doc")
+    .querySelectorAll('input[type=text], input[type=checkbox], input[type=radio], textarea');
+}
+function collect(){
+  var data = {}, f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(!el.id) continue;
+    data[el.id] = (el.type === "checkbox" || el.type === "radio") ? el.checked : el.value;
+  }
+  return data;
+}
+function hasContent(){
+  var f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(el.type === "checkbox" || el.type === "radio"){ if(el.checked) return true; }
+    else if(el.value && el.value.trim() !== ""){ return true; }
+  }
+  return false;
+}
+function resetAll(){
+  var f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(el.type === "checkbox" || el.type === "radio"){ el.checked = false; }
+    else { el.value = ""; }
+  }
+  autoAll();
+}
+function makePayload(){
+  return { format: SCHEMA, version: VERSION, saved: stamp(), answers: collect() };
+}
+function serialize(){ return JSON.stringify(collect()); }
+function isUnsaved(){ return hasContent() && serialize() !== lastSavedSerial; }
+function validPayload(d){
+  return !!d && typeof d === "object" && d.format === SCHEMA && d.version === VERSION &&
+         !!d.answers && typeof d.answers === "object" && !Array.isArray(d.answers);
+}
+function applyPayload(d){
+  resetAll();
+  var f = fields(), applied = 0;
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(!el.id || !Object.prototype.hasOwnProperty.call(d.answers, el.id)) continue;
+    var v = d.answers[el.id];
+    if(el.type === "checkbox" || el.type === "radio"){
+      if(typeof v !== "boolean") continue;
+      el.checked = v;
+    } else {
+      if(typeof v !== "string") continue;
+      el.value = v;
+    }
+    applied++;
+  }
+  autoAll();
+  return applied;
+}
+
+function storageAvailable(){
+  try{
+    var k = "__queuend_probe__";
+    window.localStorage.setItem(k, "1");
+    window.localStorage.removeItem(k);
+    return true;
+  } catch(e){ return false; }
+}
+function readSaved(){
+  var raw;
+  try { raw = window.localStorage.getItem(STORE_KEY); }
+  catch(e){ return null; }
+  if(!raw) return null;
+  var d;
+  try { d = JSON.parse(raw); } catch(e){ d = null; }
+  if(!validPayload(d)){
+    try { window.localStorage.removeItem(STORE_KEY); } catch(e){}
+    return null;
+  }
+  return d;
+}
+function writeSaved(){
+  try {
+    window.localStorage.setItem(STORE_KEY, JSON.stringify(makePayload()));
+    lastSavedSerial = serialize();
+    return true;
+  } catch(e){ return false; }
+}
+function clearSaved(){
+  try { window.localStorage.removeItem(STORE_KEY); return true; }
+  catch(e){ return false; }
+}
+function scheduleAutosave(){
+  if(!autosaveOn) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); }
+  autosaveTimer = setTimeout(function(){
+    autosaveTimer = null;
+    if(!writeSaved()){
+      autosaveOn = false;
+      if(!storageWarned){
+        storageWarned = true;
+        window.alert("Your progress could not be updated in this browser, so automatic saving has been switched off.\n\nYou can use Download a backup copy to keep your answers instead.");
+      }
+    }
+  }, 800);
+}
+function flushAutosave(){
+  if(autosaveTimer){
+    clearTimeout(autosaveTimer);
+    autosaveTimer = null;
+    writeSaved();
+  }
+}
+
+function mirrorTextareas(){
+  var ts = document.getElementById("doc").querySelectorAll("textarea");
+  for(var i=0;i<ts.length;i++){
+    var t = ts[i], m = t.nextElementSibling;
+    if(!m || !m.classList || !m.classList.contains("print-mirror")){
+      m = document.createElement("div");
+      m.className = "print-mirror";
+      t.parentNode.insertBefore(m, t.nextSibling);
+    }
+    var v = t.value || "";
+    m.textContent = v;
+    if(v.replace(/\s/g, "") !== ""){
+      t.classList.add("has-value");
+      m.classList.add("filled");
+    } else {
+      t.classList.remove("has-value");
+      m.classList.remove("filled");
+    }
+  }
+}
+
+var lastSavedSerial = null;
+var autosaveOn = false;
+var autosaveTimer = null;
+var storageWarned = false;
+var cloneTimer = null;
+var resumeBox = document.getElementById("resumeBox");
+var fileIn = document.getElementById("fileIn");
+
+function hideResume(){ resumeBox.hidden = true; }
+function isAnswerControl(el){
+  if(!el || !el.tagName) return false;
+  if(el.tagName === "TEXTAREA") return true;
+  if(el.tagName !== "INPUT") return false;
+  return el.type === "text" || el.type === "checkbox" || el.type === "radio";
+}
+function onAnswerChanged(ev){
+  if(isAnswerControl(ev.target) && ev.target.id !== "fileIn"){ scheduleAutosave(); }
+}
+document.addEventListener("input", function(ev){
+  if(ev.target && ev.target.tagName === "TEXTAREA"){ autosize(ev.target); }
+  onAnswerChanged(ev);
+});
+document.addEventListener("change", onAnswerChanged);
+
+document.getElementById("btnPrint").addEventListener("click", function(){
+  autoAll(); mirrorTextareas(); window.print();
+});
+window.addEventListener("beforeprint", function(){
+  if(!document.body.classList.contains("blank-print")){ mirrorTextareas(); }
+});
+
+function removeClone(){
+  var c = document.getElementById("printClone");
+  if(c && c.parentNode){ c.parentNode.removeChild(c); }
+  document.body.classList.remove("blank-print");
+  if(cloneTimer){ clearTimeout(cloneTimer); cloneTimer = null; }
+}
+
+document.getElementById("btnBlank").addEventListener("click", function(){
+  removeClone();
+  var clone = document.getElementById("doc").cloneNode(true);
+  var i, els;
+
+  els = clone.querySelectorAll("textarea");
+  for(i=0;i<els.length;i++){
+    els[i].value = ""; els[i].textContent = "";
+    els[i].removeAttribute("style"); els[i].classList.remove("has-value");
+  }
+  els = clone.querySelectorAll("input");
+  for(i=0;i<els.length;i++){
+    if(els[i].type === "checkbox" || els[i].type === "radio"){
+      els[i].checked = false; els[i].removeAttribute("checked");
+    } else { els[i].value = ""; els[i].removeAttribute("value"); }
+  }
+  els = clone.querySelectorAll(".print-mirror");
+  for(i=els.length-1;i>=0;i--){ els[i].parentNode.removeChild(els[i]); }
+  els = clone.querySelectorAll("[id]");
+  for(i=0;i<els.length;i++){ els[i].removeAttribute("id"); }
+  els = clone.querySelectorAll("label[for]");
+  for(i=0;i<els.length;i++){ els[i].removeAttribute("for"); }
+  els = clone.querySelectorAll("[name]");
+  for(i=0;i<els.length;i++){ els[i].setAttribute("name", "blank_" + els[i].getAttribute("name")); }
+
+  clone.id = "printClone";
+  clone.setAttribute("aria-hidden", "true");
+  document.body.appendChild(clone);
+  document.body.classList.add("blank-print");
+  window.print();
+  cloneTimer = setTimeout(removeClone, 1500);
+});
+
+window.addEventListener("afterprint", removeClone);
+window.addEventListener("focus", function(){
+  if(document.body.classList.contains("blank-print")){ setTimeout(removeClone, 200); }
+});
+
+document.getElementById("btnSaveLocal").addEventListener("click", function(){
+  if(!storageAvailable()){
+    window.alert("This browser will not let the page save anything locally. That usually happens in private browsing, or when site data is switched off.\n\nUse Download a backup copy instead, and reopen it later with Open a backup copy.");
+    return;
+  }
+  if(writeSaved()){
+    autosaveOn = true;
+    hideResume();
+    window.alert("Your progress has been saved in this browser, and will be kept up to date as you carry on.");
+  } else {
+    window.alert("Your progress could not be saved in this browser. Its storage may be full.\n\nUse Download a backup copy instead.");
+  }
+});
+
+document.getElementById("btnRestore").addEventListener("click", function(){
+  var d = readSaved();
+  if(!d){
+    hideResume();
+    window.alert("The saved progress could not be found in this browser. It may have been removed since this page was opened.");
+    return;
+  }
+  if(isUnsaved() && !window.confirm("Restoring will replace the answers currently on this page. Continue?")) return;
+  applyPayload(d);
+  lastSavedSerial = serialize();
+  autosaveOn = true;
+  hideResume();
+  window.scrollTo(0, 0);
+});
+
+document.getElementById("btnStartAgain").addEventListener("click", function(){
+  if(!window.confirm(
+    "Start again?\n\n" +
+    "This deletes the copy of your answers saved in this browser and clears the page. " +
+    "It cannot be undone. It does not delete a backup copy you have already downloaded.")) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); autosaveTimer = null; }
+  autosaveOn = false;
+  var removed = clearSaved();
+  resetAll();
+  lastSavedSerial = serialize();
+  hideResume();
+  window.scrollTo(0, 0);
+  if(!removed){
+    window.alert("The page has been cleared, but the copy saved in this browser could not be removed. You may need to clear this site's data in your browser settings.");
+  }
+});
+
+document.getElementById("btnSave").addEventListener("click", function(){
+  var blob = new Blob([JSON.stringify(makePayload(), null, 2)], {type: "application/json"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = "Queuend-ADHD-Part-B-progress-" + stamp() + ".json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  lastSavedSerial = serialize();
+});
+
+document.getElementById("btnLoad").addEventListener("click", function(){ fileIn.click(); });
+function fail(msg){ window.alert(msg); fileIn.value = ""; }
+
+fileIn.addEventListener("change", function(){
+  var file = fileIn.files && fileIn.files[0];
+  if(!file) return;
+  if(file.size > MAX_FILE){ return fail("That file is too large to be a saved Part B checklist."); }
+
+  var warn = null;
+  if(autosaveOn){
+    warn = "Opening this backup copy will replace the answers currently on this page, and will also replace the copy saved in this browser, because browser saving is switched on.\n\nContinue?";
+  } else if(hasContent()){
+    warn = "Opening this backup copy will replace the answers currently on this page. Continue?";
+  }
+  if(warn && !window.confirm(warn)){ fileIn.value = ""; return; }
+
+  var reader = new FileReader();
+  reader.onerror = function(){ fail("That file could not be read."); };
+  reader.onload = function(){
+    var data;
+    try { data = JSON.parse(reader.result); }
+    catch(err){ return fail("That file could not be read. Please choose a file you downloaded from this checklist."); }
+
+    if(!data || typeof data !== "object" || data.format !== SCHEMA){
+      return fail("That does not look like a backup copy from Part B. If it came from the Reflection Record, open it there instead.");
+    }
+    if(data.version !== VERSION){
+      return fail("That file was saved by a different version of this checklist, so it cannot be opened here.");
+    }
+    if(!validPayload(data)){
+      return fail("That file does not contain any answers this checklist can read.");
+    }
+
+    var hadBrowserCopy = !!readSaved();
+    var applied = applyPayload(data);
+    lastSavedSerial = serialize();
+    if(autosaveOn){ writeSaved(); }
+    hideResume();
+    fileIn.value = "";
+    if(applied > 0){
+      if(autosaveOn){
+        window.alert("Your backup copy has been loaded, and the copy saved in this browser has been updated to match.");
+      } else if(hadBrowserCopy){
+        window.alert("Your backup copy has been opened. It has not been saved in this browser. " +
+          "Your previously saved browser progress has not been changed. " +
+          "Choose \u201CSave my progress in this browser\u201D if you want this version to replace it.");
+      } else {
+        window.alert("Your backup copy has been opened. It has not been saved in this browser. " +
+          "Choose \u201CSave my progress in this browser\u201D if you want to keep it here.");
+      }
+    } else {
+      window.alert("That file opened, but contained no answers this checklist recognises.");
+    }
+  };
+  reader.readAsText(file);
+});
+
+document.getElementById("btnClear").addEventListener("click", function(){
+  var saved = readSaved();
+  if(!hasContent() && !saved){ window.alert("There is nothing to clear yet."); return; }
+  if(!window.confirm(
+    "Clear every answer currently shown on this page?\n\n" +
+    "Any copy saved in this browser will be deleted too. This cannot be undone. " +
+    "It does not delete a backup copy you have already downloaded \u2014 " +
+    "that belongs to you, and you would need to delete it yourself.")) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); autosaveTimer = null; }
+  autosaveOn = false;
+  var removed = clearSaved();
+  resetAll();
+  lastSavedSerial = serialize();
+  hideResume();
+  window.scrollTo(0, 0);
+  if(saved && !removed){
+    window.alert("The page has been cleared, but the copy saved in this browser could not be removed. You may need to clear this site's data in your browser settings.");
+  }
+});
+
+// "No documents available" and the documentary options cannot both be true.
+// Family recollections and the Reflection Record tick are not documents, so they are unaffected.
+(function(){
+  var NONE = "c_c6";
+  var DOCS = ["c_c2", "c_c3", "c_c5"];
+  function el(id){ return document.getElementById(id); }
+  var none = el(NONE);
+  if(!none) return;
+  none.addEventListener("change", function(){
+    if(!none.checked) return;
+    for(var i=0;i<DOCS.length;i++){
+      var d = el(DOCS[i]);
+      if(d){ d.checked = false; }
+    }
+  });
+  for(var i=0;i<DOCS.length;i++){
+    (function(d){
+      if(!d) return;
+      d.addEventListener("change", function(){
+        if(d.checked){ none.checked = false; }
+      });
+    })(el(DOCS[i]));
+  }
+})();
+
+window.addEventListener("beforeunload", function(ev){
+  flushAutosave();
+  if(isUnsaved()){ ev.preventDefault(); ev.returnValue = ""; return ""; }
+});
+
+autoAll();
+lastSavedSerial = serialize();
+if(readSaved()){ resumeBox.hidden = false; }
 })();
 </script>
-
 </body>
 </html>
-
