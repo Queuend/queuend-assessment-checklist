@@ -3,43 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADHD Assessment Checklist, Part A — Queuend</title>
+<meta name="description" content="A free worksheet for comparing ADHD assessment routes and providers before you book. Nothing you enter is sent to Queuend.">
+<title>ADHD Assessment Checklist, Part A &mdash; Queuend</title>
 <style>
 :root{
-  --ink:#16212C;
-  --ink-soft:#3E4A56;
-  --muted:#5E6A75;
-  --teal:#04575A;
-  --teal-mid:#0B7B77;
-  --ochre:#8A5A14;
-  --tint-cool:#EDF4F3;
-  --tint-warm:#FBF6EC;
-  --rule:#9E998E;
-  --rule-fine:#C2BDB2;
-  --line:#A9A398;
+  --ink:#16212C; --ink-soft:#3E4A56; --muted:#5E6A75;
+  --teal:#04575A; --teal-mid:#0B7B77; --ochre:#8A5A14;
+  --tint-cool:#EDF4F3; --tint-warm:#FBF6EC;
+  --rule:#9E998E; --rule-fine:#C2BDB2; --line:#A9A398;
+  --alert:#8E2A2A; --alert-tint:#FDF2F0;
   --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
   --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden}
-body{
-  font-family:var(--sans);
-  font-size:10.5pt;
-  line-height:1.45;
-  color:var(--ink);
-  background:#EDEBE6;
-  padding:28px 16px 60px;
-}
-.doc{
-  max-width:210mm;
-  margin:0 auto;
-  background:#FFFFFF;
-  padding:22mm 19mm 18mm;
-  box-shadow:0 1px 3px rgba(22,33,44,.10),0 8px 28px rgba(22,33,44,.10);
-}
+body{font-family:var(--sans);font-size:10.5pt;line-height:1.45;color:var(--ink);
+  background:#EDEBE6;padding:28px 16px 60px}
+.doc{max-width:210mm;margin:0 auto;background:#FFFFFF;padding:22mm 19mm 18mm;
+  box-shadow:0 1px 3px rgba(22,33,44,.10),0 8px 28px rgba(22,33,44,.10)}
 
-/* ---------- masthead ---------- */
 .mast{display:flex;align-items:flex-start;gap:15px;padding-bottom:13px;border-bottom:2.5px solid var(--teal)}
 .mark{flex:0 0 auto;margin-top:3px}
 .mast-id{flex:1}
@@ -49,101 +32,123 @@ h1{font-family:var(--serif);font-size:23pt;line-height:1.08;font-weight:400;lett
 .standfirst{margin-top:13px;font-size:10pt;color:var(--ink-soft);max-width:50em;line-height:1.55}
 .standfirst strong{color:var(--ink);font-weight:600}
 
-.toolbar{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;padding:13px 0 2px;border-top:1px solid var(--rule-fine)}
-button{
-  font-family:var(--sans);font-size:9.5pt;font-weight:600;
-  padding:9px 16px;border-radius:3px;cursor:pointer;
-  border:1.25px solid var(--teal);background:var(--teal);color:#fff;
-  transition:background-color .12s ease,color .12s ease;
-}
-button.ghost{background:#fff;color:var(--teal)}
+.toolbar{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;padding:13px 0 2px;border-top:1px solid var(--rule-fine)}
+button{font-family:var(--sans);font-size:9.5pt;font-weight:600;padding:10px 15px;border-radius:3px;
+  cursor:pointer;border:1.25px solid var(--teal);background:var(--teal);color:#fff;min-height:44px;
+  transition:background-color .12s ease,color .12s ease}
+button.ghost{background:#fff;color:var(--teal);border-color:var(--rule-fine)}
 button:hover{background:var(--teal-mid);border-color:var(--teal-mid);color:#fff}
-button:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
+  outline:3px solid var(--ochre);outline-offset:2px}
+.privacy{font-size:8.5pt;color:var(--muted);margin-top:10px;line-height:1.55;max-width:50em}
+.privacy p{margin-bottom:6px}.privacy p:last-child{margin-bottom:0}
 
-/* ---------- sections ---------- */
+.alert{margin:16px 0 0;padding:13px 16px;border:1.5px solid var(--alert);border-left:4px solid var(--alert);
+  background:var(--alert-tint);font-size:9pt;line-height:1.6;color:var(--ink)}
+.alert .note-lbl{color:var(--alert)}
+.alert p{margin-bottom:7px}.alert p:last-child{margin-bottom:0}
+.alert strong{color:var(--alert)}
+
+.resume{margin:16px 0 0;padding:13px 16px;background:var(--tint-warm);border-left:3px solid var(--ochre)}
+.resume p{font-size:9.5pt;font-weight:600;color:var(--ink);margin:0 0 10px}
+.resume-btns{display:flex;gap:8px;flex-wrap:wrap}
+
 section{margin-top:30px}
 .sec-head{display:flex;align-items:center;gap:11px;border-bottom:1.75px solid var(--ink);padding-bottom:6px;margin-bottom:13px}
-.sec-no{
-  font-family:var(--mono);font-size:8.5pt;font-weight:600;color:var(--teal);
-  border:1.25px solid var(--teal);border-radius:2px;padding:2px 5px;line-height:1;
-}
+.sec-no{font-family:var(--mono);font-size:8.5pt;font-weight:600;color:var(--teal);
+  border:1.25px solid var(--teal);border-radius:2px;padding:2px 5px;line-height:1}
 h2{font-family:var(--serif);font-size:14.5pt;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
 .sec-note{font-size:9pt;color:var(--muted);margin:-4px 0 14px;max-width:48em;line-height:1.55}
 
-h3{
-  font-size:8.5pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);
-  margin:20px 0 9px;padding-bottom:4px;border-bottom:1px solid var(--rule-fine);
-}
+h3{font-size:8.5pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);
+  margin:20px 0 9px;padding-bottom:4px;border-bottom:1px solid var(--rule-fine)}
 .block:first-child h3{margin-top:0}
 h3 .plain{text-transform:none;letter-spacing:0;font-weight:400;font-style:italic;color:var(--muted);font-size:8pt}
 
-/* ---------- fields ---------- */
-.f{margin-bottom:10px}
-.lbl{display:block;font-size:9.5pt;color:var(--ink);margin-bottom:4px;line-height:1.4}
-.hint{font-size:8.5pt;color:var(--muted);font-style:italic}
-.rule{border-bottom:1px solid var(--line);height:1.55em}
-.rule.tall{height:1.85em}
-.rows .rule{margin-bottom:3px}
+.f{margin-bottom:12px}
+.lbl{display:block;font-size:9.5pt;color:var(--ink);margin-bottom:5px;line-height:1.4;font-weight:600}
+.hint{font-size:8.5pt;color:var(--muted);font-style:italic;font-weight:400}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
-.inline-rule{display:inline-block;border-bottom:1px solid var(--line);min-width:80px;height:1.15em;vertical-align:-2px}
-.inline-rule.w-wide{min-width:170px}
 
-/* ---------- checkboxes ---------- */
-.opts{font-size:9.5pt;line-height:2}
-.cb{display:inline-block;width:11px;height:11px;border:1.25px solid var(--ink-soft);border-radius:1px;margin-right:6px;vertical-align:-1px}
-.opt{white-space:nowrap;margin-right:16px;display:inline-block}
-.q{margin-bottom:1px}
-.q strong{font-weight:600}
+input[type=text],textarea{width:100%;font-family:var(--sans);font-size:10pt;line-height:1.7;
+  color:var(--ink);background:#fff;border:1px solid var(--rule-fine);border-radius:2px;padding:8px 10px}
+input[type=text]{min-height:42px}
+textarea{resize:vertical;overflow:hidden;display:block}
+textarea.sm{min-height:62px}textarea.md{min-height:92px}textarea.lg{min-height:150px}
+input[type=text]:hover,textarea:hover{border-color:var(--line)}
+.print-mirror{display:none;font-family:var(--sans);font-size:10pt;line-height:1.7;
+  white-space:pre-wrap;overflow-wrap:break-word;border-bottom:1px solid var(--line);padding:2px 0 6px}
 
-/* ---------- three note tiers ---------- */
-.note,.flag,.key{font-size:8.5pt;line-height:1.55;margin-top:10px;padding:9px 12px}
+fieldset{border:0;margin:12px 0;padding:0;min-width:0}
+legend{padding:0;font-size:9.5pt;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.4}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 18px}
+.opts.wide{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
+.opt{display:flex;align-items:center;gap:9px;font-size:9.5pt;line-height:1.4;padding:7px 0;
+  cursor:pointer;min-height:42px}
+.opt input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:16px;height:16px;
+  border:1.4px solid var(--ink-soft);background:#fff;cursor:pointer;position:relative;margin:0}
+.opt input[type=checkbox]{border-radius:2px}
+.opt input[type=radio]{border-radius:50%}
+.opt input:checked{background:var(--teal);border-color:var(--teal)}
+.opt input[type=checkbox]:checked::after{content:"";position:absolute;left:4.5px;top:1px;width:5px;height:9px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.opt input[type=radio]:checked::after{content:"";position:absolute;left:4px;top:4px;width:6px;height:6px;
+  border-radius:50%;background:#fff}
+.opt input:checked ~ .opt-txt{font-weight:600;color:var(--teal)}
+
+.note,.flag,.key{font-size:8.5pt;line-height:1.55;margin-top:12px;padding:10px 13px}
 .note{background:var(--tint-cool);border-left:2.5px solid var(--teal);color:var(--ink-soft)}
 .flag{background:var(--tint-warm);border-left:2.5px solid var(--ochre);color:var(--ink-soft)}
 .key{background:#fff;border:1.25px solid var(--teal);border-left:3.5px solid var(--teal);color:var(--ink)}
-.note-lbl{
-  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;
-}
+.note-lbl{display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px}
 .note .note-lbl{color:var(--teal)}
 .flag .note-lbl{color:var(--ochre)}
 .key .note-lbl{color:var(--teal)}
 .key strong{font-weight:600}
+.key a,.note a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
 
-/* ---------- comparison table ---------- */
-.table-wrap{border-top:2.5px solid var(--teal);border-bottom:1.75px solid var(--ink);padding-top:2px;margin-top:4px}
+.table-wrap{border-top:2.5px solid var(--teal);border-bottom:1.75px solid var(--ink);padding-top:2px;margin-top:4px;overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:9pt}
-th{
-  font-size:7.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  text-align:left;color:var(--teal);padding:7px 6px 7px;border-bottom:1.25px solid var(--ink);vertical-align:bottom;
-}
-td{border-bottom:1px solid var(--rule-fine);height:3.3em;padding:0 6px}
+th{font-size:7.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:left;
+  color:var(--teal);padding:7px 6px;border-bottom:1.25px solid var(--ink);vertical-align:bottom}
+td{border-bottom:1px solid var(--rule-fine);padding:3px 3px}
+td input[type=text]{border:0;min-height:34px;padding:4px;border-radius:0;font-size:9pt}
+td input[type=text]:hover{border:0;background:var(--tint-cool)}
 .col-sub{display:block;font-size:6.8pt;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-style:italic;margin-top:1px}
 .sheet table{border-top:1.5px solid var(--teal)}
 .sheet th{padding-top:6px;padding-bottom:5px}
 
-/* ---------- provider sheet ---------- */
 .sheet{border:1.25px solid var(--rule);border-top:4px solid var(--teal);padding:0 20px 20px;margin-top:22px;background:#fff}
-.sheet-head{
-  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
-  border-bottom:1.75px solid var(--ink);padding:14px 0 8px;margin-bottom:11px;
-}
+.sheet-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  border-bottom:1.75px solid var(--ink);padding:14px 0 8px;margin-bottom:11px}
 .sheet-title{font-family:var(--serif);font-size:14pt;letter-spacing:-.01em}
 .sheet-title .st-sub{display:block;font-family:var(--sans);font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:2px}
-.sheet-no{
-  font-family:var(--mono);font-size:9pt;font-weight:600;color:#fff;background:var(--teal);
-  padding:4px 9px;border-radius:2px;white-space:nowrap;
-}
+.sheet-no{font-family:var(--mono);font-size:9pt;font-weight:600;color:#fff;background:var(--teal);
+  padding:4px 9px;border-radius:2px;white-space:nowrap}
 .sheet-lead{font-size:9pt;color:var(--muted);margin-bottom:16px;font-style:italic;line-height:1.55}
 
-/* ---------- costs ---------- */
-.cost-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;font-size:9.5pt}
-.cost-row .cl{flex:1}
-.cost-row .cv{font-family:var(--mono);border-bottom:1px solid var(--line);min-width:96px;height:1.25em}
-.cost-total{border-top:1.5px solid var(--ink);margin-top:8px;padding-top:7px;font-weight:700}
-.cost-flag{border-top:2px solid var(--ochre);margin-top:10px;padding-top:8px;font-weight:700;color:var(--ochre)}
-.cost-flag .cv{border-bottom-color:var(--ochre)}
+.cost-row{display:grid;grid-template-columns:1fr 120px;align-items:center;gap:10px;margin-bottom:4px;font-size:9.5pt}
+.cost-row .cl{line-height:1.4}
+.cost-row input[type=text]{font-family:var(--mono);min-height:36px;padding:5px 8px}
+.cost-inline{display:inline-block;width:60px}
+.cost-inline input[type=text]{min-height:30px;padding:3px 5px;font-size:9pt}
+.cost-total{border-top:1.5px solid var(--ink);margin-top:8px;padding-top:8px;font-weight:700}
+.cost-flag{border-top:2px solid var(--ochre);margin-top:10px;padding-top:9px;font-weight:700;color:var(--ochre)}
+.cost-flag input[type=text]{border-color:var(--ochre)}
+
+.tail-notes{margin-top:15px;padding-top:8px;border-top:1px solid var(--rule-fine)}
+.tn-lbl{display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:6px}
 
 footer{margin-top:34px;padding-top:13px;border-top:1.75px solid var(--ink);font-size:8.5pt;color:var(--muted);line-height:1.55}
 footer strong{color:var(--ink)}
+
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+#printClone{display:none}
+body.blank-print > .doc:not(#printClone){display:none}
+body.blank-print > #printClone{display:block}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
@@ -151,79 +156,46 @@ footer strong{color:var(--ink)}
   body{padding:0;background:#fff}
   .doc{padding:14mm 6mm;box-shadow:none;max-width:none}
   .two{grid-template-columns:1fr}
-  table{font-size:8pt}
+  .opts,.opts.wide,.opts.row{grid-template-columns:1fr}
+  .toolbar button{flex:1 1 100%}
+  table{font-size:8pt;min-width:640px}
   th{font-size:7pt}
   .sheet{padding:0 12px 14px}
+  .cost-row{grid-template-columns:1fr 96px}
 }
 
-/* ---------- tail notes (turn part-page gaps into usable space) ---------- */
-.tail-notes{margin-top:15px;padding-top:6px;border-top:1px solid var(--rule-fine)}
-.tn-lbl{
-  display:block;font-size:7pt;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--teal);margin-bottom:6px;
-}
-.tail-notes .rule{height:1.85em}
-
-/* ---------- print: A4 pagination ---------- */
 @page{size:A4;margin:15mm 14mm 16mm}
-@media print {
-  html, body {
-    overflow: visible !important;
-    height: auto !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-  body {
-    background: #fff;
-    padding: 0;
-    font-size: 10pt;
-  }
-  .doc {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    background: #fff;
-  }
-  .toolbar,
-  .screen-only {
-    display: none !important;
-  }
-  body.print-core .full-only {
-    display: none !important;
-  }
-  p, .lbl, .opts {
-    orphans: 3;
-    widows: 3;
-  }
-  section {
-    margin-top: 22px;
-    break-inside: auto;
-  }
-  .page-break {
-    break-before: page;
-    page-break-before: always;
-  }
-  h1, h2, h3, .sec-head, .sheet-head {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  .f, .note, .flag, .key, .cost-row, tr, .two, .opts,
-  .block, .table-wrap, .cost-group, .tail-notes {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .sheet {
-    break-inside: auto;
-  }
-  thead {
-    display: table-header-group;
-  }
+@media print{
+  html,body{overflow:visible!important;height:auto!important;
+    -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background:#fff;padding:0;font-size:10pt}
+  .doc{max-width:none;margin:0;padding:0;box-shadow:none;background:#fff}
+  .toolbar,.screen-only,.no-print{display:none!important}
+  body.print-core .full-only{display:none!important}
+  p,.lbl,legend,.opt{orphans:3;widows:3}
+  section{margin-top:22px;break-inside:auto}
+  .page-break{break-before:page;page-break-before:always}
+  h1,h2,h3,.sec-head,.sheet-head,.lbl,legend,.tn-lbl{break-after:avoid;page-break-after:avoid}
+  .opt,.note,.flag,.key,tr,.cost-row,.tail-notes,.table-wrap{break-inside:avoid;page-break-inside:avoid}
+  .f,.block,fieldset,.two,.sheet,.cost-group{break-inside:auto;page-break-inside:auto}
+  thead{display:table-header-group}
+  .table-wrap{overflow-x:visible}
+  input[type=text],textarea{border:0;border-bottom:1px solid var(--line);border-radius:0;
+    padding:2px 0;background:transparent;
+    background-image:repeating-linear-gradient(transparent,transparent 24px,var(--rule-fine) 24px,var(--rule-fine) 25px);
+    background-position:0 2px}
+  td input[type=text]{border-bottom:0;background-image:none;min-height:2.8em}
+  .cost-row input[type=text]{background-image:none}
+  textarea.sm{min-height:74px}textarea.md{min-height:98px}textarea.lg{min-height:160px}
+  textarea.has-value{display:none}
+  .print-mirror.filled{display:block}
+  .opt{padding:2px 0;min-height:0}
+  .opt input{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
 <body>
-<div class="doc">
+<div class="doc" id="doc">
 
   <header class="mast">
     <svg class="mark" width="32" height="32" viewBox="0 0 240 240" aria-hidden="true">
@@ -244,70 +216,64 @@ footer strong{color:var(--ink)}
     Waits, prices and arrangements change often, so note the date beside anything you're told.
   </p>
 
-  <div class="toolbar screen-only">
-    <button id="printCore">Print core checklist</button>
-    <button id="printFull">Print full checklist</button>
-    <button class="ghost" id="addSheet">Add another provider sheet</button>
+  <div class="alert">
+    <span class="note-lbl">Your answers stay private</span>
+    <p><strong>Queuend does not receive or see anything you enter in this worksheet.</strong> Your answers are not submitted to Queuend or stored on our servers.</p>
+    <p>If you save your progress, it is stored in this browser on this device so you can return to it later. Queuend does not upload that saved copy. If you download a backup, it is saved wherever your device normally puts downloaded files; that location may be synchronised to a service such as Google Drive, OneDrive or iCloud.</p>
+    <p>This is your personal record. You decide whether to keep it, delete it or share it with anyone.</p>
   </div>
 
+  <div class="toolbar screen-only">
+    <button id="btnSaveLocal" type="button">Save my progress in this browser</button>
+    <button id="btnPrintFull" type="button">Print or save full checklist</button>
+    <button class="ghost" id="btnPrintCore" type="button">Print core checklist</button>
+    <button class="ghost" id="btnBlank" type="button">Print a blank copy</button>
+    <button class="ghost" id="btnSave" type="button">Download a backup copy</button>
+    <button class="ghost" id="btnLoad" type="button">Open a backup copy</button>
+    <button class="ghost" id="btnClear" type="button">Clear my answers</button>
+    <input type="file" id="fileIn" accept="application/json,.json" hidden>
+  </div>
+  <div class="privacy screen-only">
+    <p>Unless you choose to save your progress, your answers exist only on the page while it is open, and closing or reloading will lose them. Saved progress can be reopened by anyone using the same browser profile, and clearing browser data may remove it.</p>
+    <p>A backup copy is an ordinary file downloaded to your device, and it is not encrypted. If you share a device, keep it somewhere private or delete it when you no longer need it.</p>
+    <p><em>Print core checklist</em> gives you sections 1 to 4 and the ending. <em>Print or save full checklist</em> adds the provider detail sheets. <em>Print a blank copy</em> prints the whole checklist empty, with two provider sheets.</p>
+  </div>
+
+  <div class="resume screen-only" id="resumeBox" hidden>
+    <p>You have saved progress in this browser.</p>
+    <div class="resume-btns">
+      <button id="btnRestore" type="button">Pick up where I left off</button>
+      <button class="ghost" id="btnStartAgain" type="button">Start again</button>
+    </div>
+  </div>
+
+  <noscript>
+    <p style="font-size:9pt;background:#FBF6EC;padding:13px 16px;border-left:3px solid #8A5A14;margin:16px 0">This checklist needs JavaScript to build the provider sheets, to save your progress and to use the print buttons. Please enable JavaScript.</p>
+  </noscript>
+
+  <!-- 01 -->
   <section>
     <div class="sec-head"><span class="sec-no">01</span><h2>What matters most to you</h2></div>
     <p class="sec-note">Fill this in before you start ringing round. If a provider is persuasive on the phone, check what they're offering against this list rather than the other way round.</p>
-    <div class="opts">
-      <span class="opt"><span class="cb"></span>Being seen quickly</span>
-      <span class="opt"><span class="cb"></span>Keeping the total cost down</span>
-      <span class="opt"><span class="cb"></span>A thorough assessment, even if slower</span><br>
-      <span class="opt"><span class="cb"></span>Good chance my GP accepts Shared Care</span>
-      <span class="opt"><span class="cb"></span>Access to medication</span>
-      <span class="opt"><span class="cb"></span>Being seen in person rather than online</span><br>
-      <span class="opt"><span class="cb"></span>Experience with adults diagnosed late</span>
-      <span class="opt"><span class="cb"></span>Experience with women and girls</span>
-      <span class="opt"><span class="cb"></span>Experience with co-occurring conditions</span>
-    </div>
-    <div class="f" style="margin-top:11px">
-      <span class="lbl">Anything else that matters to me</span>
-      <div class="rows"><div class="rule"></div><div class="rule"></div></div>
+    <div id="g_matters"></div>
+    <div class="f">
+      <label class="lbl" for="m_other">Anything else that matters to me <span class="hint">optional</span></label>
+      <textarea id="m_other" class="sm"></textarea>
     </div>
   </section>
 
+  <!-- 02 -->
   <section>
     <div class="sec-head"><span class="sec-no">02</span><h2>About this assessment</h2></div>
-    <div class="opts">
-      <div class="q"><strong>Assessment for:</strong>
-        <span class="opt"><span class="cb"></span>Adult</span>
-        <span class="opt"><span class="cb"></span>Child or young person</span>
-        &nbsp;Age now: <span class="inline-rule"></span>
-      </div>
-      <div class="q"><strong>I may need a provider who can also consider autism or another explanation:</strong>
-        <span class="opt"><span class="cb"></span>Yes</span>
-        <span class="opt"><span class="cb"></span>No</span>
-        <span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-      <div class="q"><strong>UK nation:</strong>
-        <span class="opt"><span class="cb"></span>England</span>
-        <span class="opt"><span class="cb"></span>Scotland</span>
-        <span class="opt"><span class="cb"></span>Wales</span>
-        <span class="opt"><span class="cb"></span>Northern Ireland</span>
-      </div>
-      <div class="q"><strong>I may need the assessment/report for:</strong>
-        <span class="opt"><span class="cb"></span>Work</span>
-        <span class="opt"><span class="cb"></span>School</span>
-        <span class="opt"><span class="cb"></span>College or university</span>
-        <span class="opt"><span class="cb"></span>Adjustments</span>
-        <span class="opt"><span class="cb"></span>Other</span>
-      </div>
-      <div class="q"><strong>Medication something I may want to explore:</strong>
-        <span class="opt"><span class="cb"></span>Yes</span>
-        <span class="opt"><span class="cb"></span>No</span>
-        <span class="opt"><span class="cb"></span>Unsure</span>
-      </div>
-    </div>
+    <div id="g_about"></div>
     <div class="two" style="margin-top:12px">
-      <div class="f"><span class="lbl">Local area / NHS area or board</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Date started this checklist</span><div class="rule"></div></div>
+      <div class="f"><label class="lbl" for="ab_age">Age now</label><input type="text" id="ab_age"></div>
+      <div class="f"><label class="lbl" for="ab_area">Local area / NHS area or board</label><input type="text" id="ab_area"></div>
+      <div class="f"><label class="lbl" for="ab_started">Date started this checklist</label><input type="text" id="ab_started"></div>
     </div>
   </section>
 
+  <!-- 03 -->
   <section class="page-break">
     <div class="sec-head"><span class="sec-no">03</span><h2>Side-by-side comparison</h2></div>
     <div class="key">
@@ -317,6 +283,7 @@ footer strong{color:var(--ink)}
     </div>
     <div class="table-wrap">
       <table>
+        <caption class="vh">Side-by-side provider comparison</caption>
         <thead>
           <tr>
             <th style="width:17%">Provider</th>
@@ -328,14 +295,7 @@ footer strong{color:var(--ink)}
             <th style="width:16%">Status <span class="col-sub">&amp; next step</span></th>
           </tr>
         </thead>
-        <tbody>
-          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        </tbody>
+        <tbody id="cmpBody"></tbody>
       </table>
     </div>
     <div class="note">
@@ -345,77 +305,37 @@ footer strong{color:var(--ink)}
     </div>
   </section>
 
+  <!-- 04 -->
   <section>
     <div class="sec-head"><span class="sec-no">04</span><h2>The GP conversation</h2></div>
     <p class="sec-note">Your GP may be central to the NHS and Right to Choose referral routes, and may later decide whether to accept Shared Care. Keep this separate from any single provider.</p>
     <div class="block">
       <div class="two">
-        <div class="f"><span class="lbl">GP practice</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">GP spoken to</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Date of conversation</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">ICB / health board <span class="hint">(for escalation)</span></span><div class="rule"></div></div>
+        <div class="f"><label class="lbl" for="gp_practice">GP practice</label><input type="text" id="gp_practice"></div>
+        <div class="f"><label class="lbl" for="gp_name">GP spoken to</label><input type="text" id="gp_name"></div>
+        <div class="f"><label class="lbl" for="gp_date">Date of conversation</label><input type="text" id="gp_date"></div>
+        <div class="f"><label class="lbl" for="gp_icb">ICB / health board <span class="hint">for escalation</span></label><input type="text" id="gp_icb"></div>
       </div>
-      <div class="opts">
-        <div class="q"><strong>What I asked for:</strong>
-          <span class="opt"><span class="cb"></span>NHS referral</span>
-          <span class="opt"><span class="cb"></span>Right to Choose referral</span>
-          <span class="opt"><span class="cb"></span>Shared Care</span>
-          <span class="opt"><span class="cb"></span>Advice only</span>
-        </div>
-        <div class="q"><strong>Outcome:</strong>
-          <span class="opt"><span class="cb"></span>Agreed</span>
-          <span class="opt"><span class="cb"></span>Declined</span>
-          <span class="opt"><span class="cb"></span>Referred elsewhere</span>
-          <span class="opt"><span class="cb"></span>Awaiting decision</span>
-        </div>
-        <div class="q"><strong>If declined, do I have the reasons in writing?</strong>
-          <span class="opt"><span class="cb"></span>Yes</span>
-          <span class="opt"><span class="cb"></span>No</span>
-          <span class="opt"><span class="cb"></span>Requested</span>
-        </div>
-      </div>
+      <div id="g_gp"></div>
       <div class="note">
         <span class="note-lbl">Why this matters</span>
         Written reasons matter. They tell you exactly what to address, and they're what an ICB or a complaint would need to see.
       </div>
-      <div class="f" style="margin-top:10px">
-        <span class="lbl">What was said, and what happens next</span>
-        <div class="rows"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+      <div class="f" style="margin-top:12px">
+        <label class="lbl" for="gp_said">What was said, and what happens next</label>
+        <textarea id="gp_said" class="md"></textarea>
       </div>
     </div>
 
     <div class="block">
       <h3>If using Right to Choose <span class="plain">England only</span></h3>
-      <div class="opts">
-        <div class="q">Provider says it accepts Right to Choose referrals:
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Does their pathway cover assessment only, or treatment as well?
-          <span class="opt"><span class="cb"></span>Assessment only</span><span class="opt"><span class="cb"></span>Both</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-      </div>
+      <div id="g_rtc1"></div>
       <div class="two" style="margin-top:8px">
-        <div class="f"><span class="lbl">What service does their NHS contract cover?</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Referral instructions checked on</span><div class="rule"></div></div>
+        <div class="f"><label class="lbl" for="rtc_contract">What service does their NHS contract cover?</label><input type="text" id="rtc_contract"></div>
+        <div class="f"><label class="lbl" for="rtc_checked">Referral instructions checked on</label><input type="text" id="rtc_checked"></div>
       </div>
-      <div class="f"><span class="lbl">If told I cannot choose this provider, what exact reason was given?</span><div class="rule"></div></div>
-      <div class="opts">
-        <div class="q"><strong>Which of these is it?</strong></div>
-        <span class="opt"><span class="cb"></span>Not clinically appropriate</span>
-        <span class="opt"><span class="cb"></span>No qualifying NHS contract</span><br>
-        <span class="opt"><span class="cb"></span>Wrong cohort (adult / child)</span>
-        <span class="opt"><span class="cb"></span>Provider has paused referrals</span><br>
-        <span class="opt"><span class="cb"></span>Practice preference &mdash; "the one we use"</span>
-        <span class="opt"><span class="cb"></span>Unclear</span>
-      </div>
-      <div class="f" style="margin-top:9px">
-        <span class="lbl">Ask directly: is this about the referral itself, or about Shared Care afterwards?</span>
-        <div class="opts">
-          <span class="opt"><span class="cb"></span>They cannot refer me there</span>
-          <span class="opt"><span class="cb"></span>They will not do Shared Care with them later</span>
-          <span class="opt"><span class="cb"></span>Still unclear</span>
-        </div>
-      </div>
+      <div class="f"><label class="lbl" for="rtc_reason">If told I cannot choose this provider, what exact reason was given?</label><input type="text" id="rtc_reason"></div>
+      <div id="g_rtc2"></div>
       <div class="flag">
         <span class="note-lbl">Watch out</span>
         These are different answers with different consequences. Declining Shared Care with a particular provider later is lawful and fairly common. Refusing the referral itself has only narrow lawful grounds &mdash; clinical appropriateness, or the provider not holding a qualifying NHS contract for your service and age group. Practice preference is not one of them. If you are told you cannot be referred to a provider you have chosen, ask for the reason in writing. You are not expected to judge whether a contract legally qualifies; these questions exist so the answer is on the record rather than assumed.
@@ -423,32 +343,38 @@ footer strong{color:var(--ink)}
     </div>
 
     <div class="tail-notes">
-      <span class="tn-lbl">Notes</span>
-      <div class="rule"></div><div class="rule"></div>
+      <label class="tn-lbl" for="gp_notes">Optional notes</label>
+      <textarea id="gp_notes" class="sm"></textarea>
     </div>
   </section>
 
+  <!-- 05 -->
   <section class="page-break full-only">
     <div class="sec-head"><span class="sec-no">05</span><h2>Provider detail sheets</h2></div>
-    <p class="sec-note">One sheet per provider you're seriously considering. Add more sheets on screen before printing, or print this page as many times as you need.</p>
+    <p class="sec-note">One sheet per provider you're seriously considering. Add more sheets on screen before printing.</p>
     <div id="sheets"></div>
+    <div class="tail-notes screen-only">
+      <button class="ghost" id="btnAddSheet" type="button"><span aria-hidden="true">+</span> Add another provider sheet</button>
+    </div>
   </section>
 
+  <!-- 06 -->
   <section class="page-break full-only">
     <div class="sec-head"><span class="sec-no">06</span><h2>Still to confirm</h2></div>
     <p class="sec-note">What do I still need to know before deciding? Note who can answer each one.</p>
-    <div class="block rows">
-      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
+    <div class="f">
+      <label class="lbl" for="confirm_notes">Anything still to confirm <span class="hint">optional</span></label>
+      <textarea id="confirm_notes" class="lg"></textarea>
     </div>
   </section>
 
+  <!-- 07 -->
   <section class="full-only">
-    <div class="sec-head"><span class="sec-no">07</span><h2>Notes</h2></div>
-    <div class="block rows">
-      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-      <div class="rule tall"></div><div class="rule tall"></div><div class="rule tall"></div>
-      <div class="rule tall"></div><div class="rule tall"></div>
+    <div class="sec-head"><span class="sec-no">07</span><h2>Optional notes</h2></div>
+    <p class="sec-note">Anything this checklist did not ask about. Leaving it empty is perfectly normal.</p>
+    <div class="f">
+      <label class="lbl" for="final_notes">Notes</label>
+      <textarea id="final_notes" class="lg"></textarea>
     </div>
   </section>
 
@@ -456,8 +382,9 @@ footer strong{color:var(--ink)}
     <div class="key">
       <span class="note-lbl">Next step</span>
       <strong>Already booked your assessment?</strong>
-      Continue with Part B &mdash; Preparing for your ADHD assessment, to organise examples,
-      relevant background information, questions and practical details before the appointment.
+      Continue with <a href="https://queuend.github.io/queuend-assessment-checklist/part-b/" target="_blank" rel="noopener">Part B &mdash; Preparing for your ADHD assessment</a>
+      to organise what you need to have ready, ask, take and remember, and to keep track of what you are
+      told afterwards. It opens in a new tab, so this record stays available.
     </div>
   </section>
 
@@ -470,431 +397,746 @@ footer strong{color:var(--ink)}
 
 </div>
 
-<template id="sheetTpl">
-  <div class="sheet">
-    <div class="sheet-head">
-      <span class="sheet-title"><span class="st-sub">Provider detail sheet</span>Provider</span>
-      <span class="sheet-no">Sheet <span class="n"></span></span>
-    </div>
-    <p class="sheet-lead">Everything below is something to ask them. Work down it on the call and write what they actually say, not what the website says.</p>
-
-    <div class="block">
-      <h3>The basics</h3>
-      <div class="two">
-        <div class="f"><span class="lbl">Name</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Website</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Phone / email</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Information checked on / recheck by</span><div class="rule"></div></div>
-      </div>
-      <div class="opts">
-        <div class="q"><strong>Route:</strong>
-          <span class="opt"><span class="cb"></span>Local NHS</span>
-          <span class="opt"><span class="cb"></span>Right to Choose</span>
-          <span class="opt"><span class="cb"></span>Private</span>
-          <span class="opt"><span class="cb"></span>Children's pathway</span>
-          <span class="opt"><span class="cb"></span>Other</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="block">
-      <h3>Contact log</h3>
-      <table>
-        <thead><tr>
-          <th style="width:14%">Date</th>
-          <th style="width:14%">Method</th>
-          <th style="width:20%">Who I spoke to</th>
-          <th style="width:36%">What they said</th>
-          <th style="width:16%">Follow up by</th>
-        </tr></thead>
-        <tbody>
-          <tr><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="block">
-      <h3>Ask: who actually makes the diagnosis</h3>
-      <div class="f"><span class="lbl">Who conducts the assessment? <span class="hint">Name, profession, registration</span></span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">Who makes and signs off the diagnostic decision? <span class="hint">Name, profession, registration</span></span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">What specialist ADHD training and experience do they have?</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">If they also assess co-occurring conditions, who contributes to that decision?</span><div class="rule"></div></div>
-      <div class="flag">
-        <span class="note-lbl">Watch out</span>
-        The person interviewing you is not always the person responsible for the diagnosis. Check that the clinician making the diagnostic decision has appropriate specialist training and expertise in ADHD.
-      </div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: how long, and until what</h3>
-      <div class="two">
-        <div class="f"><span class="lbl">Current estimated wait</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Referral required?</span><div class="rule"></div></div>
-      </div>
-      <div class="opts">
-        <div class="q"><strong>That wait is until:</strong>
-          <span class="opt"><span class="cb"></span>First contact</span>
-          <span class="opt"><span class="cb"></span>First appointment</span>
-          <span class="opt"><span class="cb"></span>Completed assessment</span>
-          <span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-      </div>
-      <div class="two" style="margin-top:8px">
-        <div class="f"><span class="lbl">After the final appointment, diagnostic decision within</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Feedback appointment within</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Written report within</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">If the report is delayed, who do I contact?</span><div class="rule"></div></div>
-      </div>
-      <div class="note">
-        <span class="note-lbl">Why this matters</span>
-        An assessment in six weeks is less impressive if the written report takes another twelve. The report is usually the thing you actually need.
-      </div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: what the assessment involves</h3>
-      <div class="two">
-        <div class="f"><span class="lbl">Length / number of appointments</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">What happens if the result is inconclusive</span><div class="rule"></div></div>
-      </div>
-      <div class="opts">
-        <div class="q"><strong>Format:</strong>
-          <span class="opt"><span class="cb"></span>In person</span>
-          <span class="opt"><span class="cb"></span>Video</span>
-          <span class="opt"><span class="cb"></span>Mixed</span>
-        </div>
-        <div class="q"><strong>Included:</strong>
-          <span class="opt"><span class="cb"></span>Written report</span>
-          <span class="opt"><span class="cb"></span>Feedback appointment</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: what happens if it turns out to be something else</h3>
-      <div class="opts">
-        <div class="q">Will the assessment consider other possible explanations for the difficulties?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Will it consider co-occurring conditions?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-      </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">If something else becomes apparent, what happens?</span><div class="rule"></div></div>
-      <div class="f"><span class="lbl">If autism or another condition seems relevant, is it discussed, assessed, referred on, or charged again?</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="note">
-        <span class="note-lbl">Why this matters</span>
-        A good assessment is not a conveyor belt towards the condition written on the booking form.
-      </div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: what information I will need to provide</h3>
-      <div class="opts">
-        <div class="q"><strong>Before the assessment, this provider requires:</strong>
-          <span class="opt"><span class="cb"></span>Developmental / childhood history</span>
-          <span class="opt"><span class="cb"></span>Childhood informant</span><br>
-          <span class="opt"><span class="cb"></span>School records</span>
-          <span class="opt"><span class="cb"></span>Questionnaires</span>
-          <span class="opt"><span class="cb"></span>Previous reports</span>
-          <span class="opt"><span class="cb"></span>Other</span>
-        </div>
-      </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">If I cannot provide childhood records or a childhood informant, what alternatives will they accept?</span><div class="rows"><div class="rule"></div><div class="rule"></div></div></div>
-      <div class="note">
-        <span class="note-lbl">Why this matters</span>
-        Guidance asks for childhood evidence where possible. Those two words matter if your school reports vanished thirty years ago. Requirements vary between providers, which may affect which one suits you.
-      </div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: about the report</h3>
-      <div class="opts">
-        <div class="q">Does it state which diagnostic criteria were used?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Does it include recommendations or a treatment plan?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Have local GPs accepted their reports before?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Can I see an anonymised example?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
-        </div>
-        <div class="q">Can I request clarification or a second clinical opinion?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-      </div>
-      <div class="two" style="margin-top:8px">
-        <div class="f"><span class="lbl">If I find a factual error, how do I request a correction?</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">What is the complaints process?</span><div class="rule"></div></div>
-      </div>
-    </div>
-
-      <div class="tail-notes">
-        <span class="tn-lbl">Notes</span>
-        <div class="rule"></div><div class="rule"></div>
-      </div>
-
-
-    <div class="block">
-      <h3>Ask: about regulation and registration</h3>
-      <div class="opts">
-        <div class="q"><strong>CQC status (England):</strong>
-          <span class="opt"><span class="cb"></span>Registered</span>
-          <span class="opt"><span class="cb"></span>Not required &mdash; diagnosis only</span>
-          <span class="opt"><span class="cb"></span>Unclear</span>
-          <span class="opt"><span class="cb"></span>N/A outside England</span>
-        </div>
-      </div>
-      <div class="two" style="margin-top:8px">
-        <div class="f"><span class="lbl">Rating, if rated / checked on</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">Statutory register &amp; number <span class="hint">e.g. GMC, HCPC, NMC</span></span><div class="rule"></div></div>
-      </div>
-      <div class="f"><span class="lbl">Other professional membership or accreditation <span class="hint">e.g. BACP, UKCP</span></span><div class="rule"></div></div>
-      <div class="flag">
-        <span class="note-lbl">Watch out</span>
-        GMC, HCPC and NMC are statutory regulators. Membership bodies are not the same thing, and membership alone does not establish qualification to diagnose ADHD. Separately, a missing CQC registration is not automatically a warning sign &mdash; since March 2026, providers offering diagnosis only, without treatment or prescribing, are no longer required to register. Ask which applies.
-      </div>
-    </div>
-
-      <div class="tail-notes">
-        <span class="tn-lbl">Notes</span>
-        <div class="rule"></div><div class="rule"></div>
-      </div>
-
-
-    <div class="block cost-group">
-      <h3>Ask: what it costs in the first year</h3>
-      <div class="cost-row"><span class="cl">Assessment</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Report, if charged separately</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Feedback appointment</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Medication consultation</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Titration appointments (how many? ____)</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Prescriptions during titration</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Anything else</span><span class="cv"></span></div>
-      <div class="cost-row cost-total"><span class="cl">Total, first year</span><span class="cv"></span></div>
-    </div>
-
-    <div class="block cost-group">
-      <h3>Ask: what it costs after that</h3>
-      <div class="cost-row"><span class="cl">Annual review</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Ongoing prescriptions</span><span class="cv"></span></div>
-      <div class="cost-row"><span class="cl">Renewal or membership fee</span><span class="cv"></span></div>
-      <div class="cost-row cost-total"><span class="cl">Total, per year after</span><span class="cv"></span></div>
-      <div class="cost-row cost-flag"><span class="cl">If my GP never accepts Shared Care, cost per year</span><span class="cv"></span></div>
-      <div class="key">
-        <span class="note-lbl">Decision point</span>
-        That last figure is the one worth insisting on. It prices the scenario everybody hopes will not happen.
-      </div>
-    </div>
-
-      <div class="tail-notes">
-        <span class="tn-lbl">Notes</span>
-        <div class="rule"></div><div class="rule"></div>
-      </div>
-
-
-    <div class="block">
-      <h3>Ask: about medication and Shared Care</h3>
-      <div class="opts">
-        <div class="q">Medication available on this pathway?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Titration included in the price?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Will they keep prescribing if my GP declines?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q"><strong>Shared Care status:</strong>
-          <span class="opt"><span class="cb"></span>GP confirmed</span>
-          <span class="opt"><span class="cb"></span>Provider expects</span>
-          <span class="opt"><span class="cb"></span>Not discussed</span>
-          <span class="opt"><span class="cb"></span>GP declined</span>
-        </div>
-      </div>
-      <div class="two" style="margin-top:8px">
-        <div class="f"><span class="lbl">Who prescribes during titration</span><div class="rule"></div></div>
-        <div class="f"><span class="lbl">If a diagnosis is given, what follows</span><div class="rule"></div></div>
-      </div>
-      <div class="f"><span class="lbl">If no diagnosis is given, what follows</span><div class="rule"></div></div>
-      <div class="flag">
-        <span class="note-lbl">Watch out</span>
-        "We routinely enter Shared Care" describes their habit. It is not an agreement from your GP.
-      </div>
-    </div>
-
-      <div class="tail-notes">
-        <span class="tn-lbl">Notes</span>
-        <div class="rule"></div><div class="rule"></div>
-      </div>
-
-
-    <div class="block">
-      <h3>Ask: about my data and recordings</h3>
-      <div class="opts">
-        <div class="q">Is the appointment recorded?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Optional</span>
-        </div>
-        <div class="q">Is AI transcription or another automated system used?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Can I opt out?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-      </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">How long are recordings and notes kept?</span><div class="rule"></div></div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: about paying, and changing my mind</h3>
-      <div class="opts">
-        <div class="q">Payment plan offered?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
-          &nbsp;Through: <span class="inline-rule w-wide"></span>
-        </div>
-        <div class="q">Insurance accepted?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span>
-          &nbsp;Which: <span class="inline-rule w-wide"></span>
-        </div>
-      </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">Cancellation, rescheduling and refund policy</span><div class="rule"></div></div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: about adjustments</h3>
-      <div class="opts">
-        <div class="q">Can this provider accommodate adjustments to how the appointment runs?
-          <span class="opt"><span class="cb"></span>Yes</span>
-          <span class="opt"><span class="cb"></span>Partly</span>
-          <span class="opt"><span class="cb"></span>No</span>
-          <span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-      </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">What did they say is possible?</span><div class="rule"></div></div>
-      <div class="note">
-        <span class="note-lbl">Why this matters</span>
-        You do not need to have decided what to ask for yet. At this stage it only matters whether the provider is willing and able to adjust.
-      </div>
-    </div>
-
-    <div class="block">
-      <h3>Ask: if this is for a child or young person</h3>
-      <div class="opts">
-        <div class="q">If approaching 18, will the provider continue treatment or prescribing?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-        <div class="q">Is another referral or assessment required at 18?
-          <span class="opt"><span class="cb"></span>Yes</span><span class="opt"><span class="cb"></span>No</span><span class="opt"><span class="cb"></span>Unsure</span>
-        </div>
-      </div>
-      <div class="f" style="margin-top:8px"><span class="lbl">What happens at transition to adult services?</span><div class="rule"></div></div>
-    </div>
-
-    <div class="block">
-      <h3>Outstanding questions and notes for this provider</h3>
-      <div class="rows">
-        <div class="rule"></div><div class="rule"></div><div class="rule"></div>
-        <div class="rule"></div><div class="rule"></div><div class="rule"></div>
-        <div class="rule"></div><div class="rule"></div><div class="rule"></div>
-        <div class="rule"></div><div class="rule"></div><div class="rule"></div>
-        <div class="rule"></div><div class="rule"></div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 (function(){
-  var host = document.getElementById('sheets');
-  var tpl = document.getElementById('sheetTpl');
-  var count = 0;
-  var lastReported = 0;
+"use strict";
 
-  function measure(){
-    var doc = document.querySelector('.doc');
-    if (!doc) return Math.ceil(document.documentElement.scrollHeight);
-    var cs = window.getComputedStyle(document.body);
-    var pad = parseFloat(cs.paddingTop || '0') + parseFloat(cs.paddingBottom || '0');
-    return Math.ceil(doc.getBoundingClientRect().height + pad + 2);
+var SCHEMA = "queuend-assessment-checklist-part-a";
+var STORE_KEY = "queuend-assessment-checklist-part-a";
+var VERSION = 1;
+var MAX_FILE = 3 * 1024 * 1024;
+var BASE_SHEETS = 2;
+var MAX_SHEETS = 12;
+var CMP_ROWS = 6;
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];
+  });
+}
+function stamp(){
+  var d = new Date();
+  function p(n){ return (n < 10 ? "0" : "") + n; }
+  return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+}
+
+/* ---------- markup helpers ---------- */
+function group(type, key, legend, items, opts){
+  opts = opts || {};
+  var cls = opts.cls ? " " + opts.cls : "";
+  var h = '<fieldset><legend>' + esc(legend) + '</legend><div class="opts' + cls + '">';
+  for(var i=0;i<items.length;i++){
+    var id = key + "_" + i;
+    h += '<label class="opt" for="' + id + '"><input type="' + type + '" name="' + key + '" id="' + id + '">' +
+         '<span class="opt-txt">' + esc(items[i]) + '</span></label>';
   }
+  return h + '</div></fieldset>';
+}
+function checks(key, legend, items, opts){ return group("checkbox", key, legend, items, opts); }
+function radios(key, legend, items, opts){ return group("radio", key, legend, items, opts); }
+function txt(id, label, hint){
+  return '<div class="f"><label class="lbl" for="' + id + '">' + esc(label) +
+    (hint ? ' <span class="hint">' + esc(hint) + '</span>' : '') +
+    '</label><input type="text" id="' + id + '"></div>';
+}
+function area(id, label, cls, hint){
+  return '<div class="f"><label class="lbl" for="' + id + '">' + esc(label) +
+    (hint ? ' <span class="hint">' + esc(hint) + '</span>' : '') +
+    '</label><textarea id="' + id + '" class="' + (cls || "sm") + '"></textarea></div>';
+}
+function cell(id, label){
+  return '<td><input type="text" id="' + id + '" aria-label="' + esc(label) + '"></td>';
+}
+function put(id, html){ var el = document.getElementById(id); if(el){ el.innerHTML = html; } }
 
-  function report(){
-    var h = measure();
-    if (!isFinite(h) || h < 1) return;
-    if (Math.abs(h - lastReported) <= 2) return;
-    lastReported = h;
-    try {
-      if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ channel: 'queuend-checklist', height: h }, '*');
-      }
-    } catch (e) {}
+var YNU = ["Yes","No","Unsure"];
+var YN = ["Yes","No"];
+
+/* ---------- section 01 ---------- */
+put("g_matters", checks("matters", "What matters most to me",
+  ["Being seen quickly","Keeping the total cost down","A thorough assessment, even if slower",
+   "Good chance my GP accepts Shared Care","Access to medication",
+   "Being seen in person rather than online","Experience with adults diagnosed late",
+   "Experience with women and girls","Experience with co-occurring conditions"],
+  {cls: "wide"}));
+
+/* ---------- section 02 ---------- */
+put("g_about",
+  radios("ab_for", "Assessment for", ["Adult","Child or young person"], {cls: "row"}) +
+  radios("ab_other", "I may need a provider who can also consider autism or another explanation", YNU, {cls: "row"}) +
+  radios("ab_nation", "UK nation", ["England","Scotland","Wales","Northern Ireland"], {cls: "row"}) +
+  checks("ab_purpose", "I may need the assessment or report for",
+    ["Work","School","College or university","Adjustments","Something else"]) +
+  radios("ab_med", "Medication something I may want to explore", YNU, {cls: "row"}));
+
+/* ---------- section 03: comparison table ---------- */
+var CMP_COLS = ["Provider","Route","Wait","First-year cost","Cost a year if no Shared Care","Shared Care","Status and next step"];
+var cmpHtml = "";
+for(var r=1;r<=CMP_ROWS;r++){
+  cmpHtml += "<tr>";
+  for(var c=0;c<CMP_COLS.length;c++){
+    cmpHtml += cell("cmp_r" + r + "c" + (c+1), CMP_COLS[c] + ", comparison row " + r);
   }
+  cmpHtml += "</tr>";
+}
+put("cmpBody", cmpHtml);
 
-  var rafId = 0;
-  function scheduleReport(){
-    cancelAnimationFrame(rafId);
-    rafId = requestAnimationFrame(report);
-  }
+/* ---------- section 04 ---------- */
+put("g_gp",
+  checks("gp_asked", "What I asked for",
+    ["NHS referral","Right to Choose referral","Shared Care","Advice only"]) +
+  radios("gp_outcome", "Outcome",
+    ["Agreed","Declined","Referred elsewhere","Awaiting decision"]) +
+  radios("gp_writing", "If declined, do I have the reasons in writing?",
+    ["Yes","No","Requested"], {cls: "row"}));
 
-  function addSheet(){
-    count++;
-    var node = tpl.content.cloneNode(true);
-    node.querySelector('.n').textContent = count;
-    if (count > 1) node.querySelector('.sheet').classList.add('page-break');
-    host.appendChild(node);
-    scheduleReport();
-  }
+put("g_rtc1",
+  radios("rtc_accepts", "Provider says it accepts Right to Choose referrals", YNU, {cls: "row"}) +
+  radios("rtc_scope", "Does their pathway cover assessment only, or treatment as well?",
+    ["Assessment only","Both","Unsure"], {cls: "row"}));
 
-  addSheet();
-  addSheet();
+put("g_rtc2",
+  radios("rtc_which", "Which of these is it?",
+    ["Not clinically appropriate","No qualifying NHS contract","Wrong cohort (adult / child)",
+     "Provider has paused referrals","Practice preference \u2014 \u201Cthe one we use\u201D","Unclear"],
+    {cls: "wide"}) +
+  radios("rtc_kind", "Ask directly: is this about the referral itself, or about Shared Care afterwards?",
+    ["They cannot refer me there","They will not do Shared Care with them later","Still unclear"],
+    {cls: "wide"}));
 
-  function printChecklist(mode){
-    if (mode === 'core') {
-      document.body.classList.add('print-core');
-    } else {
-      document.body.classList.remove('print-core');
+/* ---------- provider sheets ---------- */
+var LOG_COLS = ["Date","Method","Who I spoke to","What they said","Follow up by"];
+
+function sheetHtml(n){
+  var p = "p" + n + "_";
+  var h = '<div class="sheet' + (n > 1 ? " page-break" : "") + '" data-sheet="' + n + '">';
+  h += '<div class="sheet-head"><span class="sheet-title"><span class="st-sub">Provider detail sheet</span>Provider</span>' +
+       '<span class="sheet-no">Sheet ' + n + '</span></div>';
+  h += '<p class="sheet-lead">Everything below is something to ask them. Work down it on the call and write what they actually say, not what the website says.</p>';
+
+  h += '<div class="block"><h3>The basics</h3><div class="two">' +
+       txt(p+"name", "Name") + txt(p+"web", "Website") +
+       txt(p+"contact", "Phone / email") + txt(p+"checked", "Information checked on / recheck by") +
+       '</div>' +
+       checks(p+"route", "Route", ["Local NHS","Right to Choose","Private","Children's pathway","Other"]) +
+       '</div>';
+
+  h += '<div class="block"><h3>Contact log</h3><div class="table-wrap"><table>' +
+       '<caption class="vh">Contact log, provider ' + n + '</caption><thead><tr>' +
+       '<th style="width:14%">Date</th><th style="width:14%">Method</th><th style="width:20%">Who I spoke to</th>' +
+       '<th style="width:36%">What they said</th><th style="width:16%">Follow up by</th></tr></thead><tbody>';
+  for(var r=1;r<=3;r++){
+    h += "<tr>";
+    for(var c=0;c<LOG_COLS.length;c++){
+      h += cell(p + "log" + r + "c" + (c+1), LOG_COLS[c] + ", provider " + n + " contact log row " + r);
     }
-    window.print();
+    h += "</tr>";
   }
+  h += '</tbody></table></div></div>';
 
-  window.addEventListener('afterprint', function(){
-    document.body.classList.remove('print-core');
-    scheduleReport();
-  });
+  h += '<div class="block"><h3>Ask: who actually makes the diagnosis</h3>' +
+       txt(p+"conducts", "Who conducts the assessment?", "name, profession, registration") +
+       txt(p+"signs", "Who makes and signs off the diagnostic decision?", "name, profession, registration") +
+       txt(p+"training", "What specialist ADHD training and experience do they have?") +
+       txt(p+"cocontrib", "If they also assess co-occurring conditions, who contributes to that decision?") +
+       '<div class="flag"><span class="note-lbl">Watch out</span>' +
+       'The person interviewing you is not always the person responsible for the diagnosis. Check that the clinician making the diagnostic decision has appropriate specialist training and expertise in ADHD.' +
+       '</div></div>';
 
-  document.getElementById('printCore').addEventListener('click', function(){
-    printChecklist('core');
-  });
+  h += '<div class="block"><h3>Ask: how long, and until what</h3><div class="two">' +
+       txt(p+"wait", "Current estimated wait") + txt(p+"refreq", "Referral required?") +
+       '</div>' +
+       radios(p+"waituntil", "That wait is until",
+         ["First contact","First appointment","Completed assessment","Unsure"]) +
+       '<div class="two" style="margin-top:8px">' +
+       txt(p+"decision", "After the final appointment, diagnostic decision within") +
+       txt(p+"feedback", "Feedback appointment within") +
+       txt(p+"report", "Written report within") +
+       txt(p+"delay", "If the report is delayed, who do I contact?") +
+       '</div>' +
+       '<div class="note"><span class="note-lbl">Why this matters</span>' +
+       'An assessment in six weeks is less impressive if the written report takes another twelve. The report is usually the thing you actually need.' +
+       '</div></div>';
 
-  document.getElementById('printFull').addEventListener('click', function(){
-    printChecklist('full');
-  });
+  h += '<div class="block"><h3>Ask: what the assessment involves</h3><div class="two">' +
+       txt(p+"length", "Length / number of appointments") +
+       txt(p+"inconclusive", "What happens if the result is inconclusive") +
+       '</div>' +
+       radios(p+"format", "Format", ["In person","Video","Mixed"], {cls: "row"}) +
+       checks(p+"included", "Included", ["Written report","Feedback appointment"], {cls: "row"}) +
+       '</div>';
 
-  document.getElementById('addSheet').addEventListener('click', function(){
-    addSheet();
-    host.lastElementChild.scrollIntoView({
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-      block: 'start'
-    });
-  });
+  h += '<div class="block"><h3>Ask: what happens if it turns out to be something else</h3>' +
+       radios(p+"otherexpl", "Will the assessment consider other possible explanations for the difficulties?", YNU, {cls: "row"}) +
+       radios(p+"cooccur", "Will it consider co-occurring conditions?", YNU, {cls: "row"}) +
+       txt(p+"apparent", "If something else becomes apparent, what happens?") +
+       area(p+"autism", "If autism or another condition seems relevant, is it discussed, assessed, referred on, or charged again?") +
+       '<div class="note"><span class="note-lbl">Why this matters</span>' +
+       'A good assessment is not a conveyor belt towards the condition written on the booking form.' +
+       '</div></div>';
 
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(scheduleReport).observe(document.body);
+  h += '<div class="block"><h3>Ask: what information I will need to provide</h3>' +
+       checks(p+"require", "Before the assessment, this provider requires",
+         ["Developmental / childhood history","Childhood informant","School records",
+          "Questionnaires","Previous reports","Something else"], {cls: "wide"}) +
+       area(p+"alternatives", "If I cannot provide childhood records or a childhood informant, what alternatives will they accept?") +
+       '<div class="note"><span class="note-lbl">Why this matters</span>' +
+       'Guidance asks for childhood evidence where possible. Those two words matter if your school reports vanished thirty years ago. Requirements vary between providers, which may affect which one suits you.' +
+       '</div></div>';
+
+  h += '<div class="block"><h3>Ask: about the report</h3>' +
+       radios(p+"criteria", "Does it state which diagnostic criteria were used?", YNU, {cls: "row"}) +
+       radios(p+"recs", "Does it include recommendations or a treatment plan?", YNU, {cls: "row"}) +
+       radios(p+"gpaccept", "Have local GPs accepted their reports before?", YNU, {cls: "row"}) +
+       radios(p+"example", "Can I see an anonymised example?", YN, {cls: "row"}) +
+       radios(p+"second", "Can I request clarification or a second clinical opinion?", YNU, {cls: "row"}) +
+       '<div class="two" style="margin-top:8px">' +
+       txt(p+"correction", "If I find a factual error, how do I request a correction?") +
+       txt(p+"complaints", "What is the complaints process?") +
+       '</div></div>';
+
+  h += '<div class="tail-notes"><label class="tn-lbl" for="' + p + 'notes1">Optional notes</label>' +
+       '<textarea id="' + p + 'notes1" class="sm"></textarea></div>';
+
+  h += '<div class="block"><h3>Ask: about regulation and registration</h3>' +
+       radios(p+"cqc", "CQC status (England)",
+         ["Registered","Not required \u2014 diagnosis only","Unclear","N/A outside England"], {cls: "wide"}) +
+       '<div class="two" style="margin-top:8px">' +
+       txt(p+"rating", "Rating, if rated / checked on") +
+       txt(p+"register", "Statutory register & number", "e.g. GMC, HCPC, NMC") +
+       '</div>' +
+       txt(p+"membership", "Other professional membership or accreditation", "e.g. BACP, UKCP") +
+       '<div class="flag"><span class="note-lbl">Watch out</span>' +
+       'GMC, HCPC and NMC are statutory regulators. Membership bodies are not the same thing, and membership alone does not establish qualification to diagnose ADHD. Separately, a missing CQC registration is not automatically a warning sign &mdash; since March 2026, providers offering diagnosis only, without treatment or prescribing, are no longer required to register. Ask which applies.' +
+       '</div></div>';
+
+  h += '<div class="tail-notes"><label class="tn-lbl" for="' + p + 'notes2">Optional notes</label>' +
+       '<textarea id="' + p + 'notes2" class="sm"></textarea></div>';
+
+  h += '<div class="block cost-group"><h3>Ask: what it costs in the first year</h3>';
+  var first = [
+    [p+"c_assess","Assessment"],
+    [p+"c_report","Report, if charged separately"],
+    [p+"c_feedback","Feedback appointment"],
+    [p+"c_medcons","Medication consultation"]
+  ];
+  for(var i=0;i<first.length;i++){
+    h += '<div class="cost-row"><label class="cl" for="' + first[i][0] + '">' + esc(first[i][1]) + '</label>' +
+         '<input type="text" id="' + first[i][0] + '"></div>';
   }
-  window.addEventListener('load', scheduleReport);
-  window.addEventListener('resize', scheduleReport);
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(scheduleReport).catch(function(){});
+  h += '<div class="cost-row"><label class="cl" for="' + p + 'c_titration">Titration appointments ' +
+       '<span class="cost-inline"><input type="text" id="' + p + 'c_titcount" aria-label="Number of titration appointments, provider ' + n + '"></span> how many?</label>' +
+       '<input type="text" id="' + p + 'c_titration"></div>';
+  var first2 = [
+    [p+"c_scripts","Prescriptions during titration"],
+    [p+"c_other","Anything else"]
+  ];
+  for(i=0;i<first2.length;i++){
+    h += '<div class="cost-row"><label class="cl" for="' + first2[i][0] + '">' + esc(first2[i][1]) + '</label>' +
+         '<input type="text" id="' + first2[i][0] + '"></div>';
   }
-  scheduleReport();
-  setTimeout(scheduleReport, 100);
-  setTimeout(scheduleReport, 400);
-  setTimeout(scheduleReport, 1200);
+  h += '<div class="cost-row cost-total"><label class="cl" for="' + p + 'c_total1">Total, first year</label>' +
+       '<input type="text" id="' + p + 'c_total1"></div></div>';
+
+  h += '<div class="block cost-group"><h3>Ask: what it costs after that</h3>';
+  var later = [
+    [p+"c_review","Annual review"],
+    [p+"c_ongoing","Ongoing prescriptions"],
+    [p+"c_renewal","Renewal or membership fee"]
+  ];
+  for(i=0;i<later.length;i++){
+    h += '<div class="cost-row"><label class="cl" for="' + later[i][0] + '">' + esc(later[i][1]) + '</label>' +
+         '<input type="text" id="' + later[i][0] + '"></div>';
+  }
+  h += '<div class="cost-row cost-total"><label class="cl" for="' + p + 'c_total2">Total, per year after</label>' +
+       '<input type="text" id="' + p + 'c_total2"></div>';
+  h += '<div class="cost-row cost-flag"><label class="cl" for="' + p + 'c_noshared">If my GP never accepts Shared Care, cost per year</label>' +
+       '<input type="text" id="' + p + 'c_noshared"></div>';
+  h += '<div class="key"><span class="note-lbl">Decision point</span>' +
+       'That last figure is the one worth insisting on. It prices the scenario everybody hopes will not happen.' +
+       '</div></div>';
+
+  h += '<div class="tail-notes"><label class="tn-lbl" for="' + p + 'notes3">Optional notes</label>' +
+       '<textarea id="' + p + 'notes3" class="sm"></textarea></div>';
+
+  h += '<div class="block"><h3>Ask: about medication and Shared Care</h3>' +
+       radios(p+"medavail", "Medication available on this pathway?", YNU, {cls: "row"}) +
+       radios(p+"titincl", "Titration included in the price?", YNU, {cls: "row"}) +
+       radios(p+"keepscript", "Will they keep prescribing if my GP declines?", YNU, {cls: "row"}) +
+       radios(p+"sharedstatus", "Shared Care status",
+         ["GP confirmed","Provider expects","Not discussed","GP declined"]) +
+       '<div class="two" style="margin-top:8px">' +
+       txt(p+"prescriber", "Who prescribes during titration") +
+       txt(p+"ifdiag", "If a diagnosis is given, what follows") +
+       '</div>' +
+       txt(p+"ifnodiag", "If no diagnosis is given, what follows") +
+       '<div class="flag"><span class="note-lbl">Watch out</span>' +
+       '&ldquo;We routinely enter Shared Care&rdquo; describes their habit. It is not an agreement from your GP.' +
+       '</div></div>';
+
+  h += '<div class="tail-notes"><label class="tn-lbl" for="' + p + 'notes4">Optional notes</label>' +
+       '<textarea id="' + p + 'notes4" class="sm"></textarea></div>';
+
+  h += '<div class="block"><h3>Ask: about my data and recordings</h3>' +
+       radios(p+"recorded", "Is the appointment recorded?", ["Yes","No","Optional"], {cls: "row"}) +
+       radios(p+"aitrans", "Is AI transcription or another automated system used?", YNU, {cls: "row"}) +
+       radios(p+"optout", "Can I opt out?", YNU, {cls: "row"}) +
+       txt(p+"retention", "How long are recordings and notes kept?") +
+       '</div>';
+
+  h += '<div class="block"><h3>Ask: about paying, and changing my mind</h3>' +
+       radios(p+"payplan", "Payment plan offered?", YN, {cls: "row"}) +
+       txt(p+"paythrough", "Payment plan through") +
+       radios(p+"insurance", "Insurance accepted?", YN, {cls: "row"}) +
+       txt(p+"insurwhich", "Which insurers") +
+       txt(p+"cancel", "Cancellation, rescheduling and refund policy") +
+       '</div>';
+
+  h += '<div class="block"><h3>Ask: about adjustments</h3>' +
+       radios(p+"adjust", "Can this provider accommodate adjustments to how the appointment runs?",
+         ["Yes","Partly","No","Unsure"], {cls: "row"}) +
+       txt(p+"adjustwhat", "What did they say is possible?") +
+       '<div class="note"><span class="note-lbl">Why this matters</span>' +
+       'You do not need to have decided what to ask for yet. At this stage it only matters whether the provider is willing and able to adjust.' +
+       '</div></div>';
+
+  h += '<div class="block"><h3>Ask: if this is for a child or young person</h3>' +
+       radios(p+"cont18", "If approaching 18, will the provider continue treatment or prescribing?", YNU, {cls: "row"}) +
+       radios(p+"ref18", "Is another referral or assessment required at 18?", YNU, {cls: "row"}) +
+       txt(p+"transition", "What happens at transition to adult services?") +
+       '</div>';
+
+  h += '<div class="block">' +
+       area(p+"outstanding", "Outstanding questions or optional notes for this provider", "lg") +
+       '</div>';
+
+  return h + '</div>';
+}
+
+var sheetHost = document.getElementById("sheets");
+var sheetCount = 0;
+
+function addSheet(){
+  sheetCount++;
+  sheetHost.insertAdjacentHTML("beforeend", sheetHtml(sheetCount));
+  return sheetHost.querySelector('[data-sheet="' + sheetCount + '"]');
+}
+function buildSheets(n){
+  sheetHost.innerHTML = "";
+  sheetCount = 0;
+  for(var i=0;i<n;i++){ addSheet(); }
+}
+buildSheets(BASE_SHEETS);
+
+/* ---------- shared behaviour ---------- */
+function autosize(t){
+  t.style.height = "auto";
+  var min = parseFloat(window.getComputedStyle(t).minHeight) || 0;
+  t.style.height = Math.max(t.scrollHeight, min) + "px";
+}
+function autoAll(root){
+  var ts = (root || document).querySelectorAll("textarea");
+  for(var i=0;i<ts.length;i++){ autosize(ts[i]); }
+}
+
+function fields(){
+  return document.getElementById("doc")
+    .querySelectorAll('input[type=text], input[type=checkbox], input[type=radio], textarea');
+}
+function collect(){
+  var data = {}, f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(!el.id) continue;
+    data[el.id] = (el.type === "checkbox" || el.type === "radio") ? el.checked : el.value;
+  }
+  return data;
+}
+function hasContent(){
+  var f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(el.type === "checkbox" || el.type === "radio"){ if(el.checked) return true; }
+    else if(el.value && el.value.trim() !== ""){ return true; }
+  }
+  return false;
+}
+function resetAll(){
+  buildSheets(BASE_SHEETS);
+  var f = fields();
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(el.type === "checkbox" || el.type === "radio"){ el.checked = false; }
+    else { el.value = ""; }
+  }
+  autoAll();
+}
+function makePayload(){
+  return { format: SCHEMA, version: VERSION, saved: stamp(),
+           providerSheets: sheetCount, answers: collect() };
+}
+function serialize(){ return JSON.stringify({ sheets: sheetCount, answers: collect() }); }
+function isUnsaved(){ return serialize() !== lastSavedSerial; }
+function validPayload(d){
+  return !!d && typeof d === "object" && d.format === SCHEMA && d.version === VERSION &&
+         !!d.answers && typeof d.answers === "object" && !Array.isArray(d.answers);
+}
+function applyPayload(d){
+  var want = parseInt(d.providerSheets, 10);
+  if(!isFinite(want) || want < 1){ want = BASE_SHEETS; }
+  if(want > MAX_SHEETS){ want = MAX_SHEETS; }
+  resetAll();
+  buildSheets(want);
+  var f = fields(), applied = 0;
+  for(var i=0;i<f.length;i++){
+    var el = f[i];
+    if(!el.id || !Object.prototype.hasOwnProperty.call(d.answers, el.id)) continue;
+    var v = d.answers[el.id];
+    if(el.type === "checkbox" || el.type === "radio"){
+      if(typeof v !== "boolean") continue;
+      el.checked = v;
+    } else {
+      if(typeof v !== "string") continue;
+      el.value = v;
+    }
+    applied++;
+  }
+  autoAll();
+  return applied;
+}
+
+function storageAvailable(){
+  try{
+    var k = "__queuend_probe__";
+    window.localStorage.setItem(k, "1");
+    window.localStorage.removeItem(k);
+    return true;
+  } catch(e){ return false; }
+}
+function readSaved(){
+  var raw;
+  try { raw = window.localStorage.getItem(STORE_KEY); }
+  catch(e){ return null; }
+  if(!raw) return null;
+  var d;
+  try { d = JSON.parse(raw); } catch(e){ d = null; }
+  if(!validPayload(d)){
+    try { window.localStorage.removeItem(STORE_KEY); } catch(e){}
+    return null;
+  }
+  return d;
+}
+function writeSaved(){
+  try {
+    window.localStorage.setItem(STORE_KEY, JSON.stringify(makePayload()));
+    lastSavedSerial = serialize();
+    return true;
+  } catch(e){ return false; }
+}
+function clearSaved(){
+  try { window.localStorage.removeItem(STORE_KEY); return true; }
+  catch(e){ return false; }
+}
+function scheduleAutosave(){
+  if(!autosaveOn) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); }
+  autosaveTimer = setTimeout(function(){
+    autosaveTimer = null;
+    if(!writeSaved()){
+      autosaveOn = false;
+      if(!storageWarned){
+        storageWarned = true;
+        window.alert("Your progress could not be updated in this browser, so automatic saving has been switched off.\n\nYou can use Download a backup copy to keep your answers instead.");
+      }
+    }
+  }, 800);
+}
+function flushAutosave(){
+  if(autosaveTimer){
+    clearTimeout(autosaveTimer);
+    autosaveTimer = null;
+    writeSaved();
+  }
+}
+function mirrorTextareas(){
+  var ts = document.getElementById("doc").querySelectorAll("textarea");
+  for(var i=0;i<ts.length;i++){
+    var t = ts[i], m = t.nextElementSibling;
+    if(!m || !m.classList || !m.classList.contains("print-mirror")){
+      m = document.createElement("div");
+      m.className = "print-mirror";
+      t.parentNode.insertBefore(m, t.nextSibling);
+    }
+    var v = t.value || "";
+    m.textContent = v;
+    if(v.replace(/\s/g, "") !== ""){
+      t.classList.add("has-value");
+      m.classList.add("filled");
+    } else {
+      t.classList.remove("has-value");
+      m.classList.remove("filled");
+    }
+  }
+}
+
+var lastSavedSerial = null;
+var autosaveOn = false;
+var autosaveTimer = null;
+var storageWarned = false;
+var cloneTimer = null;
+var resumeBox = document.getElementById("resumeBox");
+var fileIn = document.getElementById("fileIn");
+
+function hideResume(){ resumeBox.hidden = true; }
+function isAnswerControl(el){
+  if(!el || !el.tagName) return false;
+  if(el.tagName === "TEXTAREA") return true;
+  if(el.tagName !== "INPUT") return false;
+  return el.type === "text" || el.type === "checkbox" || el.type === "radio";
+}
+function onAnswerChanged(ev){
+  if(isAnswerControl(ev.target) && ev.target.id !== "fileIn"){ scheduleAutosave(); }
+}
+document.addEventListener("input", function(ev){
+  if(ev.target && ev.target.tagName === "TEXTAREA"){ autosize(ev.target); }
+  onAnswerChanged(ev);
+});
+document.addEventListener("change", onAnswerChanged);
+
+document.getElementById("btnAddSheet").addEventListener("click", function(){
+  if(sheetCount >= MAX_SHEETS){
+    window.alert("That is as many provider sheets as this checklist will hold.");
+    return;
+  }
+  var el = addSheet();
+  autoAll(el);
+  scheduleAutosave();
+  el.scrollIntoView({
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    block: "start"
+  });
+});
+
+/* ---------- printing ---------- */
+function doPrint(core){
+  if(core){ document.body.classList.add("print-core"); }
+  else { document.body.classList.remove("print-core"); }
+  autoAll();
+  mirrorTextareas();
+  window.print();
+}
+document.getElementById("btnPrintFull").addEventListener("click", function(){ doPrint(false); });
+document.getElementById("btnPrintCore").addEventListener("click", function(){ doPrint(true); });
+window.addEventListener("beforeprint", function(){
+  if(!document.body.classList.contains("blank-print")){ mirrorTextareas(); }
+});
+
+function removeClone(){
+  var c = document.getElementById("printClone");
+  if(c && c.parentNode){ c.parentNode.removeChild(c); }
+  document.body.classList.remove("blank-print");
+  if(cloneTimer){ clearTimeout(cloneTimer); cloneTimer = null; }
+}
+
+document.getElementById("btnBlank").addEventListener("click", function(){
+  removeClone();
+  document.body.classList.remove("print-core");
+  var clone = document.getElementById("doc").cloneNode(true);
+  var i, els;
+
+  els = clone.querySelectorAll("textarea");
+  for(i=0;i<els.length;i++){
+    els[i].value = ""; els[i].textContent = "";
+    els[i].removeAttribute("style"); els[i].classList.remove("has-value");
+  }
+  els = clone.querySelectorAll("input");
+  for(i=0;i<els.length;i++){
+    if(els[i].type === "checkbox" || els[i].type === "radio"){
+      els[i].checked = false; els[i].removeAttribute("checked");
+    } else { els[i].value = ""; els[i].removeAttribute("value"); }
+  }
+  els = clone.querySelectorAll(".print-mirror");
+  for(i=els.length-1;i>=0;i--){ els[i].parentNode.removeChild(els[i]); }
+  els = clone.querySelectorAll("[data-sheet]");
+  for(i=els.length-1;i>=0;i--){
+    if(parseInt(els[i].getAttribute("data-sheet"), 10) > BASE_SHEETS){ els[i].parentNode.removeChild(els[i]); }
+  }
+  els = clone.querySelectorAll("[id]");
+  for(i=0;i<els.length;i++){ els[i].removeAttribute("id"); }
+  els = clone.querySelectorAll("label[for]");
+  for(i=0;i<els.length;i++){ els[i].removeAttribute("for"); }
+  els = clone.querySelectorAll("[name]");
+  for(i=0;i<els.length;i++){ els[i].setAttribute("name", "blank_" + els[i].getAttribute("name")); }
+
+  clone.id = "printClone";
+  clone.setAttribute("aria-hidden", "true");
+  document.body.appendChild(clone);
+  document.body.classList.add("blank-print");
+  window.print();
+  cloneTimer = setTimeout(removeClone, 1500);
+});
+
+window.addEventListener("afterprint", function(){
+  document.body.classList.remove("print-core");
+  removeClone();
+});
+window.addEventListener("focus", function(){
+  if(document.body.classList.contains("blank-print")){ setTimeout(removeClone, 200); }
+});
+
+/* ---------- save / restore ---------- */
+document.getElementById("btnSaveLocal").addEventListener("click", function(){
+  if(!storageAvailable()){
+    window.alert("This browser will not let the page save anything locally. That usually happens in private browsing, or when site data is switched off.\n\nUse Download a backup copy instead, and reopen it later with Open a backup copy.");
+    return;
+  }
+  if(writeSaved()){
+    autosaveOn = true;
+    hideResume();
+    window.alert("Your progress has been saved in this browser, and will be kept up to date as you carry on.");
+  } else {
+    window.alert("Your progress could not be saved in this browser. Its storage may be full.\n\nUse Download a backup copy instead.");
+  }
+});
+
+document.getElementById("btnRestore").addEventListener("click", function(){
+  var d = readSaved();
+  if(!d){
+    hideResume();
+    window.alert("The saved progress could not be found in this browser. It may have been removed since this page was opened.");
+    return;
+  }
+  if(isUnsaved() && !window.confirm("Restoring will replace the answers currently on this page. Continue?")) return;
+  applyPayload(d);
+  lastSavedSerial = serialize();
+  autosaveOn = true;
+  hideResume();
+  window.scrollTo(0, 0);
+});
+
+document.getElementById("btnStartAgain").addEventListener("click", function(){
+  if(!window.confirm(
+    "Start again?\n\n" +
+    "This deletes the copy of your answers saved in this browser and clears the page. " +
+    "It cannot be undone. It does not delete a backup copy you have already downloaded.")) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); autosaveTimer = null; }
+  autosaveOn = false;
+  var removed = clearSaved();
+  resetAll();
+  lastSavedSerial = serialize();
+  hideResume();
+  window.scrollTo(0, 0);
+  if(!removed){
+    window.alert("The page has been cleared, but the copy saved in this browser could not be removed. You may need to clear this site's data in your browser settings.");
+  }
+});
+
+document.getElementById("btnSave").addEventListener("click", function(){
+  var blob = new Blob([JSON.stringify(makePayload(), null, 2)], {type: "application/json"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = "Queuend-ADHD-Part-A-progress-" + stamp() + ".json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  lastSavedSerial = serialize();
+});
+
+document.getElementById("btnLoad").addEventListener("click", function(){ fileIn.click(); });
+function fail(msg){ window.alert(msg); fileIn.value = ""; }
+
+fileIn.addEventListener("change", function(){
+  var file = fileIn.files && fileIn.files[0];
+  if(!file) return;
+  if(file.size > MAX_FILE){ return fail("That file is too large to be a saved Part A checklist."); }
+
+  var warn = null;
+  if(autosaveOn){
+    warn = "Opening this backup copy will replace the answers currently on this page, and will also replace the copy saved in this browser, because browser saving is switched on.\n\nContinue?";
+  } else if(isUnsaved()){
+    warn = "Opening this backup copy will replace the answers currently on this page. Continue?";
+  }
+  if(warn && !window.confirm(warn)){ fileIn.value = ""; return; }
+
+  var reader = new FileReader();
+  reader.onerror = function(){ fail("That file could not be read."); };
+  reader.onload = function(){
+    var data;
+    try { data = JSON.parse(reader.result); }
+    catch(err){ return fail("That file could not be read. Please choose a file you downloaded from this checklist."); }
+
+    if(!data || typeof data !== "object"){
+      return fail("That file could not be read. Please choose a file you downloaded from this checklist.");
+    }
+    if(data.format !== SCHEMA){
+      var where = "";
+      if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a Part B backup \u2014 open it in Part B instead."; }
+      else if(data.format === "queuend-reflection-record"){ where = " It looks like a Reflection Record backup \u2014 open it in the Reflection Record instead."; }
+      return fail("That does not look like a backup copy from Part A." + where);
+    }
+    if(data.version !== VERSION){
+      return fail("That file was saved by a different version of this checklist, so it cannot be opened here.");
+    }
+    if(!validPayload(data)){
+      return fail("That file does not contain any answers this checklist can read.");
+    }
+
+    var hadBrowserCopy = !!readSaved();
+    var applied = applyPayload(data);
+    lastSavedSerial = serialize();
+    if(autosaveOn){ writeSaved(); }
+    hideResume();
+    fileIn.value = "";
+    if(applied > 0){
+      if(autosaveOn){
+        window.alert("Your backup copy has been loaded, and the copy saved in this browser has been updated to match.");
+      } else if(hadBrowserCopy){
+        window.alert("Your backup copy has been opened. It has not been saved in this browser. " +
+          "Your previously saved browser progress has not been changed. " +
+          "Choose \u201CSave my progress in this browser\u201D if you want this version to replace it.");
+      } else {
+        window.alert("Your backup copy has been opened. It has not been saved in this browser. " +
+          "Choose \u201CSave my progress in this browser\u201D if you want to keep it here.");
+      }
+    } else {
+      window.alert("That file opened, but contained no answers this checklist recognises.");
+    }
+  };
+  reader.readAsText(file);
+});
+
+document.getElementById("btnClear").addEventListener("click", function(){
+  var saved = readSaved();
+  if(!hasContent() && sheetCount === BASE_SHEETS && !saved){
+    window.alert("There is nothing to clear yet."); return;
+  }
+  if(!window.confirm(
+    "Clear every answer currently shown on this page?\n\n" +
+    "Any copy saved in this browser will be deleted too. This cannot be undone. " +
+    "It does not delete a backup copy you have already downloaded \u2014 " +
+    "that belongs to you, and you would need to delete it yourself.")) return;
+  if(autosaveTimer){ clearTimeout(autosaveTimer); autosaveTimer = null; }
+  autosaveOn = false;
+  var removed = clearSaved();
+  resetAll();
+  lastSavedSerial = serialize();
+  hideResume();
+  window.scrollTo(0, 0);
+  if(saved && !removed){
+    window.alert("The page has been cleared, but the copy saved in this browser could not be removed. You may need to clear this site's data in your browser settings.");
+  }
+});
+
+window.addEventListener("beforeunload", function(ev){
+  flushAutosave();
+  if(isUnsaved()){ ev.preventDefault(); ev.returnValue = ""; return ""; }
+});
+
+autoAll();
+lastSavedSerial = serialize();
+if(readSaved()){ resumeBox.hidden = false; }
 })();
 </script>
 </body>
