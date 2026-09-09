@@ -689,7 +689,7 @@ function makePayload(){
   return { format: SCHEMA, version: VERSION, saved: stamp(), answers: collect() };
 }
 function serialize(){ return JSON.stringify(collect()); }
-function isUnsaved(){ return hasContent() && serialize() !== lastSavedSerial; }
+function isUnsaved(){ return serialize() !== lastSavedSerial; }
 function validPayload(d){
   return !!d && typeof d === "object" && d.format === SCHEMA && d.version === VERSION &&
          !!d.answers && typeof d.answers === "object" && !Array.isArray(d.answers);
