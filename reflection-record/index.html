@@ -130,6 +130,9 @@ legend{padding:0}
 .cta{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:10pt;font-weight:600;
   background:var(--rose);color:#fff;padding:12px 18px;border-radius:3px;text-decoration:none}
 .cta:hover{background:var(--berry)}
+.next-alt{font-family:var(--sans);font-size:9pt;color:var(--muted);margin:12px 0 0}
+.next-alt a{color:var(--berry);text-decoration:underline;text-underline-offset:2px}
+.next-alt a:hover{color:var(--rose)}
 
 .handover{margin-top:34px;border-top:2.5px solid var(--rose);padding-top:16px}
 .stmt{font-family:var(--sans);font-size:9.5pt;line-height:1.6;color:var(--muted);
@@ -181,6 +184,7 @@ body.blank-print > #printClone{display:block}
   .handover{break-before:page;page-break-before:always}
   .cta{border:1px solid var(--rose);background:transparent;color:var(--berry);padding:6px 0}
   .cta::after{content:" — queuend.com/which-route";font-size:8pt;color:var(--muted)}
+  .next-alt a{color:var(--berry);text-decoration:none}
 }
 </style>
 </head>
@@ -348,8 +352,10 @@ body.blank-print > #printClone{display:block}
 
   <div class="next">
     <h3>If you decide to explore assessment</h3>
-    <p>If assessment feels like something you want to explore, Queuend can help you understand the three main routes &mdash; NHS, Right to Choose and private &mdash; before you decide what to do next.</p>
+    <p>There is space to write anything in your own words in section 12, just below.</p>
+    <p>When you&rsquo;re ready to leave: if assessment feels like something you want to explore, Queuend can help you understand the three main routes &mdash; NHS, Right to Choose and private &mdash; before you decide what to do next.</p>
     <a class="cta" href="https://straightforward-symptoms-475728.framer.app/which-route-1-2-3">Explore the three assessment routes &rarr;</a>
+    <p class="next-alt">Or return to <a href="https://straightforward-symptoms-475728.framer.app/resource-hub">all Queuend resources</a>.</p>
   </div>
 </section>
 
@@ -758,7 +764,7 @@ function serialize(){
   return JSON.stringify({ examples: exCount, answers: collect() });
 }
 function isUnsaved(){
-  return hasContent() && serialize() !== lastSavedSerial;
+  return serialize() !== lastSavedSerial;
 }
 function validPayload(d){
   return !!d && typeof d === "object" && d.format === SCHEMA && d.version === VERSION &&
@@ -1003,7 +1009,9 @@ fileIn.addEventListener("change", function(){
 
 document.getElementById("btnClear").addEventListener("click", function(){
   var saved = readSaved();
-  if(!hasContent() && !saved){ window.alert("There is nothing to clear yet."); return; }
+  if(!hasContent() && exCount === BASE_EXAMPLES && !saved){
+    window.alert("There is nothing to clear yet."); return;
+  }
   if(!window.confirm(
     "Clear every answer currently shown on this page?\n\n" +
     "Any copy saved in this browser will be deleted too. This cannot be undone. " +
