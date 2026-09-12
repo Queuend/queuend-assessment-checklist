@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A free worksheet for preparing for an ADHD assessment: what to have ready, ask, take and record afterwards. Nothing you enter is sent to Queuend.">
-<title>ADHD Assessment Checklist, Part B &mdash; Queuend</title>
+<meta name="description" content="Free checklist to help you prepare for an ADHD assessment: what to have ready, ask, take and record afterwards. Nothing you enter is sent to Queuend.">
+<title>Already booked an ADHD assessment? Free checklist &mdash; Queuend</title>
 <style>
 :root{
   --ink:#16212C; --ink-soft:#3E4A56; --muted:#5E6A75;
@@ -28,6 +28,7 @@ body{font-family:var(--sans);font-size:10.5pt;line-height:1.45;color:var(--ink);
 .mast-id{flex:1}
 .brand{font-size:8pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
 h1{font-family:var(--serif);font-size:23pt;line-height:1.08;font-weight:400;letter-spacing:-.015em;margin-top:5px;color:var(--ink)}
+.purpose{margin-top:9px;font-size:10pt;color:var(--ink-soft);line-height:1.5}
 .kicker{margin-top:7px;font-size:8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ochre);font-weight:700}
 .standfirst{margin-top:13px;font-size:10pt;color:var(--ink-soft);max-width:50em;line-height:1.55}
 .standfirst strong{color:var(--ink);font-weight:600}
@@ -176,14 +177,14 @@ body.blank-print > #printClone{display:block}
       <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
     </svg>
     <div class="mast-id">
-      <div class="brand">Queuend</div>
-      <h1>ADHD Assessment Checklist</h1>
-      <div class="kicker">Part B &middot; Preparing for your assessment</div>
+      <div class="brand">Queuend &middot; Free ADHD assessment checklist</div>
+      <h1>Already booked an ADHD assessment?</h1>
+      <div class="purpose">Use this to prepare for your ADHD assessment.</div>
+      <div class="kicker">Preparing for your assessment</div>
     </div>
   </header>
 
   <p class="standfirst">
-    <strong>Use this once you are booked or in the queue.</strong>
     A worksheet for organising what you need to have ready, ask, take and remember, and for recording
     what you are told afterwards. Fill it in here, save your progress, and come back to it as often as
     you need. It is not a test, a symptom questionnaire, or a way of working out what the
@@ -232,7 +233,7 @@ body.blank-print > #printClone{display:block}
 
   <div class="note">
     <span class="note-lbl">Not booked yet?</span>
-    Still choosing a route or provider? Use <a href="../">Part A &mdash; Choosing your route and provider</a> instead.
+    Still deciding how and where to book? Use the <a href="../">Choosing your route and provider checklist</a>.
   </div>
 
   <!-- 01 -->
@@ -621,10 +622,10 @@ body.blank-print > #printClone{display:block}
   </section>
 
   <footer>
-    <strong>Queuend ADHD Assessment Checklist &mdash; Part B, preparing for your assessment.</strong>
+    <strong>Queuend ADHD assessment checklist &mdash; preparing for your assessment.</strong>
     For organising information only. It does not diagnose, assess, or replace professional advice.
-    Part A covers choosing a route and provider. The Reflection Record covers what you have noticed
-    about yourself.
+    The Choosing your route and provider checklist covers picking a route and provider. The Reflection
+    Record covers what you have noticed about yourself.
   </footer>
 
 </div>
@@ -930,7 +931,7 @@ function fail(msg){ window.alert(msg); fileIn.value = ""; }
 fileIn.addEventListener("change", function(){
   var file = fileIn.files && fileIn.files[0];
   if(!file) return;
-  if(file.size > MAX_FILE){ return fail("That file is too large to be a saved Part B checklist."); }
+  if(file.size > MAX_FILE){ return fail("That file is too large to be a saved checklist."); }
 
   var warn = null;
   if(autosaveOn){
@@ -948,7 +949,7 @@ fileIn.addEventListener("change", function(){
     catch(err){ return fail("That file could not be read. Please choose a file you downloaded from this checklist."); }
 
     if(!data || typeof data !== "object" || data.format !== SCHEMA){
-      return fail("That does not look like a backup copy from Part B. If it came from the Reflection Record, open it there instead.");
+      return fail("That does not look like a backup copy from this checklist. If it came from the Reflection Record, open it there instead.");
     }
     if(data.version !== VERSION){
       return fail("That file was saved by a different version of this checklist, so it cannot be opened here.");
