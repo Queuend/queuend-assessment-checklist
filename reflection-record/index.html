@@ -117,6 +117,7 @@ legend{padding:0}
 .addmore-note{font-family:var(--sans);font-size:8.5pt;color:var(--muted);margin:8px 0 0;max-width:36em}
 .resume{margin:18px 0;padding:14px 17px;background:var(--warm);border-left:3px solid var(--berry)}
 .resume p{font-family:var(--sans);font-size:9.5pt;font-weight:600;color:var(--ink);margin:0 0 10px;max-width:none}
+.resume-note{font-weight:400;font-size:9pt;color:var(--muted);margin:0 0 10px}
 .resume-btns{display:flex;gap:8px;flex-wrap:wrap}
 .block{border:1px solid var(--rule);border-top:2.5px solid var(--rose);padding:15px 17px 17px;margin:16px 0}
 .block-head{padding-bottom:9px;margin-bottom:4px;border-bottom:1px solid var(--rule-fine)}
@@ -233,6 +234,14 @@ body.blank-print > #printClone{display:block}
   <div class="resume-btns">
     <button id="btnRestore" type="button">Pick up where I left off</button>
     <button class="ghost" id="btnStartAgain" type="button">Start again</button>
+  </div>
+</div>
+
+<div class="resume no-print" id="staleBox" hidden>
+  <p>You have progress saved in this browser from an earlier version of this worksheet.</p>
+  <p class="resume-note">It cannot be opened by this version, so it is not being used. It has not been deleted &mdash; saving new progress will replace it, or you can remove it now.</p>
+  <div class="resume-btns">
+    <button class="ghost" id="btnRemoveStale" type="button">Remove the old saved copy</button>
   </div>
 </div>
 
@@ -705,6 +714,7 @@ var lastSavedSerial = null;
 var autosaveOn = false;
 var autosaveTimer = null;
 var storageWarned = false;
+var staleSaved = false;
 
 function isAnswerControl(el){
   if(!el || !el.tagName) return false;
@@ -809,6 +819,13 @@ function readSaved(){
   if(!raw) return null;
   var d;
   try { d = JSON.parse(raw); } catch(e){ d = null; }
+  // Ours, but saved by a different version: keep it. Deleting it would destroy
+  // the user's only copy without asking.
+  if(d && typeof d === "object" && d.format === SCHEMA &&
+     typeof d.version === "number" && d.version !== VERSION){
+    staleSaved = true;
+    return null;
+  }
   if(!validPayload(d)){
     try { window.localStorage.removeItem(STORE_KEY); } catch(e){}
     return null;
@@ -1082,6 +1099,16 @@ document.getElementById("btnStartAgain").addEventListener("click", function(){
 
 lastSavedSerial = serialize();
 if(readSaved()){ resumeBox.hidden = false; }
+else if(staleSaved){ document.getElementById("staleBox").hidden = false; }
+
+document.getElementById("btnRemoveStale").addEventListener("click", function(){
+  if(!window.confirm(
+    "Remove the old saved copy from this browser?\n\n" +
+    "It cannot be opened by this version, and this cannot be undone.")) return;
+  clearSaved();
+  staleSaved = false;
+  document.getElementById("staleBox").hidden = true;
+});
 })();
 </script>
 </body>
