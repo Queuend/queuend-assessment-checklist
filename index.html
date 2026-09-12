@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A free worksheet for comparing ADHD assessment routes and providers before you book. Nothing you enter is sent to Queuend.">
-<title>ADHD Assessment Checklist, Part A &mdash; Queuend</title>
+<meta name="description" content="Free checklist to help you decide how and where to book an ADHD assessment: compare NHS, Right to Choose and private routes, providers and costs. Nothing you enter is sent to Queuend.">
+<title>Considering an ADHD assessment? Free checklist &mdash; Queuend</title>
 <style>
 :root{
   --ink:#16212C; --ink-soft:#3E4A56; --muted:#5E6A75;
@@ -28,6 +28,7 @@ body{font-family:var(--sans);font-size:10.5pt;line-height:1.45;color:var(--ink);
 .mast-id{flex:1}
 .brand{font-size:8pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
 h1{font-family:var(--serif);font-size:23pt;line-height:1.08;font-weight:400;letter-spacing:-.015em;margin-top:5px;color:var(--ink)}
+.purpose{margin-top:9px;font-size:10pt;color:var(--ink-soft);line-height:1.5}
 .kicker{margin-top:7px;font-size:8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ochre);font-weight:700}
 .standfirst{margin-top:13px;font-size:10pt;color:var(--ink-soft);max-width:50em;line-height:1.55}
 .standfirst strong{color:var(--ink);font-weight:600}
@@ -203,14 +204,14 @@ body.blank-print > #printClone{display:block}
       <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
     </svg>
     <div class="mast-id">
-      <div class="brand">Queuend</div>
-      <h1>ADHD Assessment Checklist</h1>
-      <div class="kicker">Part A &middot; Choosing your route and provider</div>
+      <div class="brand">Queuend &middot; Free ADHD assessment checklist</div>
+      <h1>Considering an ADHD assessment?</h1>
+      <div class="purpose">Use this to help you decide how and where to book an ADHD assessment.</div>
+      <div class="kicker">Choosing your route and provider</div>
     </div>
   </header>
 
   <p class="standfirst">
-    <strong>Use this before you book.</strong>
     A worksheet for recording what you find while comparing routes and providers for ADHD assessment.
     It organises information. It does not assess symptoms or recommend a provider.
     Waits, prices and arrangements change often, so note the date beside anything you're told.
@@ -381,15 +382,15 @@ body.blank-print > #printClone{display:block}
   <section>
     <div class="key">
       <span class="note-lbl">Next step</span>
-      <strong>Already booked your assessment?</strong>
-      Continue with <a href="https://queuend.github.io/queuend-assessment-checklist/part-b/" target="_blank" rel="noopener">Part B &mdash; Preparing for your ADHD assessment</a>
+      <strong>Already booked?</strong>
+      Continue with the <a href="https://queuend.github.io/queuend-assessment-checklist/part-b/" target="_blank" rel="noopener">Preparing for your assessment checklist</a>
       to organise what you need to have ready, ask, take and remember, and to keep track of what you are
       told afterwards. It opens in a new tab, so this record stays available.
     </div>
   </section>
 
   <footer>
-    <strong>Queuend ADHD Assessment Checklist &mdash; Part A, choosing your route and provider.</strong>
+    <strong>Queuend ADHD assessment checklist &mdash; choosing your route and provider.</strong>
     For organising information only. It does not diagnose, recommend a provider, or replace professional advice.
     In England, clinic regulation is checked at cqc.org.uk. Elsewhere, check Healthcare Improvement Scotland,
     Healthcare Inspectorate Wales, or the RQIA in Northern Ireland.
@@ -1050,7 +1051,7 @@ function fail(msg){ window.alert(msg); fileIn.value = ""; }
 fileIn.addEventListener("change", function(){
   var file = fileIn.files && fileIn.files[0];
   if(!file) return;
-  if(file.size > MAX_FILE){ return fail("That file is too large to be a saved Part A checklist."); }
+  if(file.size > MAX_FILE){ return fail("That file is too large to be a saved checklist."); }
 
   var warn = null;
   if(autosaveOn){
@@ -1072,9 +1073,9 @@ fileIn.addEventListener("change", function(){
     }
     if(data.format !== SCHEMA){
       var where = "";
-      if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a Part B backup \u2014 open it in Part B instead."; }
+      if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a backup from the Preparing for your assessment checklist \u2014 open it there instead."; }
       else if(data.format === "queuend-reflection-record"){ where = " It looks like a Reflection Record backup \u2014 open it in the Reflection Record instead."; }
-      return fail("That does not look like a backup copy from Part A." + where);
+      return fail("That does not look like a backup copy from this checklist." + where);
     }
     if(data.version !== VERSION){
       return fail("That file was saved by a different version of this checklist, so it cannot be opened here.");
