@@ -52,6 +52,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
 
 .resume{margin:16px 0 0;padding:13px 16px;background:var(--tint-warm);border-left:3px solid var(--ochre)}
 .resume p{font-size:9.5pt;font-weight:600;color:var(--ink);margin:0 0 10px}
+.resume-note{font-weight:400;font-size:9pt;color:var(--muted);margin:0 0 10px}
 .resume-btns{display:flex;gap:8px;flex-wrap:wrap}
 
 section{margin-top:30px}
@@ -248,6 +249,14 @@ body.blank-print > #printClone{display:block}
     </div>
   </div>
 
+  <div class="resume screen-only" id="staleBox" hidden>
+    <p>You have progress saved in this browser from an earlier version of this checklist.</p>
+    <p class="resume-note">It cannot be opened by this version, so it is not being used. It has not been deleted &mdash; saving new progress will replace it, or you can remove it now.</p>
+    <div class="resume-btns">
+      <button class="ghost" id="btnRemoveStale" type="button">Remove the old saved copy</button>
+    </div>
+  </div>
+
   <noscript>
     <p style="font-size:9pt;background:#FBF6EC;padding:13px 16px;border-left:3px solid #8A5A14;margin:16px 0">This checklist needs JavaScript to build the provider sheets, to save your progress and to use the print buttons. Please enable JavaScript.</p>
   </noscript>
@@ -339,7 +348,7 @@ body.blank-print > #printClone{display:block}
       <div id="g_rtc2"></div>
       <div class="flag">
         <span class="note-lbl">Watch out</span>
-        These are different answers with different consequences. Declining Shared Care with a particular provider later is lawful and fairly common. Refusing the referral itself has only narrow lawful grounds &mdash; clinical appropriateness, or the provider not holding a qualifying NHS contract for your service and age group. Practice preference is not one of them. If you are told you cannot be referred to a provider you have chosen, ask for the reason in writing. You are not expected to judge whether a contract legally qualifies; these questions exist so the answer is on the record rather than assumed.
+        These are different answers with different consequences. Declining Shared Care with a particular provider later is separate from whether you can be referred there in the first place. Where the legal right to choose applies, the key questions include whether the referral and provider are clinically appropriate and whether the provider holds a qualifying NHS contract for the service required. Practice preference &mdash; &ldquo;the one we use&rdquo; &mdash; is not by itself a reason to override that right. There are exceptions to the legal right to choice, so if you are told you cannot be referred to a provider you have chosen, ask for the exact reason in writing.
       </div>
     </div>
 
@@ -513,7 +522,7 @@ function sheetHtml(n){
   var h = '<div class="sheet' + (n > 1 ? " page-break" : "") + '" data-sheet="' + n + '">';
   h += '<div class="sheet-head"><span class="sheet-title"><span class="st-sub">Provider detail sheet</span>Provider</span>' +
        '<span class="sheet-no">Sheet ' + n + '</span></div>';
-  h += '<p class="sheet-lead">Everything below is something to ask them. Work down it on the call and write what they actually say, not what the website says.</p>';
+  h += '<p class="sheet-lead">Everything below is something to ask them. Work down it on the call and record what they tell you, including the date. If it differs from published information, note the discrepancy and ask which is current.</p>';
 
   h += '<div class="block"><h3>The basics</h3><div class="two">' +
        txt(p+"name", "Name") + txt(p+"web", "Website") +
@@ -821,6 +830,13 @@ function readSaved(){
   if(!raw) return null;
   var d;
   try { d = JSON.parse(raw); } catch(e){ d = null; }
+  // Ours, but saved by a different version: keep it. Deleting it would destroy
+  // the user's only copy without asking.
+  if(d && typeof d === "object" && d.format === SCHEMA &&
+     typeof d.version === "number" && d.version !== VERSION){
+    staleSaved = true;
+    return null;
+  }
   if(!validPayload(d)){
     try { window.localStorage.removeItem(STORE_KEY); } catch(e){}
     return null;
@@ -884,6 +900,7 @@ var lastSavedSerial = null;
 var autosaveOn = false;
 var autosaveTimer = null;
 var storageWarned = false;
+var staleSaved = false;
 var cloneTimer = null;
 var resumeBox = document.getElementById("resumeBox");
 var fileIn = document.getElementById("fileIn");
@@ -1037,7 +1054,7 @@ document.getElementById("btnSave").addEventListener("click", function(){
   var url = URL.createObjectURL(blob);
   var a = document.createElement("a");
   a.href = url;
-  a.download = "Queuend-ADHD-Part-A-progress-" + stamp() + ".json";
+  a.download = "Queuend-ADHD-choosing-assessment-progress-" + stamp() + ".json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -1138,6 +1155,16 @@ window.addEventListener("beforeunload", function(ev){
 autoAll();
 lastSavedSerial = serialize();
 if(readSaved()){ resumeBox.hidden = false; }
+else if(staleSaved){ document.getElementById("staleBox").hidden = false; }
+
+document.getElementById("btnRemoveStale").addEventListener("click", function(){
+  if(!window.confirm(
+    "Remove the old saved copy from this browser?\n\n" +
+    "It cannot be opened by this version, and this cannot be undone.")) return;
+  clearSaved();
+  staleSaved = false;
+  document.getElementById("staleBox").hidden = true;
+});
 })();
 </script>
 </body>
