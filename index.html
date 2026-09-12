@@ -843,16 +843,25 @@ function readSaved(){
   }
   return d;
 }
+function clearStaleNotice(){
+  staleSaved = false;
+  var box = document.getElementById("staleBox");
+  if(box){ box.hidden = true; }
+}
 function writeSaved(){
   try {
     window.localStorage.setItem(STORE_KEY, JSON.stringify(makePayload()));
     lastSavedSerial = serialize();
+    clearStaleNotice();
     return true;
   } catch(e){ return false; }
 }
 function clearSaved(){
-  try { window.localStorage.removeItem(STORE_KEY); return true; }
-  catch(e){ return false; }
+  try {
+    window.localStorage.removeItem(STORE_KEY);
+    clearStaleNotice();
+    return true;
+  } catch(e){ return false; }
 }
 function scheduleAutosave(){
   if(!autosaveOn) return;
@@ -1162,8 +1171,6 @@ document.getElementById("btnRemoveStale").addEventListener("click", function(){
     "Remove the old saved copy from this browser?\n\n" +
     "It cannot be opened by this version, and this cannot be undone.")) return;
   clearSaved();
-  staleSaved = false;
-  document.getElementById("staleBox").hidden = true;
 });
 })();
 </script>
