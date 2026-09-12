@@ -1,53 +1,145 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>How to prepare for your child's ADHD assessment | Queuend</title>
+  <title>How to prepare for your child’s ADHD assessment | Queuend</title>
 
   <meta
     name="description"
-    content="What to expect before, during and after your child or teenager’s ADHD assessment, including preparation, school information, the appointment and what happens afterwards."
+    content="A practical guide to preparing for your child or teenager’s ADHD assessment, including what to have ready, what may happen at the appointment and what happens afterwards."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&family=Source+Code+Pro:wght@500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&family=Source+Code+Pro:wght@400..700&family=Source+Sans+3:wght@400..700&display=swap"
     rel="stylesheet"
   >
 
   <link rel="stylesheet" href="../../assets/css/queuend.css">
 </head>
 
+
 <body>
 
   <!-- =========================================================
-       SITE HEADER
-       Links can be connected to the final Queuend URLs later.
+       QUEUEND HEADER
+       Replace provisional # links once final site routes are set.
        ========================================================= -->
 
   <header class="site-header">
+
     <div class="site-header__inner">
 
-      <a class="brand" href="#">
-        <span class="brand-mark" aria-hidden="true"></span>
+      <a class="brand" href="#" aria-label="Queuend home">
+
+        <svg
+          class="brand__mark"
+          width="29"
+          height="29"
+          viewBox="0 0 240 240"
+          aria-hidden="true"
+        >
+          <path
+            d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z"
+            fill="currentColor"
+          />
+          <polygon
+            points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68"
+            class="brand__mark-accent"
+          />
+        </svg>
+
         <span>Queuend</span>
+
       </a>
 
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="#">Start Here</a>
-        <a href="#">Guides</a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+
+        <details class="nav-dropdown">
+
+          <summary>
+            Start Here
+            <span class="nav-chevron" aria-hidden="true">⌄</span>
+          </summary>
+
+          <div class="nav-dropdown__panel">
+
+            <span class="nav-dropdown__label">START HERE</span>
+
+            <a href="#">
+              <span>I think I might have ADHD</span>
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="#">
+              <span>I’m choosing an assessment</span>
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="#">
+              <span>My assessment is already booked</span>
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="#">
+              <span>I’m concerned about my child</span>
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </details>
+
+        <a href="#">Resources</a>
         <a href="#">Assessment Routes</a>
-        <a href="#">Children &amp; Young People</a>
         <a href="#">Questions</a>
-        <a class="site-nav__urgent" href="#">I need help NOW</a>
+
+        <a class="nav-urgent" href="#">
+          I need help NOW
+        </a>
+
       </nav>
 
+
+      <details class="mobile-menu">
+
+        <summary aria-label="Open navigation">
+          <span>Menu</span>
+          <span aria-hidden="true">☰</span>
+        </summary>
+
+        <nav class="mobile-menu__panel" aria-label="Mobile navigation">
+
+          <span class="mobile-menu__label">START HERE</span>
+
+          <a href="#">I think I might have ADHD</a>
+          <a href="#">I’m choosing an assessment</a>
+          <a href="#">My assessment is already booked</a>
+          <a href="#">I’m concerned about my child</a>
+
+          <div class="mobile-menu__rule"></div>
+
+          <a href="#">Resources</a>
+          <a href="#">Assessment Routes</a>
+          <a href="#">Questions</a>
+
+          <a class="mobile-menu__urgent" href="#">
+            I need help NOW
+          </a>
+
+        </nav>
+
+      </details>
+
     </div>
+
   </header>
 
 
@@ -57,29 +149,39 @@
          HERO
          ========================================================= -->
 
-    <section class="hero hero--dark">
+    <section class="hero">
 
       <div class="hero__inner">
 
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="#">Already booked</a>
+
+          <a href="../">Already booked</a>
+
           <span aria-hidden="true">/</span>
+
           <span>Children &amp; young people</span>
+
         </nav>
 
-        <p class="eyebrow">ALREADY BOOKED · CHILDREN &amp; YOUNG PEOPLE</p>
+
+        <p class="eyebrow">
+          ALREADY BOOKED · CHILDREN &amp; YOUNG PEOPLE
+        </p>
+
 
         <h1>
-          My child’s ADHD assessment
-          <span class="hero-accent">is already booked.</span>
+          How to prepare for your
+          <span class="hero-accent">child’s ADHD assessment.</span>
         </h1>
+
 
         <p class="hero__standfirst">
           If your child or teenager already has an ADHD assessment arranged,
-          this page will help you understand what may happen before, during and
-          after the appointment — including the part played by parents or
+          this guide will help you understand what may happen before, during
+          and after the appointment, including the part played by parents or
           carers, school or college and the young person themselves.
         </p>
+
 
         <p class="hero__note">
           Every service works a little differently. Treat this as general
@@ -93,24 +195,32 @@
 
 
     <!-- =========================================================
-         PAGE INTRO / OPTIONAL HERO IMAGE
+         OPTIONAL HERO ILLUSTRATION
          ========================================================= -->
 
-    <div class="reading-column">
+    <figure class="image-break image-break--hero placeholder-image wide-column">
 
-      <figure class="image-break image-break--hero placeholder-image">
-        <div class="placeholder-image__inner">
-          <span class="micro-label">ILLUSTRATION PLACEHOLDER</span>
-          <strong>Parent or carer and young person at home</strong>
-          <span>Calm, everyday setting · optional</span>
-        </div>
-      </figure>
+      <div class="placeholder-image__inner">
 
-    </div>
+        <span class="micro-label">
+          ILLUSTRATION PLACEHOLDER
+        </span>
+
+        <strong>
+          Parent or carer and young person at home
+        </strong>
+
+        <span>
+          Calm, everyday setting · optional
+        </span>
+
+      </div>
+
+    </figure>
 
 
     <!-- =========================================================
-         SECTION 1
+         SECTION 01
          ========================================================= -->
 
     <section class="article-section" id="while-we-wait">
@@ -136,15 +246,20 @@
         </p>
 
         <aside class="key-point">
-          <span class="micro-label">WORTH REMEMBERING</span>
+
+          <span class="micro-label">
+            WORTH REMEMBERING
+          </span>
 
           <p>
             <strong>
-              You do not need to spend the waiting period trying to build a case
-              for ADHD.
+              During the wait, focus on anything the service has actually asked
+              you to do.
             </strong>
-            The purpose of the assessment is to understand the whole picture.
+            The clinician will be looking at the whole picture, including what
+            goes well.
           </p>
+
         </aside>
 
       </div>
@@ -152,66 +267,112 @@
     </section>
 
 
-    <div class="reading-column">
+    <!-- =========================================================
+         IMAGE BREAK 01
+         ========================================================= -->
 
-      <figure class="image-break placeholder-image">
-        <div class="placeholder-image__inner">
-          <span class="micro-label">ILLUSTRATION PLACEHOLDER</span>
-          <strong>Waiting, calendar, paperwork or ordinary family life</strong>
-          <span>Editorial illustration · 3:2</span>
-        </div>
-      </figure>
+    <figure class="image-break placeholder-image wide-column">
 
-    </div>
+      <div class="placeholder-image__inner">
+
+        <span class="micro-label">
+          ILLUSTRATION PLACEHOLDER
+        </span>
+
+        <strong>
+          Waiting, calendar, paperwork or ordinary family life
+        </strong>
+
+        <span>
+          Editorial illustration · landscape
+        </span>
+
+      </div>
+
+    </figure>
 
 
     <!-- =========================================================
-         SECTION 2
+         SECTION 02
          ========================================================= -->
 
-    <section class="article-section article-section--soft" id="what-to-have-ready">
+    <section
+      class="article-section article-section--soft"
+      id="what-to-have-ready"
+    >
 
       <div class="wide-column">
 
         <div class="section-heading reading-width">
+
           <p class="section-number">02</p>
+
           <h2>What should we have ready?</h2>
 
           <p>
             Have whatever the provider has specifically asked for available.
             Depending on the service, useful information may include:
           </p>
+
         </div>
+
 
         <div class="split-layout">
 
           <div>
 
             <ul class="check-list">
-              <li>Appointment details: date, time, location or video link</li>
-              <li>School or college reports</li>
+
+              <li>
+                Appointment details: date, time, location or video link
+              </li>
+
+              <li>
+                School or college reports
+              </li>
+
               <li>
                 Information from a SENCo or learning-support team, if available
               </li>
-              <li>Any questionnaires the service has sent</li>
-              <li>Previous assessments or relevant professional reports</li>
-              <li>A list of current medication and doses</li>
-              <li>Relevant health information</li>
-              <li>Short real-life examples of things you have noticed</li>
+
+              <li>
+                Any questionnaires the service has sent
+              </li>
+
+              <li>
+                Previous assessments or relevant professional reports
+              </li>
+
+              <li>
+                A list of current medication and doses
+              </li>
+
+              <li>
+                Relevant health information
+              </li>
+
+              <li>
+                Short real-life examples of things you have noticed
+              </li>
+
               <li>
                 Your child’s own thoughts about what they find easy and what
                 they find difficult
               </li>
+
             </ul>
 
           </div>
 
+
           <aside class="side-callout">
 
-            <span class="micro-label">IF SOMETHING IS MISSING</span>
+            <span class="micro-label">
+              IF SOMETHING IS MISSING
+            </span>
 
             <p>
-              It can help to think about what happens in more than one setting —
+              It can help to think about what happens in more than one setting,
               for example at home, at school or college, with friends, or during
               activities outside school.
             </p>
@@ -240,7 +401,7 @@
 
 
     <!-- =========================================================
-         SECTION 3
+         SECTION 03
          ========================================================= -->
 
     <section class="article-section" id="what-happens">
@@ -256,9 +417,9 @@
         </p>
 
         <p>
-          The clinician will usually want to understand your child’s development,
-          current difficulties, how things are going in different parts of life
-          and whether anything else could be contributing.
+          The clinician will usually want to understand your child’s
+          development, current difficulties, how things are going in different
+          parts of life and whether anything else could be contributing.
         </p>
 
         <p>
@@ -283,30 +444,44 @@
         <div class="outcome-grid">
 
           <article class="outcome-card">
+
             <span class="outcome-card__number">01</span>
+
             <h3>A diagnosis is made</h3>
+
             <p>
               The clinician explains what they have concluded and what happens
               next.
             </p>
+
           </article>
 
+
           <article class="outcome-card">
+
             <span class="outcome-card__number">02</span>
+
             <h3>ADHD is not diagnosed</h3>
+
             <p>
               Ask what the clinician thinks may explain the difficulties and
               what support or further assessment may still be useful.
             </p>
+
           </article>
 
+
           <article class="outcome-card">
+
             <span class="outcome-card__number">03</span>
+
             <h3>More information is needed</h3>
+
             <p>
               The service may ask for further information or arrange another
               appointment before reaching a conclusion.
             </p>
+
           </article>
 
         </div>
@@ -316,21 +491,33 @@
     </section>
 
 
-    <div class="reading-column">
+    <!-- =========================================================
+         IMAGE BREAK 02
+         ========================================================= -->
 
-      <figure class="image-break placeholder-image">
-        <div class="placeholder-image__inner">
-          <span class="micro-label">ILLUSTRATION PLACEHOLDER</span>
-          <strong>Young person, parent or carer and clinician talking</strong>
-          <span>Relaxed setting · people at roughly equal eye level</span>
-        </div>
-      </figure>
+    <figure class="image-break placeholder-image wide-column">
 
-    </div>
+      <div class="placeholder-image__inner">
+
+        <span class="micro-label">
+          ILLUSTRATION PLACEHOLDER
+        </span>
+
+        <strong>
+          Young person, parent or carer and clinician talking
+        </strong>
+
+        <span>
+          Relaxed setting · people at roughly equal eye level
+        </span>
+
+      </div>
+
+    </figure>
 
 
     <!-- =========================================================
-         SECTION 4
+         SECTION 04
          ========================================================= -->
 
     <section class="article-section" id="prepare-my-child">
@@ -342,22 +529,22 @@
         <h2>How should I prepare my child?</h2>
 
         <p>
-          Explain the appointment in straightforward language and make clear
-          that it is not an exam and there are no answers they are supposed to
-          give.
+          Explain it as a conversation about how things are for them: what
+          feels easy, what feels difficult and what they would like help with.
+          There is nothing to revise and no particular answer they are expected
+          to give.
         </p>
 
         <p>
-          They do not need to “show” the clinician that they have ADHD. Encourage
-          them to describe things as they actually experience them, including
-          anything they find easy, difficult or hard to explain.
+          Encourage them to describe things as they actually experience them,
+          including anything they find easy, difficult or hard to explain.
         </p>
 
         <p>
           It is fine for a young person to say that they do not know, cannot
-          remember, disagree with an adult’s description or experience something
-          differently at school and at home. Those differences can themselves
-          be useful information.
+          remember, disagree with an adult’s description or experience
+          something differently at school and at home. Those differences can
+          themselves be useful information.
         </p>
 
         <blockquote class="pull-quote">
@@ -373,7 +560,9 @@
 
         <aside class="practical-note">
 
-          <span class="micro-label">PRACTICAL NOTE</span>
+          <span class="micro-label">
+            PRACTICAL NOTE
+          </span>
 
           <p>
             If your child has particular communication, sensory or accessibility
@@ -388,10 +577,13 @@
 
 
     <!-- =========================================================
-         SECTION 5
+         SECTION 05
          ========================================================= -->
 
-    <section class="article-section article-section--soft" id="afterwards">
+    <section
+      class="article-section article-section--soft"
+      id="afterwards"
+    >
 
       <div class="reading-column">
 
@@ -404,7 +596,9 @@
           report will be available.
         </p>
 
+
         <div class="after-group">
+
           <h3>If ADHD is diagnosed</h3>
 
           <p>
@@ -413,9 +607,12 @@
             It is also worth asking who will be responsible for follow-up,
             reviews and prescribing if medication becomes part of the plan.
           </p>
+
         </div>
 
+
         <div class="after-group">
+
           <h3>If ADHD is not diagnosed</h3>
 
           <p>
@@ -424,25 +621,34 @@
             support may still be useful and whether any further assessment or
             referral should be considered.
           </p>
+
         </div>
 
+
         <div class="after-group">
+
           <h3>If the outcome is not yet clear</h3>
 
           <p>
-            Ask exactly what information is still needed, who is responsible for
-            obtaining it and when you should expect to hear again.
+            Ask exactly what information is still needed, who is responsible
+            for obtaining it and when you should expect to hear again.
           </p>
+
         </div>
 
+
         <aside class="key-point">
-          <span class="micro-label">SUPPORT DOES NOT BEGIN WITH A LABEL</span>
+
+          <span class="micro-label">
+            SUPPORT DOES NOT BEGIN WITH A LABEL
+          </span>
 
           <p>
-            A diagnosis is not the only route to support. Some help at school or
-            college can be based on the young person’s needs rather than waiting
-            for a diagnostic label.
+            A diagnosis is not the only route to support. Some help at school
+            or college can be based on the young person’s needs rather than
+            waiting for a diagnostic label.
           </p>
+
         </aside>
 
       </div>
@@ -459,6 +665,7 @@
       <div class="wide-column">
 
         <div class="questions-intro">
+
           <p class="section-number">06</p>
 
           <h2>Useful questions to ask</h2>
@@ -467,42 +674,58 @@
             You will probably not need all of these. Pick the questions that
             matter to you and keep them somewhere easy to find.
           </p>
+
         </div>
+
 
         <div class="question-grid">
 
           <div class="question-group">
+
             <span class="micro-label">BEFORE</span>
 
             <h3>Before the appointment</h3>
 
             <ul>
-              <li>What information do you still need before the assessment?</li>
 
               <li>
-                Do you need anything from school or college, and what happens if
-                it is unavailable or arrives late?
+                What information do you still need before the assessment?
               </li>
 
-              <li>Who will take part in the assessment?</li>
+              <li>
+                Do you need anything from school or college, and what happens
+                if it is unavailable or arrives late?
+              </li>
 
-              <li>Who makes the final diagnostic decision?</li>
+              <li>
+                Who will take part in the assessment?
+              </li>
+
+              <li>
+                Who makes the final diagnostic decision?
+              </li>
 
               <li>
                 Will my child or teenager be spoken to separately for any part
                 of the appointment?
               </li>
+
             </ul>
+
           </div>
 
 
           <div class="question-group">
+
             <span class="micro-label">DURING</span>
 
             <h3>During the assessment</h3>
 
             <ul>
-              <li>How will my child’s own views be included?</li>
+
+              <li>
+                How will my child’s own views be included?
+              </li>
 
               <li>
                 What happens if home and school describe things differently?
@@ -517,20 +740,35 @@
                 How will you consider other possible explanations or
                 co-occurring conditions?
               </li>
+
             </ul>
+
           </div>
 
 
           <div class="question-group">
+
             <span class="micro-label">AFTER</span>
 
             <h3>Afterwards</h3>
 
             <ul>
-              <li>When should we expect an outcome?</li>
-              <li>When should we expect the written report?</li>
-              <li>What happens if ADHD is not diagnosed?</li>
-              <li>What happens if the outcome remains unclear?</li>
+
+              <li>
+                When should we expect an outcome?
+              </li>
+
+              <li>
+                When should we expect the written report?
+              </li>
+
+              <li>
+                What happens if ADHD is not diagnosed?
+              </li>
+
+              <li>
+                What happens if the outcome remains unclear?
+              </li>
 
               <li>
                 What support might still be useful regardless of the diagnostic
@@ -540,7 +778,9 @@
               <li>
                 Who should we contact if we have questions afterwards?
               </li>
+
             </ul>
+
           </div>
 
         </div>
@@ -552,48 +792,57 @@
 
     <!-- =========================================================
          CHECKLIST CTA
+         Deliberately body-coloured, not a second hero.
          ========================================================= -->
 
-    <section class="checklist-cta">
+    <section class="checklist-section">
 
-      <div class="checklist-cta__inner">
+      <div class="wide-column">
 
-        <div>
+        <div class="checklist-panel">
 
-          <p class="eyebrow eyebrow--light">
-            FREE · INTERACTIVE · NO ACCOUNT REQUIRED
-          </p>
+          <div class="checklist-panel__copy">
 
-          <h2>Already booked an ADHD assessment?</h2>
+            <p class="micro-label">
+              FREE CHECKLIST · NO ACCOUNT REQUIRED
+            </p>
 
-          <p class="checklist-cta__lead">
-            One place to keep together the practical details of the appointment,
-            information you may need to provide, questions you want to ask and a
-            record of what you are told afterwards.
-          </p>
+            <h2>
+              Already booked an ADHD assessment?
+              <span>Free checklist</span>
+            </h2>
 
-          <p>
-            For a child or teenager, you can use it together: a parent or carer
-            can keep track of the practical information while the young person
-            contributes anything they want the assessor to understand.
-          </p>
+            <p class="checklist-panel__lead">
+              One place to keep together the practical details of the
+              appointment, information you may need to provide, questions you
+              want to ask and a record of what you are told afterwards.
+            </p>
 
-          <p class="checklist-cta__privacy">
-            Free to use · No account required · Queuend does not receive or see
-            what you enter.
-          </p>
+            <p>
+              For a child or teenager, you can use it together: a parent or
+              carer can keep track of the practical information while the young
+              person contributes anything they want the assessor to understand.
+            </p>
 
-        </div>
+            <p class="checklist-panel__privacy">
+              Free to use · No account required · Queuend does not receive or
+              see what you enter.
+            </p>
 
-        <div class="checklist-cta__action">
+          </div>
 
-          <a
-            class="button button--light"
-            href="../../part-b/"
-          >
-            Open the free checklist
-            <span aria-hidden="true">→</span>
-          </a>
+
+          <div class="checklist-panel__action">
+
+            <a
+              class="button button--dark"
+              href="../../part-b/"
+            >
+              Open the free checklist
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
 
         </div>
 
@@ -614,34 +863,66 @@
 
         <h2>Where to next</h2>
 
+
         <div class="onward-grid">
 
           <a class="onward-card" href="../">
+
             <span class="micro-label">HUB</span>
+
             <h3>Back to the booked-assessment hub</h3>
-            <p>See all the pages in this section.</p>
+
+            <p>
+              See all the pages in this section.
+            </p>
+
             <span class="onward-card__arrow" aria-hidden="true">→</span>
+
           </a>
+
 
           <a class="onward-card" href="../what-they-ask/">
+
             <span class="micro-label">NEXT GUIDE</span>
+
             <h3>What will they actually ask me?</h3>
-            <p>The kinds of things an assessment may explore and why.</p>
+
+            <p>
+              The kinds of things an assessment may explore and why.
+            </p>
+
             <span class="onward-card__arrow" aria-hidden="true">→</span>
+
           </a>
+
 
           <a class="onward-card" href="../what-to-have-ready/">
+
             <span class="micro-label">NEXT GUIDE</span>
+
             <h3>What should I have ready?</h3>
-            <p>A fuller look at documents, information and practical preparation.</p>
+
+            <p>
+              A fuller look at documents, information and practical preparation.
+            </p>
+
             <span class="onward-card__arrow" aria-hidden="true">→</span>
+
           </a>
 
+
           <a class="onward-card" href="../afterwards/">
+
             <span class="micro-label">NEXT GUIDE</span>
+
             <h3>What happens afterwards?</h3>
-            <p>Reports, outcomes, support and what may happen next.</p>
+
+            <p>
+              Reports, outcomes, support and what may happen next.
+            </p>
+
             <span class="onward-card__arrow" aria-hidden="true">→</span>
+
           </a>
 
         </div>
@@ -678,31 +959,58 @@
 
 
   <!-- =========================================================
-       SITE FOOTER
+       FOOTER
        ========================================================= -->
 
   <footer class="site-footer">
 
     <div class="site-footer__inner">
 
-      <div>
-        <a class="brand brand--footer" href="#">
-          <span class="brand-mark" aria-hidden="true"></span>
+      <div class="site-footer__identity">
+
+        <a
+          class="brand brand--footer"
+          href="#"
+          aria-label="Queuend home"
+        >
+
+          <svg
+            class="brand__mark"
+            width="27"
+            height="27"
+            viewBox="0 0 240 240"
+            aria-hidden="true"
+          >
+            <path
+              d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z"
+              fill="currentColor"
+            />
+            <polygon
+              points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68"
+              class="brand__mark-accent"
+            />
+          </svg>
+
           <span>Queuend</span>
+
         </a>
 
         <p>
           Independent UK information to help people make better-informed ADHD
           assessment decisions.
         </p>
+
       </div>
 
+
       <nav class="footer-links" aria-label="Footer navigation">
+
         <a href="#">Editorial standards</a>
         <a href="#">Contributors</a>
         <a href="#">Privacy</a>
         <a href="#">Accessibility</a>
         <a href="#">Disclaimer</a>
+
       </nav>
 
     </div>
@@ -710,4 +1018,5 @@
   </footer>
 
 </body>
+
 </html>
