@@ -832,16 +832,25 @@ function readSaved(){
   }
   return d;
 }
+function clearStaleNotice(){
+  staleSaved = false;
+  var box = document.getElementById("staleBox");
+  if(box){ box.hidden = true; }
+}
 function writeSaved(){
   try {
     window.localStorage.setItem(STORE_KEY, JSON.stringify(makePayload()));
     lastSavedSerial = serialize();
+    clearStaleNotice();
     return true;
   } catch(e){ return false; }
 }
 function clearSaved(){
-  try { window.localStorage.removeItem(STORE_KEY); return true; }
-  catch(e){ return false; }
+  try {
+    window.localStorage.removeItem(STORE_KEY);
+    clearStaleNotice();
+    return true;
+  } catch(e){ return false; }
 }
 function scheduleAutosave(){
   if(!autosaveOn) return;
@@ -990,8 +999,14 @@ fileIn.addEventListener("change", function(){
     try { data = JSON.parse(reader.result); }
     catch(err){ return fail("That file could not be read. Please choose a file you saved from this worksheet."); }
 
-    if(!data || typeof data !== "object" || data.format !== SCHEMA){
-      return fail("That does not look like a backup copy from this worksheet. Please choose a file you downloaded from here.");
+    if(!data || typeof data !== "object"){
+      return fail("That file could not be read. Please choose a file you downloaded from this worksheet.");
+    }
+    if(data.format !== SCHEMA){
+      var where = "";
+      if(data.format === "queuend-assessment-checklist-part-a"){ where = " It looks like a backup from the Choosing your route and provider checklist \u2014 open it there instead."; }
+      else if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a backup from the Preparing for your assessment checklist \u2014 open it there instead."; }
+      return fail("That does not look like a backup copy from this worksheet." + where);
     }
     if(data.version !== VERSION){
       return fail("That file was saved by a different version of this worksheet, so it cannot be opened here.");
@@ -1106,8 +1121,6 @@ document.getElementById("btnRemoveStale").addEventListener("click", function(){
     "Remove the old saved copy from this browser?\n\n" +
     "It cannot be opened by this version, and this cannot be undone.")) return;
   clearSaved();
-  staleSaved = false;
-  document.getElementById("staleBox").hidden = true;
 });
 })();
 </script>
