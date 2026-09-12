@@ -244,10 +244,6 @@ button:focus-visible {
   color: var(--mint);
 }
 
-.nav-urgent {
-  color: var(--mint) !important;
-  font-weight: 650 !important;
-}
 
 
 /* ============================================================
@@ -440,10 +436,6 @@ button:focus-visible {
   height: 20px;
 }
 
-.mobile-menu__urgent {
-  color: var(--mint) !important;
-  font-weight: 650;
-}
 
 
 /* ============================================================
