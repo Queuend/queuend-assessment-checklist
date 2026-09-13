@@ -1051,6 +1051,154 @@ button:focus-visible {
 .footer-links a:hover { color: var(--mint); }
 
 
+
+
+/* ============================================================
+   HUB PAGE
+   ============================================================ */
+
+
+/* ===== utility ============================================= */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* ===== hub hero ============================================ */
+
+/* Two-sentence headline needs more room than the guide pages. */
+.hero--hub h1 { max-width: 20ch; }
+.hero--hub .hero__inner { padding-bottom: 76px; }
+
+
+/* ===== hub card grid ======================================= */
+
+.hub-section { padding: 62px 0 12px; }
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.hub-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 26px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--body);
+  text-decoration: none;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.hub-card:hover {
+  border-color: var(--teal);
+  background: var(--mint-pale);
+}
+
+.hub-card__media {
+  aspect-ratio: 4 / 3;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  overflow: hidden;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(147,222,197,.17), rgba(169,104,42,.06)),
+    var(--cream-deep);
+}
+
+.hub-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hub-card__media span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hub-card h3 {
+  margin: 0 0 9px;
+  padding-right: 8px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 650;
+  line-height: 1.18;
+  letter-spacing: -.018em;
+  text-wrap: balance;
+}
+
+.hub-card p {
+  margin: 0;
+  padding-right: 34px;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.hub-card__arrow {
+  position: absolute;
+  right: 18px;
+  bottom: 20px;
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 21px;
+  font-weight: 400;
+}
+
+
+/* ===== trust strip ========================================= */
+
+.trust-strip {
+  padding: 46px 0 54px;
+  background: var(--cream-deep);
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+
+.trust-strip .micro-label { margin-bottom: 16px; }
+
+.trust-strip ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.trust-strip li { padding: 0 16px; }
+
+.trust-strip li + li::before {
+  content: "·";
+  margin-left: -20px;
+  margin-right: 16px;
+  color: var(--muted);
+}
+
+
 /* ============================================================
    TABLET
    ============================================================ */
@@ -1059,6 +1207,8 @@ button:focus-visible {
   .hero__grid { grid-template-columns: 1fr; gap: 44px; align-items: start; }
   .page-ledger { max-width: 480px; }
   .page-ledger__stamp { right: 12px; }
+
+  .hub-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -1073,6 +1223,9 @@ button:focus-visible {
   .breadcrumb { margin-bottom: 40px; }
   .hero h1 { max-width: 16ch; }
   .hero__standfirst { font-size: 20px; }
+
+  .hub-section { padding-top: 52px; }
+  .hero--hub .hero__inner { padding-bottom: 62px; }
 
   .in-short { padding-top: 44px; }
   .in-short__box { padding: 26px 26px 22px; }
@@ -1096,6 +1249,15 @@ button:focus-visible {
 
   .site-footer__inner { flex-direction: column; gap: 30px; }
   .footer-links { justify-content: flex-start; }
+}
+
+
+@media (max-width: 640px) {
+  .hub-grid { grid-template-columns: 1fr; gap: 14px; }
+  .hub-card__media { aspect-ratio: 16 / 9; }
+  .hub-section { padding-top: 44px; }
+  .trust-strip { padding: 40px 0 46px; }
+  .trust-strip ul { font-size: 15px; }
 }
 
 
