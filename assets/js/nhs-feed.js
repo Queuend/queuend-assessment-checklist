@@ -12,7 +12,7 @@
 
   function fetchData(source) {
     if (!requests[source]) {
-      requests[source = source] = fetch(source, { cache: "no-cache" }).then(function (response) {
+      requests[source] = fetch(source, { cache: "no-cache" }).then(function (response) {
         if (!response.ok) throw new Error("HTTP " + response.status);
         return response.json();
       });
