@@ -1,0 +1,110 @@
+name: NHS ADHD data feed
+
+on:
+  schedule:
+    # Odd minute avoids the busiest part of GitHub's scheduler.
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: nhs-adhd-feed
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_TITLE: "NHS ADHD feed: review required"
+      REVIEW_FILE: ${{ github.workspace }}/review.txt
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test parser and validation rules
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Check NHS source
+        id: feed
+        continue-on-error: true
+        run: python scripts/fetch_nhs_adhd.py
+
+      # A successful unchanged check updates last_attempted_at and
+      # last_successful_at. A failed check updates only the attempt and status.
+      - name: Commit feed state
+        run: |
+          if [ -n "$(git status --porcelain assets/data/nhs-adhd.json)" ]; then
+            git config user.name "adhd-junction-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add assets/data/nhs-adhd.json
+            git commit -m "NHS ADHD feed: $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No feed state change to commit"
+          fi
+
+      # Reuse one issue rather than creating a new issue on every failed run.
+      - name: Raise or update review issue
+        if: steps.feed.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          REASON="$(cat "$REVIEW_FILE" 2>/dev/null || echo 'Unknown failure')"
+          BODY="Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          $REASON
+
+          The last validated figures remain available. The homepage distinguishes
+          a review requirement or fetch failure from a successful source check."
+          NUM="$(gh issue list --state all --search "\"$ISSUE_TITLE\" in:title" --limit 1 --json number --jq '.[0].number // empty')"
+          if [ -z "$NUM" ]; then
+            gh issue create --title "$ISSUE_TITLE" --body "$BODY"
+          else
+            gh issue reopen "$NUM" || true
+            gh issue comment "$NUM" --body "$BODY"
+          fi
+
+      - name: Close review issue after a clean run
+        if: steps.feed.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NUM="$(gh issue list --state open --search "\"$ISSUE_TITLE\" in:title" --limit 1 --json number --jq '.[0].number // empty')"
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "Resolved: feed validated on $(date -u +%Y-%m-%d)."
+            gh issue close "$NUM"
+          fi
+
+      # A push made with GITHUB_TOKEN does not start another Pages workflow.
+      # Upload this checked working tree so the deployment job below publishes it.
+      - uses: actions/configure-pages@v5
+
+      - name: Upload site for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Mark the check failed after preserving and uploading its state
+        if: steps.feed.outcome == 'failure'
+        run: exit 1
+
+  deploy:
+    needs: check
+    if: ${{ always() && (needs.check.result == 'success' || needs.check.result == 'failure') }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy current site and feed state
+        id: deployment
+        uses: actions/deploy-pages@v4
