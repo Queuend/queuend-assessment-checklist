@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
   "feed": {
-    "last_attempted_at": "2026-09-14T09:59:43+00:00",
+    "last_attempted_at": "2026-09-14T11:08:43+00:00",
     "last_successful_at": "2026-09-14T09:59:43+00:00",
-    "data_status": "current",
-    "review_note": null
+    "data_status": "review_required",
+    "review_note": "No ADHD management-information release was found"
   },
   "current": {
     "snapshot_id": "77e7ce2ed8f94a3f4502",
