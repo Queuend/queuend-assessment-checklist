@@ -20,6 +20,7 @@
   >
 
   <link rel="stylesheet" href="assets/css/queuend.css">
+  <script src="assets/js/nhs-feed.js" defer></script>
 </head>
 
 
@@ -87,46 +88,95 @@
   <section class="hero hero--home">
     <div class="hero__inner">
 
-      <p class="eyebrow">INDEPENDENT UK ADHD INFORMATION</p>
+      <div class="hero__grid">
+        <div class="hero__copy">
 
-      <h1>
-        What you need to know about ADHD assessments.
-        <span class="hero-accent">Start wherever you actually are.</span>
-      </h1>
+          <p class="eyebrow">INDEPENDENT UK ADHD INFORMATION</p>
 
-      <p class="hero__standfirst">
-        Independent guidance for comparing assessment routes, preparing for an
-        appointment and understanding what happens afterwards.
-      </p>
+          <h1>
+            What you need to know about ADHD assessments.
+            <span class="hero-accent">Start wherever you actually are.</span>
+          </h1>
 
-      <details class="hero-cta">
+          <p class="hero__standfirst">
+            Independent guidance for comparing assessment routes, preparing for an
+            appointment and understanding what happens afterwards.
+          </p>
 
-        <summary>
-          <span>Choose your free ADHD assessment checklist</span>
-          <span class="hero-cta__chevron" aria-hidden="true">→</span>
-        </summary>
+          <details class="hero-cta">
 
-        <div class="hero-cta__panel">
+            <summary>
+              <span>Choose your free ADHD assessment checklist</span>
+              <span class="hero-cta__chevron" aria-hidden="true">→</span>
+            </summary>
 
-          <a href="part-a/">
-            <span class="hero-cta__label">I’m choosing an assessment</span>
-            <span class="hero-cta__desc">Questions to ask, costs to check and a record of what each provider tells you.</span>
-            <span class="hero-cta__arrow" aria-hidden="true">→</span>
-          </a>
+            <div class="hero-cta__panel">
 
-          <a href="part-b/">
-            <span class="hero-cta__label">My assessment is already booked</span>
-            <span class="hero-cta__desc">Practical details, the questions you want to ask and what you are told afterwards.</span>
-            <span class="hero-cta__arrow" aria-hidden="true">→</span>
-          </a>
+              <a href="part-a/">
+                <span class="hero-cta__label">I’m choosing an assessment</span>
+                <span class="hero-cta__desc">Questions to ask, costs to check and a record of what each provider tells you.</span>
+                <span class="hero-cta__arrow" aria-hidden="true">→</span>
+              </a>
 
+              <a href="part-b/">
+                <span class="hero-cta__label">My assessment is already booked</span>
+                <span class="hero-cta__desc">Practical details, the questions you want to ask and what you are told afterwards.</span>
+                <span class="hero-cta__arrow" aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </details>
+
+          <p class="hero-cta__note">
+            No account · No email address · Nothing entered is sent to Queuend
+          </p>
         </div>
 
-      </details>
+        <aside
+          class="nhs-card"
+          id="nhs-feed"
+          data-src="assets/data/nhs-adhd.json"
+          data-state="loading"
+          aria-live="polite"
+          aria-label="Latest NHS ADHD referral figures"
+        >
+          <span class="nhs-card__badge" data-slot="badge">Automatic update</span>
 
-      <p class="hero-cta__note">
-        No account · No email address · Nothing entered is sent to Queuend
-      </p>
+          <p class="nhs-card__eyebrow">Latest NHS ADHD data</p>
+          <p class="nhs-card__fallback" data-slot="fallback">
+            Loading the latest NHS figures&hellip;
+          </p>
+
+          <div class="nhs-card__body">
+            <p class="nhs-card__qualifier" data-slot="new-qualifier">Up to</p>
+            <p class="nhs-card__figure" data-slot="new-value">&nbsp;</p>
+            <p class="nhs-card__caption" data-slot="new-caption">&nbsp;</p>
+
+            <div class="nhs-card__secondary">
+              <p class="nhs-card__figure nhs-card__figure--small" data-slot="open-value">&nbsp;</p>
+              <p class="nhs-card__caption">
+                open referrals that may relate to ADHD assessment or continuing care,
+                recorded in mental health services
+              </p>
+            </div>
+
+            <p class="nhs-card__note">These are referrals, not a count of people waiting.</p>
+
+            <div class="nhs-card__meta">
+              <p data-slot="period"></p>
+              <p data-slot="published"></p>
+              <p data-slot="checked"></p>
+            </div>
+
+            <a class="nhs-card__cta" href="nhs-adhd-figures/">
+              <span>What these figures mean</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </aside>
+
+      </div>
 
     </div>
   </section>
