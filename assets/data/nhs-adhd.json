@@ -1,0 +1,1591 @@
+{
+  "schema_version": 2,
+  "feed": {
+    "last_attempted_at": "2026-09-14T09:59:43+00:00",
+    "last_successful_at": "2026-09-14T09:59:43+00:00",
+    "data_status": "current",
+    "review_note": null
+  },
+  "current": {
+    "snapshot_id": "77e7ce2ed8f94a3f4502",
+    "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+    "csv_url": "https://files.digital.nhs.uk/8B/ADC770/ADHD_Aug26.csv",
+    "csv_sha256": "0b0c193c45b8cd50031bb54ab3a2b42c81cae30ac9922d0a3829ec8e1fd938f2",
+    "release_period": "2026-08",
+    "publication_date": "2026-08-27",
+    "retrieved_at": "2026-09-14T09:59:43+00:00",
+    "discovered_via": "local_fixture",
+    "observations": [
+      {
+        "measure_id": "ADHD007",
+        "slug": "new_referrals",
+        "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+        "data_period": "2026-06",
+        "dimensions": {
+          "geography": "England",
+          "breakdown": "Age Group",
+          "aggregation": "all age groups including unknown"
+        },
+        "value": 37105,
+        "value_min": 37105,
+        "value_max": 37105,
+        "suppressed_cells": 0,
+        "qualifier": "up_to",
+        "snapshot_id": "77e7ce2ed8f94a3f4502"
+      },
+      {
+        "measure_id": "ADHD003",
+        "slug": "open_referrals",
+        "label": "The number of open referrals that may be for an ADHD assessment",
+        "data_period": "2026-06",
+        "dimensions": {
+          "geography": "England",
+          "breakdown": "Age Group",
+          "aggregation": "all age groups including unknown"
+        },
+        "value": 780430,
+        "value_min": 780430,
+        "value_max": 780430,
+        "suppressed_cells": 0,
+        "qualifier": null,
+        "snapshot_id": "77e7ce2ed8f94a3f4502"
+      }
+    ]
+  },
+  "snapshots": [
+    {
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "csv_url": "https://files.digital.nhs.uk/8B/ADC770/ADHD_Aug26.csv",
+      "csv_sha256": "0b0c193c45b8cd50031bb54ab3a2b42c81cae30ac9922d0a3829ec8e1fd938f2",
+      "release_period": "2026-08",
+      "publication_date": "2026-08-27",
+      "retrieved_at": "2026-09-14T09:59:43+00:00",
+      "discovered_via": "local_fixture",
+      "observations": [
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-06",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 511580,
+          "value_min": 511580,
+          "value_max": 511580,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-07",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 525840,
+          "value_min": 525840,
+          "value_max": 525840,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-08",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 530675,
+          "value_min": 530675,
+          "value_max": 530675,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-09",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 539430,
+          "value_min": 539430,
+          "value_max": 539430,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-10",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 585490,
+          "value_min": 585490,
+          "value_max": 585490,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-11",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 568700,
+          "value_min": 568700,
+          "value_max": 568700,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-12",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 581335,
+          "value_min": 581335,
+          "value_max": 581335,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-01",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 616455,
+          "value_min": 616455,
+          "value_max": 616455,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-02",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 638550,
+          "value_min": 638550,
+          "value_max": 638550,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-03",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 624260,
+          "value_min": 624260,
+          "value_max": 624260,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-04",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 654800,
+          "value_min": 654800,
+          "value_max": 654800,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-05",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 711885,
+          "value_min": 711885,
+          "value_max": 711885,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-06",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 780430,
+          "value_min": 780430,
+          "value_max": 780430,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-06",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25294,
+          "value_min": 25290,
+          "value_max": 25294,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-07",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 28274,
+          "value_min": 28270,
+          "value_max": 28274,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-08",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 19504,
+          "value_min": 19500,
+          "value_max": 19504,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-09",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25299,
+          "value_min": 25295,
+          "value_max": 25299,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-10",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 32504,
+          "value_min": 32500,
+          "value_max": 32504,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-11",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 26199,
+          "value_min": 26195,
+          "value_max": 26199,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-12",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 24959,
+          "value_min": 24955,
+          "value_max": 24959,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-01",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25865,
+          "value_min": 25865,
+          "value_max": 25865,
+          "suppressed_cells": 0,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-02",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 28459,
+          "value_min": 28455,
+          "value_max": 28459,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-03",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 31900,
+          "value_min": 31900,
+          "value_max": 31900,
+          "suppressed_cells": 0,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-04",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 26084,
+          "value_min": 26080,
+          "value_max": 26084,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-05",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 30105,
+          "value_min": 30105,
+          "value_max": 30105,
+          "suppressed_cells": 0,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-06",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 37105,
+          "value_min": 37105,
+          "value_max": 37105,
+          "suppressed_cells": 0,
+          "qualifier": "up_to",
+          "snapshot_id": "77e7ce2ed8f94a3f4502"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/may-2026",
+      "csv_url": "https://files.digital.nhs.uk/BF/6057EB/ADHD_May26_V2.csv",
+      "csv_sha256": "12e3b8f451c2d256ffcfb0a37bae5d2dc93855f848c18a2d0f992f9528da694f",
+      "release_period": "2026-05",
+      "publication_date": "2026-05-28",
+      "retrieved_at": "2026-09-14T09:59:43+00:00",
+      "discovered_via": "local_fixture",
+      "observations": [
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-03",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 467635,
+          "value_min": 467635,
+          "value_max": 467635,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-04",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 481680,
+          "value_min": 481680,
+          "value_max": 481680,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-05",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 497875,
+          "value_min": 497875,
+          "value_max": 497875,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-06",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 512875,
+          "value_min": 512875,
+          "value_max": 512875,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-07",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 527145,
+          "value_min": 527145,
+          "value_max": 527145,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-08",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 532090,
+          "value_min": 532090,
+          "value_max": 532090,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-09",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 540920,
+          "value_min": 540920,
+          "value_max": 540920,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-10",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 557795,
+          "value_min": 557795,
+          "value_max": 557795,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-11",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 570225,
+          "value_min": 570225,
+          "value_max": 570225,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2025-12",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 582940,
+          "value_min": 582940,
+          "value_max": 582940,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-01",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 618140,
+          "value_min": 618140,
+          "value_max": 618140,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-02",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 640290,
+          "value_min": 640290,
+          "value_max": 640290,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD003",
+          "slug": "open_referrals",
+          "label": "The number of open referrals that may be for an ADHD assessment",
+          "data_period": "2026-03",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 626415,
+          "value_min": 626415,
+          "value_max": 626415,
+          "suppressed_cells": 0,
+          "qualifier": null,
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-03",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25004,
+          "value_min": 25000,
+          "value_max": 25004,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-04",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 20844,
+          "value_min": 20840,
+          "value_max": 20844,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-05",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 22469,
+          "value_min": 22465,
+          "value_max": 22469,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-06",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25339,
+          "value_min": 25335,
+          "value_max": 25339,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-07",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 28314,
+          "value_min": 28310,
+          "value_max": 28314,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-08",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 19554,
+          "value_min": 19550,
+          "value_max": 19554,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-09",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25349,
+          "value_min": 25345,
+          "value_max": 25349,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-10",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 28929,
+          "value_min": 28925,
+          "value_max": 28929,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-11",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 26259,
+          "value_min": 26255,
+          "value_max": 26259,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2025-12",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25039,
+          "value_min": 25035,
+          "value_max": 25039,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-01",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 25935,
+          "value_min": 25935,
+          "value_max": 25935,
+          "suppressed_cells": 0,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-02",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 28534,
+          "value_min": 28530,
+          "value_max": 28534,
+          "suppressed_cells": 1,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        },
+        {
+          "measure_id": "ADHD007",
+          "slug": "new_referrals",
+          "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+          "data_period": "2026-03",
+          "dimensions": {
+            "geography": "England",
+            "breakdown": "Age Group",
+            "aggregation": "all age groups including unknown"
+          },
+          "value": 32375,
+          "value_min": 32375,
+          "value_max": 32375,
+          "suppressed_cells": 0,
+          "qualifier": "up_to",
+          "snapshot_id": "a32784d21dbc001d353c"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "new_period",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2026-06",
+      "previous_data_period": "2026-05",
+      "previous_value": 30105,
+      "previous_value_min": 30105,
+      "previous_value_max": 30105,
+      "new_value": 37105,
+      "new_value_min": 37105,
+      "new_value_max": 37105,
+      "percentage_change": 23.25,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "new_period",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2026-06",
+      "previous_data_period": "2026-05",
+      "previous_value": 711885,
+      "previous_value_min": 711885,
+      "previous_value_max": 711885,
+      "new_value": 780430,
+      "new_value_min": 780430,
+      "new_value_max": 780430,
+      "percentage_change": 9.63,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "new_period",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2026-05",
+      "previous_data_period": "2026-04",
+      "previous_value": 26084,
+      "previous_value_min": 26080,
+      "previous_value_max": 26084,
+      "new_value": 30105,
+      "new_value_min": 30105,
+      "new_value_max": 30105,
+      "percentage_change": 15.42,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "new_period",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2026-05",
+      "previous_data_period": "2026-04",
+      "previous_value": 654800,
+      "previous_value_min": 654800,
+      "previous_value_max": 654800,
+      "new_value": 711885,
+      "new_value_min": 711885,
+      "new_value_max": 711885,
+      "percentage_change": 8.72,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "new_period",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2026-04",
+      "previous_data_period": "2026-03",
+      "previous_value": 31900,
+      "previous_value_min": 31900,
+      "previous_value_max": 31900,
+      "new_value": 26084,
+      "new_value_min": 26080,
+      "new_value_max": 26084,
+      "percentage_change": -18.23,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "new_period",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2026-04",
+      "previous_data_period": "2026-03",
+      "previous_value": 624260,
+      "previous_value_min": 624260,
+      "previous_value_max": 624260,
+      "new_value": 654800,
+      "new_value_min": 654800,
+      "new_value_max": 654800,
+      "percentage_change": 4.89,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2026-03",
+      "previous_data_period": "2026-03",
+      "previous_value": 32375,
+      "previous_value_min": 32375,
+      "previous_value_max": 32375,
+      "new_value": 31900,
+      "new_value_min": 31900,
+      "new_value_max": 31900,
+      "percentage_change": -1.47,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2026-03",
+      "previous_data_period": "2026-03",
+      "previous_value": 626415,
+      "previous_value_min": 626415,
+      "previous_value_max": 626415,
+      "new_value": 624260,
+      "new_value_min": 624260,
+      "new_value_max": 624260,
+      "percentage_change": -0.34,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2026-02",
+      "previous_data_period": "2026-02",
+      "previous_value": 28534,
+      "previous_value_min": 28530,
+      "previous_value_max": 28534,
+      "new_value": 28459,
+      "new_value_min": 28455,
+      "new_value_max": 28459,
+      "percentage_change": -0.26,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2026-02",
+      "previous_data_period": "2026-02",
+      "previous_value": 640290,
+      "previous_value_min": 640290,
+      "previous_value_max": 640290,
+      "new_value": 638550,
+      "new_value_min": 638550,
+      "new_value_max": 638550,
+      "percentage_change": -0.27,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2026-01",
+      "previous_data_period": "2026-01",
+      "previous_value": 25935,
+      "previous_value_min": 25935,
+      "previous_value_max": 25935,
+      "new_value": 25865,
+      "new_value_min": 25865,
+      "new_value_max": 25865,
+      "percentage_change": -0.27,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2026-01",
+      "previous_data_period": "2026-01",
+      "previous_value": 618140,
+      "previous_value_min": 618140,
+      "previous_value_max": 618140,
+      "new_value": 616455,
+      "new_value_min": 616455,
+      "new_value_max": 616455,
+      "percentage_change": -0.27,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2025-12",
+      "previous_data_period": "2025-12",
+      "previous_value": 25039,
+      "previous_value_min": 25035,
+      "previous_value_max": 25039,
+      "new_value": 24959,
+      "new_value_min": 24955,
+      "new_value_max": 24959,
+      "percentage_change": -0.32,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2025-12",
+      "previous_data_period": "2025-12",
+      "previous_value": 582940,
+      "previous_value_min": 582940,
+      "previous_value_max": 582940,
+      "new_value": 581335,
+      "new_value_min": 581335,
+      "new_value_max": 581335,
+      "percentage_change": -0.28,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2025-11",
+      "previous_data_period": "2025-11",
+      "previous_value": 26259,
+      "previous_value_min": 26255,
+      "previous_value_max": 26259,
+      "new_value": 26199,
+      "new_value_min": 26195,
+      "new_value_max": 26199,
+      "percentage_change": -0.23,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2025-11",
+      "previous_data_period": "2025-11",
+      "previous_value": 570225,
+      "previous_value_min": 570225,
+      "previous_value_max": 570225,
+      "new_value": 568700,
+      "new_value_min": 568700,
+      "new_value_max": 568700,
+      "percentage_change": -0.27,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2025-10",
+      "previous_data_period": "2025-10",
+      "previous_value": 28929,
+      "previous_value_min": 28925,
+      "previous_value_max": 28929,
+      "new_value": 32504,
+      "new_value_min": 32500,
+      "new_value_max": 32504,
+      "percentage_change": 12.36,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2025-10",
+      "previous_data_period": "2025-10",
+      "previous_value": 557795,
+      "previous_value_min": 557795,
+      "previous_value_max": 557795,
+      "new_value": 585490,
+      "new_value_min": 585490,
+      "new_value_max": 585490,
+      "percentage_change": 4.97,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2025-09",
+      "previous_data_period": "2025-09",
+      "previous_value": 25349,
+      "previous_value_min": 25345,
+      "previous_value_max": 25349,
+      "new_value": 25299,
+      "new_value_min": 25295,
+      "new_value_max": 25299,
+      "percentage_change": -0.2,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2025-09",
+      "previous_data_period": "2025-09",
+      "previous_value": 540920,
+      "previous_value_min": 540920,
+      "previous_value_max": 540920,
+      "new_value": 539430,
+      "new_value_min": 539430,
+      "new_value_max": 539430,
+      "percentage_change": -0.28,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2025-08",
+      "previous_data_period": "2025-08",
+      "previous_value": 19554,
+      "previous_value_min": 19550,
+      "previous_value_max": 19554,
+      "new_value": 19504,
+      "new_value_min": 19500,
+      "new_value_max": 19504,
+      "percentage_change": -0.26,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2025-08",
+      "previous_data_period": "2025-08",
+      "previous_value": 532090,
+      "previous_value_min": 532090,
+      "previous_value_max": 532090,
+      "new_value": 530675,
+      "new_value_min": 530675,
+      "new_value_max": 530675,
+      "percentage_change": -0.27,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2025-07",
+      "previous_data_period": "2025-07",
+      "previous_value": 28314,
+      "previous_value_min": 28310,
+      "previous_value_max": 28314,
+      "new_value": 28274,
+      "new_value_min": 28270,
+      "new_value_max": 28274,
+      "percentage_change": -0.14,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2025-07",
+      "previous_data_period": "2025-07",
+      "previous_value": 527145,
+      "previous_value_min": 527145,
+      "previous_value_max": 527145,
+      "new_value": 525840,
+      "new_value_min": 525840,
+      "new_value_max": 525840,
+      "percentage_change": -0.25,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD007",
+      "slug": "new_referrals",
+      "label": "The number of new referrals that may be for an ADHD assessment made in the reporting month",
+      "data_period": "2025-06",
+      "previous_data_period": "2025-06",
+      "previous_value": 25339,
+      "previous_value_min": 25335,
+      "previous_value_max": 25339,
+      "new_value": 25294,
+      "new_value_min": 25290,
+      "new_value_max": 25294,
+      "percentage_change": -0.18,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    },
+    {
+      "observed_at": "2026-09-14T09:59:43+00:00",
+      "snapshot_id": "77e7ce2ed8f94a3f4502",
+      "previous_snapshot_id": "a32784d21dbc001d353c",
+      "source_url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/august-2026",
+      "kind": "revision",
+      "measure_id": "ADHD003",
+      "slug": "open_referrals",
+      "label": "The number of open referrals that may be for an ADHD assessment",
+      "data_period": "2025-06",
+      "previous_data_period": "2025-06",
+      "previous_value": 512875,
+      "previous_value_min": 512875,
+      "previous_value_max": 512875,
+      "new_value": 511580,
+      "new_value_min": 511580,
+      "new_value_max": 511580,
+      "percentage_change": -0.25,
+      "dimensions": {
+        "geography": "England",
+        "breakdown": "Age Group",
+        "aggregation": "all age groups including unknown"
+      }
+    }
+  ]
+}
