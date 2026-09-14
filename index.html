@@ -169,8 +169,13 @@
               <p data-slot="checked"></p>
             </div>
 
-            <a class="nhs-card__cta" href="nhs-adhd-figures/">
-              <span>What these figures mean</span>
+            <a
+              class="nhs-card__cta"
+              href="nhs-adhd-figures/"
+              data-nhs-dialog-open
+              aria-haspopup="dialog"
+            >
+              <span>What these figures actually count</span>
               <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -366,6 +371,52 @@
   </section>
 
 </main>
+
+
+<!-- The explanation remains a normal linked page. When JavaScript and the
+     native dialog element are available, nhs-feed.js progressively enhances
+     that link into this floating reader. -->
+<dialog
+  class="nhs-modal"
+  id="nhs-explainer-dialog"
+  aria-labelledby="nhs-modal-title"
+>
+  <div class="nhs-modal__frame">
+
+    <header class="nhs-modal__bar">
+      <div class="nhs-modal__heading">
+        <span class="nhs-modal__label">NHS ADHD DATA</span>
+        <h2 id="nhs-modal-title">What these figures actually count</h2>
+      </div>
+
+      <div class="nhs-modal__actions">
+        <a class="nhs-modal__full-link" href="nhs-adhd-figures/">
+          <span>Open as a full page</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <button
+          class="nhs-modal__close"
+          type="button"
+          data-nhs-dialog-close
+          aria-label="Close NHS figures explanation"
+          autofocus
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="nhs-modal__scroll" data-nhs-dialog-scroll tabindex="-1">
+      <div class="nhs-modal__loading" role="status">
+        Loading the explanation&hellip;
+      </div>
+    </div>
+
+  </div>
+</dialog>
 
 
 <!-- =========================================================
