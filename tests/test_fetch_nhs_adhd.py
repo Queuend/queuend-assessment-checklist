@@ -86,6 +86,26 @@ class DiscoveryTests(unittest.TestCase):
         result = feed.national_csv_url("https://digital.nhs.uk/example", html)
         self.assertTrue(result.endswith("ADHD_Aug26.csv"))
 
+    def test_known_csv_is_verified_when_discovery_is_unavailable(self):
+        raw = synthetic_csv()
+        release_url = "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/may-2026"
+        csv_url = "https://files.digital.nhs.uk/AA/BBBBBB/ADHD_May26.csv"
+        published = date.today().isoformat()
+        release = feed.Release(release_url, "2026-05", "test", published)
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            feed.process(state_path, release, raw, csv_url, published)
+            arguments = feed.cli_arguments(["--output", str(state_path)])
+            with (
+                mock.patch.object(feed, "discover_release", side_effect=feed.Review("offline")),
+                mock.patch.object(feed, "request_bytes", return_value=(raw, csv_url)),
+            ):
+                result = feed.run(arguments)
+            state = json.loads(state_path.read_text())
+        self.assertEqual(result, 0)
+        self.assertEqual(state["feed"]["data_status"], "current")
+        self.assertEqual(state["feed"]["discovery_status"], "current_csv_fallback")
+
 
 class ParsingTests(unittest.TestCase):
     def test_verified_age_aggregation_and_mixed_dates(self):
