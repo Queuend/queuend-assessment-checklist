@@ -1,6 +1,9 @@
 name: NHS ADHD data feed
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Odd minute avoids the busiest part of GitHub's scheduler.
     - cron: "17 6 * * *"
