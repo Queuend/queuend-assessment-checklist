@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """Maintain the ADHD Junction NHS ADHD management-information feed.
 
 Discovers the latest NHS England release, validates the national CSV, and
@@ -71,10 +71,17 @@ CONFIG = {
         },
     },
     "thresholds": {"new_period": 0.35, "revision": 0.50},
+    # Discovery may be temporarily unavailable while the known CSV remains
+    # reachable. Never use that fallback indefinitely across a release cycle.
+    "max_fallback_age_days": 110,
     "max_snapshots": 40,
     "max_changes": 200,
     "output": "assets/data/nhs-adhd.json",
-    "user_agent": "ADHDJunction-feed/2.0 (+https://adhdjunction.com)",
+    # digital.nhs.uk sometimes rejects non-browser HTTP clients at its edge.
+    "user_agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    ),
     "timeout": 45,
 }
 
@@ -100,6 +107,8 @@ def now_iso() -> str:
 def request_bytes(url: str, accept: str | None = None) -> tuple[bytes, str]:
     request = urllib.request.Request(url)
     request.add_header("User-Agent", CONFIG["user_agent"])
+    request.add_header("Accept-Language", "en-GB,en;q=0.9")
+    request.add_header("Cache-Control", "no-cache")
     if accept:
         request.add_header("Accept", accept)
     with urllib.request.urlopen(request, timeout=CONFIG["timeout"]) as response:
@@ -109,6 +118,7 @@ def request_bytes(url: str, accept: str | None = None) -> tuple[bytes, str]:
 def url_exists(url: str) -> bool:
     request = urllib.request.Request(url, method="HEAD")
     request.add_header("User-Agent", CONFIG["user_agent"])
+    request.add_header("Accept-Language", "en-GB,en;q=0.9")
     try:
         with urllib.request.urlopen(request, timeout=CONFIG["timeout"]) as response:
             return 200 <= response.status < 400
@@ -528,6 +538,8 @@ def empty_state() -> dict[str, Any]:
         "feed": {
             "last_attempted_at": None,
             "last_successful_at": None,
+            "last_discovery_success_at": None,
+            "discovery_status": None,
             "data_status": "awaiting_first_run",
             "review_note": None,
         },
@@ -608,6 +620,18 @@ def inspect_csv(raw: bytes) -> None:
             break
 
 
+def mark_successful_check(feed_state: dict[str, Any], checked_at: str,
+                          discovery_status: str) -> None:
+    feed_state.update(
+        last_successful_at=checked_at,
+        discovery_status=discovery_status,
+        data_status="current",
+        review_note=None,
+    )
+    if discovery_status != "current_csv_fallback":
+        feed_state["last_discovery_success_at"] = checked_at
+
+
 def process(output_path: Path, release: Release, csv_raw: bytes,
             csv_url: str, publication_date: str) -> str:
     state = load_state(output_path)
@@ -618,13 +642,11 @@ def process(output_path: Path, release: Release, csv_raw: bytes,
     current = state.get("current")
 
     if current and current.get("snapshot_id") == snapshot_id:
-        state["feed"].update(last_successful_at=attempted_at,
-                             data_status="current", review_note=None)
+        mark_successful_check(state["feed"], attempted_at, release.discovered_via)
         save_state(output_path, state)
         return f"unchanged (snapshot {snapshot_id})"
     if current and release.release_period < current.get("release_period", ""):
-        state["feed"].update(last_successful_at=attempted_at,
-                             data_status="current", review_note=None)
+        mark_successful_check(state["feed"], attempted_at, release.discovered_via)
         save_state(output_path, state)
         return f"older release {release.release_period} ignored; current is {current.get('release_period')}"
 
@@ -654,8 +676,7 @@ def process(output_path: Path, release: Release, csv_raw: bytes,
                       if item.get("snapshot_id") != snapshot_id]
     )[:CONFIG["max_snapshots"]]
     state["changes"] = (changes + state.get("changes", []))[:CONFIG["max_changes"]]
-    state["feed"].update(last_successful_at=attempted_at,
-                         data_status="current", review_note=None)
+    mark_successful_check(state["feed"], attempted_at, release.discovered_via)
     save_state(output_path, state)
     return f"updated snapshot {snapshot_id}: {len(observations)} observations, {len(changes)} changes"
 
@@ -679,6 +700,39 @@ def cli_arguments(argv: list[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
+def current_csv_fallback(output_path: Path, reason: Exception) -> tuple[Release, bytes, str, str]:
+    """Verify the last known official CSV when release discovery is unavailable."""
+    state = load_state(output_path)
+    current = state.get("current")
+    if not current:
+        raise Review(f"No release was discovered and there is no validated fallback: {reason}")
+
+    try:
+        published = date.fromisoformat(current["publication_date"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise Review("The validated fallback has no usable publication date") from exc
+    age_days = (date.today() - published).days
+    if age_days > CONFIG["max_fallback_age_days"]:
+        raise Review(
+            "Release discovery is unavailable and the last known publication is "
+            f"{age_days} days old; manual review is required"
+        )
+
+    csv_url = current.get("csv_url")
+    if not isinstance(csv_url, str) or not csv_url.startswith("https://"):
+        raise Review("The validated fallback has no usable official CSV URL")
+    csv_raw, final_csv_url = request_bytes(csv_url, "text/csv")
+    release = Release(
+        current["source_url"], current["release_period"],
+        "current_csv_fallback", current["publication_date"]
+    )
+    print(
+        "Release discovery unavailable; verified the last known official CSV directly",
+        file=sys.stderr,
+    )
+    return release, csv_raw, final_csv_url, current["publication_date"]
+
+
 def run(args: argparse.Namespace) -> int:
     if args.csv_file and (not args.release_url or not args.publication_date):
         raise ValueError("--csv-file requires --release-url and --publication-date")
@@ -694,16 +748,34 @@ def run(args: argparse.Namespace) -> int:
         publication_date = args.publication_date
     else:
         rss_raw = args.rss_file.read_bytes() if args.rss_file else None
-        release = discover_release(rss_raw)
-        release_html, final_release_url = request_bytes(release.url)
-        release = Release(normalise_release_url(final_release_url),
-                          release.release_period, release.discovered_via,
-                          release.publication_date)
-        csv_url = national_csv_url(release.url, release_html)
-        csv_raw, csv_url = request_bytes(csv_url, "text/csv")
-        publication_date = release.publication_date or publication_date_from_html(release_html)
-        if not publication_date:
-            raise Review("Publication date was not found in RSS or release page")
+        try:
+            release = discover_release(rss_raw)
+        except Review as exc:
+            release, csv_raw, csv_url, publication_date = current_csv_fallback(
+                args.output, exc
+            )
+        else:
+            try:
+                release_html, final_release_url = request_bytes(release.url)
+            except (OSError, TimeoutError, urllib.error.URLError) as exc:
+                state = load_state(args.output)
+                current = state.get("current") or {}
+                if normalise_release_url(release.url) != normalise_release_url(
+                    current.get("source_url", "")
+                ):
+                    raise
+                release, csv_raw, csv_url, publication_date = current_csv_fallback(
+                    args.output, exc
+                )
+            else:
+                release = Release(normalise_release_url(final_release_url),
+                                  release.release_period, release.discovered_via,
+                                  release.publication_date)
+                csv_url = national_csv_url(release.url, release_html)
+                csv_raw, csv_url = request_bytes(csv_url, "text/csv")
+                publication_date = release.publication_date or publication_date_from_html(release_html)
+                if not publication_date:
+                    raise Review("Publication date was not found in RSS or release page")
 
     if args.inspect:
         inspect_csv(csv_raw)
