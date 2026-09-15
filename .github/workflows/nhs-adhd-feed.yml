@@ -87,6 +87,15 @@ jobs:
             gh issue close "$NUM"
           fi
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build site search index
+        run: |
+          npx --yes pagefind@1.5.2 --site .
+          test -f pagefind/pagefind.js
+
       # A push made with GITHUB_TOKEN does not start another Pages workflow.
       # Upload this checked working tree so the deployment job below publishes it.
       - uses: actions/configure-pages@v5
