@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact ADHD Junction</title>
+  <meta name="description" content="Send a question, correction, suggestion, privacy enquiry or accessibility enquiry to ADHD Junction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&amp;family=Source+Code+Pro:wght@400..700&amp;family=Source+Sans+3:ital,wght@0,400..700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/queuend.css">
+  <script src="../assets/js/contact-config.js" defer></script>
+  <script src="../assets/js/contact-form.js" defer></script>
+</head>
+<body class="contact-page">
+<a class="skip-link" href="#main">Skip to contact form</a>
+<header class="site-header print-hidden">
+  <div class="site-header__inner">
+    <a class="brand" href="../" aria-label="ADHD Junction home">
+      <svg class="brand__mark" width="29" height="29" viewBox="0 0 240 240" aria-hidden="true">
+        <path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="currentColor"/>
+        <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" class="brand__mark-accent"/>
+      </svg>
+      <span>ADHD Junction</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <details class="nav-dropdown">
+        <summary>Start Here <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+        <div class="nav-dropdown__panel">
+          <span class="nav-dropdown__label">START HERE</span>
+          <a href="../could-this-be-adhd/"><span>I think I might have ADHD</span><span aria-hidden="true">→</span></a>
+          <a href="../assessment-routes/"><span>I’m choosing an assessment</span><span aria-hidden="true">→</span></a>
+          <a href="../already-booked/"><span>My assessment is already booked</span><span aria-hidden="true">→</span></a>
+          <a href="../children-young-people/"><span>I think my child might have ADHD</span><span aria-hidden="true">→</span></a>
+        </div>
+      </details>
+      <a href="../resources/">Resources</a>
+      <a href="../assessment-routes/">Assessment Routes</a>
+      <a href="../faqs/">Questions</a>
+    </nav>
+    <details class="mobile-menu">
+      <summary aria-label="Open navigation"><span>Menu</span><span aria-hidden="true">☰</span></summary>
+      <nav class="mobile-menu__panel" aria-label="Mobile navigation">
+        <span class="mobile-menu__label">START HERE</span>
+        <a href="../could-this-be-adhd/">I think I might have ADHD</a>
+        <a href="../assessment-routes/">I’m choosing an assessment</a>
+        <a href="../already-booked/">My assessment is already booked</a>
+        <a href="../children-young-people/">I think my child might have ADHD</a>
+        <div class="mobile-menu__rule"></div>
+        <a href="../resources/">Resources</a>
+        <a href="../assessment-routes/">Assessment Routes</a>
+        <a href="../faqs/">Questions</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main" data-pagefind-meta="type:Contact">
+  <section class="contact-intro">
+    <div class="contact-column">
+      <a class="contact-back" href="../formalities/#contact"><span aria-hidden="true">←</span> Privacy and formalities</a>
+      <p class="eyebrow">CONTACT ADHD JUNCTION</p>
+      <h1 data-pagefind-meta="title">Write to us.</h1>
+      <p class="contact-intro__standfirst" data-pagefind-meta="description">Questions, corrections and suggestions are welcome. Tell us just enough to help us understand what you need.</p>
+    </div>
+  </section>
+
+  <section class="contact-area" aria-label="Contact ADHD Junction">
+    <div class="contact-column">
+      <div class="contact-card">
+        <div class="contact-card__heading">
+          <p class="micro-label">A SHORT NOTE</p>
+          <h2>What would you like to tell us?</h2>
+          <p>Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+        </div>
+
+        <form id="adhd-junction-contact-form" method="POST">
+          <input type="hidden" name="form_name" value="ADHD Junction contact">
+          <div class="contact-form__field">
+            <label for="enquiry-type">What is this about? <span aria-hidden="true">*</span></label>
+            <select id="enquiry-type" name="enquiry_type" required>
+              <option value="">Choose one</option>
+              <option value="Correction or outdated information">A correction or something outdated</option>
+              <option value="Question about content or sources">A question about our information or sources</option>
+              <option value="Privacy or accessibility">Privacy or accessibility</option>
+              <option value="General message">Something else</option>
+            </select>
+          </div>
+
+          <div class="contact-form__pair">
+            <div class="contact-form__field">
+              <label for="name">Your name <span class="contact-form__optional">Optional</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="100">
+            </div>
+            <div class="contact-form__field">
+              <label for="email">Your email address <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required>
+            </div>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="page-concerned">Which page is this about? <span class="contact-form__optional">Optional</span></label>
+            <input id="page-concerned" name="page_concerned" type="text" maxlength="300" placeholder="Page title or web address">
+          </div>
+
+          <div class="contact-form__field">
+            <div class="contact-form__label-row">
+              <label for="message">Your message <span aria-hidden="true">*</span></label>
+              <span id="message-count" aria-live="polite">0 / 4,000</span>
+            </div>
+            <textarea id="message" name="message" rows="7" minlength="10" maxlength="4000" aria-describedby="message-guidance" required></textarea>
+            <p id="message-guidance" class="contact-form__hint">Please don’t attach or paste medical records. This form does not accept files.</p>
+          </div>
+
+          <div class="contact-form__trap" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="contact-form__warning">
+            <strong>Please don’t include detailed medical records or other highly sensitive personal information.</strong>
+            <span>ADHD Junction cannot provide emergency help, diagnosis, treatment or individual medical care.</span>
+          </div>
+
+          <p class="contact-form__privacy">We use your details only to reply and deal with appropriate follow-up. Messages about clinical or editorial content may also be read by Neill Hughes. Read our <a href="../formalities/#privacy">privacy notice</a>.</p>
+
+          <div id="contact-setup-notice" class="contact-form__notice" role="status" hidden>
+            The secure delivery connection is being completed. The form cannot accept messages just yet.
+          </div>
+
+          <button class="contact-form__submit" type="submit" disabled>
+            <span>Send to ADHD Junction</span><span aria-hidden="true">→</span>
+          </button>
+          <p class="contact-form__verification">Protected against automated spam. You may be asked to complete a brief security check.</p>
+        </form>
+
+        <div id="contact-success" class="contact-result contact-result--success" tabindex="-1" role="status" style="display: none;">
+          <p class="micro-label">MESSAGE SENT</p>
+          <h2>Thank you.</h2>
+          <p>Your message is safely on its way to ADHD Junction.</p>
+          <a href="../">Return to the homepage <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div id="contact-error" class="contact-result contact-result--error" tabindex="-1" role="alert" style="display: none;">
+          <p class="micro-label">NOT SENT</p>
+          <h2>Something interrupted that.</h2>
+          <p>Your message has not been sent. Please check the required fields and try again in a moment.</p>
+        </div>
+      </div>
+
+      <p class="contact-afterword">We read corrections carefully. We may not be able to answer every general enquiry, and contacting us does not create a clinician–patient relationship.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer print-hidden">
+  <div class="site-footer__inner">
+    <div class="site-footer__identity">
+      <a class="brand" href="../" aria-label="ADHD Junction home">
+        <svg class="brand__mark" width="29" height="29" viewBox="0 0 240 240" aria-hidden="true"><path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="currentColor"/><polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" class="brand__mark-accent"/></svg>
+        <span>ADHD Junction</span>
+      </a>
+      <p>Independent UK information to help people make better-informed ADHD assessment decisions. General information, not diagnosis, treatment or individual medical advice.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="../resources/">Resources and guides</a>
+      <a href="../assessment-routes/">Assessment routes</a>
+      <a href="../faqs/">Questions</a>
+      <a href="../formalities/#corrections">Corrections</a>
+      <a href="../formalities/#editorial-standards">Editorial standards</a>
+      <a href="../formalities/#privacy">Privacy</a>
+      <a href="../formalities/#accessibility">Accessibility</a>
+      <a href="../formalities/#disclaimer">Disclaimer</a>
+      <a href="../formalities/#contact" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</footer>
+<script>
+(function () { var dropdown = document.querySelector('.nav-dropdown'); document.addEventListener('click', function (event) { if (dropdown && dropdown.open && !dropdown.contains(event.target)) dropdown.open = false; }); })();
+</script>
+</body>
+</html>
