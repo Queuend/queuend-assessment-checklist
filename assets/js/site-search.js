@@ -40,25 +40,72 @@ function resolveResultUrl(rawUrl) {
   return new URL(rawUrl.replace(/^\/+/, ""), siteRoot).href;
 }
 
-function resultCard(data) {
+function normaliseSearchText(value) {
+  return (value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function textFromHtml(value) {
+  const template = document.createElement("template");
+  template.innerHTML = value || "";
+  return template.content.textContent.trim();
+}
+
+function matchingSection(data, query) {
+  const queryText = normaliseSearchText(query);
+  const ignoredWords = new Set(["and", "are", "can", "does", "for", "how", "the", "what", "when", "where", "which", "who", "why", "with"]);
+  const queryTerms = queryText.split(" ").filter((term) => term.length > 2 && !ignoredWords.has(term));
+
+  if (!queryTerms.length || !Array.isArray(data.sub_results)) return null;
+
+  return data.sub_results
+    .map((section, index) => {
+      const title = normaliseSearchText(section.title);
+      const titleHits = queryTerms.filter((term) => title.includes(term)).length;
+      const exactPhrase = queryText.length > 2 && title.includes(queryText);
+
+      return {
+        section,
+        index,
+        score: (exactPhrase ? 1000 : 0) + (titleHits / queryTerms.length) * 100 + titleHits,
+        titleHits,
+      };
+    })
+    .filter((candidate) => candidate.titleHits > 0)
+    .sort((a, b) => b.score - a.score || a.index - b.index)[0]?.section || null;
+}
+
+function resultCard(data, query) {
+  const section = matchingSection(data, query);
+  const resultUrl = section?.url || data.url;
+  const resultTitle = section?.title || data.meta?.title || "Untitled page";
+  const sectionExcerpt = section?.excerpt || "";
+  const sectionExcerptText = textFromHtml(sectionExcerpt);
+  const usefulSectionExcerpt = sectionExcerptText.length > resultTitle.length + 20;
+  const resultExcerpt = usefulSectionExcerpt
+    ? sectionExcerpt
+    : data.meta?.description || data.excerpt || "";
+
   const article = document.createElement("article");
   article.className = "site-search-result";
 
   const link = document.createElement("a");
   link.className = "site-search-result__link";
-  link.href = resolveResultUrl(data.url);
+  link.href = resolveResultUrl(resultUrl);
 
   const type = document.createElement("span");
   type.className = "site-search-result__type";
   type.textContent = data.meta?.type || "ADHD Junction";
 
   const title = document.createElement("h3");
-  title.textContent = data.meta?.title || "Untitled page";
+  title.textContent = resultTitle;
 
   const excerpt = document.createElement("p");
   excerpt.className = "site-search-result__excerpt";
   // Pagefind encodes source HTML before inserting its own safe <mark> tags.
-  excerpt.innerHTML = data.excerpt || data.meta?.description || "";
+  excerpt.innerHTML = resultExcerpt;
 
   const arrow = document.createElement("span");
   arrow.className = "site-search-result__arrow";
@@ -136,7 +183,7 @@ function bindSearch(root, options = {}) {
       const visibleResults = Number.isFinite(limit) ? search.results.slice(0, limit) : search.results;
       const data = await Promise.all(visibleResults.map((result) => result.data()));
       if (thisRequest !== requestNumber) return;
-      data.forEach((item) => results.append(resultCard(item)));
+      data.forEach((item) => results.append(resultCard(item, query)));
 
       if (allResults && total > limit) {
         const destination = new URL(searchPageUrl);
