@@ -677,6 +677,26 @@ button:focus-visible {
   font-size: 13.5px;
 }
 
+.article-illustration {
+  width: min(100%, 420px);
+  margin: 46px 0 50px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  background: var(--mint-pale);
+  box-shadow: 0 14px 34px rgba(19, 32, 43, .065);
+}
+
+.article-illustration--lead { width: min(100%, 470px); margin-top: 48px; }
+.article-illustration--right { margin-left: auto; }
+
+.article-illustration img {
+  width: 100%;
+  height: auto;
+  border-radius: 11px;
+}
+
 
 /* ===== callouts ============================================ */
 
@@ -1517,6 +1537,24 @@ button:focus-visible {
 
   .desktop-nav { display: none; }
   .mobile-menu { display: block; }
+  .mobile-menu__panel {
+    max-height: calc(100dvh - 72px);
+    padding: 16px 24px 18px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .mobile-menu__label { margin-bottom: 4px; }
+  .mobile-menu__panel a { min-height: 41px; font-size: 15px; }
+  .mobile-menu__rule { height: 10px; }
+  .site-search-trigger--mobile { min-height: 41px; padding-block: 7px; font-size: 15px; }
+  .mobile-menu[open] > summary span:last-child { display: none; }
+  .mobile-menu[open] > summary::after {
+    content: "×";
+    position: relative;
+    top: -1px;
+    color: var(--mint);
+    font: 400 21px/1 var(--sans);
+  }
 
   .hero__inner { padding-top: 34px; padding-bottom: 68px; }
   .breadcrumb { margin-bottom: 40px; }
@@ -1632,7 +1670,10 @@ button:focus-visible {
   .site-header__inner { min-height: 64px; padding: 13px 0; }
   .brand { font-size: 19px; }
   .brand__mark { width: 25px; height: 25px; }
-  .mobile-menu__panel { padding-left: 18px; padding-right: 18px; }
+  .mobile-menu__panel {
+    max-height: calc(100dvh - 64px);
+    padding: 12px 18px 14px;
+  }
 
   .hero__inner { padding-top: 26px; padding-bottom: 52px; }
 
@@ -1657,6 +1698,12 @@ button:focus-visible {
   .in-short li { font-size: 16.5px; padding-left: 36px; }
 
   .image-break { margin-top: 44px; margin-bottom: 44px; }
+  .article-illustration,
+  .article-illustration--lead {
+    width: min(82vw, 390px);
+    margin-top: 38px;
+    margin-bottom: 42px;
+  }
   .placeholder-image { aspect-ratio: 4 / 3; }
   .image-break--hero .placeholder-image,
   .image-break--hero.placeholder-image { aspect-ratio: 3 / 2; }
@@ -1699,7 +1746,8 @@ button:focus-visible {
 
 @media print {
   .site-header, .section-index, .checklist-section,
-  .onward-section, .site-footer, .image-break { display: none; }
+  .onward-section, .site-footer, .image-break,
+  .article-illustration { display: none; }
   .hero { background: none; color: #000; }
   .hero h1, .hero__standfirst, .hero__note { color: #000; }
   body { background: #fff; font-size: 11pt; }
@@ -3291,6 +3339,17 @@ body.nhs-modal-open {
   background: var(--navy);
   color: var(--mint);
   font: 650 16px/1 var(--mono);
+}
+
+.therapist-view__portrait {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 22px;
+  border: 2px solid var(--mint);
+  border-radius: 50%;
+  background: var(--cream);
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(22, 45, 51, .09);
 }
 
 .therapist-view__name {

@@ -270,6 +270,46 @@ function addHeaderTriggers() {
   }
 }
 
+function bindNavigationMenus() {
+  const mobileMenus = [...document.querySelectorAll(".mobile-menu")];
+  if (!mobileMenus.length) return;
+
+  const closeMenu = (menu, returnFocus = false) => {
+    if (!menu.open) return;
+    menu.open = false;
+    const summary = menu.querySelector(":scope > summary");
+    if (returnFocus) summary?.focus();
+  };
+
+  mobileMenus.forEach((menu) => {
+    const summary = menu.querySelector(":scope > summary");
+
+    menu.addEventListener("toggle", () => {
+      summary?.setAttribute("aria-label", menu.open ? "Close navigation" : "Open navigation");
+    });
+
+    menu.querySelectorAll(".mobile-menu__panel a").forEach((link) => {
+      link.addEventListener("click", () => closeMenu(menu));
+    });
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    mobileMenus.forEach((menu) => {
+      if (menu.open && !menu.contains(event.target)) closeMenu(menu);
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    mobileMenus.forEach((menu) => closeMenu(menu, true));
+  });
+
+  const desktopQuery = window.matchMedia("(min-width: 901px)");
+  desktopQuery.addEventListener?.("change", (event) => {
+    if (event.matches) mobileMenus.forEach((menu) => closeMenu(menu));
+  });
+}
+
 function createDialog() {
   const dialog = document.createElement("dialog");
   dialog.className = "site-search-dialog";
@@ -305,6 +345,7 @@ function createDialog() {
 }
 
 addHeaderTriggers();
+bindNavigationMenus();
 
 const fullPageRoot = document.querySelector("[data-site-search-page]");
 let modal;
