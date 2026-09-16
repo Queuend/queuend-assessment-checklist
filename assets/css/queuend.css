@@ -64,6 +64,7 @@ body {
 
 img { display: block; max-width: 100%; }
 a   { color: inherit; }
+a, button, summary { touch-action: manipulation; }
 
 p, ul, ol, blockquote, figure { margin-top: 0; }
 p { margin-bottom: 1.25em; }
@@ -1101,12 +1102,20 @@ button:focus-visible {
   background: var(--white);
   color: var(--body);
   text-decoration: none;
-  transition: border-color .15s ease, background .15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(23, 93, 91, .16);
+  transition: border-color .15s ease, background .15s ease, transform .08s ease;
 }
 
 .hub-card:hover {
   border-color: var(--teal);
   background: var(--mint-pale);
+}
+
+.hub-card:active {
+  border-color: var(--teal);
+  background: var(--mint-pale);
+  transform: translateY(1px);
 }
 
 .hub-card__media {

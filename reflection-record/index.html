@@ -210,7 +210,7 @@ body.blank-print > #printClone{display:block}
 
 <div class="alert">
   <span class="lbl">Your answers stay private</span>
-  <p><strong>Queuend does not receive or see anything you enter in this worksheet.</strong> Your answers are not submitted to ADHD Junction or stored on our servers.</p>
+  <p><strong>ADHD Junction does not receive or see anything you enter in this worksheet.</strong> Your answers are not submitted to ADHD Junction or stored on our servers.</p>
   <p>If you save your progress, it is stored in this browser on this device so you can return to it later. ADHD Junction does not upload that saved copy. If you download a backup, it is saved wherever your device normally puts downloaded files; that location may be synchronised to a service such as Google Drive, OneDrive or iCloud.</p>
   <p>This is your personal record. You decide whether to keep it, delete it or share it with anyone.</p>
 </div>
@@ -966,7 +966,7 @@ document.getElementById("btnSave").addEventListener("click", function(){
   var url = URL.createObjectURL(blob);
   var a = document.createElement("a");
   a.href = url;
-  a.download = "Queuend-ADHD-reflection-progress-" + stamp() + ".json";
+  a.download = "ADHD-Junction-reflection-progress-" + stamp() + ".json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
