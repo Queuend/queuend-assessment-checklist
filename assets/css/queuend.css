@@ -4956,6 +4956,17 @@ body.nhs-modal-open {
   font-size: 20px;
   line-height: 1.52;
 }
+.booking-hero__backlink {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--mint);
+  font-size: 15px;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+.booking-hero__backlink:hover { color: var(--white); }
 .booking-map {
   position: relative;
   padding: 26px 24px 24px;
@@ -5029,9 +5040,12 @@ body.nhs-modal-open {
 }
 .booking-section-heading > p:last-child,
 .booking-section-heading--split > p { margin: 0; color: var(--body); font-size: 18px; line-height: 1.56; }
+.booking-inline-link { color: var(--teal-dark); font-weight: 700; text-underline-offset: 4px; }
 .booking-person-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .booking-person {
   padding: 31px 31px 29px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(28, 41, 54, .12);
   border-radius: 21px;
 }
@@ -5046,6 +5060,26 @@ body.nhs-modal-open {
 }
 .booking-person p { margin-bottom: 14px; font-size: 16.5px; line-height: 1.55; }
 .booking-person a { color: var(--teal-dark); font-size: 15px; font-weight: 700; text-underline-offset: 4px; }
+.booking-person .booking-free-guide {
+  min-height: 64px;
+  margin-top: auto;
+  padding: 12px 14px 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid rgba(7, 92, 90, .22);
+  border-radius: 11px;
+  background: rgba(255,255,255,.72);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 7px 18px rgba(28, 41, 54, .06);
+}
+.booking-free-guide span { display: grid; gap: 4px; }
+.booking-free-guide small { color: var(--teal-dark); font: 700 9px/1 var(--mono); letter-spacing: .11em; }
+.booking-free-guide strong { font: 670 16px/1.25 var(--display); }
+.booking-free-guide b { color: var(--teal); font: 500 20px/1 var(--mono); }
+.booking-person .booking-free-guide:hover { border-color: var(--teal); background: var(--white); }
 .booking-nations {
   margin-top: 20px;
   padding: 20px 23px;
@@ -5142,6 +5176,8 @@ body.nhs-modal-open {
 
 .booking-after { padding: 91px 0 97px; }
 .booking-after__steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--rule); background: var(--rule); }
+.booking-after__guide { margin-top: 17px !important; font-size: 16px !important; }
+.booking-after__guide a { color: var(--teal-dark); font-weight: 700; text-underline-offset: 4px; }
 .booking-after__steps > div { padding: 24px 21px 22px; background: rgba(255,255,255,.72); }
 .booking-after__steps span { width: 30px; height: 30px; margin-bottom: 14px; display: grid; place-items: center; border-radius: 50%; background: var(--book-clay-pale); color: var(--book-clay); font: 700 11px/1 var(--mono); }
 .booking-after__steps strong { display: block; margin-bottom: 7px; color: var(--ink); font: 660 18px/1.25 var(--display); }
@@ -5169,8 +5205,89 @@ body.nhs-modal-open {
 .booking-gateway .micro-label { margin-bottom: 10px; color: var(--book-clay); }
 .booking-gateway h2 { font-size: clamp(34px, 4.5vw, 48px); }
 .booking-gateway p { max-width: 700px; margin: 0; font-size: 17px; line-height: 1.55; }
-.booking-gateway__inner > a { min-width: 255px; padding: 15px 17px; display: flex; justify-content: space-between; gap: 24px; border-radius: 10px; background: var(--navy); color: var(--white); font-size: 15px; font-weight: 700; line-height: 1.35; text-decoration: none; }
-.booking-gateway__inner > a:hover { background: var(--teal-dark); }
+.booking-gateway__inner > a,
+.booking-gateway__inner > button { min-width: 255px; padding: 15px 17px; display: flex; justify-content: space-between; gap: 24px; border: 0; border-radius: 10px; background: var(--navy); color: var(--white); font: 700 15px/1.35 var(--sans); text-align: left; text-decoration: none; cursor: pointer; }
+.booking-gateway__inner > a:hover,
+.booking-gateway__inner > button:hover { background: var(--teal-dark); }
+
+.provider-alert {
+  width: min(calc(100% - 34px), 620px);
+  max-height: min(760px, calc(100vh - 34px));
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 18px;
+  background: var(--cream);
+  color: var(--body);
+  box-shadow: 0 26px 80px rgba(9, 20, 28, .38);
+}
+.provider-alert[open] { animation: provider-alert-in .18s ease-out; }
+.provider-alert::backdrop { background: rgba(10, 22, 31, .72); backdrop-filter: blur(3px); }
+.provider-alert__frame { position: relative; padding: 39px 40px 34px; border-top: 7px solid var(--teal); }
+.provider-alert__close {
+  position: absolute;
+  top: 16px;
+  right: 17px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  font: 400 25px/1 var(--sans);
+  cursor: pointer;
+}
+.provider-alert__close:hover { border-color: var(--teal); }
+.provider-alert .micro-label { margin-bottom: 10px; color: var(--teal-dark); }
+.provider-alert h2 { max-width: 500px; margin: 0 42px 15px 0; color: var(--ink); font: 680 34px/1.08 var(--display); letter-spacing: -.035em; }
+.provider-alert__frame > p:not(.micro-label) { margin: 0; font-size: 17px; line-height: 1.58; }
+.provider-alert__reveal,
+.provider-alert__submit {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 24px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--teal-dark);
+  color: var(--white);
+  font: 700 15.5px/1.3 var(--sans);
+  text-align: left;
+  cursor: pointer;
+}
+.provider-alert__reveal:hover,
+.provider-alert__submit:hover { background: var(--navy); }
+.provider-alert__form { margin-top: 25px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.provider-alert__field label { display: block; margin-bottom: 7px; color: var(--ink); font-weight: 700; font-size: 15px; }
+.provider-alert__field input {
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 12px;
+  border: 1px solid #a8a39a;
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+.provider-alert__field input:focus { outline: 3px solid rgba(11,123,119,.18); border-color: var(--teal-dark); }
+.provider-alert__privacy { margin: 11px 0 0; color: var(--muted); font-size: 13.5px; line-height: 1.48; }
+.provider-alert__privacy a { color: var(--teal-dark); font-weight: 700; }
+.provider-alert__notice { margin-top: 16px; padding: 12px 14px; border-left: 4px solid var(--book-clay); background: var(--book-clay-pale); color: var(--ink); font-size: 13.5px; line-height: 1.45; }
+.provider-alert__submit:disabled { background: #8d9697; cursor: not-allowed; opacity: .82; }
+.provider-alert__verification { margin: 9px 0 0; color: var(--muted); font: 500 10px/1.4 var(--mono); letter-spacing: .035em; text-transform: uppercase; }
+.provider-alert__result { margin-top: 26px; padding: 21px; border-left: 5px solid var(--teal); background: var(--book-sage); }
+.provider-alert__result h2 { margin-right: 0; font-size: 27px; }
+.provider-alert__result p:last-child { margin-bottom: 0; }
+.provider-alert__result--error { border-left-color: #a64f45; background: #f7e9e6; }
+.provider-alert__guide { margin-top: 24px; display: inline-flex; gap: 15px; color: var(--teal-dark); font-size: 14px; font-weight: 700; text-underline-offset: 4px; }
+@keyframes provider-alert-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
 
 .booking-sources { padding: 74px 0 83px; background: #ece8df; }
 .booking-sources h2 { margin: 0 0 16px; color: var(--ink); font: 670 30px/1.15 var(--display); }
@@ -5198,7 +5315,8 @@ body.nhs-modal-open {
   .booking-check__button { max-width: 330px; }
   .booking-after__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .booking-gateway__inner { grid-template-columns: 1fr; gap: 27px; }
-  .booking-gateway__inner > a { max-width: 330px; }
+  .booking-gateway__inner > a,
+  .booking-gateway__inner > button { max-width: 330px; }
 }
 
 @media (max-width: 680px) {
@@ -5233,7 +5351,10 @@ body.nhs-modal-open {
   .booking-after__steps,
   .booking-after__choices { grid-template-columns: 1fr; }
   .booking-gateway { padding: 54px 0 57px; }
-  .booking-gateway__inner > a { min-width: 0; max-width: none; }
+  .booking-gateway__inner > a,
+  .booking-gateway__inner > button { min-width: 0; max-width: none; }
+  .provider-alert__frame { padding: 32px 21px 26px; }
+  .provider-alert h2 { margin-right: 36px; font-size: 29px; }
   .booking-sources { padding: 55px 0 62px; }
 }
 
@@ -5241,6 +5362,7 @@ body.nhs-modal-open {
   .booking-page .booking-index,
   .booking-page .booking-map,
   .booking-page .booking-gateway,
+  .booking-page .provider-alert,
   .booking-page .booking-after__choices,
   .booking-page .booking-check__button { display: none; }
   .booking-page .booking-hero { padding: 0 0 16pt; background: none; color: #000; }

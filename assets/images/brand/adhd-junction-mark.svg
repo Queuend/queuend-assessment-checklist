@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" fill="none">
+  <title>ADHD Junction logo vector</title>
+  <desc>Rounded geometric logo with three cyan symbols and one lime-green symbol on a transparent background.</desc>
+
+  <!-- Top-left chevron -->
+  <polyline points="168,495 379,177 587,495"
+            stroke="#23C4DD"
+            stroke-width="175"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"/>
+
+  <!-- Top-right chevron -->
+  <polyline points="797,169 1065,355 797,531"
+            stroke="#23C4DD"
+            stroke-width="175"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"/>
+
+  <!-- Bottom-left H -->
+  <rect x="108" y="625" width="185" height="548" rx="92.5" fill="#23C4DD"/>
+  <rect x="466" y="625" width="185" height="548" rx="92.5" fill="#23C4DD"/>
+  <rect x="215" y="789" width="330" height="148" rx="20" fill="#23C4DD"/>
+
+  <!-- Bottom-right chevron -->
+  <polyline points="797,711 1074,903 797,1093"
+            stroke="#78D828"
+            stroke-width="175"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"/>
+</svg>
