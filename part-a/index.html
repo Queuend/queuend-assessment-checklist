@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Free checklist to help you decide how and where to book an ADHD assessment: compare NHS, Right to Choose and private routes, providers and costs. Nothing you enter is sent to ADHD Junction.">
-<title>Considering an ADHD assessment? Free checklist &mdash; ADHD Junction</title>
+<meta name="description" content="A free interactive checklist to help you compare NHS, Right to Choose and private ADHD assessment routes, providers and costs. Nothing you enter is sent to ADHD Junction.">
+<title>Interactive ADHD assessment comparison checklist &mdash; ADHD Junction</title>
 <style>
 :root{
   --ink:#16212C; --ink-soft:#3E4A56; --muted:#5E6A75;
@@ -206,9 +206,9 @@ body.blank-print > #printClone{display:block}
       <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
     </svg>
     <div class="mast-id">
-      <div class="brand">ADHD Junction &middot; Free ADHD assessment checklist</div>
-      <h1>Considering an ADHD assessment?</h1>
-      <div class="purpose">Use this to help you decide how and where to book an ADHD assessment.</div>
+      <div class="brand">ADHD Junction &middot; Free interactive checklist</div>
+      <h1>Interactive ADHD assessment comparison checklist</h1>
+      <div class="purpose">Considering an ADHD assessment? Use this to help you decide how and where to book.</div>
       <div class="kicker">Choosing your route and provider</div>
     </div>
   </header>
@@ -393,14 +393,14 @@ body.blank-print > #printClone{display:block}
     <div class="key">
       <span class="note-lbl">Next step</span>
       <strong>Already booked?</strong>
-      Continue with the <a href="https://queuend.github.io/queuend-assessment-checklist/part-b/" target="_blank" rel="noopener">Preparing for your assessment checklist</a>
+      Continue with the <a href="../part-b/">Interactive ADHD assessment preparation checklist</a>
       to organise what you need to have ready, ask, take and remember, and to keep track of what you are
       told afterwards. It opens in a new tab, so this record stays available.
     </div>
   </section>
 
   <footer>
-    <strong>ADHD Junction ADHD assessment checklist &mdash; choosing your route and provider.</strong>
+    <strong>ADHD Junction &mdash; Interactive ADHD assessment comparison checklist.</strong>
     For organising information only. It does not diagnose, recommend a provider, or replace professional advice.
     In England, clinic regulation is checked at cqc.org.uk. Elsewhere, check Healthcare Improvement Scotland,
     Healthcare Inspectorate Wales, or the RQIA in Northern Ireland.
@@ -1064,7 +1064,7 @@ document.getElementById("btnSave").addEventListener("click", function(){
   var url = URL.createObjectURL(blob);
   var a = document.createElement("a");
   a.href = url;
-  a.download = "Queuend-ADHD-choosing-assessment-progress-" + stamp() + ".json";
+  a.download = "ADHD-Junction-comparison-checklist-progress-" + stamp() + ".json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -1100,7 +1100,7 @@ fileIn.addEventListener("change", function(){
     }
     if(data.format !== SCHEMA){
       var where = "";
-      if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a backup from the Preparing for your assessment checklist \u2014 open it there instead."; }
+      if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a backup from the Interactive ADHD assessment preparation checklist \u2014 open it there instead."; }
       else if(data.format === "queuend-reflection-record"){ where = " It looks like a Reflection Record backup \u2014 open it in the Reflection Record instead."; }
       return fail("That does not look like a backup copy from this checklist." + where);
     }

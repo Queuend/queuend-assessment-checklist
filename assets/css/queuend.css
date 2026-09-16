@@ -1441,6 +1441,24 @@ button:focus-visible {
   border-top: 1px solid var(--rule);
 }
 
+.contributor__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 11px;
+}
+
+.contributor__portrait {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--mint);
+  border-radius: 50%;
+  background: var(--paper);
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(22, 45, 51, .09);
+}
+
 .contributor h3 {
   margin: 0 0 3px;
   color: var(--ink);
@@ -1450,8 +1468,18 @@ button:focus-visible {
   letter-spacing: -.015em;
 }
 
+.contributor__postnominal {
+  margin-left: .22em;
+  color: var(--teal);
+  font-family: var(--sans);
+  font-size: .62em;
+  font-weight: 600;
+  letter-spacing: .035em;
+  white-space: nowrap;
+}
+
 .contributor__role {
-  margin: 0 0 9px;
+  margin: 0;
   color: var(--teal);
   font-family: var(--mono);
   font-size: 11px;
