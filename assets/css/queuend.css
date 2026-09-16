@@ -171,6 +171,7 @@ button:focus-visible {
 }
 
 .brand__mark { display: block; flex: 0 0 auto; color: var(--mint); }
+.brand__mark--image { width: 31px; height: 30px; object-fit: contain; }
 .brand__mark-accent { fill: var(--teal); }
 
 .desktop-nav {
@@ -1327,19 +1328,19 @@ button:focus-visible {
   display: flow-root;
   padding-bottom: 104px;
   background-color: var(--cream-deep);
-  background-image: url("../images/home/QueuendQueueWide.png");
+  background-image: url("../images/home/adhd-junction-panorama.webp");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover;
+  background-size: 100% auto;
 }
 
 .scene::before {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 150px;
+  height: 120px;
   pointer-events: none;
-  background: linear-gradient(to bottom, rgba(28, 41, 54, .5), rgba(28, 41, 54, 0));
+  background: linear-gradient(to bottom, rgba(28, 41, 54, .28), rgba(28, 41, 54, 0));
 }
 
 .scene::after {
@@ -1379,8 +1380,7 @@ button:focus-visible {
 
 /* ===== free tools panel ==================================== */
 
-/* Tune this after viewing the real panorama in the browser. */
-.tools-section { padding-top: 180px; }
+.tools-section { padding-top: 138px; }
 
 .tools-panel {
   padding: 44px 46px 46px;
@@ -1483,7 +1483,7 @@ button:focus-visible {
   .hero--home .hero__inner { padding-top: 52px; padding-bottom: 104px; }
   .hero-cta { max-width: none; }
   .route-section { margin-top: -58px; }
-  .tools-section { padding-top: 130px; }
+  .tools-section { padding-top: 104px; }
   .scene { padding-bottom: 84px; }
   .contributors { padding: 46px 0 50px; }
 
@@ -1537,15 +1537,15 @@ button:focus-visible {
   .hub-section { padding-top: 44px; }
 
   .scene {
-    background-position: 42% top;
-    background-size: auto 100%;
+    background-position: center top;
+    background-size: 100% auto;
     padding-bottom: 68px;
   }
 
   .scene::before { height: 110px; }
   .scene::after { height: 130px; }
 
-  .tools-section { padding-top: 72px; }
+  .tools-section { padding-top: 56px; }
   .tools-panel { padding: 28px 22px 30px; border-radius: 12px; }
   .tools-panel__head { margin-bottom: 26px; }
 
@@ -1836,7 +1836,8 @@ button:focus-visible {
   justify-content: space-between;
   gap: 16px;
   border-radius: 8px;
-  background: var(--mint);
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: #cfc3b2;
   color: var(--navy-deep);
   text-decoration: none;
   font-size: 15px;
@@ -1846,7 +1847,7 @@ button:focus-visible {
 }
 
 .nhs-card__cta:hover {
-  background: #a8e6d1;
+  background: #ded4c7;
 }
 
 .nhs-card__cta:focus-visible {
@@ -4853,49 +4854,9 @@ body.nhs-modal-open {
   }
 }
 
-/* Keep the booking doorway visually distinct after shared current-page rules. */
-.desktop-nav > .nav-book,
-.desktop-nav > .nav-book:hover,
-.desktop-nav > .nav-book[aria-current="page"],
-.mobile-menu__panel .nav-book,
-.mobile-menu__panel .nav-book:hover,
-.mobile-menu__panel .nav-book[aria-current="page"] {
-  color: var(--white);
-}
-
-
 /* ============================================================
    HOW TO BOOK AN ADHD ASSESSMENT
    ============================================================ */
-
-.desktop-nav > .nav-book {
-  margin-left: 1px;
-  padding: 11px 15px 12px;
-  border: 1px solid rgba(255, 255, 255, .14);
-  border-radius: 9px;
-  background: #95551f;
-  color: var(--white);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
-  font-weight: 700;
-}
-.desktop-nav > .nav-book:hover,
-.desktop-nav > .nav-book[aria-current="page"] {
-  background: #b06b2d;
-  color: var(--white);
-}
-.mobile-menu__panel .nav-book {
-  min-height: 50px;
-  margin-top: 17px;
-  padding: 0 15px;
-  justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, .13);
-  border-radius: 9px;
-  background: #95551f;
-  color: var(--white);
-  font-weight: 700;
-}
-.mobile-menu__panel .nav-book:hover,
-.mobile-menu__panel .nav-book[aria-current="page"] { background: #b06b2d; color: var(--white); }
 
 .home-booking-signpost {
   margin: 28px 0 0;
@@ -4906,13 +4867,13 @@ body.nhs-modal-open {
   align-items: center;
   border: 1px solid rgba(28, 41, 54, .13);
   border-radius: 22px;
-  background: linear-gradient(115deg, #f1e1d1, #f7eee3);
+  background: linear-gradient(115deg, #e5dfd5, #f2eee7);
   color: var(--ink);
   text-decoration: none;
   box-shadow: 0 12px 30px rgba(28, 41, 54, .08);
 }
-.home-booking-signpost:hover { border-color: #95551f; transform: translateY(-1px); }
-.home-booking-signpost .micro-label { margin-bottom: 6px; color: #865022; }
+.home-booking-signpost:hover { border-color: var(--teal-dark); transform: translateY(-1px); }
+.home-booking-signpost .micro-label { margin-bottom: 6px; color: var(--teal-dark); }
 .home-booking-signpost h2 {
   margin: 0 0 5px;
   color: var(--ink);
@@ -4927,7 +4888,7 @@ body.nhs-modal-open {
   justify-content: space-between;
   gap: 20px;
   border-radius: 9px;
-  background: #95551f;
+  background: var(--teal-dark);
   color: var(--white);
   font-size: 14.5px;
   font-weight: 700;
