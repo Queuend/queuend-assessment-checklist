@@ -289,7 +289,12 @@ function bindNavigationMenus() {
     });
 
     menu.querySelectorAll(".mobile-menu__panel a").forEach((link) => {
-      link.addEventListener("click", () => closeMenu(menu));
+      link.addEventListener("click", () => {
+        // Let the browser complete the link activation before collapsing the
+        // <details> panel. Closing it synchronously can remove the tapped link
+        // early enough for some mobile browsers to cancel the navigation.
+        window.setTimeout(() => closeMenu(menu), 0);
+      });
     });
   });
 
