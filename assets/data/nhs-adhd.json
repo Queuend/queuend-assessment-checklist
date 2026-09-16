@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "feed": {
-    "last_attempted_at": "2026-09-16T12:48:07+00:00",
-    "last_successful_at": "2026-09-16T12:48:07+00:00",
+    "last_attempted_at": "2026-09-16T13:40:55+00:00",
+    "last_successful_at": "2026-09-16T13:40:55+00:00",
     "data_status": "current",
     "review_note": null,
     "discovery_status": "current_csv_fallback"
