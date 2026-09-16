@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A free interactive worksheet to help you organise what you have noticed before deciding whether to seek an ADHD assessment. Mostly tick-boxes, with writing only where it helps.">
-<title>Interactive ADHD Reflection Record — ADHD Junction</title>
+<title>ADHD reflection: interactive record — ADHD Junction</title>
 <style>
 :root{
   --ink:#241D22; --muted:#574A52; --rose:#9B536C; --berry:#71374C; --mid:#BB748A;
@@ -198,8 +198,8 @@ body.blank-print > #printClone{display:block}
     <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
   </svg>
   <div>
-    <div class="brand">ADHD Junction &middot; Interactive worksheet</div>
-    <h1>Interactive ADHD Reflection Record</h1>
+    <div class="brand">ADHD Junction &middot; Private worksheet</div>
+    <h1>ADHD reflection: interactive record</h1>
     <div class="kicker">Patterns and examples I&rsquo;ve noticed</div>
   </div>
 </header>
@@ -413,7 +413,7 @@ body.blank-print > #printClone{display:block}
 </section>
 
 <footer>
-  <strong>ADHD Junction &mdash; Interactive ADHD Reflection Record.</strong>
+  <strong>ADHD Junction &mdash; ADHD reflection: interactive record.</strong>
   Information and reflection support, not diagnosis or personal medical advice. This worksheet does not assess, screen or diagnose, and nothing in it is counted or scored. If you are worried about your health, speak to your GP or a qualified assessor.
   <br><span class="indep">Independent by design</span>
 </footer>
@@ -1005,7 +1005,7 @@ fileIn.addEventListener("change", function(){
     if(data.format !== SCHEMA){
       var where = "";
       if(data.format === "queuend-assessment-checklist-part-a"){ where = " It looks like a backup from the Choosing your route and provider checklist \u2014 open it there instead."; }
-      else if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a backup from the Interactive ADHD assessment preparation checklist \u2014 open it there instead."; }
+      else if(data.format === "queuend-assessment-checklist-part-b"){ where = " It looks like a backup from the ADHD assessment preparation checklist \u2014 open it there instead."; }
       return fail("That does not look like a backup copy from this worksheet." + where);
     }
     if(data.version !== VERSION){
