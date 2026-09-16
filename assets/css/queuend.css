@@ -5290,12 +5290,21 @@ body.nhs-modal-open {
 @keyframes provider-alert-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
 
 .booking-sources { padding: 74px 0 83px; background: #ece8df; }
+.booking-sources__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 330px);
+  gap: clamp(48px, 8vw, 105px);
+  align-items: center;
+}
+.booking-sources__copy { max-width: 700px; }
 .booking-sources h2 { margin: 0 0 16px; color: var(--ink); font: 670 30px/1.15 var(--display); }
 .booking-sources p,
 .booking-sources li { font-size: 14.5px; line-height: 1.55; }
 .booking-sources ul { margin: 22px 0; padding-left: 21px; }
 .booking-sources a { color: var(--teal-dark); font-weight: 650; text-underline-offset: 3px; }
 .booking-sources__reviewed { margin-top: 25px; color: var(--muted); }
+.booking-sources__illustration { margin: -38px 0 -46px; align-self: end; }
+.booking-sources__illustration img { width: 100%; height: auto; display: block; }
 
 @media (max-width: 1080px) {
   .desktop-nav { gap: 18px; }
@@ -5317,6 +5326,8 @@ body.nhs-modal-open {
   .booking-gateway__inner { grid-template-columns: 1fr; gap: 27px; }
   .booking-gateway__inner > a,
   .booking-gateway__inner > button { max-width: 330px; }
+  .booking-sources__grid { grid-template-columns: minmax(0, 1fr) 245px; gap: 34px; }
+  .booking-sources__illustration { margin: -18px 0 -37px; }
 }
 
 @media (max-width: 680px) {
@@ -5355,7 +5366,9 @@ body.nhs-modal-open {
   .booking-gateway__inner > button { min-width: 0; max-width: none; }
   .provider-alert__frame { padding: 32px 21px 26px; }
   .provider-alert h2 { margin-right: 36px; font-size: 29px; }
-  .booking-sources { padding: 55px 0 62px; }
+  .booking-sources { padding: 55px 0 0; overflow: hidden; }
+  .booking-sources__grid { grid-template-columns: 1fr; gap: 20px; }
+  .booking-sources__illustration { width: min(84vw, 335px); margin: -6px auto -34px; }
 }
 
 @media print {
