@@ -1324,6 +1324,7 @@ button:focus-visible {
 /* ===== illustrated panoramic band ========================== */
 
 .scene {
+  --scene-image-height: min(35.7vw, 731px);
   position: relative;
   display: flow-root;
   padding-bottom: 104px;
@@ -1331,7 +1332,7 @@ button:focus-visible {
   background-image: url("../images/home/adhd-junction-panorama.webp");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: 100% auto;
+  background-size: min(100%, 2048px) auto;
 }
 
 .scene::before {
@@ -1346,10 +1347,10 @@ button:focus-visible {
 .scene::after {
   content: "";
   position: absolute;
-  inset: auto 0 0 0;
-  height: 170px;
+  inset: 0 0 auto 0;
+  height: var(--scene-image-height);
   pointer-events: none;
-  background: linear-gradient(to bottom, rgba(247, 244, 237, 0), var(--cream));
+  background: linear-gradient(to bottom, rgba(238, 232, 220, 0) 64%, var(--cream-deep) 100%);
 }
 
 .scene > * {
@@ -1375,7 +1376,16 @@ button:focus-visible {
 .route-section .hub-card,
 .tools-panel .hub-card {
   box-shadow: 0 10px 26px rgba(19, 32, 43, .10);
+  border-left: 6px solid var(--feature-accent, var(--teal));
 }
+
+.route-section .hub-card:nth-child(1) { --feature-accent: #8fa77f; }
+.route-section .hub-card:nth-child(2) { --feature-accent: #d1a13b; }
+.route-section .hub-card:nth-child(3) { --feature-accent: #76a9bf; }
+.route-section .hub-card:nth-child(4) { --feature-accent: #b995b4; }
+.tools-panel .hub-card:nth-child(1) { --feature-accent: #7ea997; }
+.tools-panel .hub-card:nth-child(2) { --feature-accent: #b7a58b; }
+.tools-panel .hub-card:nth-child(3) { --feature-accent: #7d9eb1; }
 
 
 /* ===== free tools panel ==================================== */
@@ -1543,7 +1553,7 @@ button:focus-visible {
   }
 
   .scene::before { height: 110px; }
-  .scene::after { height: 130px; }
+  .scene::after { height: var(--scene-image-height); }
 
   .tools-section { padding-top: 56px; }
   .tools-panel { padding: 28px 22px 30px; border-radius: 12px; }
@@ -1836,9 +1846,9 @@ button:focus-visible {
   justify-content: space-between;
   gap: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, .18);
-  background: #cfc3b2;
-  color: var(--navy-deep);
+  border: 1px solid rgba(255, 255, 255, .2);
+  background: #347f7a;
+  color: var(--white);
   text-decoration: none;
   font-size: 15px;
   font-weight: 700;
@@ -1847,7 +1857,7 @@ button:focus-visible {
 }
 
 .nhs-card__cta:hover {
-  background: #ded4c7;
+  background: #3f918a;
 }
 
 .nhs-card__cta:focus-visible {
