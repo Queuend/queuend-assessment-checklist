@@ -1468,11 +1468,6 @@ button:focus-visible {
 }
 
 
-@media (max-width: 1100px) {
-  .hub-grid--four { grid-template-columns: repeat(2, 1fr); }
-}
-
-
 /* ============================================================
    TABLET
    ============================================================ */
@@ -1483,6 +1478,7 @@ button:focus-visible {
   .page-ledger__stamp { right: 12px; }
 
   .hub-grid { grid-template-columns: repeat(2, 1fr); }
+  .hub-grid--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .tools-panel { padding: 38px 34px 40px; }
 }
 
@@ -1501,8 +1497,15 @@ button:focus-visible {
 
   .hero--home .hero__inner { padding-top: 52px; padding-bottom: 104px; }
   .hero-cta { max-width: none; }
+  .hub-grid--four {
+    width: 100%;
+    max-width: 780px;
+    margin-inline: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .route-section .hub-card__media { aspect-ratio: 16 / 10; }
   .route-section { margin-top: -58px; }
-  .tools-section { padding-top: 104px; }
+  .tools-section { padding-top: 60px; }
   .scene { padding-bottom: 84px; }
   .contributors { padding: 46px 0 50px; }
 
@@ -1552,7 +1555,8 @@ button:focus-visible {
     gap: 14px;
   }
 
-  .hub-card__media { aspect-ratio: 16 / 9; }
+  .hub-card__media,
+  .route-section .hub-card__media { aspect-ratio: 16 / 9; }
   .hub-section { padding-top: 44px; }
 
   .scene {
