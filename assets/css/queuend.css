@@ -372,6 +372,14 @@ button:focus-visible {
   line-height: 1.55;
 }
 
+.hero-text-link {
+  color: inherit;
+  text-decoration-color: rgba(147, 222, 197, .62);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+}
+.hero-text-link:hover { color: var(--mint); text-decoration-thickness: 2px; }
+
 .hero__note {
   max-width: 62ch;
   margin-top: 24px;
@@ -1536,12 +1544,19 @@ button:focus-visible {
   html { scroll-padding-top: 84px; }
 
   .desktop-nav { display: none; }
-  .mobile-menu { display: block; }
+  .mobile-menu { position: relative; display: block; }
   .mobile-menu__panel {
-    max-height: calc(100dvh - 72px);
+    top: calc(100% + 17px);
+    left: auto;
+    right: 0;
+    width: min(420px, calc(100vw - 32px));
+    max-height: calc(100dvh - 92px);
     padding: 16px 24px 18px;
     overflow-y: auto;
     overscroll-behavior: contain;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 13px;
+    box-shadow: 0 20px 42px rgba(5, 14, 20, .28);
   }
   .mobile-menu__label { margin-bottom: 4px; }
   .mobile-menu__panel a { min-height: 41px; font-size: 15px; }
@@ -1671,7 +1686,9 @@ button:focus-visible {
   .brand { font-size: 19px; }
   .brand__mark { width: 25px; height: 25px; }
   .mobile-menu__panel {
-    max-height: calc(100dvh - 64px);
+    top: calc(100% + 14px);
+    width: min(360px, calc(100vw - 24px));
+    max-height: calc(100dvh - 82px);
     padding: 12px 18px 14px;
   }
 
@@ -3796,7 +3813,7 @@ body.nhs-modal-open {
 
 .guide-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -3848,6 +3865,11 @@ body.nhs-modal-open {
 }
 .guide-card dt { color: var(--muted); }
 .guide-card dd { margin: 0; color: var(--ink); font-weight: 650; }
+.guide-card dd small { font-size: .72em; font-weight: 650; }
+.guide-card--benefits {
+  background: #eef3f1;
+  border-color: rgba(44, 100, 96, .24);
+}
 
 .resource-principles {
   padding: 47px 0 51px;
@@ -4075,6 +4097,105 @@ body.nhs-modal-open {
   font-weight: 700;
 }
 
+/* ===== benefits guide ===================================== */
+
+.benefits-page .guide-hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(147, 222, 197, .16) 0 13%, transparent 13.3%),
+    linear-gradient(135deg, #172632 0%, #203b42 100%);
+}
+.benefits-page .guide-meta__author small {
+  margin-left: .2em;
+  font-size: .62em;
+  font-weight: 650;
+  letter-spacing: .04em;
+}
+.benefit-rule {
+  margin: 0 0 2.3rem;
+  padding: 25px 26px 24px;
+  border: 1px solid rgba(44, 100, 96, .28);
+  border-left: 5px solid var(--teal);
+  border-radius: 10px;
+  background: #edf5f1;
+}
+.benefit-rule .micro-label { margin-bottom: 10px; color: var(--teal-dark); }
+.benefit-rule p { margin: 0; color: var(--ink); font: 650 20px/1.5 var(--display); }
+.benefit-route-grid {
+  margin: 2rem 0 2.7rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.benefit-route-card {
+  min-height: 138px;
+  padding: 20px 21px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(25, 39, 49, .11);
+  border-radius: 12px;
+  color: var(--ink) !important;
+  text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.benefit-route-card:hover { transform: translateY(-2px); border-color: rgba(11, 123, 119, .45); }
+.benefit-route-card:nth-child(1) { background: #e6eff3; }
+.benefit-route-card:nth-child(2) { background: #f4e9dc; }
+.benefit-route-card:nth-child(3) { background: #e4eee8; }
+.benefit-route-card:nth-child(4) { background: #ece7f0; }
+.benefit-route-card small { color: var(--teal-dark); font: 650 10px/1.2 var(--mono); letter-spacing: .07em; }
+.benefit-route-card strong { margin-top: auto; font: 680 22px/1.15 var(--display); letter-spacing: -.025em; }
+.benefit-route-card span { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+.benefit-overview {
+  margin: 1.8rem 0 2.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.benefit-overview article {
+  padding: 20px 21px 19px;
+  border: 1px solid var(--rule);
+  border-radius: 11px;
+  background: var(--white);
+}
+.benefit-overview h3 { margin: 0 0 7px; color: var(--ink); font-size: 20px; }
+.benefit-overview p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.48; }
+.benefit-rates {
+  margin: 1.4rem 0 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.benefit-rate {
+  padding: 18px 19px;
+  border-radius: 10px;
+  background: #f2eee7;
+}
+.benefit-rate small { display: block; color: var(--muted); font-size: 12px; }
+.benefit-rate strong { display: block; margin-top: 4px; color: var(--ink); font: 690 23px/1.2 var(--display); }
+.benefit-country-note,
+.benefit-rate-note {
+  padding: 18px 20px;
+  border-radius: 9px;
+  background: #f3f0e9;
+  color: var(--muted);
+}
+.article-body .benefit-country-note,
+.article-body .benefit-rate-note { font-size: 15px; line-height: 1.55; }
+.benefit-checklist {
+  margin: 1.7rem 0;
+  padding: 25px 27px 22px;
+  border-radius: 12px;
+  background: #e8f1ef;
+}
+.benefit-checklist h3 { margin-top: 0; }
+.benefit-checklist ul { margin-bottom: 0; }
+.benefit-reviewed {
+  margin-top: 2rem;
+  color: var(--muted);
+  font: 600 12px/1.5 var(--mono);
+  letter-spacing: .025em;
+}
+
 
 /* ===== resource and guide responsive ====================== */
 
@@ -4124,6 +4245,13 @@ body.nhs-modal-open {
   .article-body blockquote { padding: 18px 19px; }
   .guide-next__inner { grid-template-columns: 1fr; gap: 27px; }
   .guide-next__link { min-width: 0; }
+  .benefit-rule { padding: 21px 20px 20px; }
+  .benefit-rule p { font-size: 18px; }
+  .benefit-route-grid,
+  .benefit-overview,
+  .benefit-rates { grid-template-columns: 1fr; }
+  .benefit-route-card { min-height: 122px; }
+  .benefit-checklist { padding: 22px 20px 19px; }
 }
 
 
@@ -4814,16 +4942,15 @@ body.nhs-modal-open {
 @media (max-width: 940px) {
   .young-hero__grid { min-height: 0; grid-template-columns: 1fr; gap: 0; }
   .young-hero__copy { padding-bottom: 35px; }
-  .young-hero__art { min-height: 480px; }
-  .young-hero__art img { right: 50%; width: min(650px, 88vw); transform: translateX(50%); }
-  .young-hero__shape { left: 50%; top: 35px; transform: translateX(-50%) rotate(-6deg); }
+  .young-hero__art { min-height: 520px; }
+  .young-hero__art img { right: 50%; width: min(470px, 64vw); transform: translateX(50%); }
+  .young-hero__shape { left: 50%; top: 52px; width: 355px; height: 395px; transform: translateX(-50%) rotate(-6deg); }
   .young-pattern-grid,
   .young-feelings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .young-next__grid { grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: 45px; }
 }
 
 @media (max-width: 680px) {
-  .young-hero { background: #f8f4eb; }
   .young-hero::after { right: -170px; bottom: -120px; }
   .young-hero__copy { padding: 56px 0 28px; }
   .young-hero h1 { font-size: clamp(48px, 14vw, 63px); }
@@ -4831,9 +4958,9 @@ body.nhs-modal-open {
   .young-hero__standfirst { margin-top: 25px; font-size: 18px; }
   .young-hero__choices { grid-template-columns: 1fr; }
   .young-hero__choices a { min-height: 52px; }
-  .young-hero__art { min-height: 380px; }
-  .young-hero__art img { width: min(530px, 116vw); }
-  .young-hero__shape { top: 10px; width: 300px; height: 330px; }
+  .young-hero__art { min-height: clamp(350px, 76vw, 480px); }
+  .young-hero__art img { width: min(430px, 84vw); }
+  .young-hero__shape { top: 24px; width: min(300px, 64vw); height: min(330px, 70vw); }
   .young-intro,
   .young-patterns,
   .young-feelings,
