@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A free interactive checklist to help you prepare for an ADHD assessment: what to have ready, ask, take and record afterwards. Nothing you enter is sent to ADHD Junction.">
 <title>ADHD assessment preparation: interactive checklist &mdash; ADHD Junction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&amp;family=Source+Code+Pro:wght@400..700&amp;family=Source+Sans+3:ital,wght@0,400..700;1,400&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#16212C; --ink-soft:#3E4A56; --muted:#5E6A75;
@@ -12,9 +15,10 @@
   --tint-cool:#EDF4F3; --tint-warm:#FBF6EC;
   --rule:#9E998E; --rule-fine:#C2BDB2; --line:#A9A398;
   --alert:#8E2A2A; --alert-tint:#FDF2F0;
+  --display:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif;
   --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
-  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
+  --sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'Source Code Pro','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden}
@@ -23,14 +27,15 @@ body{font-family:var(--sans);font-size:10.5pt;line-height:1.45;color:var(--ink);
 .doc{max-width:210mm;margin:0 auto;background:#FFFFFF;padding:22mm 19mm 18mm;
   box-shadow:0 1px 3px rgba(22,33,44,.10),0 8px 28px rgba(22,33,44,.10)}
 
-.mast{display:flex;align-items:flex-start;gap:15px;padding-bottom:13px;border-bottom:2.5px solid var(--teal)}
-.mark{flex:0 0 auto;margin-top:3px}
-.mast-id{flex:1}
-.brand{font-size:8pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
-h1{font-family:var(--serif);font-size:23pt;line-height:1.08;font-weight:400;letter-spacing:-.015em;margin-top:5px;color:var(--ink)}
-.purpose{margin-top:9px;font-size:10pt;color:var(--ink-soft);line-height:1.5}
-.kicker{margin-top:7px;font-size:8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ochre);font-weight:700}
-.standfirst{margin-top:13px;font-size:10pt;color:var(--ink-soft);max-width:50em;line-height:1.55}
+.mast{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:42px minmax(0,1fr);align-items:start;gap:18px;padding:25px 27px 23px;border:1px solid var(--rule-fine);border-left:5px solid var(--ochre);border-radius:16px;background:linear-gradient(135deg,#FFF 0%,var(--tint-warm) 100%)}
+.mast::after{content:"";position:absolute;z-index:-1;right:-62px;top:-76px;width:190px;height:190px;border-radius:50%;background:rgba(138,90,20,.08)}
+.mark{width:40px;height:40px;display:block;flex:0 0 auto;margin-top:2px}
+.mast-id{min-width:0}
+.brand{font-family:var(--mono);font-size:7.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+h1{max-width:20ch;font-family:var(--display);font-size:29pt;line-height:.99;font-weight:720;letter-spacing:-.045em;margin-top:7px;color:var(--ink)}
+.purpose{max-width:50em;margin-top:11px;font-family:var(--sans);font-size:10.5pt;color:var(--ink-soft);line-height:1.5}
+.kicker{display:inline-flex;margin-top:13px;padding:5px 9px;border:1px solid rgba(138,90,20,.18);border-radius:999px;background:rgba(255,255,255,.72);font-family:var(--mono);font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);font-weight:650}
+.standfirst{margin-top:17px;font-size:10.5pt;color:var(--ink-soft);max-width:50em;line-height:1.58}
 .standfirst strong{color:var(--ink);font-weight:600}
 
 .toolbar{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;padding:13px 0 2px;border-top:1px solid var(--rule-fine)}
@@ -135,6 +140,10 @@ body.blank-print > #printClone{display:block}
 @media (max-width:620px){
   body{padding:0;background:#fff}
   .doc{padding:14mm 6mm;box-shadow:none;max-width:none}
+  .mast{grid-template-columns:32px minmax(0,1fr);gap:12px;padding:20px 17px 19px;border-radius:12px}
+  .mark{width:32px;height:32px}
+  h1{font-size:23pt;line-height:1.01}
+  .kicker{line-height:1.35}
   .two{grid-template-columns:1fr}
   .opts,.opts.wide,.opts.row{grid-template-columns:1fr}
   .toolbar button{flex:1 1 100%}
@@ -148,6 +157,11 @@ body.blank-print > #printClone{display:block}
     -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   body{background:#fff;padding:0;font-size:10pt}
   .doc{max-width:none;margin:0;padding:0;box-shadow:none;background:#fff}
+  .mast{grid-template-columns:32px minmax(0,1fr);gap:15px;padding:0 0 13px;border:0;border-bottom:2.5px solid var(--teal);border-radius:0;background:none}
+  .mast::after{display:none}
+  .mark{width:32px;height:32px}
+  h1{font-size:23pt;line-height:1.08}
+  .kicker{padding:0;border:0;border-radius:0;background:none}
   .toolbar,.screen-only,.no-print{display:none!important}
   p,.lbl,legend,.opt{orphans:3;widows:3}
   section{margin-top:22px;break-inside:auto}
@@ -173,10 +187,7 @@ body.blank-print > #printClone{display:block}
 <div class="doc" id="doc" data-pagefind-meta="type:Checklist">
 
   <header class="mast">
-    <svg class="mark" width="32" height="32" viewBox="0 0 240 240" aria-hidden="true">
-      <path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="#04575A"/>
-      <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
-    </svg>
+    <img class="mark" src="../assets/images/brand/adhd-junction-mark.svg" width="40" height="40" alt="">
     <div class="mast-id">
       <div class="brand">ADHD Junction &middot; Free checklist</div>
       <h1>ADHD assessment preparation: interactive checklist</h1>

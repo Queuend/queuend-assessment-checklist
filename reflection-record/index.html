@@ -5,14 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A free interactive worksheet to help you organise what you have noticed before deciding whether to seek an ADHD assessment. Mostly tick-boxes, with writing only where it helps.">
 <title>ADHD reflection: interactive record — ADHD Junction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&amp;family=Source+Code+Pro:wght@400..700&amp;family=Source+Sans+3:ital,wght@0,400..700;1,400&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#241D22; --muted:#574A52; --rose:#9B536C; --berry:#71374C; --mid:#BB748A;
   --blush:#F8EEF1; --warm:#F4E4E9; --rule:#DDC8CF; --rule-fine:#EADCE1; --page:#EFE9EA;
   --alert:#8E2A2A; --alert-tint:#FDF2F0;
+  --display:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif;
   --serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
-  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  --mono:'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
+  --sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'Source Code Pro','SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden}
@@ -21,12 +25,14 @@ body{font-family:var(--serif);font-size:11pt;line-height:1.62;color:var(--ink);
 .doc{max-width:210mm;margin:0 auto;background:#fff;padding:20mm 18mm 16mm;
   box-shadow:0 1px 3px rgba(36,29,34,.10),0 8px 28px rgba(36,29,34,.10)}
 
-.mast{display:flex;align-items:flex-start;gap:15px;padding-bottom:13px;border-bottom:2.5px solid var(--rose)}
-.mark{flex:0 0 auto;margin-top:3px}
-.brand{font-family:var(--sans);font-size:8pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
-h1{font-size:24pt;line-height:1.06;font-weight:400;letter-spacing:-.015em;margin-top:5px}
-.kicker{margin-top:8px;font-family:var(--sans);font-size:8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--berry);font-weight:700}
-.standfirst{margin-top:14px;font-size:11pt;color:var(--muted);max-width:36em}
+.mast{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:42px minmax(0,1fr);align-items:start;gap:18px;padding:25px 27px 23px;border:1px solid var(--rule);border-left:5px solid var(--rose);border-radius:16px;background:linear-gradient(135deg,#FFF 0%,var(--blush) 100%)}
+.mast::after{content:"";position:absolute;z-index:-1;right:-62px;top:-76px;width:190px;height:190px;border-radius:50%;background:rgba(187,116,138,.10)}
+.mark{width:40px;height:40px;display:block;flex:0 0 auto;margin-top:2px}
+.mast-id{min-width:0}
+.brand{font-family:var(--mono);font-size:7.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+h1{max-width:20ch;font-family:var(--display);font-size:29pt;line-height:.99;font-weight:720;letter-spacing:-.045em;margin-top:7px;color:var(--ink)}
+.kicker{display:inline-flex;margin-top:13px;padding:5px 9px;border:1px solid rgba(113,55,76,.18);border-radius:999px;background:rgba(255,255,255,.72);font-family:var(--mono);font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:var(--berry);font-weight:650}
+.standfirst{margin-top:17px;font-family:var(--sans);font-size:11pt;line-height:1.58;color:var(--muted);max-width:52em}
 .meta{margin-top:12px;font-family:var(--sans);font-size:8pt;color:var(--muted);letter-spacing:.04em;
   padding-top:9px;border-top:1px solid var(--rule-fine)}
 
@@ -154,7 +160,10 @@ body.blank-print > #printClone{display:block}
 @media (max-width:620px){
   body{padding:0;background:#fff;font-size:11.5pt}
   .doc{padding:12mm 5mm;box-shadow:none;max-width:none}
-  h1{font-size:20pt}
+  .mast{grid-template-columns:32px minmax(0,1fr);gap:12px;padding:20px 17px 19px;border-radius:12px}
+  .mark{width:32px;height:32px}
+  h1{font-size:23pt;line-height:1.01}
+  .kicker{line-height:1.35}
   .contents ol{column-count:1}
   .opts,.opts.wide,.opts.row{grid-template-columns:1fr}
   .two{grid-template-columns:1fr}
@@ -168,6 +177,11 @@ body.blank-print > #printClone{display:block}
     -webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   body{background:#fff;padding:0;font-size:10.5pt}
   .doc{max-width:none;margin:0;padding:0;box-shadow:none}
+  .mast{grid-template-columns:32px minmax(0,1fr);gap:15px;padding:0 0 13px;border:0;border-bottom:2.5px solid var(--rose);border-radius:0;background:none}
+  .mast::after{display:none}
+  .mark{width:32px;height:32px}
+  h1{font-size:24pt;line-height:1.06}
+  .kicker{padding:0;border:0;border-radius:0;background:none}
   .no-print{display:none!important}
   h1,h2,h3,.sec-head,.flabel,.opt-label,.block-title,legend,.field label{
     break-after:avoid;page-break-after:avoid}
@@ -193,11 +207,8 @@ body.blank-print > #printClone{display:block}
 <div class="doc" id="doc" data-pagefind-meta="type:Worksheet">
 
 <header class="mast">
-  <svg class="mark" width="32" height="32" viewBox="0 0 240 240" aria-hidden="true">
-    <path d="M147.36 195.18 A80 80 0 1 1 195.18 147.36 L171.68 138.81 A55 55 0 1 0 138.81 171.68 Z" fill="#04575A"/>
-    <polygon points="171.68,138.81 195.18,147.36 193.54,193.54 147.36,195.18 138.81,171.68" fill="#0B7B77"/>
-  </svg>
-  <div>
+  <img class="mark" src="../assets/images/brand/adhd-junction-mark.svg" width="40" height="40" alt="">
+  <div class="mast-id">
     <div class="brand">ADHD Junction &middot; Private worksheet</div>
     <h1>ADHD reflection: interactive record</h1>
     <div class="kicker">Patterns and examples I&rsquo;ve noticed</div>

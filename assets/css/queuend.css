@@ -1516,6 +1516,14 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+.contributor__role--credentials {
+  max-width: 47ch;
+  font-size: 10.5px;
+  line-height: 1.42;
+  letter-spacing: .025em;
+  text-transform: none;
+}
+
 .contributor p:last-child {
   margin: 0;
   max-width: 44ch;
@@ -3535,6 +3543,9 @@ body.nhs-modal-open {
 .screener-hero__grid { grid-template-columns: minmax(0,1.12fr) minmax(300px,.88fr); }
 .screener-hero h1 { max-width: 10ch; }
 .screener-hero__standfirst { max-width: 570px; margin-top: 24px; }
+.screener-hero__alternate { max-width: 660px; margin: 19px 0 0; color: rgba(255,255,255,.64); font-size: 14.5px; line-height: 1.55; }
+.screener-hero__alternate a { color: var(--mint); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.screener-hero__alternate a:hover { color: var(--white); }
 .screener-privacy { padding: 24px 25px; display: grid; grid-template-columns: 40px 1fr; gap: 15px; border: 1px solid rgba(147,222,197,.35); border-radius: 12px; background: rgba(37,53,68,.9); }
 .screener-privacy > span { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: var(--mint); color: var(--navy-deep); font-weight: 800; }
 .screener-privacy .micro-label { margin-bottom: 7px; color: var(--mint); }
@@ -3569,6 +3580,10 @@ body.nhs-modal-open {
 .screener-result__status p { margin: 0; color: var(--teal-dark); font: 650 10.5px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
 .screener-result h2 { max-width: 18ch; margin: 18px 0 17px; }
 .screener-result > p { max-width: 720px; font-size: 16.5px; }
+.screener-result__reflection { max-width: 800px; margin-top: 26px; padding: 21px 23px 22px; border: 1px solid rgba(178,112,45,.2); border-left: 4px solid var(--ochre); border-radius: 10px; background: rgba(255,255,255,.72); }
+.screener-result__reflection .micro-label { margin-bottom: 8px; color: var(--ochre); }
+.screener-result__reflection h3 { margin: 0 0 8px; color: var(--ink); font: 700 22px/1.15 var(--display); letter-spacing: -.025em; }
+.screener-result__reflection p:last-child { max-width: 710px; margin: 0; color: var(--body); font-size: 15.5px; line-height: 1.58; }
 .screener-result__actions { margin: 27px 0 22px; display: flex; flex-wrap: wrap; gap: 10px; }
 .screener-result__actions a { min-height: 45px; padding: 11px 14px; display: inline-flex; align-items: center; gap: 25px; border-radius: 8px; background: var(--teal-dark); color: var(--white); text-decoration: none; font-size: 14px; font-weight: 650; }
 .screener-result #screener-reset { padding: 4px 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--teal-dark); cursor: pointer; font: 650 14px/1.2 var(--sans); }
@@ -3637,6 +3652,7 @@ body.nhs-modal-open {
   .screener-submit { align-items: stretch; flex-direction: column; }
   .screener-submit button { width: 100%; min-width: 0; }
   .screener-result { padding: 30px 24px 32px; }
+  .screener-result__reflection { padding: 18px 18px 19px; }
   .screener-result__actions { flex-direction: column; }
   .screener-result__actions a { justify-content: space-between; }
   .screener-method { padding: 60px 0 72px; }
@@ -4942,9 +4958,9 @@ body.nhs-modal-open {
 @media (max-width: 940px) {
   .young-hero__grid { min-height: 0; grid-template-columns: 1fr; gap: 0; }
   .young-hero__copy { padding-bottom: 35px; }
-  .young-hero__art { min-height: 520px; }
-  .young-hero__art img { right: 50%; width: min(470px, 64vw); transform: translateX(50%); }
-  .young-hero__shape { left: 50%; top: 52px; width: 355px; height: 395px; transform: translateX(-50%) rotate(-6deg); }
+  .young-hero__art { min-height: 455px; }
+  .young-hero__art img { right: 50%; width: min(430px, 58vw); transform: translateX(50%); }
+  .young-hero__shape { left: 50%; top: 45px; width: 335px; height: 370px; transform: translateX(-50%) rotate(-6deg); }
   .young-pattern-grid,
   .young-feelings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .young-next__grid { grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: 45px; }
