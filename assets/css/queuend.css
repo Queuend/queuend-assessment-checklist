@@ -2261,6 +2261,7 @@ body.nhs-modal-open {
 }
 
 .nhs-modal__loading,
+.nhs-modal__fallback,
 .nhs-modal__error {
   min-height: 240px;
   padding: 56px 28px;
@@ -2268,6 +2269,17 @@ body.nhs-modal-open {
   place-items: center;
   color: var(--muted);
   text-align: center;
+}
+
+.nhs-modal__fallback {
+  align-content: center;
+  justify-items: start;
+  text-align: left;
+}
+
+.nhs-modal__fallback p {
+  max-width: 48rem;
+  margin: 0 0 1rem;
 }
 
 .nhs-modal__error p {
@@ -4258,6 +4270,7 @@ body.nhs-modal-open {
   font-size: 14px;
   font-weight: 700;
 }
+.guide-next__links{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
 
 /* ===== benefits guide ===================================== */
 

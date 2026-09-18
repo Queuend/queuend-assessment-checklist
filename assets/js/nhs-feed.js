@@ -71,6 +71,11 @@
   }
 
   function unavailable(message) {
+    if (CARD && CARD.getAttribute("data-static") === "true") {
+      CARD.setAttribute("data-state", "error");
+      setText(CARD, "[data-slot='badge']", "Automatic check unavailable");
+      return;
+    }
     CARD.setAttribute("data-state", "unavailable");
     setText(CARD, "[data-slot='badge']", "NHS data");
     setText(CARD, "[data-slot='fallback']", message);
