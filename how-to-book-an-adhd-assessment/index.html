@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="../assets/css/queuend.css?v=29">
   <script type="module" src="../assets/js/site-search.js?v=29"></script>
   <script src="../assets/js/contact-config.js?v=29" defer></script>
-  <script src="../assets/js/provider-alert.js?v=29" defer></script>
   <link rel="icon" href="../assets/images/brand/adhd-junction-mark.svg?v=29" type="image/svg+xml">
   <link rel="icon" href="../assets/images/brand/favicon-32x32.png?v=29" type="image/png" sizes="32x32">
   <link rel="shortcut icon" href="../favicon.ico?v=29">
@@ -218,53 +217,9 @@
         <h2 id="gateway-title">Compare the service, not just the sales page</h2>
         <p>ADHD Junction is developing its provider comparison from the same questions used in our checklist: qualifications, assessment process, report, complete costs and what happens afterwards. Providers cannot pay for a higher position.</p>
       </div>
-      <button type="button" data-provider-alert-open>Use the comparison checklist <span aria-hidden="true">→</span></button>
+      <a href="../assessment-comparison-checklist/">Use the comparison checklist <span aria-hidden="true">→</span></a>
     </div>
   </section>
-
-  <dialog class="provider-alert" id="provider-alert" aria-labelledby="provider-alert-title">
-    <div class="provider-alert__frame">
-      <button class="provider-alert__close" type="button" data-provider-alert-close aria-label="Close provider comparison update">×</button>
-      <p class="micro-label">PROVIDER COMPARISON</p>
-      <h2 id="provider-alert-title">The provider list is still in development.</h2>
-      <p>We are checking the details that matter before making it available. If you would like us to let you know when it is ready, leave your email address and we will send one launch notification.</p>
-
-      <button class="provider-alert__reveal" type="button" data-provider-alert-reveal>Let me know when it’s ready <span aria-hidden="true">→</span></button>
-
-      <form class="provider-alert__form" id="provider-alert-form" method="POST" hidden>
-        <input type="hidden" name="form_name" value="ADHD Junction provider comparison launch alert">
-        <input type="hidden" name="form_type" value="provider_directory_launch_alert">
-        <input type="hidden" name="interest" value="Provider comparison launch">
-        <input type="hidden" name="consent" value="Send one email when the ADHD Junction provider comparison launches">
-        <div class="provider-alert__field">
-          <label for="provider-alert-email">Your email address</label>
-          <input id="provider-alert-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required>
-        </div>
-        <div class="contact-form__trap" aria-hidden="true">
-          <label for="provider-alert-website">Leave this field empty</label>
-          <input id="provider-alert-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-        </div>
-        <p class="provider-alert__privacy">We will use this address only to send the launch notification. Read our <a href="../formalities/#privacy">privacy notice</a>.</p>
-        <div id="provider-alert-setup" class="provider-alert__notice" role="status" hidden>The secure notification connection is being completed. It cannot accept email addresses just yet.</div>
-        <button class="provider-alert__submit" type="submit" disabled><span>Join the notification list</span><span aria-hidden="true">→</span></button>
-        <p class="provider-alert__verification">Protected against automated spam. You may be asked to complete a brief security check.</p>
-      </form>
-
-      <div id="provider-alert-success" class="provider-alert__result" tabindex="-1" role="status" style="display: none;">
-        <p class="micro-label">YOU’RE ON THE LIST</p>
-        <h2>Thank you.</h2>
-        <p>We will send one email when the provider comparison is ready.</p>
-      </div>
-
-      <div id="provider-alert-error" class="provider-alert__result provider-alert__result--error" tabindex="-1" role="alert" style="display: none;">
-        <p class="micro-label">NOT SUBMITTED</p>
-        <h2>Something interrupted that.</h2>
-        <p>Your address has not been submitted. Please check it and try again.</p>
-      </div>
-
-      <a class="provider-alert__guide" href="../assessment-comparison-checklist/">Use the assessment comparison checklist while you wait <span aria-hidden="true">→</span></a>
-    </div>
-  </dialog>
 
   <section class="booking-sources" aria-labelledby="sources-title">
     <div class="wide-column booking-sources__grid">
